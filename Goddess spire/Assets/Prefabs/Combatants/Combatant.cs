@@ -6,5 +6,6 @@ public class Combatant : MonoBehaviour
 {
     public Stats statblock;
 	public bool isPC = false;
+	public Sprite icon;
 	
 }
