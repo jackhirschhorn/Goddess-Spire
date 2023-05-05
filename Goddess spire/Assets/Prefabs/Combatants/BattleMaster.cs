@@ -57,6 +57,7 @@ public class BattleMaster : MonoBehaviour
 		clone.parent = init_track_holder.GetChild(0);
 		clone.GetComponent<Image>().color = (c.isPC?Color.green:Color.red);
 		clone.GetChild(0).GetComponent<Image>().sprite = c.icon;
+		clone.GetChild(0).GetComponent<indicatorgrabber>().comb = c;
 		clone.anchoredPosition = Vector3.zero + new Vector3(100*(init_track_holder.GetChild(0).childCount-1),0,0);
 	}
 	
