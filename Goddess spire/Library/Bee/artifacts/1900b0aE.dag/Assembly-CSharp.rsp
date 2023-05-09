@@ -378,11 +378,13 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/animationtrigger.cs"
+"Assets/menucount.cs"
 "Assets/Prefabs/Combatants/BattleMaster.cs"
 "Assets/Prefabs/Combatants/Combatant.cs"
 "Assets/Prefabs/UI/battle/battleplayerui.cs"
 "Assets/Prefabs/UI/battle/indicatorgrabber.cs"
 "Assets/Prefabs/UI/tech tree/ability node/abilitynode.cs"
+"Assets/Scripts/lookat.cs"
 "Assets/Scripts/Stats.cs"
 -langversion:9.0
 
