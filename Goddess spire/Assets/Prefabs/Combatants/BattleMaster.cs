@@ -88,7 +88,7 @@ public class BattleMaster : MonoBehaviour
 				combatmenu.GetComponent<Animator>().SetBool("leftdone", false);
 			} else if(!combatmenu.GetComponent<Animator>().GetBool("left")) {				
 				combatmenu.GetComponent<Animator>().SetBool("left", true);
-				combatmenu.Rotate(0,-90,0);
+				combatmenu.GetChild(0).Rotate(0,-90,0);
 				curmenutarg--;
 			}
 		} else if(curmenutarg < menutarget) {	
@@ -96,7 +96,7 @@ public class BattleMaster : MonoBehaviour
 				combatmenu.GetComponent<Animator>().SetBool("rightdone", false);
 			} else if(!combatmenu.GetComponent<Animator>().GetBool("right")) {
 				combatmenu.GetComponent<Animator>().SetBool("right", true);
-				combatmenu.Rotate(0,90,0);
+				combatmenu.GetChild(0).Rotate(0,90,0);
 				curmenutarg++;
 			}
 		}
