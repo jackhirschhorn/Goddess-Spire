@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleMaster : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class BattleMaster : MonoBehaviour
 	public int curmenutarg = 4000;
 	public Animator[] iconanims;
 	
+	public bool csubmenuon;
+	public GameObject csubmenu;
+	public Animator csubmenuanim;
+	public int submenutarg = 0;
+	public int submenucurtarg = 0;
+	public Transform[] optiontexts;
+	
+	
 	void Awake(){
 		combatants = combatantsass;
 		iconanims[1].SetBool("skip",true);
@@ -31,9 +40,29 @@ public class BattleMaster : MonoBehaviour
 	
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.Space))next_turn();
-		if(Input.GetKeyDown(KeyCode.A))menutarget -= 1;
-		if(Input.GetKeyDown(KeyCode.D))menutarget += 1;
+		if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
+		if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
+		if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg += 1;
+		if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg -= 1;
+		if(Input.GetKeyDown(KeyCode.Q)){
+			if(csubmenuon){
+				csubmenuon = false;
+				csubmenu.SetActive(false);
+			} else {
+			}
+		}
+		if(Input.GetKeyDown(KeyCode.E)){
+			if(!csubmenuon){
+				csubmenuon = true;
+				csubmenu.SetActive(true);
+			} else {
+				csubmenuon = false;
+				csubmenu.SetActive(false);
+				Debug.Log("option selected");
+			}
+		}
 		combatmenurotate();
+		if(csubmenuon)subcombatmenurotate();
 	}
 	
 	public void initiative_calc(){
@@ -107,6 +136,26 @@ public class BattleMaster : MonoBehaviour
 			} else {
 				iconanims[i].SetBool("brighten",true);
 				iconanims[i].SetBool("darken",false);
+			}
+		}
+	}
+	
+	public void subcombatmenurotate(){
+		if(submenucurtarg < submenutarg){
+			if(csubmenuanim.GetBool("up")){
+				
+			} else {
+				csubmenuanim.SetBool("up",true);
+				//change the icons
+				submenucurtarg++;
+			}
+		} else if (submenucurtarg > submenutarg){
+			if(csubmenuanim.GetBool("down")){
+				
+			} else {
+				csubmenuanim.SetBool("down",true);
+				//change the icons
+				submenucurtarg--;
 			}
 		}
 	}
