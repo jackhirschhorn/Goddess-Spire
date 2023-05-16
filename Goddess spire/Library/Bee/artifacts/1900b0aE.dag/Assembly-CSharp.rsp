@@ -383,7 +383,10 @@
 "Assets/Prefabs/Combatants/Combatant.cs"
 "Assets/Prefabs/UI/battle/battleplayerui.cs"
 "Assets/Prefabs/UI/battle/indicatorgrabber.cs"
+"Assets/Prefabs/UI/battle/menuoption.cs"
 "Assets/Prefabs/UI/tech tree/ability node/abilitynode.cs"
+"Assets/Scripts/combatoption.cs"
+"Assets/Scripts/combatoptionslist/CO_test.cs"
 "Assets/Scripts/lookat.cs"
 "Assets/Scripts/Stats.cs"
 -langversion:9.0

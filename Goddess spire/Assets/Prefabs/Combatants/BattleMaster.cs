@@ -9,6 +9,9 @@ public class BattleMaster : MonoBehaviour
     public static List<Combatant> combatants = new List<Combatant>();
     public List<Combatant> combatantsass = new List<Combatant>();
 	
+	public static List<Sprite> cmoi = new List<Sprite>(); //combatmenuoptionicons
+	public List<Sprite> cmoiass = new List<Sprite>(); 
+	
 	public List<Combatant> initiative = new List<Combatant>();
 	public int roundturn = 0;	
 	public Transform init_track_holder;
@@ -22,13 +25,17 @@ public class BattleMaster : MonoBehaviour
 	public bool csubmenuon;
 	public GameObject csubmenu;
 	public Animator csubmenuanim;
-	public int submenutarg = 0;
-	public int submenucurtarg = 0;
-	public Transform[] optiontexts;
+	public int submenutarg = 3;
+	public int submenucurtarg = 3;
+	public menuoption[] optiontexts;
+	public combatoption cur_sel_CO;
+	
+	public combatoption[] tactics;
 	
 	
 	void Awake(){
 		combatants = combatantsass;
+		cmoi = cmoiass;
 		iconanims[1].SetBool("skip",true);
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);
@@ -36,18 +43,20 @@ public class BattleMaster : MonoBehaviour
 	
 	void Start(){
 		initiative_calc();
+		update_menu_memory();
 	}
 	
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.Space))next_turn();
 		if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
 		if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
-		if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg += 1;
-		if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg -= 1;
+		if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
+		if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if(csubmenuon){
 				csubmenuon = false;
 				csubmenu.SetActive(false);
+				update_submenu_memory(false);
 			} else {
 			}
 		}
@@ -55,9 +64,12 @@ public class BattleMaster : MonoBehaviour
 			if(!csubmenuon){
 				csubmenuon = true;
 				csubmenu.SetActive(true);
+				update_submenu_memory(true);
+				SCM_icon_change();
 			} else {
 				csubmenuon = false;
 				csubmenu.SetActive(false);
+				update_submenu_memory(false);
 				Debug.Log("option selected");
 			}
 		}
@@ -102,6 +114,7 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public void next_turn(){
+		initiative[roundturn].BMM = menutarget;
 		roundturn++;
 		if(roundturn >= initiative.Count){
 			roundturn = 0;
@@ -109,6 +122,21 @@ public class BattleMaster : MonoBehaviour
 			init_track_holder.GetComponent<Animator>().SetBool("move",true);
 		}
 		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-100*roundturn+50,-50,0);
+		update_menu_memory();
+	}
+	
+	public void update_menu_memory(){
+		menutarget = initiative[roundturn].BMM;
+		curmenutarg = menutarget;
+	}
+	
+	public void update_submenu_memory(bool b){
+		if(b){
+			submenutarg = initiative[roundturn].BSMM[curmenutarg%4];
+			submenucurtarg = submenutarg;
+		} else {
+			initiative[roundturn].BSMM[curmenutarg%4] = submenutarg;
+		}
 	}
 	
 	public void combatmenurotate(){
@@ -141,22 +169,63 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public void subcombatmenurotate(){
-		if(submenucurtarg < submenutarg){
+		if(submenucurtarg > submenutarg){
 			if(csubmenuanim.GetBool("up")){
 				
 			} else {
 				csubmenuanim.SetBool("up",true);
-				//change the icons
-				submenucurtarg++;
+				submenucurtarg--;
+				SCM_icon_change();
 			}
-		} else if (submenucurtarg > submenutarg){
+		} else if (submenucurtarg < submenutarg){
 			if(csubmenuanim.GetBool("down")){
 				
 			} else {
 				csubmenuanim.SetBool("down",true);
-				//change the icons
-				submenucurtarg--;
+				submenucurtarg++;
+				SCM_icon_change();
 			}
+		}
+	}
+	
+	public void SCM_icon_change(){
+		int i2 = -3;
+		for(int i = 0; i < 7; i++){
+			combatoption CO = new combatoption();
+			
+			if(curmenutarg%4 == 0){ //class
+				if(submenucurtarg+i2 != 0){
+					CO = initiative[roundturn].class_CO[Mathf.Abs((submenucurtarg+i2)%initiative[roundturn].class_CO.Count)];
+					//Debug.Log((((submenucurtarg+i)%tactics.Length)));
+				} else {
+					CO = initiative[roundturn].class_CO[0];
+				}
+			}
+			
+			if(curmenutarg%4 == 1){ //weapon
+				if(submenucurtarg+i2 != 0){
+					CO = initiative[roundturn].weapon_CO[Mathf.Abs((submenucurtarg+i2)%initiative[roundturn].weapon_CO.Count)];
+					//Debug.Log((((submenucurtarg+i)%tactics.Length)));
+				} else {
+					CO = initiative[roundturn].weapon_CO[0];
+				}
+			}
+			
+			if(curmenutarg%4 == 2){ //tactics
+				if(submenucurtarg+i2 != 0){
+					CO = tactics[Mathf.Abs((submenucurtarg+i2)%tactics.Length)];
+					//Debug.Log((((submenucurtarg+i)%tactics.Length)));
+				} else {
+					CO = tactics[0];
+				}
+			}
+			
+			if(curmenutarg%4 == 3)CO = new CO_test(); //DEBUG, no inventory currently
+			
+			optiontexts[i].image.sprite = BattleMaster.cmoi[CO.iconid];
+			optiontexts[i].background.color = CO.background;
+			optiontexts[i].text.text = CO.nme;
+			i2++;
 		}
 	}
 	

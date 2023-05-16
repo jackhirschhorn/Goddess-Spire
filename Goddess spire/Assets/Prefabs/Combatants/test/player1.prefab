@@ -142,6 +142,23 @@ MonoBehaviour:
   HP: {fileID: 6873269726152503140, guid: 605461f5291d5db498e9189e093ab811, type: 3}
   hpt: {fileID: 0}
   show_HP: 0
+  class_CO:
+  - iconid: 0
+    background: {r: 1, g: 1, b: 1, a: 1}
+    nme: TEST 0
+  - iconid: 1
+    background: {r: 1, g: 1, b: 1, a: 1}
+    nme: TEST 1
+  weapon_CO:
+  - iconid: 0
+    background: {r: 1, g: 1, b: 1, a: 1}
+    nme: TEST 0
+  - iconid: 1
+    background: {r: 1, g: 1, b: 1, a: 1}
+    nme: TEST 1
+  - iconid: 2
+    background: {r: 1, g: 0.65723264, b: 0.65723264, a: 1}
+    nme: TEST 2
 --- !u!1 &376850461014927136
 GameObject:
   m_ObjectHideFlags: 0

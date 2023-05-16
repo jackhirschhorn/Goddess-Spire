@@ -14,6 +14,12 @@ public class Combatant : MonoBehaviour
 	public TextMeshProUGUI hpt;
 	public bool show_HP;
 	
+	public List<combatoption> class_CO = new List<combatoption>();
+	public List<combatoption> weapon_CO = new List<combatoption>();
+	
+	public int BMM = 4000; //battleMenuMemory;
+	public int[] BSMM = {0,0,0,0}; //battleSubMenuMemories;
+	
 	public void Awake(){
 		enemyHP = Instantiate(enemyHP);
 		enemyHP.parent = transform;
