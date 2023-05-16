@@ -141,17 +141,13 @@ public class BattleMaster : MonoBehaviour
 	
 	public void combatmenurotate(){
 		if(curmenutarg > menutarget){
-			if(combatmenu.GetComponent<Animator>().GetBool("leftdone")){
-				combatmenu.GetComponent<Animator>().SetBool("leftdone", false);
-			} else if(!combatmenu.GetComponent<Animator>().GetBool("left")) {				
+			if(!combatmenu.GetComponent<Animator>().GetBool("left") && !combatmenu.GetComponent<Animator>().GetBool("right")) {				
 				combatmenu.GetComponent<Animator>().SetBool("left", true);
 				combatmenu.GetChild(0).Rotate(0,-90,0);
 				curmenutarg--;
 			}
 		} else if(curmenutarg < menutarget) {	
-			if(combatmenu.GetComponent<Animator>().GetBool("rightdone")){
-				combatmenu.GetComponent<Animator>().SetBool("rightdone", false);
-			} else if(!combatmenu.GetComponent<Animator>().GetBool("right")) {
+			if(!combatmenu.GetComponent<Animator>().GetBool("right") && !combatmenu.GetComponent<Animator>().GetBool("left")) {
 				combatmenu.GetComponent<Animator>().SetBool("right", true);
 				combatmenu.GetChild(0).Rotate(0,90,0);
 				curmenutarg++;
@@ -170,7 +166,7 @@ public class BattleMaster : MonoBehaviour
 	
 	public void subcombatmenurotate(){
 		if(submenucurtarg > submenutarg){
-			if(csubmenuanim.GetBool("up")){
+			if(csubmenuanim.GetBool("up") || csubmenuanim.GetBool("down")){
 				
 			} else {
 				csubmenuanim.SetBool("up",true);
@@ -178,7 +174,7 @@ public class BattleMaster : MonoBehaviour
 				SCM_icon_change();
 			}
 		} else if (submenucurtarg < submenutarg){
-			if(csubmenuanim.GetBool("down")){
+			if(csubmenuanim.GetBool("down") || csubmenuanim.GetBool("up")){
 				
 			} else {
 				csubmenuanim.SetBool("down",true);
