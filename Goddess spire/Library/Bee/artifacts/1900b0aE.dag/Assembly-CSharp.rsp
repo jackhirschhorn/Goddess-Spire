@@ -381,6 +381,7 @@
 "Assets/menucount.cs"
 "Assets/Prefabs/Combatants/BattleMaster.cs"
 "Assets/Prefabs/Combatants/Combatant.cs"
+"Assets/Prefabs/UI/attacks/dragattack/dragattack.cs"
 "Assets/Prefabs/UI/battle/battleplayerui.cs"
 "Assets/Prefabs/UI/battle/indicatorgrabber.cs"
 "Assets/Prefabs/UI/battle/menuoption.cs"

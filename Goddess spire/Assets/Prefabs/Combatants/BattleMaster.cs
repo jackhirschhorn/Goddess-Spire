@@ -12,6 +12,12 @@ public class BattleMaster : MonoBehaviour
 	public static List<Sprite> cmoi = new List<Sprite>(); //combatmenuoptionicons
 	public List<Sprite> cmoiass = new List<Sprite>(); 
 	
+	public static List<Sprite> sl = new List<Sprite>(); //sprite list
+	public List<Sprite> slass = new List<Sprite>(); 
+	
+	public static List<Transform> pl = new List<Transform>(); //prefab list
+	public List<Transform> plass = new List<Transform>(); //prefab list
+	
 	public List<Combatant> initiative = new List<Combatant>();
 	public int roundturn = 0;	
 	public Transform init_track_holder;
@@ -36,6 +42,8 @@ public class BattleMaster : MonoBehaviour
 	void Awake(){
 		combatants = combatantsass;
 		cmoi = cmoiass;
+		sl = slass;
+		pl = plass;
 		iconanims[1].SetBool("skip",true);
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);

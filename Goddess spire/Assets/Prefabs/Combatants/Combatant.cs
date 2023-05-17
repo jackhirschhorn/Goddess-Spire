@@ -39,4 +39,11 @@ public class Combatant : MonoBehaviour
 		}
 	}
 	
+	public void take_damage(int i, int i2){
+		//damage reduction logic goes here
+		statblock.chp -= i;
+		if(i == 0)Debug.Log("took no damage!");
+		
+	}
+	
 }

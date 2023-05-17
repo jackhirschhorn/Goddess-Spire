@@ -159,6 +159,8 @@ MonoBehaviour:
   - iconid: 2
     background: {r: 1, g: 0.65723264, b: 0.65723264, a: 1}
     nme: TEST 2
+  BMM: 4000
+  BSMM: 00000000000000000000000000000000
 --- !u!1 &376850461014927136
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +173,7 @@ GameObject:
   - component: {fileID: 376850461014927140}
   - component: {fileID: 376850461014927139}
   - component: {fileID: 376850461014927138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -142,6 +142,10 @@ MonoBehaviour:
   HP: {fileID: 0}
   hpt: {fileID: 0}
   show_HP: 1
+  class_CO: []
+  weapon_CO: []
+  BMM: 4000
+  BSMM: 00000000000000000000000000000000
 --- !u!1 &8386547959139638492
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +158,7 @@ GameObject:
   - component: {fileID: 8386547959139638488}
   - component: {fileID: 8386547959139638495}
   - component: {fileID: 8386547959139638494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
