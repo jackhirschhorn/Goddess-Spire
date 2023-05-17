@@ -2433,6 +2433,7 @@ MonoBehaviour:
   plass:
   - {fileID: 8238769627725659590, guid: 51b1f907e32e14a4583808ef59030b4a, type: 3}
   - {fileID: 1627103997208857478, guid: 7610b9a5250ba394aae3123d113d93d6, type: 3}
+  - {fileID: 3855264248535079751, guid: c1e8df434411102458f53da33c807a30, type: 3}
   initiative: []
   roundturn: 0
   init_track_holder: {fileID: 1608182084}
@@ -6108,7 +6109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1914360899899090305, guid: 51b1f907e32e14a4583808ef59030b4a, type: 3}
       propertyPath: speed
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1914360899899090305, guid: 51b1f907e32e14a4583808ef59030b4a, type: 3}
       propertyPath: timerspeed

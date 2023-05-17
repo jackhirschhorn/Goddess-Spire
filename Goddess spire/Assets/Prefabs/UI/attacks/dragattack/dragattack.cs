@@ -17,6 +17,7 @@ public class dragattack : MonoBehaviour
 	public ParticleSystem part;	
 	private ParticleSystem.ShapeModule shap;
 	private ParticleSystem.EmissionModule emis;
+	public Transform mover;
 	
 	public void Awake(){
 		shap = part.shape;
@@ -43,9 +44,9 @@ public class dragattack : MonoBehaviour
 			if(Physics.Raycast(ray, out hit, 100, lm)){
 				//Debug.Log(Vector3.Lerp(hit.point,transform.position,speed/Vector3.Distance(hit.point,transform.position)));
 				//Vector3.Lerp(hit.point,transform.position,speed/Vector3.Distance(hit.point,transform.position)); // drag behind
-				transform.position = Vector3.Lerp(transform.position,hit.point,speed/Vector3.Distance(hit.point,transform.position));
+				mover.position = Vector3.Lerp(mover.position,hit.point,speed/Vector3.Distance(hit.point,mover.position));
 			}
-			ray = new Ray(Camera.main.transform.position, transform.position-Camera.main.transform.position);
+			ray = new Ray(Camera.main.transform.position, mover.position-Camera.main.transform.position);
 			if(Physics.Raycast(ray, out hit, 100, lm2)){
 				//Debug.Log(hit.transform.parent.GetComponent<Combatant>());
 				hit.transform.parent.GetComponent<Combatant>().take_damage(dam,damtype); //attack handler? uh
@@ -53,6 +54,9 @@ public class dragattack : MonoBehaviour
 				Transform Clone = Instantiate(BattleMaster.pl[1]);
 				Clone.parent = transform.parent;
 				Clone.position = transform.position;
+				Clone = Instantiate(BattleMaster.pl[2]);
+				Clone.parent = transform.parent;
+				Clone.position = mover.position;
 				Destroy(this.gameObject);
 			}
 			timer -= Time.fixedDeltaTime*timerspeed;
