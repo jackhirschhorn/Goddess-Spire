@@ -388,6 +388,7 @@
 "Assets/Prefabs/UI/tech tree/ability node/abilitynode.cs"
 "Assets/Scripts/combatoption.cs"
 "Assets/Scripts/combatoptionslist/CO_test.cs"
+"Assets/Scripts/combatoptionslist/Magic_Missile.cs"
 "Assets/Scripts/lookat.cs"
 "Assets/Scripts/Stats.cs"
 -langversion:9.0

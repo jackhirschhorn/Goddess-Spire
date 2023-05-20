@@ -18,4 +18,8 @@ public class combatoption
 	public virtual void demothething(){
 		
 	}
+	
+	public virtual void nevermind(){
+		
+	}
 }

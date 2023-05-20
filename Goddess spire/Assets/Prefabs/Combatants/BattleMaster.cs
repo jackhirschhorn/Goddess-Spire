@@ -6,6 +6,7 @@ using TMPro;
 
 public class BattleMaster : MonoBehaviour
 {
+	public static BattleMaster BM;
     public static List<Combatant> combatants = new List<Combatant>();
     public List<Combatant> combatantsass = new List<Combatant>();
 	
@@ -29,6 +30,8 @@ public class BattleMaster : MonoBehaviour
 	public Animator[] iconanims;
 	
 	public bool csubmenuon;
+	public bool abilityselected;
+	public bool abilityactive;
 	public GameObject csubmenu;
 	public Animator csubmenuanim;
 	public int submenutarg = 3;
@@ -36,10 +39,14 @@ public class BattleMaster : MonoBehaviour
 	public menuoption[] optiontexts;
 	public combatoption cur_sel_CO;
 	
+	public static Transform attackst;
+	public Transform attackstass;
+	
 	public combatoption[] tactics;
 	
 	
 	void Awake(){
+		BM = this;
 		combatants = combatantsass;
 		cmoi = cmoiass;
 		sl = slass;
@@ -47,6 +54,7 @@ public class BattleMaster : MonoBehaviour
 		iconanims[1].SetBool("skip",true);
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);
+		attackst = attackstass;
 	}
 	
 	void Start(){
@@ -55,34 +63,43 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.Space))next_turn();
-		if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
-		if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
-		if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
-		if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
-		if(Input.GetKeyDown(KeyCode.Q)){
-			if(csubmenuon){
-				csubmenuon = false;
-				csubmenu.SetActive(false);
-				update_submenu_memory(false);
-			} else {
+		//if(Input.GetKeyDown(KeyCode.Space))next_turn();
+		if(!abilityactive){
+			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
+			if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
+			if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
+			if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
+			if(Input.GetKeyDown(KeyCode.Q)){
+				if(abilityselected){
+					cur_sel_CO.nevermind();
+					abilityselected = false;
+				} else if(csubmenuon){
+					csubmenuon = false;
+					csubmenu.SetActive(false);
+					update_submenu_memory(false);
+				}
 			}
-		}
-		if(Input.GetKeyDown(KeyCode.E)){
-			if(!csubmenuon){
-				csubmenuon = true;
-				csubmenu.SetActive(true);
-				update_submenu_memory(true);
-				SCM_icon_change();
-			} else {
-				csubmenuon = false;
-				csubmenu.SetActive(false);
-				update_submenu_memory(false);
-				Debug.Log("option selected");
+			if(Input.GetKeyDown(KeyCode.E)){
+				if(!csubmenuon){
+					csubmenuon = true;
+					csubmenu.SetActive(true);
+					update_submenu_memory(true);
+					SCM_icon_change();
+				} else if(!abilityselected) {
+					cur_sel_CO.demothething();
+					abilityselected = true;
+				} else {
+					csubmenuon = false;
+					csubmenu.SetActive(false);
+					update_submenu_memory(false);
+					cur_sel_CO.dothething();
+					abilityselected = false;
+					abilityactive = true;
+				}
 			}
+			combatmenurotate();
+			if(csubmenuon)subcombatmenurotate();
 		}
-		combatmenurotate();
-		if(csubmenuon)subcombatmenurotate();
 	}
 	
 	public void initiative_calc(){
@@ -131,6 +148,7 @@ public class BattleMaster : MonoBehaviour
 		}
 		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-100*roundturn+50,-50,0);
 		update_menu_memory();
+		abilityactive = false;
 	}
 	
 	public void update_menu_memory(){
@@ -229,7 +247,16 @@ public class BattleMaster : MonoBehaviour
 			optiontexts[i].image.sprite = BattleMaster.cmoi[CO.iconid];
 			optiontexts[i].background.color = CO.background;
 			optiontexts[i].text.text = CO.nme;
+			if(i2 == 0)cur_sel_CO = CO;
 			i2++;
+		}
+	}
+	
+	public static void attackcallback(int i){
+		switch(i){
+			case 0:
+				BM.next_turn();
+			break;
 		}
 	}
 	

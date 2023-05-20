@@ -26,6 +26,7 @@ public class Combatant : MonoBehaviour
 		enemyHP.position = transform.position + new Vector3(0,1.5f,0);
 		HP = enemyHP.GetChild(0) as RectTransform;
 		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
+		debug();
 	}
 	
 	public void LateUpdate(){
@@ -44,6 +45,10 @@ public class Combatant : MonoBehaviour
 		statblock.chp -= i;
 		if(i == 0)Debug.Log("took no damage!");
 		
+	}
+	
+	public void debug(){
+		class_CO.Add(new Magic_Missile());
 	}
 	
 }

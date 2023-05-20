@@ -57,6 +57,7 @@ public class dragattack : MonoBehaviour
 				Clone = Instantiate(BattleMaster.pl[2]);
 				Clone.parent = transform.parent;
 				Clone.position = mover.position;
+				BattleMaster.attackcallback(0);
 				Destroy(this.gameObject);
 			}
 			timer -= Time.fixedDeltaTime*timerspeed;
@@ -71,6 +72,7 @@ public class dragattack : MonoBehaviour
 				Transform Clone = Instantiate(BattleMaster.pl[1]);
 				Clone.parent = transform.parent;
 				Clone.position = transform.position;
+				BattleMaster.attackcallback(0);
 				Destroy(this.gameObject);
 			}
 			

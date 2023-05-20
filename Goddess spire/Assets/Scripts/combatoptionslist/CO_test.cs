@@ -17,4 +17,8 @@ public class CO_test : combatoption
 	public override void demothething(){
 		Debug.Log("this is a preview of the thing you will do");
 	}
+	
+	public override void nevermind(){
+		Debug.Log("nevermind");
+	}
 }
