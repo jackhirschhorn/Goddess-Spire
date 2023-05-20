@@ -44,6 +44,10 @@ public class BattleMaster : MonoBehaviour
 	
 	public combatoption[] tactics;
 	
+	public Transform explainer;
+	public TextMeshProUGUI explainertxt;
+	public bool explained;
+	
 	
 	void Awake(){
 		BM = this;
@@ -64,7 +68,12 @@ public class BattleMaster : MonoBehaviour
 	
 	void Update(){
 		//if(Input.GetKeyDown(KeyCode.Space))next_turn();
-		if(!abilityactive){
+		if(!explained){
+			if(Input.GetKeyDown(KeyCode.E)){
+				explained = true;
+				explainer.gameObject.SetActive(false);
+			}
+		} else if(!abilityactive){
 			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
 			if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
 			if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
@@ -73,6 +82,11 @@ public class BattleMaster : MonoBehaviour
 				if(abilityselected){
 					cur_sel_CO.nevermind();
 					abilityselected = false;
+					csubmenuon = true;
+					csubmenu.SetActive(true);
+					update_submenu_memory(true);
+					combatmenu.gameObject.SetActive(true);
+					explainer.gameObject.SetActive(false);
 				} else if(csubmenuon){
 					csubmenuon = false;
 					csubmenu.SetActive(false);
@@ -80,7 +94,7 @@ public class BattleMaster : MonoBehaviour
 				}
 			}
 			if(Input.GetKeyDown(KeyCode.E)){
-				if(!csubmenuon){
+				if(!csubmenuon && !abilityselected){
 					csubmenuon = true;
 					csubmenu.SetActive(true);
 					update_submenu_memory(true);
@@ -88,13 +102,17 @@ public class BattleMaster : MonoBehaviour
 				} else if(!abilityselected) {
 					cur_sel_CO.demothething();
 					abilityselected = true;
-				} else {
 					csubmenuon = false;
 					csubmenu.SetActive(false);
 					update_submenu_memory(false);
+					combatmenu.gameObject.SetActive(false);
+					explainer.gameObject.SetActive(true);
+					explainertxt.text = cur_sel_CO.explain;
+				} else {
 					cur_sel_CO.dothething();
 					abilityselected = false;
 					abilityactive = true;
+					explainer.gameObject.SetActive(false);
 				}
 			}
 			combatmenurotate();

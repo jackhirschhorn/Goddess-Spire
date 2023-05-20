@@ -8,6 +8,7 @@ public class CO_test : combatoption
 		iconid = 0;
 		background = new Color(1,1,1,1);
 		nme = "test option";
+		explain = "this is a test option";
 	}
 	
 	public override void dothething(){

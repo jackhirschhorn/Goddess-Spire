@@ -8,6 +8,7 @@ public class Magic_Missile : combatoption
 		iconid = 3;
 		background = new Color(1,1,1,1);
 		nme = "Magic Missile";
+		explain = "Click on the magic circle and drag the missile into the target.";
 	}
 	
 	public Transform clone;
