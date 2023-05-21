@@ -11,6 +11,8 @@ public class combatoption
 	public Color background = Color.white;
 	public string nme = "";
 	public string explain = "";
+	public int cost;
+	public int costype = 0;//0 = mana, 1 = stam, 2 = hp
 	
 	public virtual void dothething(){
 		

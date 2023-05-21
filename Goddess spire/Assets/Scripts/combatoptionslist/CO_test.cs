@@ -9,6 +9,8 @@ public class CO_test : combatoption
 		background = new Color(1,1,1,1);
 		nme = "test option";
 		explain = "this is a test option";
+		cost = 0;
+		costype = 0;//0 = mana, 1 = stam, 2 = hp
 	}
 	
 	public override void dothething(){

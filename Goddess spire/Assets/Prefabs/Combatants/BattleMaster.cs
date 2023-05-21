@@ -100,16 +100,19 @@ public class BattleMaster : MonoBehaviour
 					update_submenu_memory(true);
 					SCM_icon_change();
 				} else if(!abilityselected) {
-					cur_sel_CO.demothething();
-					abilityselected = true;
-					csubmenuon = false;
-					csubmenu.SetActive(false);
-					update_submenu_memory(false);
-					combatmenu.gameObject.SetActive(false);
-					explainer.gameObject.SetActive(true);
-					explainertxt.text = cur_sel_CO.explain;
+					if(costcheck()){
+						cur_sel_CO.demothething();
+						abilityselected = true;
+						csubmenuon = false;
+						csubmenu.SetActive(false);
+						update_submenu_memory(false);
+						combatmenu.gameObject.SetActive(false);
+						explainer.gameObject.SetActive(true);
+						explainertxt.text = cur_sel_CO.explain;
+					}
 				} else {
 					cur_sel_CO.dothething();
+					docosts(initiative[roundturn],cur_sel_CO.cost,cur_sel_CO.costype);
 					abilityselected = false;
 					abilityactive = true;
 					explainer.gameObject.SetActive(false);
@@ -265,6 +268,8 @@ public class BattleMaster : MonoBehaviour
 			optiontexts[i].image.sprite = BattleMaster.cmoi[CO.iconid];
 			optiontexts[i].background.color = CO.background;
 			optiontexts[i].text.text = CO.nme;
+			optiontexts[i].costback.color = (CO.costype == 0?Color.blue:(CO.costype == 1?Color.green:Color.red));
+			optiontexts[i].cost.text = CO.cost+"";
 			if(i2 == 0)cur_sel_CO = CO;
 			i2++;
 		}
@@ -276,6 +281,36 @@ public class BattleMaster : MonoBehaviour
 				BM.next_turn();
 			break;
 		}
+	}
+	
+	public bool costcheck(){
+		switch(cur_sel_CO.costype){
+			case 0: //mana
+				return initiative[roundturn].statblock.cmana >= cur_sel_CO.cost;
+			break;
+			case 1: //stam
+				return initiative[roundturn].statblock.cstam >= cur_sel_CO.cost;
+			break;
+			case 2: //hp
+				return initiative[roundturn].statblock.chp >= cur_sel_CO.cost;
+			break;
+		}
+		return false;
+	}
+	
+	public void docosts(Combatant c, int i, int i2){
+		switch(i2){
+			case 0: //mana
+				c.statblock.cmana -= i;
+			break;
+			case 1: //stam
+				c.statblock.cstam -= i;
+			break;
+			case 2: //hp
+				c.statblock.chp -= i;
+			break;
+		}
+		
 	}
 	
 }

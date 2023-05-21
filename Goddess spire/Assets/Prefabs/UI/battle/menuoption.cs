@@ -9,4 +9,6 @@ public class menuoption : MonoBehaviour
     public Image image;
 	public Image background;
 	public TextMeshProUGUI text;
+	public Image costback;
+	public TextMeshProUGUI cost;
 }

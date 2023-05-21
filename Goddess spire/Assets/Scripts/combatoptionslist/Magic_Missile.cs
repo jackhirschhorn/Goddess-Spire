@@ -9,6 +9,8 @@ public class Magic_Missile : combatoption
 		background = new Color(1,1,1,1);
 		nme = "Magic Missile";
 		explain = "Click on the magic circle and drag the missile into the target.";
+		cost = 2;
+		costype = 0;//0 = mana, 1 = stam, 2 = hp
 	}
 	
 	public Transform clone;
