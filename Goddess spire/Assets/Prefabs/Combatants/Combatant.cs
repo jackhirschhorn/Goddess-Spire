@@ -33,7 +33,7 @@ public class Combatant : MonoBehaviour
 		if(show_HP){
 			enemyHP.gameObject.SetActive(true);
 			hpt.text = statblock.chp + "/" + statblock.hp;
-			HP.offsetMin = new Vector2(100*((statblock.chp*1f)/(statblock.hp*1f)), HP.offsetMin.y);
+			HP.offsetMin = new Vector2(200*((statblock.chp*1f)/(statblock.hp*1f)), HP.offsetMin.y);
 			
 		} else {
 			enemyHP.gameObject.SetActive(false);

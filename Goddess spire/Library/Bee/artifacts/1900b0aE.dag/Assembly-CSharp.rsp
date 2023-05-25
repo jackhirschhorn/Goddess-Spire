@@ -390,6 +390,7 @@
 "Assets/Scripts/combatoptionslist/CO_test.cs"
 "Assets/Scripts/combatoptionslist/Magic_Missile.cs"
 "Assets/Scripts/lookat.cs"
+"Assets/Scripts/PartStopper.cs"
 "Assets/Scripts/Stats.cs"
 -langversion:9.0
 
