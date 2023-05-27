@@ -524,7 +524,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.3
+  m_fontSize: 57.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1733,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass particles (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786030, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: size
       value: 50
@@ -2924,7 +2928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697540172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35, y: -0.99999404, z: -30.800007}
+  m_LocalPosition: {x: -35, y: -1, z: -30.800007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3993,6 +3997,10 @@ PrefabInstance:
     - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: m_Name
       value: wildflowers particles (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786030, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: size
@@ -6767,8 +6775,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 688562294}
   - {fileID: 697540173}
+  - {fileID: 688562294}
   - {fileID: 380534634}
   - {fileID: 1090145245}
   - {fileID: 1985837806}
@@ -7818,6 +7826,10 @@ PrefabInstance:
     - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: m_Name
       value: wildflower particles (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786030, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: size
@@ -8897,6 +8909,10 @@ PrefabInstance:
     - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: m_Name
       value: grass particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786018, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786030, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: size
