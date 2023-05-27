@@ -10,7 +10,9 @@ public class PartStopper : MonoBehaviour
 		ParticleSystem sus =  transform.GetComponent<ParticleSystem>();
 	    ParticleSystem.ShapeModule suss = sus.shape;
 		ParticleSystem.EmissionModule suse = sus.emission;
-		suse.rateOverTime = density;
+		ParticleSystem.Burst burst = suse.GetBurst(0);
+		burst.count = density;
+		suse.SetBurst(0,burst);
 		suss.radius = size;
 		sus.Play();
 	}

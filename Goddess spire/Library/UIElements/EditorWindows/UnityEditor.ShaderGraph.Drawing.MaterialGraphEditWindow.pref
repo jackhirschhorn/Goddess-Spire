@@ -28,5 +28,5 @@ MonoBehaviour:
   - '{}'
   - '{}'
   - '{}'
-  - '{"position":{"x":296.6666564941406,"y":164.0,"z":0.0},"scale":{"x":0.25,"y":0.25,"z":1.0}}'
-  - '{"m_Version":151,"m_SelectedElementsArray":["22761c1027e84ffab351c38fb9f29320"]}'
+  - '{"position":{"x":572.6666870117188,"y":164.0,"z":0.0},"scale":{"x":0.25,"y":0.25,"z":1.0}}'
+  - '{"m_Version":208,"m_SelectedElementsArray":["6c15dfa1ad5843ae8a4b759c32db4fc8"]}'
