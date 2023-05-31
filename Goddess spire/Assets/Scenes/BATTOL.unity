@@ -7424,6 +7424,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1592166465}
     m_Modifications:
     - target: {fileID: 3739832062167786016, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3739832062167786016, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_Mesh1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786016, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739832062167786016, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3febcc6b4a091234595031cd6da0dd2d, type: 2}
@@ -7581,11 +7593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime2
-      value: 46453
+      value: 52235
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime3
-      value: 55319
+      value: 61873
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime4
@@ -15167,11 +15179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime2
-      value: 46453
+      value: 50308
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime3
-      value: 55319
+      value: 60331
       objectReference: {fileID: 0}
     - target: {fileID: 3739832062167786031, guid: 80ba4e6f339c0d34db6515d1817961fd, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime4
