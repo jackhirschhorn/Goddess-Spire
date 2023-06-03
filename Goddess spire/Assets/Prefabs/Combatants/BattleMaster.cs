@@ -160,12 +160,6 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public void next_turn(){
-		abilityselected = false;
-		csubmenuon = true;
-		csubmenu.SetActive(true);
-		update_submenu_memory(true);
-		combatmenu.gameObject.SetActive(true);
-		explainer.gameObject.SetActive(false);
 		initiative[roundturn].BMM = menutarget;
 		roundturn++;
 		if(roundturn >= initiative.Count){
@@ -176,6 +170,13 @@ public class BattleMaster : MonoBehaviour
 		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-100*roundturn+50,-50,0);
 		update_menu_memory();
 		abilityactive = false;
+		if(initiative[roundturn].isPC){
+			abilityselected = false;
+			csubmenuon = false;
+			csubmenu.SetActive(false);
+			combatmenu.gameObject.SetActive(true);
+			explainer.gameObject.SetActive(false);
+		}
 	}
 	
 	public void update_menu_memory(){
