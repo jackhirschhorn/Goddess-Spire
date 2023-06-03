@@ -160,6 +160,12 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public void next_turn(){
+		abilityselected = false;
+		csubmenuon = true;
+		csubmenu.SetActive(true);
+		update_submenu_memory(true);
+		combatmenu.gameObject.SetActive(true);
+		explainer.gameObject.SetActive(false);
 		initiative[roundturn].BMM = menutarget;
 		roundturn++;
 		if(roundturn >= initiative.Count){
