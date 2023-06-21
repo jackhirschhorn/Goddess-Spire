@@ -81,15 +81,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _blink_eyelash:
-        m_Texture: {fileID: 2800000, guid: 24131c6fbce637c4da00813f9a330eea, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed8d35fd07c34894792d879ba6bb0c45, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _bottom_eyebrow:
-        m_Texture: {fileID: 2800000, guid: f796850af70b5924eb1ed2b6ccc60a3e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a4285611890db654cafb2df0c78c3fe2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _external_clip:
-        m_Texture: {fileID: 2800000, guid: 0c1904bd345b8674195af3c3f3a5e745, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4cf84b78d98fb7c4680f77261907a3b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _eye_back:
@@ -105,7 +105,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _internal_clip:
-        m_Texture: {fileID: 2800000, guid: 8763760439c0e374da8f96fab89b5951, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7ce560e2c0ca7854fb38d760713954b0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _iris:
@@ -121,7 +121,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _top_eyebrow:
-        m_Texture: {fileID: 2800000, guid: ac081c522d288d04f96c0573688b7dd4, type: 3}
+        m_Texture: {fileID: 2800000, guid: f9e07acd1e38ec947a69ea56e1f95dc6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -168,18 +168,18 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _blink_threshold: 0.5
+    - _blink_threshold: 0.7
     - _eye_raise: 0
     - _fliplook: 0
     - _lower_eye_raise: 0
-    - _upper_eye_raise: 0.2
+    - _upper_eye_raise: 0.25
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _eyebrow_color: {r: 0.8612441, g: 1, b: 0, a: 1}
-    - _iriscolor: {r: 0, g: 1, b: 0.9929137, a: 1}
+    - _eyebrow_color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _iriscolor: {r: 1, g: 1, b: 1, a: 1}
     - _looktarg: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _scalara_color: {r: 1, g: 1, b: 1, a: 1}
+    - _scalara_color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_BuildTextureStacks: []
