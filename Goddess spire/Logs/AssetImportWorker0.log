@@ -15,7 +15,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61939
+57324
 Successfully changed project path to: C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 119.92 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 123.47 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.19f1 (2fd7b40534d1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Resources/UnitySubsystems
@@ -63,81 +63,81 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56748
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006433 seconds.
+Registered in 0.007452 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 118.02 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 123.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.676 seconds
+- Completed reload, in  0.703 seconds
 Domain Reload Profiling:
-	ReloadAssembly (677ms)
-		BeginReloadAssembly (74ms)
+	ReloadAssembly (704ms)
+		BeginReloadAssembly (78ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (497ms)
-			LoadAssemblies (72ms)
+		EndReloadAssembly (513ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (105ms)
-				TypeCache.Initialize (104ms)
-					TypeCache.ScanAssembly (102ms)
-				ResolveRequiredComponents (1ms)
+			SetupTypeCache (110ms)
+				TypeCache.Initialize (109ms)
+					TypeCache.ScanAssembly (108ms)
+				ResolveRequiredComponents (0ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (311ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (319ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (118ms)
+				RefreshPlugins (124ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (134ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (135ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007227 seconds.
+Registered in 0.007736 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.50 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 122.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.505 seconds
+- Completed reload, in  1.499 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1506ms)
-		BeginReloadAssembly (104ms)
+	ReloadAssembly (1500ms)
+		BeginReloadAssembly (112ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1287ms)
-			LoadAssemblies (85ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1269ms)
+			LoadAssemblies (103ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (338ms)
-				TypeCache.Initialize (325ms)
-					TypeCache.ScanAssembly (320ms)
+			SetupTypeCache (323ms)
+				TypeCache.Initialize (311ms)
+					TypeCache.ScanAssembly (306ms)
 				ResolveRequiredComponents (12ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (733ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (717ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (127ms)
-				BeforeProcessingInitializeOnLoad (140ms)
-				ProcessInitializeOnLoadAttributes (367ms)
-				ProcessInitializeOnLoadMethodAttributes (81ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (123ms)
+				BeforeProcessingInitializeOnLoad (132ms)
+				ProcessInitializeOnLoadAttributes (360ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -146,12 +146,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.05 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6187 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (1.9 MB). Loaded Objects now: 6665.
-Memory consumption went from 0.98 GB to 0.98 GB.
-Total: 4.309100 ms (FindLiveObjects: 0.851300 ms CreateObjectMapping: 0.224900 ms MarkObjects: 2.832300 ms  DeleteObjects: 0.399800 ms)
+Unloading 6188 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 58 unused Assets / (1.8 MB). Loaded Objects now: 6666.
+Memory consumption went from 0.99 GB to 0.98 GB.
+Total: 4.496500 ms (FindLiveObjects: 0.857400 ms CreateObjectMapping: 0.236500 ms MarkObjects: 2.975500 ms  DeleteObjects: 0.425600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -165,161 +165,133 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 177852.084540 seconds.
-  path: Assets/Assets/2D/eye mats/eyelash/M2 top.png
-  artifactKey: Guid(3d9aef9c9a38ab94282cf2aaf0b9ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/eyelash/M2 top.png using Guid(3d9aef9c9a38ab94282cf2aaf0b9ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a82aa646034a7558c9b1b2a67bcf3189') in 0.082148 seconds 
+  Time since last request: 505932.186078 seconds.
+  path: Assets/Assets/shaders/mouth.shadergraph
+  artifactKey: Guid(b13b1c0e016e6c74488472956486c120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/shaders/mouth.shadergraph using Guid(b13b1c0e016e6c74488472956486c120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb23727ea1bea38084074011326ee42') in 0.271920 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.119366 seconds.
+  Time since last request: 1167.889387 seconds.
+  path: Assets/Assets/shaders/mouth.shadergraph
+  artifactKey: Guid(b13b1c0e016e6c74488472956486c120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/shaders/mouth.shadergraph using Guid(b13b1c0e016e6c74488472956486c120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a405aea3edd012fcaade1785a9deb6b4') in 0.014556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 197.231033 seconds.
+  path: Assets/Assets/2D/mouth mats
+  artifactKey: Guid(b5df470a232064b4b8d504944d54c283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats using Guid(b5df470a232064b4b8d504944d54c283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b57bf6d43ac217bb8a5e50cdda400c43') in 0.006433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 601.476514 seconds.
+  path: Assets/Assets/2D/mouth mats/back.png
+  artifactKey: Guid(f36bee062a9c24b43b1d6ac4977f1897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats/back.png using Guid(f36bee062a9c24b43b1d6ac4977f1897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '979d9eb42e8d694346598eedf1c9d9c2') in 0.074589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/2D/mouth mats/teeth 1.png
+  artifactKey: Guid(0796faf1092a9b34f80c7dc30d315c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats/teeth 1.png using Guid(0796faf1092a9b34f80c7dc30d315c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cefe0f881b10172e845643bc04699d3') in 0.028116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 445.740545 seconds.
+  path: Assets/Assets/2D/mouth mats/lip 1.png
+  artifactKey: Guid(34a3521d5dda1c64394ee65852e69bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats/lip 1.png using Guid(34a3521d5dda1c64394ee65852e69bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717c39278c24c2ffed4add6f52955850') in 0.021390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 397.298185 seconds.
+  path: Assets/Assets/2D/mouth mats/tongue 1.png
+  artifactKey: Guid(1f6ff701cefd55245b22a7dfe902fc5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats/tongue 1.png using Guid(1f6ff701cefd55245b22a7dfe902fc5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '637da4c9d15441734db2217eb6af0138') in 0.014932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.712393 seconds.
   path: Assets/Assets/Materials/eye.mat
   artifactKey: Guid(aaa5c78bd3ad7984ab3eacb59b86576e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Materials/eye.mat using Guid(aaa5c78bd3ad7984ab3eacb59b86576e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453d7ec8f34f611aec68104bf3ff171d') in 0.306953 seconds 
+Start importing Assets/Assets/Materials/eye.mat using Guid(aaa5c78bd3ad7984ab3eacb59b86576e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9e79b3446834fba6f5d43768e4ad5f') in 0.085426 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 87.800721 seconds.
-  path: Assets/Assets/2D/eye mats/eyelash/M2 bottom.png
-  artifactKey: Guid(342832ee5fd843341af0852737bba691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/eyelash/M2 bottom.png using Guid(342832ee5fd843341af0852737bba691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f91d69a195f26b718272a74a0582dc30') in 0.022079 seconds 
+  Time since last request: 6.826962 seconds.
+  path: Assets/Assets/Materials/mouth.mat
+  artifactKey: Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/mouth.mat using Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07c2e76e36f232ee58db64456e52611b') in 0.029230 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 126.739626 seconds.
-  path: Assets/Assets/2D/eye mats/eyelash/M2 internal.png
-  artifactKey: Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/eyelash/M2 internal.png using Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5358c56e3d44e8d80994ab835fa29563') in 0.015649 seconds 
+  Time since last request: 87.863554 seconds.
+  path: Assets/Assets/Materials/mouth.mat
+  artifactKey: Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/mouth.mat using Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcbefa9b585e19b0440a901d35914b9') in 0.017833 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 76.753582 seconds.
-  path: Assets/Assets/2D/eye mats/eyelash/M2 internal.png
-  artifactKey: Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/eyelash/M2 internal.png using Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60aabbd709708fd2083bfa677bc4424b') in 0.018445 seconds 
+  Time since last request: 18.624915 seconds.
+  path: Assets/Assets/Materials/mouth.mat
+  artifactKey: Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/mouth.mat using Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6523578697c6fefdb37e9a4954862aa') in 0.017728 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.498756 seconds.
-  path: Assets/Assets/2D/eye mats/M1
-  artifactKey: Guid(15b56cc8af2348c4d88b1729e7738f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M1 using Guid(15b56cc8af2348c4d88b1729e7738f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d65eb4399d21d6d374b52521c3560e2') in 0.005957 seconds 
+  Time since last request: 126.513216 seconds.
+  path: Assets/Assets/2D/mouth mats/teeth clip.png
+  artifactKey: Guid(ecc45287492542a4795a1568709cd42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/mouth mats/teeth clip.png using Guid(ecc45287492542a4795a1568709cd42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '427b73325821763e57405a6d3ffd8e65') in 0.015885 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 69.508867 seconds.
-  path: Assets/Assets/2D/eye mats/M2
-  artifactKey: Guid(a6c86c0cce7280247a159120e3e08b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2 using Guid(a6c86c0cce7280247a159120e3e08b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90b5c6a74a2d290d4284d680ac2c4292') in 0.006384 seconds 
+  Time since last request: 351.758420 seconds.
+  path: Assets/Assets/shaders/nose.shadergraph
+  artifactKey: Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/shaders/nose.shadergraph using Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6c76523fc41ce7f7e60fe808465f83') in 0.439168 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 49.812471 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 external.png
-  artifactKey: Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 external.png using Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf146d78e69d4ecc7fdd0bff514e1084') in 0.015164 seconds 
+  Time since last request: 9.590892 seconds.
+  path: Assets/Assets/shaders/nose.shadergraph
+  artifactKey: Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/shaders/nose.shadergraph using Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999ad871b1f2e17507dc698a153316ed') in 0.014794 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.566901 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 internal.png
-  artifactKey: Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 internal.png using Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94efa8b6a12afd59241eb2a6e6f352dc') in 0.035344 seconds 
+  Time since last request: 100.387328 seconds.
+  path: Assets/Assets/shaders/nose.shadergraph
+  artifactKey: Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/shaders/nose.shadergraph using Guid(3b10d8940a747104fa221b27dda0840f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c70d6e1db1952826033f6940163e720') in 0.275330 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.496466 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 external.png
-  artifactKey: Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 external.png using Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f7b9483b8b7125e47c8c4bffa36c6f') in 0.013927 seconds 
+  Time since last request: 384.426721 seconds.
+  path: Assets/Assets/2D/noses/outline.png
+  artifactKey: Guid(beac8139677d13746883106a8f8668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/noses/outline.png using Guid(beac8139677d13746883106a8f8668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8258430039a98b375b1bf18cdd786db6') in 0.027452 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 126.821757 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 external.png
-  artifactKey: Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 external.png using Guid(893b5c7c7e038cf488ed7fd7d0cfc2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75506befb97094b4565e1d5d0a9d9a56') in 0.014771 seconds 
+  Time since last request: 160.284814 seconds.
+  path: Assets/Assets/2D/noses/outline.png
+  artifactKey: Guid(beac8139677d13746883106a8f8668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/2D/noses/outline.png using Guid(beac8139677d13746883106a8f8668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d335166248e96f0a6853bff6172ddf5') in 0.015727 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 328.671265 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 internal.png
-  artifactKey: Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 internal.png using Guid(b92715713ae92ec469fdb1fbfd284ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baf3414c4dc9f2bf4691bef5a6558334') in 0.011035 seconds 
+  Time since last request: 57.249142 seconds.
+  path: Assets/Assets/Materials/mouth.mat
+  artifactKey: Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/mouth.mat using Guid(5c9b20193e4016e40b906c53880f70df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bee1850f177954cf4e5a58133a3b466f') in 0.021825 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.490654 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 bottom.png
-  artifactKey: Guid(342832ee5fd843341af0852737bba691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 bottom.png using Guid(342832ee5fd843341af0852737bba691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f08c9162b00b4ade09a41e99698ca435') in 0.017584 seconds 
+  Time since last request: 5.302206 seconds.
+  path: Assets/Assets/Materials/nose.mat
+  artifactKey: Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/nose.mat using Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a40c17bbcb102756b77cf42722107aa') in 0.014058 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 top.png
-  artifactKey: Guid(3d9aef9c9a38ab94282cf2aaf0b9ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 top.png using Guid(3d9aef9c9a38ab94282cf2aaf0b9ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e5467883a967728a80aa45d8e8b68e') in 0.009498 seconds 
+  Time since last request: 17.727592 seconds.
+  path: Assets/Assets/Materials/nose.mat
+  artifactKey: Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/nose.mat using Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3356727aa5da009b455430b6fb7f084') in 0.300214 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 214.844133 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 blink.png
-  artifactKey: Guid(9326a245d4030bb4d92f9965d71e0870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 blink.png using Guid(9326a245d4030bb4d92f9965d71e0870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66339a2918171e64d46b97cb10581c0d') in 0.014941 seconds 
+  Time since last request: 128.612447 seconds.
+  path: Assets/Assets/Materials/nose.mat
+  artifactKey: Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/nose.mat using Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5aadeb229a01d42fd9e314484e2fc91') in 0.032278 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 53.735365 seconds.
-  path: Assets/Assets/2D/eye mats/M2/M2 blink.png
-  artifactKey: Guid(9326a245d4030bb4d92f9965d71e0870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M2/M2 blink.png using Guid(9326a245d4030bb4d92f9965d71e0870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb383c140835e5d7ef69abc23f20d31') in 0.013210 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 825.984179 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 bottom.png
-  artifactKey: Guid(ea246f58eb9174941b9367fb519e05fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 bottom.png using Guid(ea246f58eb9174941b9367fb519e05fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '614f687707d1d7d0fc19bb214ee9b795') in 0.022389 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000074 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 internal.png
-  artifactKey: Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 internal.png using Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '047d05c67a399293489ac6e210fdcd06') in 0.019240 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.629798 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 blink.png
-  artifactKey: Guid(e0b006c4b80393146b27a583d56b23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 blink.png using Guid(e0b006c4b80393146b27a583d56b23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8a201042d92d1191bfea1746b44b4a4') in 0.014156 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.416625 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 blink.png
-  artifactKey: Guid(e0b006c4b80393146b27a583d56b23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 blink.png using Guid(e0b006c4b80393146b27a583d56b23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f192f8bda4207b25929c8e18b85f7e33') in 0.013377 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 internal.png
-  artifactKey: Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 internal.png using Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29b25ddfcbb5b1bbe8b889f526b7c33f') in 0.010588 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.429729 seconds.
-  path: Assets/Assets/2D/eye mats/M3/M3 internal.png
-  artifactKey: Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M3/M3 internal.png using Guid(305b2329923907140ba8fc9977a9388b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29552961ef724b67d0307b958b1bb8c7') in 0.016821 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 744.895818 seconds.
-  path: Assets/Assets/2D/eye mats/M4/M4 ext.png
-  artifactKey: Guid(4cf84b78d98fb7c4680f77261907a3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M4/M4 ext.png using Guid(4cf84b78d98fb7c4680f77261907a3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bebfb23134428ea1dbcb04be3624b4b7') in 0.018196 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Assets/2D/eye mats/M4/M4 top.png
-  artifactKey: Guid(f9e07acd1e38ec947a69ea56e1f95dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M4/M4 top.png using Guid(f9e07acd1e38ec947a69ea56e1f95dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0d8736d763ab46a7edee0cd1052f55') in 0.019653 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.431334 seconds.
-  path: Assets/Assets/2D/eye mats/M4/M4 bottom.png
-  artifactKey: Guid(a4285611890db654cafb2df0c78c3fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M4/M4 bottom.png using Guid(a4285611890db654cafb2df0c78c3fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15942bcf4c43bc982a8b023bfb912aa9') in 0.014054 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Assets/2D/eye mats/M4/M4 int.png
-  artifactKey: Guid(7ce560e2c0ca7854fb38d760713954b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/eye mats/M4/M4 int.png using Guid(7ce560e2c0ca7854fb38d760713954b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '074a2aefba81beae170787f32a4ffb19') in 0.027173 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 37.225291 seconds.
+  path: Assets/Assets/Materials/nose.mat
+  artifactKey: Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Materials/nose.mat using Guid(10ec95400aeed604c9768cc3b12c3f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4ba57a8bce845659f1a145bb0ec37eb') in 0.295061 seconds 
