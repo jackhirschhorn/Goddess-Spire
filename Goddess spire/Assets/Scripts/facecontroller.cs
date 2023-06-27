@@ -8,6 +8,8 @@ public class facecontroller : MonoBehaviour
 	public Renderer lefteye;
 	public Renderer righteye;
 	public Renderer mouth;
+	public Renderer leyebrow;
+	public Renderer reyebrow;
 	
 	public bool centerlook;
 	public Vector2 looktarg;
@@ -105,7 +107,8 @@ public class facecontroller : MonoBehaviour
 		mouth.material.SetColor("_tongue_color",tonguecolor);
 		mouth.material.SetColor("_back_color",backcolor);
 		
-		
+		leyebrow.material.SetColor("_BaseColor",eyebrowcolor);
+		reyebrow.material.SetColor("_BaseColor",eyebrowcolor);
     }
 
     // Update is called once per frame
@@ -114,6 +117,14 @@ public class facecontroller : MonoBehaviour
 		lefteye.material.SetFloat("_fliplook", (centerlook?0:1));
         righteye.material.SetVector("_looktarg", looktarg);
 		lefteye.material.SetVector("_looktarg", looktarg);
+		
+		righteye.material.SetFloat("_eye_raise", eyeraise);
+		righteye.material.SetFloat("_lower_eye_raise", lowereyeraise);
+		righteye.material.SetFloat("_upper_eye_raise", uppereyeraise);
+		
+		lefteye.material.SetFloat("_eye_raise", eyeraise);
+		lefteye.material.SetFloat("_lower_eye_raise", lowereyeraise);
+		lefteye.material.SetFloat("_upper_eye_raise", uppereyeraise);
 		
 		nose.LookAt(Camera.main.transform);
     }
