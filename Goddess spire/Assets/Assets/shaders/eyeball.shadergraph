@@ -62,6 +62,9 @@
         },
         {
             "m_Id": "0f1915e51cfb4bceb9ed1fc92a23c4f8"
+        },
+        {
+            "m_Id": "ba4f01031103443a9bbabe193205514a"
         }
     ],
     "m_Keywords": [],
@@ -326,6 +329,9 @@
         },
         {
             "m_Id": "f2f8a62674b04e89a12f533f7898705f"
+        },
+        {
+            "m_Id": "0d7ab29a604e4a239db9a6cd2db5d395"
         }
     ],
     "m_GroupDatas": [],
@@ -371,6 +377,20 @@
                     "m_Id": "9a9882c251944a358b0adbedb064b636"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "0d7ab29a604e4a239db9a6cd2db5d395"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e7cbcc0fbef84004bb26261aeb7f7f65"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -1307,20 +1327,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "5ffe6992b7c4470283241eafe879aedb"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "a004a835af3f4bb6a3bfdab1bd4ba858"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "e7cbcc0fbef84004bb26261aeb7f7f65"
                 },
                 "m_SlotId": 0
             }
@@ -2378,6 +2384,42 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "0d7ab29a604e4a239db9a6cd2db5d395",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -6140.67333984375,
+            "y": -1926.20947265625,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "e4d9340d37b54a2daf817b2529c0b6be"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "ba4f01031103443a9bbabe193205514a"
+    }
 }
 
 {
@@ -4064,6 +4106,9 @@
         },
         {
             "m_Id": "0f1915e51cfb4bceb9ed1fc92a23c4f8"
+        },
+        {
+            "m_Id": "ba4f01031103443a9bbabe193205514a"
         }
     ]
 }
@@ -4492,7 +4537,7 @@
     ],
     "synonyms": [],
     "m_Precision": 0,
-    "m_PreviewExpanded": false,
+    "m_PreviewExpanded": true,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -10245,6 +10290,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
+    "m_ObjectId": "ba4f01031103443a9bbabe193205514a",
+    "m_Guid": {
+        "m_GuidSerialized": "9206cbfe-2143-4b9e-b989-ddef561e5e67"
+    },
+    "m_Name": "fliphighlights",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "fliphighlights",
+    "m_DefaultReferenceName": "_fliphighlights",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "babd36e981a5401b95103f78fd633968",
     "m_Id": 0,
@@ -11702,6 +11770,20 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "Predicate",
+    "m_StageCapability": 3,
+    "m_Value": false,
+    "m_DefaultValue": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BooleanMaterialSlot",
+    "m_ObjectId": "e4d9340d37b54a2daf817b2529c0b6be",
+    "m_Id": 0,
+    "m_DisplayName": "fliphighlights",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_Value": false,
     "m_DefaultValue": false
