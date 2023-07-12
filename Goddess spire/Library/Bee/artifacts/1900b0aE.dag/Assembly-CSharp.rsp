@@ -337,6 +337,8 @@
 -r:"C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Autodesk.Fbx.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Autodesk.Fbx.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Cyanilux.BlitRenderFeature.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Cyanilux.BlitRenderFeature.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/OtoonEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/OtoonShader.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PPv2URPConverters.ref.dll"
@@ -405,6 +407,7 @@
 "Assets/Scripts/combatoptionslist/Magic_Missile.cs"
 "Assets/Scripts/facecontroller.cs"
 "Assets/Scripts/lookat.cs"
+"Assets/Scripts/palateswap.cs"
 "Assets/Scripts/PartStopper.cs"
 "Assets/Scripts/Stats.cs"
 -langversion:9.0

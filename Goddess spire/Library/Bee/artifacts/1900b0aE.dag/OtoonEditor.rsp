@@ -367,6 +367,7 @@
 "Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonCustomLitShader.cs"
 "Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonLitShader.cs"
 "Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonShaderGraph.cs"
+"Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonShaderGraphPallate.cs"
 "Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonTooltip.cs"
 "Assets/OToon- URP Toon Shading/Shaders/Editor/OtoonUpdateHelper.cs"
 "Assets/OToon- URP Toon Shading/Shaders/Editor/SavedParameter.cs"

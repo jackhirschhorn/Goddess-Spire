@@ -730,7 +730,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9326a245d4030bb4d92f9965d71e0870, type: 3}
   - {fileID: 2800000, guid: e0b006c4b80393146b27a583d56b23a2, type: 3}
   - {fileID: 2800000, guid: ed8d35fd07c34894792d879ba6bb0c45, type: 3}
-  blinkeyelash: 3
+  - {fileID: 2800000, guid: b41ee6b7ba80c26448bdc3edca318804, type: 3}
+  blinkeyelash: 4
   highlights:
   - {fileID: 2800000, guid: dd5c834a5d661394abf84d5774575bdb, type: 3}
   highlight: 0

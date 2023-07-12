@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Otoonskin
   m_Shader: {fileID: 4800000, guid: e88aeddd2ef1f934d805981244872e27, type: 3}
-  m_Parent: {fileID: 2100000, guid: a309bede51d930f46a6cdcd41708b2f8, type: 2}
+  m_Parent: {fileID: 2100000, guid: debdbaa023f57fc4e8951e39bbd23ab9, type: 2}
   m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _HALFTONESHAPE_CROSS
