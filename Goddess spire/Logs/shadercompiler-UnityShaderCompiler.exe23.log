@@ -1,6 +1,0 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/PlaybackEngines'
-Cmd: initializeCompiler
-
-Cmd: disassembleShader
- name=Shader Graphs/palate swap platform=d3d11 type=18 mask=6 insize=5990 outsize=9873 ok=1
-
