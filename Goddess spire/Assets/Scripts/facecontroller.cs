@@ -35,6 +35,8 @@ public class facecontroller : MonoBehaviour
 	public int blinkeyelash;
 	public Texture2D[] highlights;
 	public int highlight;
+	public Texture2D[] eyebrows;
+	public int eyebrow;
 	public Color eyebrowcolor;
 	public Color iriscolor;
 	public Color scalaracolor;
@@ -108,7 +110,9 @@ public class facecontroller : MonoBehaviour
 		mouth.material.SetColor("_back_color",backcolor);
 		
 		leyebrow.material.SetColor("_BaseColor",eyebrowcolor);
+		leyebrow.material.SetTexture("_BaseMap",eyebrows[eyebrow]);
 		reyebrow.material.SetColor("_BaseColor",eyebrowcolor);
+		reyebrow.material.SetTexture("_BaseMap",eyebrows[eyebrow]);
     }
 
     // Update is called once per frame

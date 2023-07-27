@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - _HALFTONESHAPE_CROSS
   - _OUTLINE
-  - _RIMLIGHTING_ON
   m_InvalidKeywords:
   - _ENABLEDHAIRSPEC_ON
   - _STEPVIARAMPTEXTURE_ON
@@ -25,7 +24,7 @@ Material:
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _OutlineEnabled
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
@@ -33,6 +32,11 @@ Material:
     m_Floats:
     - _EnabledHairSpec: 1
     - _FaceShadowMapEnabled: 0
+    - _HalfToneEnabled: 0
+    - _OutlineEnabled: 1
+    - _OutlineWidth: 10
+    - _RimEnabled: 0
+    - _SpecularHighlights: 1
     - _SpherizeNormalEnabled: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 0.5}
