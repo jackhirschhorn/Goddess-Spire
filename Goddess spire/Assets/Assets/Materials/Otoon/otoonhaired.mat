@@ -10,7 +10,7 @@ Material:
   m_Name: otoonhaired
   m_Shader: {fileID: 4800000, guid: e88aeddd2ef1f934d805981244872e27, type: 3}
   m_Parent: {fileID: 2100000, guid: a309bede51d930f46a6cdcd41708b2f8, type: 2}
-  m_ModifiedSerializedProperties: 16
+  m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
   - _HALFTONESHAPE_CROSS
   - _OUTLINE
@@ -35,10 +35,12 @@ Material:
     - _HalfToneEnabled: 0
     - _OutlineEnabled: 1
     - _OutlineWidth: 10
+    - _ReceiveShadows: 1
     - _RimEnabled: 0
     - _SpecularHighlights: 1
     - _SpherizeNormalEnabled: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 0.5}
+    - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
     - _HairSpecColor: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
