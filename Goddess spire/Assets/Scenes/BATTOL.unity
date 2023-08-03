@@ -13080,12 +13080,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af6c94ee83293c8499d2959a80087760, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.509823
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af6c94ee83293c8499d2959a80087760, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.250765
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af6c94ee83293c8499d2959a80087760, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af6c94ee83293c8499d2959a80087760, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.34
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af6c94ee83293c8499d2959a80087760, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22987,6 +22995,58 @@ PrefabInstance:
     - target: {fileID: 4438276116528752377, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: eyebrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: topeyebrow
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: iriscolor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: iriscolor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: iriscolor.r
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: externalclip
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: internalclip
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: bottomeyebrow
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: lowereyeraise
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: uppereyeraise
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: eyebrowcolor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: eyebrowcolor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438276116528752382, guid: fa6558ea3bc77e5479eb3caa71c17c30, type: 3}
+      propertyPath: eyebrowcolor.r
+      value: 0.24528301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

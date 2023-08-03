@@ -657,7 +657,7 @@ Transform:
   - {fileID: 5190630377684710074}
   - {fileID: 5105764922966608410}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4438276116528752382
 MonoBehaviour:
@@ -686,6 +686,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f9e07acd1e38ec947a69ea56e1f95dc6, type: 3}
   - {fileID: 2800000, guid: a26ba2e2dc79f7f4dbdc9bbd1f8a335f, type: 3}
   - {fileID: 2800000, guid: a84d5d1ea5365a94a8594a24d1a0d844, type: 3}
+  - {fileID: 2800000, guid: c7dfdf846db968345b0244b74f222127, type: 3}
   topeyebrow: 4
   bottomeyebrows:
   - {fileID: 2800000, guid: f796850af70b5924eb1ed2b6ccc60a3e, type: 3}
@@ -694,6 +695,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a4285611890db654cafb2df0c78c3fe2, type: 3}
   - {fileID: 2800000, guid: 7725bfb47c665a34ea5af56ef0e6c531, type: 3}
   - {fileID: 2800000, guid: 2ecd3e1dcae5013458c007dfb05838f1, type: 3}
+  - {fileID: 2800000, guid: e6c7e1c5eccbd6f42862bb408ec78319, type: 3}
   bottomeyebrow: 4
   externalclips:
   - {fileID: 2800000, guid: 0c1904bd345b8674195af3c3f3a5e745, type: 3}
@@ -702,6 +704,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4cf84b78d98fb7c4680f77261907a3b1, type: 3}
   - {fileID: 2800000, guid: 4703c1e5b0a1f3946bcb67aee31e1b8b, type: 3}
   - {fileID: 2800000, guid: c109e33fdac47c74eadfc52407c9ee03, type: 3}
+  - {fileID: 2800000, guid: b3eb9b748faab9741860d92db45e022a, type: 3}
   externalclip: 4
   internalclips:
   - {fileID: 2800000, guid: 8763760439c0e374da8f96fab89b5951, type: 3}
@@ -710,6 +713,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7ce560e2c0ca7854fb38d760713954b0, type: 3}
   - {fileID: 2800000, guid: 3b0febb3eb3a1964fa4e35ad71dfcfaa, type: 3}
   - {fileID: 2800000, guid: 3b875d3234087024f9f202f120f4b3e1, type: 3}
+  - {fileID: 2800000, guid: a9c6f18e6f65a3b489e181a330cf0228, type: 3}
   internalclip: 4
   eyebacks:
   - {fileID: 2800000, guid: e21ab5410fe399c46984d64ca971ddbc, type: 3}
