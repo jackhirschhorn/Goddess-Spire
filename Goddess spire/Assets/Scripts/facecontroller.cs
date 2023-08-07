@@ -82,6 +82,7 @@ public class facecontroller : MonoBehaviour
 		lefteye.material.SetFloat("_lower_eye_raise", lowereyeraise);
 		lefteye.material.SetFloat("_upper_eye_raise", uppereyeraise);
 		lefteye.material.SetFloat("_blink_threshold", blinkthreshold);
+		lefteye.material.SetTexture("_blink_eyelash", blinkeyelashes[blinkeyelash]);
 		
 		righteye.material.SetTexture("_top_eyebrow", topeyebrows[topeyebrow]);
 		righteye.material.SetTexture("_bottom_eyebrow", bottomeyebrows[bottomeyebrow]);
@@ -99,6 +100,7 @@ public class facecontroller : MonoBehaviour
 		righteye.material.SetFloat("_lower_eye_raise", lowereyeraise);
 		righteye.material.SetFloat("_upper_eye_raise", uppereyeraise);
 		righteye.material.SetFloat("_blink_threshold", blinkthreshold);
+		righteye.material.SetTexture("_blink_eyelash", blinkeyelashes[blinkeyelash]);
 		
 		mouth.material.SetTexture("_lips", lips[lip]);
 		mouth.material.SetTexture("_teeth", teeths[teeth]);

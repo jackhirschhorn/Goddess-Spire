@@ -687,6 +687,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a26ba2e2dc79f7f4dbdc9bbd1f8a335f, type: 3}
   - {fileID: 2800000, guid: a84d5d1ea5365a94a8594a24d1a0d844, type: 3}
   - {fileID: 2800000, guid: c7dfdf846db968345b0244b74f222127, type: 3}
+  - {fileID: 2800000, guid: 63e5805e1a8786a4f8a1b384f75f21c4, type: 3}
   topeyebrow: 4
   bottomeyebrows:
   - {fileID: 2800000, guid: f796850af70b5924eb1ed2b6ccc60a3e, type: 3}
@@ -696,6 +697,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7725bfb47c665a34ea5af56ef0e6c531, type: 3}
   - {fileID: 2800000, guid: 2ecd3e1dcae5013458c007dfb05838f1, type: 3}
   - {fileID: 2800000, guid: e6c7e1c5eccbd6f42862bb408ec78319, type: 3}
+  - {fileID: 2800000, guid: e468fb63614affc4e8d5d047acc7226d, type: 3}
   bottomeyebrow: 4
   externalclips:
   - {fileID: 2800000, guid: 0c1904bd345b8674195af3c3f3a5e745, type: 3}
@@ -705,6 +707,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4703c1e5b0a1f3946bcb67aee31e1b8b, type: 3}
   - {fileID: 2800000, guid: c109e33fdac47c74eadfc52407c9ee03, type: 3}
   - {fileID: 2800000, guid: b3eb9b748faab9741860d92db45e022a, type: 3}
+  - {fileID: 2800000, guid: 2616ca6a1c87e7d4ab6b0e7caebf864f, type: 3}
   externalclip: 4
   internalclips:
   - {fileID: 2800000, guid: 8763760439c0e374da8f96fab89b5951, type: 3}
@@ -714,6 +717,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3b0febb3eb3a1964fa4e35ad71dfcfaa, type: 3}
   - {fileID: 2800000, guid: 3b875d3234087024f9f202f120f4b3e1, type: 3}
   - {fileID: 2800000, guid: a9c6f18e6f65a3b489e181a330cf0228, type: 3}
+  - {fileID: 2800000, guid: 3ae69f0080b66a044bf6313bf2a3ee95, type: 3}
   internalclip: 4
   eyebacks:
   - {fileID: 2800000, guid: e21ab5410fe399c46984d64ca971ddbc, type: 3}
@@ -740,6 +744,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ed8d35fd07c34894792d879ba6bb0c45, type: 3}
   - {fileID: 2800000, guid: b41ee6b7ba80c26448bdc3edca318804, type: 3}
   - {fileID: 2800000, guid: 4c1d8930e8c25b74aac76ebd7822e594, type: 3}
+  - {fileID: 2800000, guid: fa376f04ce7bd9a4c81427f01a1b8133, type: 3}
+  - {fileID: 2800000, guid: 7378937add1d62149af7d2cd2a217bc8, type: 3}
   blinkeyelash: 4
   highlights:
   - {fileID: 2800000, guid: dd5c834a5d661394abf84d5774575bdb, type: 3}
@@ -748,6 +754,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 267d6135a49c65d4abdd9e9d4b190fc1, type: 3}
   - {fileID: 2800000, guid: b5f3c4bbe7d1a2c48a56369f5186ae51, type: 3}
   - {fileID: 2800000, guid: 4cef8b2f11771e845af44105034e51eb, type: 3}
+  - {fileID: 2800000, guid: 6640a6a391045414faf94a7c9438c448, type: 3}
   eyebrow: 0
   eyebrowcolor: {r: 0, g: 0, b: 0, a: 1}
   iriscolor: {r: 1, g: 0, b: 0, a: 1}

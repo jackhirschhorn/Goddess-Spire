@@ -11,6 +11,10 @@ public class palateswap : MonoBehaviour
 	public List<RenderTexture> rtex = new List<RenderTexture>();
 	public Material swapmat;
 
+	
+	void Start(){
+		swap = true;
+	}
     // Update is called once per frame
     void Update()
     {
