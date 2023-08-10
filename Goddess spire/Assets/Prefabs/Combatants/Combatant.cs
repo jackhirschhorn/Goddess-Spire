@@ -20,10 +20,15 @@ public class Combatant : MonoBehaviour
 	public int BMM = 4000; //battleMenuMemory;
 	public int[] BSMM = {0,0,0,0}; //battleSubMenuMemories;
 	
+	public Color red;
+	public Color blue;
+	public Color green;
+	public float height = 1.5f;
+	
 	public void Awake(){
 		enemyHP = Instantiate(enemyHP);
 		enemyHP.parent = transform;
-		enemyHP.position = transform.position + new Vector3(0,1.5f,0);
+		enemyHP.position = transform.position + new Vector3(0,height,0);
 		HP = enemyHP.GetChild(0) as RectTransform;
 		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
 		debug();
