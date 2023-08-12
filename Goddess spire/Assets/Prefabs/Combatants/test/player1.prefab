@@ -146,21 +146,40 @@ MonoBehaviour:
   - iconid: 0
     background: {r: 1, g: 1, b: 1, a: 1}
     nme: TEST 0
+    explain: 
+    cost: 0
+    costype: 0
   - iconid: 1
     background: {r: 1, g: 1, b: 1, a: 1}
     nme: TEST 1
+    explain: 
+    cost: 0
+    costype: 0
   weapon_CO:
   - iconid: 0
     background: {r: 1, g: 1, b: 1, a: 1}
     nme: TEST 0
+    explain: 
+    cost: 0
+    costype: 0
   - iconid: 1
     background: {r: 1, g: 1, b: 1, a: 1}
     nme: TEST 1
+    explain: 
+    cost: 0
+    costype: 0
   - iconid: 2
     background: {r: 1, g: 0.65723264, b: 0.65723264, a: 1}
     nme: TEST 2
+    explain: 
+    cost: 0
+    costype: 0
   BMM: 4000
   BSMM: 00000000000000000000000000000000
+  red: {r: 0, g: 0, b: 0, a: 1}
+  blue: {r: 0, g: 0, b: 0, a: 1}
+  green: {r: 0, g: 0, b: 0, a: 1}
+  height: 1.5
 --- !u!1 &376850461014927136
 GameObject:
   m_ObjectHideFlags: 0

@@ -1018,6 +1018,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d71d1fefe81cfc3408e593e8455c88e9, type: 3}
   m_PrefabInstance: {fileID: 1436641721983841855}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6955528555345279414
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246895825132653422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8010cf02c0b65c04092cdf0c1649f1b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &356244384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1055,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f6517ff9b886e804bbb7644683013ce5, type: 3}
   rtex:
   - {fileID: 8400000, guid: 7d3debd7ff99441428c2a0ad9b21a419, type: 2}
+  rtexf: []
   swapmat: {fileID: 2100000, guid: c84d1948e4179884f8c197dafc8fb128, type: 2}
   rends:
   - {fileID: 7439809729195815841}

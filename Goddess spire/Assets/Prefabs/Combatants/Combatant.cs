@@ -25,6 +25,9 @@ public class Combatant : MonoBehaviour
 	public Color green;
 	public float height = 1.5f;
 	
+	public Animator anim;
+	public bool animtest;
+	
 	public void Awake(){
 		enemyHP = Instantiate(enemyHP);
 		enemyHP.parent = transform;
@@ -32,6 +35,10 @@ public class Combatant : MonoBehaviour
 		HP = enemyHP.GetChild(0) as RectTransform;
 		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
 		debug();
+		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+		if(animtest){
+			anim.SetInteger("weapon",1);
+		}
 	}
 	
 	public void LateUpdate(){
