@@ -26,7 +26,7 @@ public class Combatant : MonoBehaviour
 	public float height = 1.5f;
 	
 	public Animator anim;
-	public bool animtest;
+	public int idleanim = 0;
 	
 	public void Awake(){
 		enemyHP = Instantiate(enemyHP);
@@ -36,8 +36,8 @@ public class Combatant : MonoBehaviour
 		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
 		debug();
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
-		if(animtest){
-			anim.SetInteger("weapon",1);
+		if(idleanim != 0){
+			anim.SetInteger("weapon",idleanim);
 		}
 	}
 	
