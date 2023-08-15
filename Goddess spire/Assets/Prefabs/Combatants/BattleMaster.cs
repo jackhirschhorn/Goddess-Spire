@@ -142,7 +142,8 @@ public class BattleMaster : MonoBehaviour
 				}
 			}
 			cur--;
-		}
+		}		
+		reverseorder();
 		if(initiative[roundturn].isPC){
 			abilityselected = false;
 			csubmenuon = false;
@@ -164,10 +165,16 @@ public class BattleMaster : MonoBehaviour
 		RectTransform clone = (Instantiate(init_head)) as RectTransform;
 		clone.parent = init_track_holder.GetChild(0);
 		clone.GetComponent<Image>().color = (c.isPC?Color.green:Color.red);
-		clone.GetChild(0).GetComponent<Image>().sprite = c.icon;
-		clone.GetChild(0).GetComponent<indicatorgrabber>().comb = c;
-		clone.anchoredPosition = Vector3.zero + new Vector3(100*(init_track_holder.GetChild(0).childCount-1),0,0);
+		clone.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.icon;
+		clone.GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb = c;
+		clone.anchoredPosition = Vector3.zero + new Vector3(70*(init_track_holder.GetChild(0).childCount-1),0,0);
 		clone.localScale = Vector3.one;
+	}
+	
+	public void reverseorder(){
+		for(int i=0;i<init_track_holder.GetChild(0).childCount;i++){
+			init_track_holder.GetChild(0).GetChild(0).SetSiblingIndex((init_track_holder.GetChild(0).childCount-1)-i);
+		}
 	}
 	
 	public void next_turn(){
