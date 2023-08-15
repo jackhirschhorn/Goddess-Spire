@@ -181,7 +181,7 @@ as a workaround for 2D Renderer not supporting features (prior to 2021.2). Uncom
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData) {
 
 			if (settings.blitMaterial == null) {
-				Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
+				//Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
 				return;
 			}
 

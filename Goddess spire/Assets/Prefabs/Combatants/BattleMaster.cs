@@ -47,6 +47,7 @@ public class BattleMaster : MonoBehaviour
 	public Transform explainer;
 	public TextMeshProUGUI explainertxt;
 	public bool explained;
+	public Quaternion[] cmrotpos;
 	
 	
 	void Awake(){
@@ -142,6 +143,15 @@ public class BattleMaster : MonoBehaviour
 			}
 			cur--;
 		}
+		if(initiative[roundturn].isPC){
+			abilityselected = false;
+			csubmenuon = false;
+			csubmenu.SetActive(false);
+			combatmenu.gameObject.SetActive(true);
+			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
+			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
+			csubmenu.transform.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
+		}
 	}
 	
 	public void reset_init_faces(){
@@ -157,6 +167,7 @@ public class BattleMaster : MonoBehaviour
 		clone.GetChild(0).GetComponent<Image>().sprite = c.icon;
 		clone.GetChild(0).GetComponent<indicatorgrabber>().comb = c;
 		clone.anchoredPosition = Vector3.zero + new Vector3(100*(init_track_holder.GetChild(0).childCount-1),0,0);
+		clone.localScale = Vector3.one;
 	}
 	
 	public void next_turn(){
@@ -176,6 +187,8 @@ public class BattleMaster : MonoBehaviour
 			csubmenu.SetActive(false);
 			combatmenu.gameObject.SetActive(true);
 			explainer.gameObject.SetActive(false);
+			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
+			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
 		}
 	}
 	

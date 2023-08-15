@@ -17,9 +17,9 @@ public class battleplayerui : MonoBehaviour
 			hpt.text = linked.statblock.chp + "/" + linked.statblock.hp;
 			manat.text = linked.statblock.cmana + "/" + linked.statblock.mana;
 			stamt.text = linked.statblock.cstam + "/" + linked.statblock.cstam;
-			hp.offsetMin = new Vector2(100*((linked.statblock.chp*1f)/(linked.statblock.hp*1f)), hp.offsetMin.y);
-			mana.offsetMin = new Vector2(100*((linked.statblock.cmana*1f)/(linked.statblock.mana*1f)), hp.offsetMin.y);
-			stam.offsetMin = new Vector2(100*((linked.statblock.cstam*1f)/(linked.statblock.stam*1f)), hp.offsetMin.y);
+			hp.offsetMin = new Vector2(130*((linked.statblock.chp*1f)/(linked.statblock.hp*1f)), hp.offsetMin.y);
+			mana.offsetMin = new Vector2(118*((linked.statblock.cmana*1f)/(linked.statblock.mana*1f)), hp.offsetMin.y);
+			stam.offsetMin = new Vector2(118*((linked.statblock.cstam*1f)/(linked.statblock.stam*1f)), hp.offsetMin.y);
 		} else {
 			transform.gameObject.SetActive(false);
 		}
@@ -32,9 +32,9 @@ public class battleplayerui : MonoBehaviour
 			hpt.text = linked.statblock.chp + "/" + linked.statblock.hp;
 			manat.text = linked.statblock.cmana + "/" + linked.statblock.mana;
 			stamt.text = linked.statblock.cstam + "/" + linked.statblock.cstam;
-			hp.offsetMin = new Vector2(100*((linked.statblock.chp*1f)/(linked.statblock.hp*1f)), hp.offsetMin.y);
-			mana.offsetMin = new Vector2(100*((linked.statblock.cmana*1f)/(linked.statblock.mana*1f)), hp.offsetMin.y);
-			stam.offsetMin = new Vector2(100*((linked.statblock.cstam*1f)/(linked.statblock.stam*1f)), hp.offsetMin.y);
+			hp.offsetMin = new Vector2(130*((linked.statblock.chp*1f)/(linked.statblock.hp*1f)), hp.offsetMin.y);
+			mana.offsetMin = new Vector2(118*((linked.statblock.cmana*1f)/(linked.statblock.mana*1f)), hp.offsetMin.y);
+			stam.offsetMin = new Vector2(118*((linked.statblock.cstam*1f)/(linked.statblock.stam*1f)), hp.offsetMin.y);
 		} else {
 			transform.gameObject.SetActive(false);
 		}
