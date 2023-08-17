@@ -53,7 +53,7 @@ public class BattleMaster : MonoBehaviour
 		//true = player, false = enemy;
 		RaycastHit hit;
 		if(Physics.Raycast(Vector3.zero, (b? new Vector3(-1,0,0):new Vector3(1,0,0)),out hit,10)){
-			Debug.Log(hit.transform.parent.GetComponent<Combatant>());
+			//Debug.Log(hit.transform.parent.GetComponent<Combatant>());
 			return hit.transform.parent.GetComponent<Combatant>();
 		}
 		return null;

@@ -17,13 +17,15 @@ public class koboldspearatk : combatoption
 	Animator anim;
 	
 	public override void dothething(){
-		
+		anim.transform.GetComponent<koboldspearatkmono>().stage = 1;
 	}
 	
 	public override void demothething(){
 		anim = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.GetChild(0).GetChild(0).GetComponent<Animator>();
 		anim.SetInteger("atkanim",1);
 		anim.SetInteger("stage",1);
+		anim.gameObject.AddComponent(typeof(koboldspearatkmono));
+		anim.transform.GetComponent<koboldspearatkmono>().anim = anim;
 	}
 	
 	public override void nevermind(){

@@ -64,4 +64,12 @@ public class Combatant : MonoBehaviour
 		class_CO.Add(new Magic_Missile());
 	}
 	
+	public int weapondamage(){
+		return statblock.atk; //add weapon damage with items
+	}
+	
+	public int pierce(){
+		return 0;
+	}
+	
 }
