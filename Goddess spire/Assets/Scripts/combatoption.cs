@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [Serializable]
-public class combatoption
+public class combatoption : ScriptableObject
 {
     public int iconid = 0;
 	public Color background = Color.white;
@@ -13,6 +13,7 @@ public class combatoption
 	public string explain = "";
 	public int cost;
 	public int costype = 0;//0 = mana, 1 = stam, 2 = hp
+		
 	
 	public virtual void dothething(){
 		

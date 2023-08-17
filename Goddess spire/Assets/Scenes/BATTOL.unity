@@ -1741,6 +1741,14 @@ PrefabInstance:
       propertyPath: statblock.spd
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy3
@@ -8356,6 +8364,14 @@ PrefabInstance:
       propertyPath: statblock.spd
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy4
@@ -9329,6 +9345,14 @@ PrefabInstance:
       propertyPath: statblock.spd
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy2
@@ -13998,6 +14022,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f82dfc5fc3c5a8f4080a3550427019c8, type: 3}
   - {fileID: 21300000, guid: 4a231ba0e81e63849a8f985c228e8acd, type: 3}
   - {fileID: 21300000, guid: f13f32194221c8142844dae39e75cb32, type: 3}
+  - {fileID: 21300000, guid: 5b8dc22a447ccfa45bca7640d06af551, type: 3}
   slass:
   - {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
   plass:
@@ -14031,27 +14056,11 @@ MonoBehaviour:
   - {fileID: 1912485640}
   - {fileID: 1476539210}
   - {fileID: 1194934756}
-  cur_sel_CO:
-    iconid: 0
-    background: {r: 0, g: 0, b: 0, a: 0}
-    nme: 
-    explain: 
-    cost: 0
-    costype: 0
+  cur_sel_CO: {fileID: 0}
   attackstass: {fileID: 0}
   tactics:
-  - iconid: 0
-    background: {r: 0, g: 1, b: 1, a: 1}
-    nme: TEST 0
-    explain: 
-    cost: 0
-    costype: 0
-  - iconid: 1
-    background: {r: 0.3908817, g: 1, b: 0.37421376, a: 1}
-    nme: TEST 1
-    explain: 
-    cost: 0
-    costype: 0
+  - {fileID: 0}
+  - {fileID: 0}
   explainer: {fileID: 1406532130}
   explainertxt: {fileID: 90673675}
   explained: 0
@@ -24783,7 +24792,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29374
+  m_Name: pb_Mesh29372
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -30011,6 +30020,14 @@ PrefabInstance:
       propertyPath: statblock.spd
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy5
@@ -37255,6 +37272,34 @@ PrefabInstance:
       propertyPath: class_CO.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0].nme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0].background.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0].background.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0].background.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: weapon_CO.Array.data[0].background.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 376850461014927138, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -37764,6 +37809,14 @@ PrefabInstance:
       propertyPath: statblock.spd
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy1
