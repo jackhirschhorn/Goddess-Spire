@@ -194,7 +194,7 @@ public class BattleMaster : MonoBehaviour
 		} else {
 			init_track_holder.GetComponent<Animator>().SetBool("move",true);
 		}
-		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-100*roundturn+50,-50,0);
+		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
 		update_menu_memory();
 		abilityactive = false;
 		if(initiative[roundturn].isPC){
@@ -205,6 +205,8 @@ public class BattleMaster : MonoBehaviour
 			explainer.gameObject.SetActive(false);
 			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
+			combatmenu.GetChild(0).localRotation = Quaternion.Euler(-38,-20,5);
+			combatmenu.GetChild(0).Rotate(0,initiative[roundturn].BMM%4 == 0?0:(initiative[roundturn].BMM%4 == 1?90:(initiative[roundturn].BMM%4 == 2?180:270)),0);
 		}
 	}
 	
