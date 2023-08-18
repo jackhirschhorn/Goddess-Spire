@@ -90,14 +90,16 @@ public class BattleMaster : MonoBehaviour
 			if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
 			if(Input.GetKeyDown(KeyCode.Q)){
 				if(abilityselected){
+					combatmenu.GetComponent<Animator>().SetBool("unselect", true);
 					cur_sel_CO.nevermind();
 					abilityselected = false;
 					csubmenuon = true;
 					csubmenu.SetActive(true);
 					update_submenu_memory(true);
-					combatmenu.gameObject.SetActive(true);
+					combatmenu.GetChild(0).gameObject.SetActive(true);
 					explainer.gameObject.SetActive(false);
 				} else if(csubmenuon){
+					combatmenu.GetComponent<Animator>().SetBool("unselect", true);
 					csubmenuon = false;
 					csubmenu.SetActive(false);
 					update_submenu_memory(false);
@@ -105,22 +107,25 @@ public class BattleMaster : MonoBehaviour
 			}
 			if(Input.GetKeyDown(KeyCode.E)){
 				if(!csubmenuon && !abilityselected){
+					combatmenu.GetComponent<Animator>().SetBool("select", true);
 					csubmenuon = true;
 					csubmenu.SetActive(true);
 					update_submenu_memory(true);
 					SCM_icon_change();
 				} else if(!abilityselected) {
 					if(costcheck()){
+						combatmenu.GetComponent<Animator>().SetBool("select", true);
 						cur_sel_CO.demothething();
 						abilityselected = true;
 						csubmenuon = false;
 						csubmenu.SetActive(false);
 						update_submenu_memory(false);
-						combatmenu.gameObject.SetActive(false);
+						combatmenu.GetChild(0).gameObject.SetActive(false);
 						explainer.gameObject.SetActive(true);
 						explainertxt.text = cur_sel_CO.explain;
 					}
 				} else {
+					combatmenu.GetComponent<Animator>().SetBool("select", true);
 					cur_sel_CO.dothething();
 					docosts(initiative[roundturn],cur_sel_CO.cost,cur_sel_CO.costype);
 					abilityselected = false;
@@ -157,7 +162,7 @@ public class BattleMaster : MonoBehaviour
 			abilityselected = false;
 			csubmenuon = false;
 			csubmenu.SetActive(false);
-			combatmenu.gameObject.SetActive(true);
+			combatmenu.GetChild(0).gameObject.SetActive(true);
 			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
 			csubmenu.transform.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
@@ -201,7 +206,7 @@ public class BattleMaster : MonoBehaviour
 			abilityselected = false;
 			csubmenuon = false;
 			csubmenu.SetActive(false);
-			combatmenu.gameObject.SetActive(true);
+			combatmenu.GetChild(0).gameObject.SetActive(true);
 			explainer.gameObject.SetActive(false);
 			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];

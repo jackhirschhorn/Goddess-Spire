@@ -58,6 +58,9 @@ public class koboldspearatkmono : attackmono
 				BattleMaster.attackcallback(0);
 				Destroy(this);
 			}
+		} else if (stage == -1){
+			Destroy(clone.gameObject);
+			Destroy(this);
 		}
 	}
 }

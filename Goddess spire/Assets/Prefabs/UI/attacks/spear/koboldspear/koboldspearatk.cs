@@ -31,5 +31,6 @@ public class koboldspearatk : combatoption
 	public override void nevermind(){
 		anim.SetInteger("atkanim",0);
 		anim.SetInteger("stage",0);
+		anim.transform.GetComponent<koboldspearatkmono>().stage = -1;
 	}
 }
