@@ -59,6 +59,8 @@ public class koboldspearatkmono : attackmono
 				Destroy(this);
 			}
 		} else if (stage == -1){
+			anim.SetInteger("stage",-1);
+			anim.SetInteger("atkanim",0);
 			Destroy(clone.gameObject);
 			Destroy(this);
 		}

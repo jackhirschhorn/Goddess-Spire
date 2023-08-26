@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638211596080964209
-    m_Hash: 4151188168
+      ticks: 638285909006440234
+    m_Hash: 741791414
   m_LockFileStatus:
     m_FilePath: C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638211596081214207
-    m_Hash: 2516324724
+      ticks: 638285909006605451
+    m_Hash: 422551180
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -159,6 +159,8 @@ m_ResolvedPackages:
     - 2.0.1
     - 2.0.3
     - 2.0.4
+    - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -177,6 +179,8 @@ m_ResolvedPackages:
     - 2.0.1
     - 2.0.3
     - 2.0.4
+    - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -461,6 +465,7 @@ m_ResolvedPackages:
     - 3.0.20
     - 3.0.21
     - 3.0.22
+    - 3.0.24
     compatible:
     - 3.0.15
     - 3.0.16
@@ -469,7 +474,8 @@ m_ResolvedPackages:
     - 3.0.20
     - 3.0.21
     - 3.0.22
-    verified: 3.0.22
+    - 3.0.24
+    verified: 3.0.24
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -540,11 +546,13 @@ m_ResolvedPackages:
     - 2.0.16
     - 2.0.17
     - 2.0.18
+    - 2.0.20
     compatible:
     - 2.0.16
     - 2.0.17
     - 2.0.18
-    verified: 2.0.18
+    - 2.0.20
+    verified: 2.0.20
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -934,6 +942,90 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 13.1.8
     nextVersion: 
+- packageId: com.unity.splines@1.0.1
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.1
+  source: 1
+  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.splines@1.0.1
+  assetPath: Packages/com.unity.splines
+  name: com.unity.splines
+  displayName: Splines
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Framework and tools for working with curves and splines.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.0-preview.1
+    - 1.0.0-pre.5
+    - 1.0.0-pre.7
+    - 1.0.0-pre.8
+    - 1.0.0-pre.9
+    - 1.0.0
+    - 1.0.1
+    - 2.0.0-pre.2
+    - 2.0.0-pre.4
+    - 2.0.0
+    - 2.1.0
+    - 2.2.0
+    - 2.2.1
+    - 2.3.0
+    - 2.4.0
+    compatible:
+    - 1.0.1
+    - 2.0.0-pre.2
+    - 2.0.0-pre.4
+    - 2.0.0
+    - 2.1.0
+    - 2.2.0
+    - 2.2.1
+    - 2.3.0
+    - 2.4.0
+    verified: 1.0.1
+  dependencies:
+  - name: com.unity.settings-manager
+    version: 1.0.3
+  - name: com.unity.mathematics
+    version: 1.2.1
+  - name: com.unity.burst
+    version: 1.6.0-pre.2
+  resolvedDependencies:
+  - name: com.unity.settings-manager
+    version: 2.0.1
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.burst
+    version: 1.7.4
+  keywords:
+  - spline
+  - curve
+  - path
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637846987190000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.splines.git
+    revision: 21a7f7dd6874cfedeff294e2599959473047a306
+    path: 
+  unityLifecycle:
+    version: 1.0.1
+    nextVersion: 
 - packageId: com.unity.terrain-tools@4.0.5
   testable: 0
   isDirectDependency: 1
@@ -1082,6 +1174,9 @@ m_ResolvedPackages:
     - 1.3.3
     - 1.3.4
     - 1.3.5
+    - 1.3.7
+    - 1.3.8
+    - 1.3.9
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1094,6 +1189,9 @@ m_ResolvedPackages:
     - 1.3.3
     - 1.3.4
     - 1.3.5
+    - 1.3.7
+    - 1.3.8
+    - 1.3.9
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1259,6 +1357,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1267,6 +1366,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
     verified: 3.0.6
   dependencies:
@@ -1402,18 +1502,24 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
+    - 1.8.3
+    - 1.8.4
     compatible:
     - 1.7.1
     - 1.7.2
     - 1.7.3
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
-    verified: 1.7.4
+    - 1.8.3
+    - 1.8.4
+    verified: 1.7.5
   dependencies:
   - name: com.unity.modules.director
     version: 1.0.0
@@ -1483,6 +1589,7 @@ m_ResolvedPackages:
     all:
     - 1.0.0
     - 3.0.0-exp.1
+    - 3.0.0-exp.3
     compatible:
     - 1.0.0
     verified: 1.0.0
@@ -1569,10 +1676,14 @@ m_ResolvedPackages:
     - 1.7.8
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.9.0
+    - 1.9.1
     compatible:
     - 1.7.8
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.9.0
+    - 1.9.1
     verified: 1.7.8
   dependencies:
   - name: com.unity.ugui
@@ -3363,7 +3474,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: 
+  type: asset
   description: Custom version of the nunit package build to work with Unity. Used
     by the Unity Test Framework.
   status: 4
@@ -3378,10 +3489,14 @@ m_ResolvedPackages:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     compatible:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     verified: 1.0.6
   dependencies: []
   resolvedDependencies: []
@@ -3396,7 +3511,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637429759280000000
   documentationUrl: 
@@ -3408,6 +3523,311 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.6
+    nextVersion: 
+- packageId: com.unity.settings-manager@2.0.1
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.1
+  source: 1
+  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.settings-manager@2.0.1
+  assetPath: Packages/com.unity.settings-manager
+  name: com.unity.settings-manager
+  displayName: Settings Manager
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: A framework for making any serializable field a setting, complete
+    with a pre-built settings interface.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.0-preview.4
+    - 0.1.0-preview.8
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.0.3
+    - 2.0.0
+    - 2.0.1
+    compatible:
+    - 2.0.1
+    verified: 2.0.1
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637744099390000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+    revision: 9b7c12d04ef880168151c127fd6b37b5931197dc
+    path: 
+  unityLifecycle:
+    version: 2.0.1
+    nextVersion: 
+- packageId: com.unity.mathematics@1.2.6
+  testable: 0
+  isDirectDependency: 0
+  version: 1.2.6
+  source: 1
+  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.mathematics@1.2.6
+  assetPath: Packages/com.unity.mathematics
+  name: com.unity.mathematics
+  displayName: Mathematics
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Unity's C# SIMD math library providing vector types and math functions
+    with a shader like syntax.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
+    - 1.2.1
+    - 1.2.4
+    - 1.2.5
+    - 1.2.6
+    - 1.3.1
+    compatible:
+    - 1.2.6
+    - 1.3.1
+    verified: 1.2.6
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637841876140000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+    revision: f110c8c230d253654afed153569030a587cc7557
+    path: 
+  unityLifecycle:
+    version: 1.2.6
+    nextVersion: 
+- packageId: com.unity.burst@1.7.4
+  testable: 0
+  isDirectDependency: 0
+  version: 1.7.4
+  source: 1
+  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.burst@1.7.4
+  assetPath: Packages/com.unity.burst
+  name: com.unity.burst
+  displayName: Burst
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Burst is a compiler that translates from IL/.NET bytecode to highly
+    optimized native code using LLVM.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.2.4-preview.5
+    - 0.2.4-preview.7
+    - 0.2.4-preview.11
+    - 0.2.4-preview.12
+    - 0.2.4-preview.13
+    - 0.2.4-preview.14
+    - 0.2.4-preview.15
+    - 0.2.4-preview.16
+    - 0.2.4-preview.17
+    - 0.2.4-preview.18
+    - 0.2.4-preview.19
+    - 0.2.4-preview.20
+    - 0.2.4-preview.21
+    - 0.2.4-preview.22
+    - 0.2.4-preview.23
+    - 0.2.4-preview.24
+    - 0.2.4-preview.25
+    - 0.2.4-preview.30
+    - 0.2.4-preview.31
+    - 0.2.4-preview.33
+    - 0.2.4-preview.34
+    - 0.2.4-preview.37
+    - 0.2.4-preview.41
+    - 0.2.4-preview.45
+    - 0.2.4-preview.48
+    - 0.2.4-preview.50
+    - 1.1.0-preview.2
+    - 1.1.0-preview.3
+    - 1.1.0-preview.4
+    - 1.1.1
+    - 1.1.2
+    - 1.1.3-preview.3
+    - 1.2.0-preview.1
+    - 1.2.0-preview.5
+    - 1.2.0-preview.6
+    - 1.2.0-preview.8
+    - 1.2.0-preview.9
+    - 1.2.0-preview.10
+    - 1.2.0-preview.11
+    - 1.2.0-preview.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.3.0-preview.1
+    - 1.3.0-preview.2
+    - 1.3.0-preview.3
+    - 1.3.0-preview.4
+    - 1.3.0-preview.5
+    - 1.3.0-preview.6
+    - 1.3.0-preview.7
+    - 1.3.0-preview.8
+    - 1.3.0-preview.9
+    - 1.3.0-preview.10
+    - 1.3.0-preview.11
+    - 1.3.0-preview.12
+    - 1.3.0-preview.13
+    - 1.3.0
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    - 1.3.4
+    - 1.3.5
+    - 1.3.6
+    - 1.3.7
+    - 1.3.8
+    - 1.3.9
+    - 1.4.0-pre.1
+    - 1.4.0-preview.1
+    - 1.4.0-preview.2
+    - 1.4.0-preview.3
+    - 1.4.0-preview.4
+    - 1.4.0-preview.5
+    - 1.4.1-pre.1
+    - 1.4.1-pre.2
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4-preview.1
+    - 1.4.4-preview.2
+    - 1.4.4
+    - 1.4.5
+    - 1.4.6
+    - 1.4.7
+    - 1.4.8
+    - 1.4.9
+    - 1.4.11
+    - 1.5.0-pre.3
+    - 1.5.0-pre.4
+    - 1.5.0-pre.5
+    - 1.5.0
+    - 1.5.1
+    - 1.5.2
+    - 1.5.3
+    - 1.5.4
+    - 1.5.5
+    - 1.5.6-preview.1
+    - 1.5.6
+    - 1.6.0-pre.2
+    - 1.6.0-pre.3
+    - 1.6.0-pre.4
+    - 1.6.0
+    - 1.6.1
+    - 1.6.2
+    - 1.6.3
+    - 1.6.4
+    - 1.6.5
+    - 1.6.6
+    - 1.7.0-pre.1
+    - 1.7.0
+    - 1.7.1
+    - 1.7.2
+    - 1.7.3
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
+    - 1.8.7
+    - 1.8.8
+    compatible:
+    - 1.7.4
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.8.3
+    - 1.8.4
+    - 1.8.7
+    - 1.8.8
+    verified: 1.7.4
+  dependencies:
+  - name: com.unity.mathematics
+    version: 1.2.1
+  resolvedDependencies:
+  - name: com.unity.mathematics
+    version: 1.2.6
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637968489940000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/burst.git
+    revision: e1ba64a3c4edd8d98c9d0f4578f114b61199122c
+    path: 
+  unityLifecycle:
+    version: 1.7.4
     nextVersion: 
 - packageId: com.unity.render-pipelines.core@13.1.8
   testable: 0
@@ -3641,250 +4061,6 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 4.9.2
     nextVersion: 
-- packageId: com.unity.mathematics@1.2.6
-  testable: 0
-  isDirectDependency: 0
-  version: 1.2.6
-  source: 1
-  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.mathematics@1.2.6
-  assetPath: Packages/com.unity.mathematics
-  name: com.unity.mathematics
-  displayName: Mathematics
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: Unity's C# SIMD math library providing vector types and math functions
-    with a shader like syntax.
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 0.0.12-preview.2
-    - 0.0.12-preview.5
-    - 0.0.12-preview.8
-    - 0.0.12-preview.10
-    - 0.0.12-preview.11
-    - 0.0.12-preview.13
-    - 0.0.12-preview.17
-    - 0.0.12-preview.19
-    - 0.0.12-preview.20
-    - 1.0.0-preview.1
-    - 1.0.1
-    - 1.1.0-preview.1
-    - 1.1.0
-    - 1.2.1
-    - 1.2.4
-    - 1.2.5
-    - 1.2.6
-    compatible:
-    - 1.2.6
-    verified: 1.2.6
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - unity
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637841876140000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
-    revision: f110c8c230d253654afed153569030a587cc7557
-    path: 
-  unityLifecycle:
-    version: 1.2.6
-    nextVersion: 
-- packageId: com.unity.burst@1.7.4
-  testable: 0
-  isDirectDependency: 0
-  version: 1.7.4
-  source: 1
-  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.burst@1.7.4
-  assetPath: Packages/com.unity.burst
-  name: com.unity.burst
-  displayName: Burst
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: asset
-  description: Burst is a compiler that translates from IL/.NET bytecode to highly
-    optimized native code using LLVM.
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 0.2.4-preview.5
-    - 0.2.4-preview.7
-    - 0.2.4-preview.11
-    - 0.2.4-preview.12
-    - 0.2.4-preview.13
-    - 0.2.4-preview.14
-    - 0.2.4-preview.15
-    - 0.2.4-preview.16
-    - 0.2.4-preview.17
-    - 0.2.4-preview.18
-    - 0.2.4-preview.19
-    - 0.2.4-preview.20
-    - 0.2.4-preview.21
-    - 0.2.4-preview.22
-    - 0.2.4-preview.23
-    - 0.2.4-preview.24
-    - 0.2.4-preview.25
-    - 0.2.4-preview.30
-    - 0.2.4-preview.31
-    - 0.2.4-preview.33
-    - 0.2.4-preview.34
-    - 0.2.4-preview.37
-    - 0.2.4-preview.41
-    - 0.2.4-preview.45
-    - 0.2.4-preview.48
-    - 0.2.4-preview.50
-    - 1.1.0-preview.2
-    - 1.1.0-preview.3
-    - 1.1.0-preview.4
-    - 1.1.1
-    - 1.1.2
-    - 1.1.3-preview.3
-    - 1.2.0-preview.1
-    - 1.2.0-preview.5
-    - 1.2.0-preview.6
-    - 1.2.0-preview.8
-    - 1.2.0-preview.9
-    - 1.2.0-preview.10
-    - 1.2.0-preview.11
-    - 1.2.0-preview.12
-    - 1.2.0
-    - 1.2.1
-    - 1.2.2
-    - 1.2.3
-    - 1.3.0-preview.1
-    - 1.3.0-preview.2
-    - 1.3.0-preview.3
-    - 1.3.0-preview.4
-    - 1.3.0-preview.5
-    - 1.3.0-preview.6
-    - 1.3.0-preview.7
-    - 1.3.0-preview.8
-    - 1.3.0-preview.9
-    - 1.3.0-preview.10
-    - 1.3.0-preview.11
-    - 1.3.0-preview.12
-    - 1.3.0-preview.13
-    - 1.3.0
-    - 1.3.1
-    - 1.3.2
-    - 1.3.3
-    - 1.3.4
-    - 1.3.5
-    - 1.3.6
-    - 1.3.7
-    - 1.3.8
-    - 1.3.9
-    - 1.4.0-pre.1
-    - 1.4.0-preview.1
-    - 1.4.0-preview.2
-    - 1.4.0-preview.3
-    - 1.4.0-preview.4
-    - 1.4.0-preview.5
-    - 1.4.1-pre.1
-    - 1.4.1-pre.2
-    - 1.4.1
-    - 1.4.2
-    - 1.4.3
-    - 1.4.4-preview.1
-    - 1.4.4-preview.2
-    - 1.4.4
-    - 1.4.5
-    - 1.4.6
-    - 1.4.7
-    - 1.4.8
-    - 1.4.9
-    - 1.4.11
-    - 1.5.0-pre.3
-    - 1.5.0-pre.4
-    - 1.5.0-pre.5
-    - 1.5.0
-    - 1.5.1
-    - 1.5.2
-    - 1.5.3
-    - 1.5.4
-    - 1.5.5
-    - 1.5.6-preview.1
-    - 1.5.6
-    - 1.6.0-pre.2
-    - 1.6.0-pre.3
-    - 1.6.0-pre.4
-    - 1.6.0
-    - 1.6.1
-    - 1.6.2
-    - 1.6.3
-    - 1.6.4
-    - 1.6.5
-    - 1.6.6
-    - 1.7.0-pre.1
-    - 1.7.0
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
-    - 1.7.4
-    - 1.8.0-pre.1
-    - 1.8.0-pre.2
-    - 1.8.0
-    - 1.8.1
-    - 1.8.2
-    - 1.8.3
-    - 1.8.4
-    compatible:
-    - 1.7.4
-    - 1.8.0-pre.1
-    - 1.8.0-pre.2
-    - 1.8.0
-    - 1.8.1
-    - 1.8.2
-    - 1.8.3
-    - 1.8.4
-    verified: 1.7.4
-  dependencies:
-  - name: com.unity.mathematics
-    version: 1.2.1
-  resolvedDependencies:
-  - name: com.unity.mathematics
-    version: 1.2.6
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hideInEditor: 0
-  isAssetStorePackage: 0
-  datePublishedTicks: 637968489940000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/burst.git
-    revision: e1ba64a3c4edd8d98c9d0f4578f114b61199122c
-    path: 
-  unityLifecycle:
-    version: 1.7.4
-    nextVersion: 
 - packageId: com.unity.probuilder@5.0.4
   testable: 0
   isDirectDependency: 0
@@ -3956,10 +4132,14 @@ m_ResolvedPackages:
     - 5.0.4
     - 5.0.6
     - 5.0.7
+    - 5.1.0
+    - 5.1.1
     compatible:
     - 5.0.4
     - 5.0.6
     - 5.0.7
+    - 5.1.0
+    - 5.1.1
     verified: 5.0.7
   dependencies:
   - name: com.unity.settings-manager
@@ -4050,11 +4230,13 @@ m_ResolvedPackages:
     - 1.1.2
     - 1.1.3
     - 1.1.4
+    - 1.1.5
     compatible:
     - 1.1.2
     - 1.1.3
     - 1.1.4
-    verified: 1.1.4
+    - 1.1.5
+    verified: 1.1.5
   dependencies:
   - name: com.unity.settings-manager
     version: 1.0.3
@@ -4368,6 +4550,7 @@ m_ResolvedPackages:
     - 1.2.1
     - 1.2.2
     - 1.2.3
+    - 1.2.4
     compatible:
     - 1.1.1
     - 1.2.0-exp.1
@@ -4381,6 +4564,7 @@ m_ResolvedPackages:
     - 1.2.1
     - 1.2.2
     - 1.2.3
+    - 1.2.4
     verified: 1.1.1
   dependencies:
   - name: com.unity.test-framework
@@ -4469,6 +4653,8 @@ m_ResolvedPackages:
     - 1.8.1
     - 1.8.2
     - 1.9.0
+    - 1.10.1
+    - 1.11.0
     compatible:
     - 1.4.2
     - 1.4.3
@@ -4479,6 +4665,8 @@ m_ResolvedPackages:
     - 1.8.1
     - 1.8.2
     - 1.9.0
+    - 1.10.1
+    - 1.11.0
     verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
@@ -4529,17 +4717,46 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: "This package provides Unity C# bindings to the Autodesk\xAE FBX\xAE
     SDK."
   status: 4
   errors: []
   versions:
     all:
+    - 2.0.0-preview
+    - 2.0.0-preview.4
+    - 2.0.0-preview.5
+    - 2.0.0-preview.6
+    - 2.0.0-preview.7
+    - 2.0.1-preview.1
+    - 3.0.0-preview.1
+    - 3.0.1-preview.1
+    - 3.1.0-preview.1
+    - 3.1.0-preview.2
+    - 4.0.0-pre.1
+    - 4.0.0-pre.2
+    - 4.0.1
+    - 4.1.0-pre.1
+    - 4.1.0
     - 4.1.1
+    - 4.1.2
+    - 4.2.0-pre.1
+    - 4.2.0
+    - 4.2.1
+    - 5.0.0-pre.1
+    - 5.0.0
+    - 5.1.0-pre.1
     compatible:
     - 4.1.1
-    verified: 4.1.1
+    - 4.1.2
+    - 4.2.0-pre.1
+    - 4.2.0
+    - 4.2.1
+    - 5.0.0-pre.1
+    - 5.0.0
+    - 5.1.0-pre.1
+    verified: 4.1.2
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -4555,73 +4772,18 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637668642230000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/com.autodesk.fbx.git
+    url: git+https://github.com/Unity-Technologies/com.autodesk.fbx.git
     revision: b6cd1211ff8824752e3dcbf05f426bac266606a0
     path: 
   unityLifecycle:
     version: 4.1.1
-    nextVersion: 
-- packageId: com.unity.settings-manager@2.0.1
-  testable: 0
-  isDirectDependency: 0
-  version: 2.0.1
-  source: 1
-  resolvedPath: C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.settings-manager@2.0.1
-  assetPath: Packages/com.unity.settings-manager
-  name: com.unity.settings-manager
-  displayName: Settings Manager
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: A framework for making any serializable field a setting, complete
-    with a pre-built settings interface.
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 0.1.0-preview.4
-    - 0.1.0-preview.8
-    - 1.0.0
-    - 1.0.1
-    - 1.0.2
-    - 1.0.3
-    - 2.0.0
-    - 2.0.1
-    compatible:
-    - 2.0.1
-    verified: 2.0.1
-  dependencies: []
-  resolvedDependencies: []
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637744099390000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
-    revision: 9b7c12d04ef880168151c127fd6b37b5931197dc
-    path: 
-  unityLifecycle:
-    version: 2.0.1
     nextVersion: 
 - packageId: com.unity.nuget.newtonsoft-json@3.0.2
   testable: 0

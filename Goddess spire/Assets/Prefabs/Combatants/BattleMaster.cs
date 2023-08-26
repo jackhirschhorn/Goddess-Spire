@@ -84,8 +84,8 @@ public class BattleMaster : MonoBehaviour
 				explainer.gameObject.SetActive(false);
 			}
 		} else if(!abilityactive){
-			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon)menutarget -= 1;
-			if(Input.GetKeyDown(KeyCode.D) && !csubmenuon)menutarget += 1;
+			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon && !abilityselected)menutarget -= 1;
+			if(Input.GetKeyDown(KeyCode.D) && !csubmenuon && !abilityselected)menutarget += 1;
 			if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
 			if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
 			if(Input.GetKeyDown(KeyCode.Q)){
