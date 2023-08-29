@@ -76,6 +76,7 @@ public class koboldspearthrowmono : animredirect
 			clone3.position = hand.GetChild(0).position;
 			clone3.GetComponent<projectile>().atk = comb.weapondamage();
 			clone3.GetComponent<projectile>().pierce = comb.pierce();
+			clone3.GetComponent<projectile>().atktype = 2;
 			Transform clone2 = Instantiate(hand.GetChild(0));
 			clone3.GetChild(0).rotation = hand.GetChild(0).rotation;
 			clone2.parent = clone3.GetChild(0);

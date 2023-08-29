@@ -62,15 +62,12 @@ public class Combatant : MonoBehaviour
 			Debug.Log("took no damage!");
 			//no damage swoosh
 		} else {
-			anim.SetBool("hurt",true);
-			switch(i3){
-				case 0:
-					Transform clone = Instantiate(BattleMaster.pl[6]);
-					clone.position = transform.position;
-					clone.GetComponent<swooshcontroller>().dam = totdam;
-					clone.GetComponent<swooshcontroller>().dothething();
-				break;
-			}
+			anim.SetBool("hurt",true);		
+			Transform clone = Instantiate(BattleMaster.pl[6+i3]);
+			clone.position = transform.position;
+			clone.GetComponent<swooshcontroller>().dam = totdam;
+			clone.GetComponent<swooshcontroller>().damtype = i3;
+			clone.GetComponent<swooshcontroller>().dothething();
 		}
 		
 	}

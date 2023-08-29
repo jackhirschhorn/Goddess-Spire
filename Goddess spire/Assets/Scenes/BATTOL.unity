@@ -14316,6 +14316,8 @@ MonoBehaviour:
   - {fileID: 2973095764949914295, guid: 503e28b3a4b1a394c8885cef1fa8b583, type: 3}
   - {fileID: 8903212627741056714, guid: 84e27e3cd3a83c34dbea9590915dd8cb, type: 3}
   - {fileID: 5870687719783976580, guid: 5f121a7818d19314894e5289f4fb367e, type: 3}
+  - {fileID: 1719848605886278461, guid: 04215be8454e8f14b90370eabc45f322, type: 3}
+  - {fileID: 6844173250618002359, guid: 3aad7652415cf79458b91a98ffda9b9f, type: 3}
   initiative: []
   roundturn: 0
   init_track_holder: {fileID: 1608182084}
@@ -18815,7 +18817,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29298
+  m_Name: pb_Mesh29300
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -22177,7 +22179,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29022
+  m_Name: pb_Mesh29024
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -23811,7 +23813,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30346
+  m_Name: pb_Mesh30348
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -25095,7 +25097,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29566
+  m_Name: pb_Mesh29568
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -29503,7 +29505,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30492
+  m_Name: pb_Mesh30494
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -37563,7 +37565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.atk
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.chp

@@ -32,7 +32,7 @@ public class projectile : MonoBehaviour
 			}
 			if(Physics.Raycast(transform.position, bz.GetSegment(Mathf.Clamp01(timer+0.05f)), out hit, Vector3.Distance(transform.position,bz.GetSegment(Mathf.Clamp01(timer+0.05f))))){
 				if(hit.transform.parent.GetComponent<Combatant>()){
-					hit.transform.parent.GetComponent<Combatant>().take_damage(atk,pierce,0);
+					hit.transform.parent.GetComponent<Combatant>().take_damage(atk,pierce,atktype);
 					Destroy(gameObject);
 				}
 			}

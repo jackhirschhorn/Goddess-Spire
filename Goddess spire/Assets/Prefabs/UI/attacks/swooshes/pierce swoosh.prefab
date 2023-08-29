@@ -210,7 +210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.14, y: 0}
   m_SizeDelta: {x: 1.05, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2976304571584229620
@@ -5370,6 +5370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 97320811269523784}
   dam: 0
+  damtype: 0
   ten: {r: 1, g: 0, b: 0, a: 0.47843137}
   five: {r: 1, g: 0.4872635, b: 0, a: 0.47843137}
   one: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.47843137}
