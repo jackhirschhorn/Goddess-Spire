@@ -53,10 +53,25 @@ public class Combatant : MonoBehaviour
 		}
 	}
 	
-	public void take_damage(int i, int i2){
+	public void take_damage(int i, int i2, int i3){
 		//damage reduction logic goes here
-		statblock.chp -= i;
-		if(i == 0)Debug.Log("took no damage!");
+		//i = damage, i2 = pierce, i3 = damagetype;
+		int totdam = i;
+		statblock.chp -= totdam;
+		if(i == 0){
+			Debug.Log("took no damage!");
+			//no damage swoosh
+		} else {
+			anim.SetBool("hurt",true);
+			switch(i3){
+				case 0:
+					Transform clone = Instantiate(BattleMaster.pl[6]);
+					clone.position = transform.position;
+					clone.GetComponent<swooshcontroller>().dam = totdam;
+					clone.GetComponent<swooshcontroller>().dothething();
+				break;
+			}
+		}
 		
 	}
 	

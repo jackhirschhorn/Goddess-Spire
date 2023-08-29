@@ -49,7 +49,7 @@ public class dragattack : MonoBehaviour
 			ray = new Ray(Camera.main.transform.position, mover.position-Camera.main.transform.position);
 			if(Physics.Raycast(ray, out hit, 100, lm2)){
 				//Debug.Log(hit.transform.parent.GetComponent<Combatant>());
-				hit.transform.parent.GetComponent<Combatant>().take_damage(dam,damtype); //attack handler? uh
+				hit.transform.parent.GetComponent<Combatant>().take_damage(dam,0,damtype); //attack handler? uh
 				//spawn the thing
 				Transform Clone = Instantiate(BattleMaster.pl[1]);
 				Clone.parent = transform.parent;

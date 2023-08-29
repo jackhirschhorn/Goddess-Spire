@@ -45,7 +45,7 @@ public class koboldspearatkmono : attackmono
 				stage = 4;
 				anim.SetInteger("stage",3);
 				start = anim.transform.position;
-				target.take_damage(damage,pierce);
+				target.take_damage(damage,pierce,0);
 				timer = 0;
 			}
 		} else if(stage == 4){

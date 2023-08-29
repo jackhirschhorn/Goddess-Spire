@@ -15,7 +15,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 -logFile
 Logs/AssetImportWorker5.log
 -srvPort
-63080
+62585
 Successfully changed project path to: C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 130.49 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 135.49 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.19f1 (2fd7b40534d1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Resources/UnitySubsystems
@@ -63,95 +63,95 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56844
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008331 seconds.
+Registered in 0.008393 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.39 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 120.81 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.746 seconds
+- Completed reload, in  0.720 seconds
 Domain Reload Profiling:
-	ReloadAssembly (747ms)
-		BeginReloadAssembly (84ms)
+	ReloadAssembly (721ms)
+		BeginReloadAssembly (82ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (540ms)
-			LoadAssemblies (82ms)
+		EndReloadAssembly (520ms)
+			LoadAssemblies (79ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (115ms)
 				TypeCache.Initialize (114ms)
 					TypeCache.ScanAssembly (112ms)
 				ResolveRequiredComponents (1ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (337ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (317ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (126ms)
+				RefreshPlugins (121ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (145ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
+				ProcessInitializeOnLoadAttributes (135ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008139 seconds.
+Registered in 0.009789 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 131.77 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 124.88 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.642 seconds
+- Completed reload, in  1.514 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1643ms)
-		BeginReloadAssembly (118ms)
+	ReloadAssembly (1515ms)
+		BeginReloadAssembly (117ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1398ms)
-			LoadAssemblies (101ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1277ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (349ms)
-				TypeCache.Initialize (336ms)
-					TypeCache.ScanAssembly (330ms)
-				ResolveRequiredComponents (13ms)
+			SetupTypeCache (323ms)
+				TypeCache.Initialize (311ms)
+					TypeCache.ScanAssembly (306ms)
+				ResolveRequiredComponents (12ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (87ms)
-			SetupLoadedEditorAssemblies (794ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (727ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (132ms)
-				BeforeProcessingInitializeOnLoad (147ms)
-				ProcessInitializeOnLoadAttributes (397ms)
-				ProcessInitializeOnLoadMethodAttributes (95ms)
+				RefreshPlugins (125ms)
+				BeforeProcessingInitializeOnLoad (133ms)
+				ProcessInitializeOnLoadAttributes (366ms)
+				ProcessInitializeOnLoadMethodAttributes (82ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.76 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.99 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6285 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 58 unused Assets / (1.8 MB). Loaded Objects now: 6764.
 Memory consumption went from 1.00 GB to 1.00 GB.
-Total: 5.459800 ms (FindLiveObjects: 1.028200 ms CreateObjectMapping: 0.490100 ms MarkObjects: 3.429700 ms  DeleteObjects: 0.510100 ms)
+Total: 5.689900 ms (FindLiveObjects: 0.947100 ms CreateObjectMapping: 0.281700 ms MarkObjects: 3.968800 ms  DeleteObjects: 0.490600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -165,16 +165,10 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1100830.324379 seconds.
-  path: Assets/Assets/3D/coolhair.blend
-  artifactKey: Guid(17f2d3bea03665642987c6954ad17380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/3D/coolhair.blend using Guid(17f2d3bea03665642987c6954ad17380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4aa93e3239dbda68147b8eded5d741c') in 0.339795 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Assets/3D/Mason's Weapons/Hammers/Warhammer Spike final.blend
-  artifactKey: Guid(58f42dd2e6867f4438adc1fb3326beda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/3D/Mason's Weapons/Hammers/Warhammer Spike final.blend using Guid(58f42dd2e6867f4438adc1fb3326beda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5cfb4d1ef6bdae9585f0e2e28f6e27b') in 0.075439 seconds 
+  Time since last request: 1194432.135116 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph
+  artifactKey: Guid(9920c1f1781549a46ba081a2a15a16ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph using Guid(9920c1f1781549a46ba081a2a15a16ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e574137428a9293aef533eab455c24fa') in 2.845368 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
