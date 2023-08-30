@@ -13,6 +13,7 @@ public class spearattackindicator : MonoBehaviour
 	public Combatant comb;
 	public int pull = 1;
 	public float totalpull = 0;
+	public AudioSource adso;
 	
 	
 	void Start(){
@@ -24,6 +25,9 @@ public class spearattackindicator : MonoBehaviour
     void Update()
     {
         if(stage == 1){
+			if(!adso.isPlaying)adso.Play();
+			adso.pitch = 1.6f - (Mathf.Abs(cursor.localPosition.x)*0.01f);
+			Debug.Log(adso.pitch);
 			timer += Time.deltaTime;
 			if(timer%0.2f < 0.03f) pull = (Random.Range(0,2) == 0?-1:1); 
 			totalpull = (Input.GetKey(KeyCode.A)?-2f:(Input.GetKey(KeyCode.D))?2f:0);

@@ -15,7 +15,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49758
+63629
 Successfully changed project path to: C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/jack/Documents/GitHub/Goddess-Spire/Goddess spire
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 122.92 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 137.76 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.1.19f1 (2fd7b40534d1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Resources/UnitySubsystems
@@ -63,82 +63,82 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006683 seconds.
+Registered in 0.006967 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 117.55 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 119.64 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.668 seconds
+- Completed reload, in  0.686 seconds
 Domain Reload Profiling:
-	ReloadAssembly (669ms)
-		BeginReloadAssembly (68ms)
+	ReloadAssembly (687ms)
+		BeginReloadAssembly (72ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (494ms)
-			LoadAssemblies (65ms)
+		EndReloadAssembly (500ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (101ms)
-				TypeCache.Initialize (100ms)
-					TypeCache.ScanAssembly (99ms)
-				ResolveRequiredComponents (0ms)
+			SetupTypeCache (104ms)
+				TypeCache.Initialize (104ms)
+					TypeCache.ScanAssembly (102ms)
+				ResolveRequiredComponents (1ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (313ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (311ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (118ms)
+				RefreshPlugins (120ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (134ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
+				ProcessInitializeOnLoadAttributes (130ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007670 seconds.
+Registered in 0.007080 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\jack\Documents\GitHub\Goddess-Spire\Goddess spire\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 118.36 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 127.19 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.469 seconds
+- Completed reload, in  1.495 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1470ms)
-		BeginReloadAssembly (106ms)
+	ReloadAssembly (1496ms)
+		BeginReloadAssembly (92ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1250ms)
-			LoadAssemblies (89ms)
+		EndReloadAssembly (1289ms)
+			LoadAssemblies (73ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (312ms)
-				TypeCache.Initialize (301ms)
-					TypeCache.ScanAssembly (296ms)
+			SetupTypeCache (319ms)
+				TypeCache.Initialize (307ms)
+					TypeCache.ScanAssembly (302ms)
 				ResolveRequiredComponents (12ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (76ms)
-			SetupLoadedEditorAssemblies (714ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (752ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (118ms)
-				BeforeProcessingInitializeOnLoad (133ms)
-				ProcessInitializeOnLoadAttributes (362ms)
-				ProcessInitializeOnLoadMethodAttributes (80ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (127ms)
+				BeforeProcessingInitializeOnLoad (135ms)
+				ProcessInitializeOnLoadAttributes (387ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
@@ -146,12 +146,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.03 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.07 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6287 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 58 unused Assets / (1.9 MB). Loaded Objects now: 6766.
 Memory consumption went from 1.00 GB to 1.00 GB.
-Total: 4.316700 ms (FindLiveObjects: 0.860300 ms CreateObjectMapping: 0.231100 ms MarkObjects: 2.826000 ms  DeleteObjects: 0.398100 ms)
+Total: 4.585400 ms (FindLiveObjects: 0.880100 ms CreateObjectMapping: 0.250300 ms MarkObjects: 3.036200 ms  DeleteObjects: 0.417400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -165,46 +165,70 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1271826.604065 seconds.
-  path: Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab
-  artifactKey: Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab using Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a8d827eef09f4eb4514a41c078f08cf') in 0.358106 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.436870 seconds.
+  Time since last request: 1347018.748112 seconds.
   path: Assets/Prefabs/UI/attacks/swooshes/bash swoosh.prefab
   artifactKey: Guid(3aad7652415cf79458b91a98ffda9b9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/UI/attacks/swooshes/bash swoosh.prefab using Guid(3aad7652415cf79458b91a98ffda9b9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61f4de1a1ba2c85c90797a997a079896') in 0.055316 seconds 
+Start importing Assets/Prefabs/UI/attacks/swooshes/bash swoosh.prefab using Guid(3aad7652415cf79458b91a98ffda9b9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6210f412c60774b699db2592bfb24734') in 0.419394 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.778827 seconds.
-  path: Assets/Assets/2D/Sprites/tactics icon.png
-  artifactKey: Guid(00efddd0dc74eee49ad0faccf9374c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/Sprites/tactics icon.png using Guid(00efddd0dc74eee49ad0faccf9374c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bf1271fd2b6a210a34d100489aa4166') in 0.064199 seconds 
+  Time since last request: 0.000029 seconds.
+  path: Assets/Prefabs/UI/attacks/swooshes/slash swoosh.prefab
+  artifactKey: Guid(04215be8454e8f14b90370eabc45f322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/attacks/swooshes/slash swoosh.prefab using Guid(04215be8454e8f14b90370eabc45f322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c6732d315cd99ec1e9af210a9f46fb0') in 0.100849 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Assets/2D/Sprites/tech tree.png
-  artifactKey: Guid(2b8e0b22f16448e49a61769a375ce064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/Sprites/tech tree.png using Guid(2b8e0b22f16448e49a61769a375ce064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ba92b768bc908c0b45aee6a1fd5c25') in 0.022041 seconds 
+  Time since last request: 11.101326 seconds.
+  path: Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab
+  artifactKey: Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab using Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7f26a28326666bfc66a6f9fb8b76790') in 0.047410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.145013 seconds.
+  path: Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab
+  artifactKey: Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/attacks/swooshes/pierce swoosh.prefab using Guid(5f121a7818d19314894e5289f4fb367e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ed64a73c18918dce40913623e0f55d6') in 0.078843 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.744889 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(33aa4dc93e1227847956d0d0eed07143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(33aa4dc93e1227847956d0d0eed07143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78d816d4ec09e88bd6f6e2b97053baf') in 0.019189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TerrainData_0a72016f-24c1-4fae-80b4-d369a8732104.asset
+  artifactKey: Guid(f69722b655965e4448cbee186e471dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TerrainData_0a72016f-24c1-4fae-80b4-d369a8732104.asset using Guid(f69722b655965e4448cbee186e471dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aee9e9e5460211f7e5a118e614ed1e8d') in 0.094248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NewLayer 2.terrainlayer
+  artifactKey: Guid(c690a4137c219804486e6585fd8e124b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewLayer 2.terrainlayer using Guid(c690a4137c219804486e6585fd8e124b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded1dd73c65ee909b6238c816c84d5fb') in 0.079853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/UniversalRenderPipelineGlobalSettings.asset
+  artifactKey: Guid(7c9565b6f1ef9cb418de21ad3c7da3a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(7c9565b6f1ef9cb418de21ad3c7da3a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3117f7af66e639b4643f933363d4b5c9') in 0.008500 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/Combatants/test/testportrait.png
-  artifactKey: Guid(2d2aee6a7b0a9504591c46f1de9655d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Combatants/test/testportrait.png using Guid(2d2aee6a7b0a9504591c46f1de9655d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96f13c5e5f78c3c3b1f3cef528855566') in 0.028185 seconds 
+  path: Assets/NewLayer.terrainlayer
+  artifactKey: Guid(a8e841e079a07bd42bfda5a9d69e6e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewLayer.terrainlayer using Guid(a8e841e079a07bd42bfda5a9d69e6e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10b3d480f1068189c95f2aed873d9b88') in 0.012560 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Assets/2D/Sprites/weapons icon.png
-  artifactKey: Guid(8478093a7fc255f47bec845bc0f16897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/Sprites/weapons icon.png using Guid(8478093a7fc255f47bec845bc0f16897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f0f6b7610efc21c2c3df7bff56b8909') in 0.027346 seconds 
+  Time since last request: 2.399241 seconds.
+  path: Assets/Assets/my URP.asset
+  artifactKey: Guid(aa1f2150b59def94ba7f1e04c5a01dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/my URP.asset using Guid(aa1f2150b59def94ba7f1e04c5a01dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37df961f18a08157d53fa68960950fa1') in 0.010481 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Assets/2D/Sprites/track.png
-  artifactKey: Guid(0dc89671e5f35d34eac40f024f8d25e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/2D/Sprites/track.png using Guid(0dc89671e5f35d34eac40f024f8d25e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc9a3406a691248c968964ed93359ff') in 0.019178 seconds 
+  Time since last request: 1.555651 seconds.
+  path: Assets/Assets/main menu lighting.lighting
+  artifactKey: Guid(5977ad842ae4c8a4486d0b977b2f2088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/main menu lighting.lighting using Guid(5977ad842ae4c8a4486d0b977b2f2088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '413ad52fc9b5b71a269cc50840f2a1e6') in 0.010266 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

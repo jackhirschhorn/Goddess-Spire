@@ -7,7 +7,7 @@ public class koboldspearatkmono : attackmono
     public int stage = 0;
 	public Animator anim;
 	public Combatant target;
-	public float speed = 3;
+	public float speed = 9;
 	public Vector3 start = new Vector3(0,0,0);
 	public float timer = 0;
 	
@@ -34,16 +34,19 @@ public class koboldspearatkmono : attackmono
 			
 		} else if(stage == 2){
 			anim.SetInteger("stage",2);
+			BattleMaster.makesoundtokill(1);
 			//move from start to target
 			target = BattleMaster.BM.meleetarg((anim.transform.parent.parent.GetComponent<Combatant>().isPC?false:true));
 			stage = 3;
 		} else if(stage == 3){
 			if(Vector3.Distance(anim.transform.position, target.transform.position) > 1f){
-				timer += speed * Time.deltaTime;
+				timer += (speed * Time.deltaTime)/Vector3.Distance(anim.transform.parent.position, target.transform.position);
 				anim.transform.position = Vector3.Lerp(anim.transform.parent.position, target.transform.position, timer); 
 			} else {
+				BattleMaster.killsound();
 				stage = 4;
 				anim.SetInteger("stage",3);
+				//BattleMaster.makesound(0);
 				start = anim.transform.position;
 				target.take_damage(damage,pierce,0);
 				timer = 0;
@@ -56,6 +59,7 @@ public class koboldspearatkmono : attackmono
 				anim.SetInteger("stage",-1);
 				anim.SetInteger("atkanim",0);
 				BattleMaster.attackcallback(0);
+				BattleMaster.makesound(2);
 				Destroy(this);
 			}
 		} else if (stage == -1){

@@ -49,10 +49,27 @@ public class BattleMaster : MonoBehaviour
 	public bool explained;
 	public Quaternion[] cmrotpos;
 	
+	public static List<Transform> sndl = new List<Transform>(); //sound prefab list
+	public List<Transform> sndlass = new List<Transform>();
+	
+	public static void makesound(int i){
+		Instantiate(sndl[i]);
+	}
+	
+	public Transform snd;
+	
+	public static void makesoundtokill(int i){
+		BM.snd = Instantiate(sndl[i]);
+	}
+	
+	public static void killsound(){
+		if(BM.snd)Destroy(BM.snd.gameObject);
+	}
+	
 	public Combatant meleetarg(bool b){
 		//true = player, false = enemy;
 		RaycastHit hit;
-		if(Physics.Raycast(Vector3.zero, (b? new Vector3(-1,0,0):new Vector3(1,0,0)),out hit,10)){
+		if(Physics.Raycast(Vector3.zero, (b? new Vector3(-1,0,0):new Vector3(1,0,0)),out hit,1000)){
 			//Debug.Log(hit.transform.parent.GetComponent<Combatant>());
 			return hit.transform.parent.GetComponent<Combatant>();
 		}
@@ -65,6 +82,7 @@ public class BattleMaster : MonoBehaviour
 		cmoi = cmoiass;
 		sl = slass;
 		pl = plass;
+		sndl = sndlass;
 		iconanims[1].SetBool("skip",true);
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);
