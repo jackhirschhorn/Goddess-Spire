@@ -46,7 +46,6 @@ public class koboldspearatkmono : attackmono
 				BattleMaster.killsound();
 				stage = 4;
 				anim.SetInteger("stage",3);
-				//BattleMaster.makesound(0);
 				start = anim.transform.position;
 				target.take_damage(damage,pierce,0);
 				timer = 0;
