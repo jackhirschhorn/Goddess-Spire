@@ -56,7 +56,7 @@ public class Combatant : MonoBehaviour
 	public void take_damage(int i, int i2, int i3){
 		//damage reduction logic goes here
 		//i = damage, i2 = pierce, i3 = damagetype;
-		//damagetype, 0 = pierce, 1 = slash, 2 = bash, 3 = fire
+		//damagetype, 0 = pierce, 1 = slash, 2 = bash, 3 = fire, 4 = ice, 5 = lightning, 6 = acid, 7 = wind, 8 = light, 9 = dark, 10 = arcane
 		int totdam = i;
 		statblock.chp -= totdam;
 		if(i == 0){
