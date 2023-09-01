@@ -28,7 +28,7 @@ public class swooshcontroller : MonoBehaviour
 	
 	public IEnumerator dothething1(){
 		while(dam > 0){
-			if(damtype != 2)part.transform.localPosition = new Vector3((damtype == 0?-1:(damtype == 3 || damtype == 4?Random.Range(-10,10)*0.1f:0)),0,(Random.Range(-10,10)*0.1f)+0.5f);
+			if(damtype != 2)part.transform.localPosition = new Vector3((damtype == 0?-1:(damtype >= 3?Random.Range(-10,10)*0.1f:0)),0,(Random.Range(-10,10)*0.1f)+0.5f);
 			if(dam >= 10){
 				sett.startColor = new ParticleSystem.MinMaxGradient(ten);
 				sett.startSize = 2*(damtype == 2?0.25f:1);
