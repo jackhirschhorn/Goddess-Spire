@@ -30,6 +30,7 @@ public class koboldspearthrowmono : animredirect
 	public float slider = 0.5f;
 	public float power = 1f;
 	public Vector3 trg;
+	public float timer = 3.1f;
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +42,7 @@ public class koboldspearthrowmono : animredirect
 			Destroy(clone.gameObject);
 			Destroy(this);
 		} else if(stage == 1){
+			slider = Mathf.Clamp01(slider - (Time.deltaTime/2f));
 			if(Input.GetKey(KeyCode.A)){
 				slider = Mathf.Clamp01(slider - Time.deltaTime);
 			} else if (Input.GetKey(KeyCode.D)){
@@ -49,12 +51,26 @@ public class koboldspearthrowmono : animredirect
 				trg = bz.GetSegment(slider);
 				stage = 2;
 			}
+			timer -= Time.deltaTime;
+			if(timer <= 0){
+				trg = bz.GetSegment(slider);
+				stage = 2;
+				timer = 3.1f;
+			}
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{hand.position,Vector3.Lerp(hand.position,bz.GetSegment(slider),0.33f)+ new Vector3(0,0.5f,0),Vector3.Lerp(hand.position,bz.GetSegment(slider),0.66f)+ new Vector3(0,0.5f,0), bz.GetSegment(slider)};
 		} else if (stage == 2){
 			power = Mathf.Clamp(power + Time.deltaTime,1,2.5f);
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{hand.position,Vector3.Lerp(hand.position,Vector3.LerpUnclamped(transform.position,trg,power),0.33f)+ new Vector3(0,0.5f,0),Vector3.Lerp(hand.position,Vector3.LerpUnclamped(transform.position,trg,power),0.66f)+ new Vector3(0,0.5f,0), Vector3.LerpUnclamped(transform.position,trg,power)};
 			if(Input.GetKeyUp(KeyCode.W)){
 				stage = 3;
+				BattleMaster.killsound();
+				BattleMaster.makesoundtokill(4);
+			}
+			timer -= Time.deltaTime;
+			if(timer <= 0){
+				stage = 3;
+				BattleMaster.killsound();
+				BattleMaster.makesoundtokill(4);
 			}
 		} else if (stage == 3){
 			if(clone)Destroy(clone.gameObject);	
@@ -76,7 +92,7 @@ public class koboldspearthrowmono : animredirect
 			clone3.position = hand.GetChild(0).position;
 			clone3.GetComponent<projectile>().atk = comb.weapondamage();
 			clone3.GetComponent<projectile>().pierce = comb.pierce();
-			clone3.GetComponent<projectile>().atktype = 10;
+			clone3.GetComponent<projectile>().atktype = 0;
 			Transform clone2 = Instantiate(hand.GetChild(0));
 			clone3.GetChild(0).rotation = hand.GetChild(0).rotation;
 			clone2.parent = clone3.GetChild(0);

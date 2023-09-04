@@ -28,11 +28,13 @@ public class projectile : MonoBehaviour
 			if(timer >= 1){
 				timer = 0;
 				move = false;
+				BattleMaster.killsound();
 				Destroy(gameObject);
 			}
 			if(Physics.Raycast(transform.position, bz.GetSegment(Mathf.Clamp01(timer+0.05f)), out hit, Vector3.Distance(transform.position,bz.GetSegment(Mathf.Clamp01(timer+0.05f))))){
 				if(hit.transform.parent.GetComponent<Combatant>()){
 					hit.transform.parent.GetComponent<Combatant>().take_damage(atk,pierce,atktype);
+					BattleMaster.killsound();
 					Destroy(gameObject);
 				}
 			}
