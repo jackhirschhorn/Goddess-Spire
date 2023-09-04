@@ -416,6 +416,7 @@
 "Assets/Scripts/combatoptionslist/attackmono.cs"
 "Assets/Scripts/combatoptionslist/CO_test.cs"
 "Assets/Scripts/combatoptionslist/Magic_Missile.cs"
+"Assets/Scripts/deathredirect.cs"
 "Assets/Scripts/endaudio.cs"
 "Assets/Scripts/facecontroller.cs"
 "Assets/Scripts/lookat.cs"

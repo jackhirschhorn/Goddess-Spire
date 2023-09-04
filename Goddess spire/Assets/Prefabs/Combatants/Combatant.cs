@@ -58,7 +58,10 @@ public class Combatant : MonoBehaviour
 		//i = damage, i2 = pierce, i3 = damagetype;
 		//damagetype, 0 = pierce, 1 = slash, 2 = bash, 3 = fire, 4 = ice, 5 = lightning, 6 = acid, 7 = wind, 8 = light, 9 = dark, 10 = arcane
 		int totdam = i;
-		statblock.chp -= totdam;
+		statblock.chp = Mathf.Max(statblock.chp-totdam,0);
+		if(statblock.chp == 0){
+			die();
+		}
 		if(i == 0){
 			Debug.Log("took no damage!");
 			//no damage swoosh
@@ -83,6 +86,11 @@ public class Combatant : MonoBehaviour
 	
 	public int pierce(){
 		return 0;
+	}
+	
+	public void die(){
+		anim.SetBool("dead",true);
+		anim.gameObject.AddComponent(typeof(deathredirect));
 	}
 	
 }
