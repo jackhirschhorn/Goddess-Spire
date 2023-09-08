@@ -84,6 +84,10 @@ public class Combatant : MonoBehaviour
 		return statblock.atk; //add weapon damage with items
 	}
 	
+	public int magicdamage(int i){
+		return statblock.mag; //per damage type?
+	}
+	
 	public int pierce(){
 		return 0;
 	}
