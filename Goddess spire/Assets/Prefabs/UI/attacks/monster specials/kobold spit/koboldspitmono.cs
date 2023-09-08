@@ -33,6 +33,7 @@ public class koboldspitmono : MonoBehaviour
 		end = BattleMaster.unitlist(!anim.transform.parent.parent.GetComponent<Combatant>().isPC,4).transform.position +new Vector3((anim.transform.parent.parent.GetComponent<Combatant>().isPC?1:-1),0,0); // FIX THIS
 		bz.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,0.5f),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,0.5f),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,0.5f)};
 		clone.GetComponent<lrbez>().bc.Points = bz.Points;
+		BattleMaster.makesound(5);
 	}
 	bool flip = false;
 	float slider = 0.5f;
@@ -54,6 +55,7 @@ public class koboldspitmono : MonoBehaviour
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
 			if(Input.GetKey(KeyCode.Space)){
 				stage = 2;
+				BattleMaster.makesoundtokill(8);
 			}
 		} else if (stage == 2){
 			slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
@@ -65,6 +67,7 @@ public class koboldspitmono : MonoBehaviour
 			clone2.localScale = new Vector3(2+(powar*2),2+(powar*2),2+(powar*2));
 		} else if (stage == 3){
 			//self damage
+			BattleMaster.killsound();
 			Destroy(clone.gameObject);
 			comb.take_damage(comb.magicdamage(0)+(int)powar,0,3+comb.phenotype);
 			anim.SetInteger("stage",0);	
@@ -80,6 +83,9 @@ public class koboldspitmono : MonoBehaviour
 			//play explosion
 		} else if (stage == 4){
 			//spit
+			BattleMaster.killsound();
+			BattleMaster.makesound(6);			
+			BattleMaster.makesoundtokill(7);
 			var main = BattleMaster.pl[19].GetComponent<ParticleSystem>().main;
 			main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
 			clone2.parent = BattleMaster.BM.transform;
