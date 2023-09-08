@@ -59,6 +59,9 @@ public class Combatant : MonoBehaviour
 		//i = damage, i2 = pierce, i3 = damagetype;
 		//damagetype, 0 = pierce, 1 = slash, 2 = bash, 3 = fire, 4 = ice, 5 = lightning, 6 = acid, 7 = wind, 8 = light, 9 = dark, 10 = arcane
 		int totdam = i;
+		totdam = (int)Mathf.Floor(i * statblock.resistances[i3]);
+		totdam -= (i3 >= 3?statblock.res:statblock.def);
+		totdam = (totdam <= 0?0:totdam);
 		statblock.chp = Mathf.Max(statblock.chp-totdam,0);
 		if(statblock.chp == 0){
 			die();
