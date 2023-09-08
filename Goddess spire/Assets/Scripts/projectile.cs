@@ -43,8 +43,7 @@ public class projectile : MonoBehaviour
 				move = false;
 				BattleMaster.killsound();
 				Destroy(gameObject);
-			}
-			if(Physics.Raycast(transform.position, bz.GetSegment(Mathf.Clamp01(timer+0.05f)), out hit, Vector3.Distance(transform.position,bz.GetSegment(Mathf.Clamp01(timer+0.05f))))){ 
+			} else if(Physics.Raycast(transform.position, bz.GetSegment(Mathf.Clamp01(timer+0.05f)), out hit, Vector3.Distance(transform.position,bz.GetSegment(Mathf.Clamp01(timer+0.05f))))){ 
 				if(hit.transform.parent.GetComponent<Combatant>()){
 					if(AoE){
 						foreach(Combatant c in BattleMaster.combatants){
