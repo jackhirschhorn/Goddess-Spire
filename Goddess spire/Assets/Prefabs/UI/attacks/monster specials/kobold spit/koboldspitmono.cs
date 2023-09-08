@@ -7,6 +7,7 @@ public class koboldspitmono : MonoBehaviour
     public Animator anim;
 	public int stage = 0;
 	public Combatant comb;
+	public List<Color> cols = new List<Color>();
 	
 	Transform clone;
 	Transform clone2;
@@ -23,6 +24,10 @@ public class koboldspitmono : MonoBehaviour
 		clone2.localPosition = new Vector3(0.9f,2.4f,-0.5f);
 		clone2.localScale = new Vector3(2,2,2);
 		clone2.rotation = Quaternion.Euler(0,0,0);
+		var main = clone2.GetComponent<ParticleSystem>().main;
+		main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
+		main = clone2.GetChild(0).GetComponent<ParticleSystem>().main;
+		main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
 		BezierCurve bz = new BezierCurve();
 		front = BattleMaster.unitlist(!anim.transform.parent.parent.GetComponent<Combatant>().isPC,0).transform.position +new Vector3((anim.transform.parent.parent.GetComponent<Combatant>().isPC?-1:1),0,0);
 		end = BattleMaster.unitlist(!anim.transform.parent.parent.GetComponent<Combatant>().isPC,4).transform.position +new Vector3((anim.transform.parent.parent.GetComponent<Combatant>().isPC?1:-1),0,0); // FIX THIS
@@ -61,11 +66,13 @@ public class koboldspitmono : MonoBehaviour
 		} else if (stage == 3){
 			//self damage
 			Destroy(clone.gameObject);
-			comb.take_damage(comb.magicdamage(0)+(int)powar,0,3+0);
+			comb.take_damage(comb.magicdamage(0)+(int)powar,0,3+comb.phenotype);
 			anim.SetInteger("stage",0);	
 			anim.SetInteger("atkanim",0);
 			BattleMaster.attackcallback(0);	
 			clone = Instantiate(BattleMaster.pl[19]);//spawn an explosion
+			var main = clone.GetComponent<ParticleSystem>().main;
+			main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
 			clone.position = clone2.position;
 			clone.localScale = new Vector3(4,4,4);
 			Destroy(clone2.gameObject);
@@ -73,9 +80,11 @@ public class koboldspitmono : MonoBehaviour
 			//play explosion
 		} else if (stage == 4){
 			//spit
+			var main = BattleMaster.pl[19].GetComponent<ParticleSystem>().main;
+			main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
 			clone2.parent = BattleMaster.BM.transform;
 			clone2.GetComponent<projectile>().atk = comb.magicdamage(0)+(int)powar; // make variable based on phenotype
-			clone2.GetComponent<projectile>().atktype = 3+0;// make variable based on phenotype
+			clone2.GetComponent<projectile>().atktype = 3+comb.phenotype;// make variable based on phenotype
 			clone2.GetComponent<projectile>().pierce = 0; //???
 			clone2.GetComponent<projectile>().AoEdist = powar*2;
 			clone2.GetComponent<projectile>().bz.Points = clone.GetComponent<lrbez>().bc.Points;

@@ -15,6 +15,7 @@ public class koboldspit : combatoption
 	}
 		
 	Animator anim;
+	public List<Color> cols = new List<Color>();
 	
 	public override void dothething(){
 		anim.transform.GetComponent<koboldspitmono>().stage = 1;
@@ -27,7 +28,7 @@ public class koboldspit : combatoption
 		anim.gameObject.AddComponent(typeof(koboldspitmono));
 		anim.transform.GetComponent<koboldspitmono>().anim = anim;
 		anim.transform.GetComponent<koboldspitmono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
-	
+		anim.transform.GetComponent<koboldspitmono>().cols = cols;
 	}
 	
 	public override void nevermind(){

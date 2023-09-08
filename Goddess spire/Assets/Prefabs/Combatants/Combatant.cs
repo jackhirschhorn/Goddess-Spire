@@ -6,6 +6,7 @@ using System;
 
 public class Combatant : MonoBehaviour
 {
+	public int phenotype = 0;
     public Stats statblock;
 	public bool isPC = false;
 	public Sprite icon;
