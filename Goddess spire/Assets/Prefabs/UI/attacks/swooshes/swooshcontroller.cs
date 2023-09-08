@@ -15,6 +15,7 @@ public class swooshcontroller : MonoBehaviour
 	public Color five;
 	public Color one;
 	public TextMeshProUGUI ind;
+	public bool nodam = false;
 	
 	
 	public void dothething(){
@@ -22,6 +23,7 @@ public class swooshcontroller : MonoBehaviour
 		emis = part.emission;
 		sett = part.main;
 		ind.text = dam+"";
+		if(nodam)ind.text = "NO DAMAGE";
 		transform.GetComponent<Animator>().SetInteger("anim",damtype);
 		StartCoroutine("dothething1");
 	}
