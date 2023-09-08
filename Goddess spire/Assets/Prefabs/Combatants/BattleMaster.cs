@@ -66,6 +66,21 @@ public class BattleMaster : MonoBehaviour
 		if(BM.snd)Destroy(BM.snd.gameObject);
 	}
 	
+	public static Combatant unitlist(bool b, int i){
+		//true = player, false = enemy;
+		//FIX THIS LATER
+		foreach(Combatant c in combatants){
+			if(c.isPC == b){
+				if(i == 0){
+					return c;
+				} else {
+					i--;
+				}
+			}
+		}
+		return null;
+	}
+	
 	public Combatant meleetarg(bool b){
 		//true = player, false = enemy;
 		RaycastHit hit;

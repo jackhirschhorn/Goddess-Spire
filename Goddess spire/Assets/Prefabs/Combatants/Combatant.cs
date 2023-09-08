@@ -35,7 +35,7 @@ public class Combatant : MonoBehaviour
 		enemyHP.position = transform.position + new Vector3(0,height,0);
 		HP = enemyHP.GetChild(0) as RectTransform;
 		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
-		debug();
+		//debug();
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
 		if(idleanim != 0){
 			anim.SetInteger("weapon",idleanim);

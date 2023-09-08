@@ -11,6 +11,8 @@ public class projectile : MonoBehaviour
 	public int pierce = 0;
 	public float timer = 0;
 	public float speed = 1;
+	public bool AoE = false;
+	public float AoEdist = 0;
 	RaycastHit hit;
 	// Start is called before the first frame update
     void Start()

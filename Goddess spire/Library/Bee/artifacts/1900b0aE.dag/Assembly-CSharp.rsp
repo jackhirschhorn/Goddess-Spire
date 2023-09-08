@@ -400,6 +400,8 @@
 "Assets/Prefabs/Combatants/BattleMaster.cs"
 "Assets/Prefabs/Combatants/Combatant.cs"
 "Assets/Prefabs/UI/attacks/dragattack/dragattack.cs"
+"Assets/Prefabs/UI/attacks/monster specials/kobold spit/koboldspit.cs"
+"Assets/Prefabs/UI/attacks/monster specials/kobold spit/koboldspitmono.cs"
 "Assets/Prefabs/UI/attacks/spear/koboldspear/koboldspearatk.cs"
 "Assets/Prefabs/UI/attacks/spear/koboldspear/koboldspearatkmono.cs"
 "Assets/Prefabs/UI/attacks/spear/koboldspearthrow/koboldspearthrow.cs"

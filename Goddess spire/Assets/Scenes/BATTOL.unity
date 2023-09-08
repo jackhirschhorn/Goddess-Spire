@@ -1879,13 +1879,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
-      propertyPath: weapon_CO.Array.size
+      propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy3
@@ -8643,13 +8655,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
-      propertyPath: weapon_CO.Array.size
+      propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy4
@@ -9632,13 +9656,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
-      propertyPath: weapon_CO.Array.size
+      propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy2
@@ -14318,6 +14354,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f13f32194221c8142844dae39e75cb32, type: 3}
   - {fileID: 21300000, guid: 5b8dc22a447ccfa45bca7640d06af551, type: 3}
   - {fileID: 21300000, guid: 524f9995c4274b4459241bd74c071a76, type: 3}
+  - {fileID: 21300000, guid: 84e8082f21cd03c4daa1f53287d344b1, type: 3}
   slass:
   - {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
   plass:
@@ -14339,6 +14376,7 @@ MonoBehaviour:
   - {fileID: 8876546461729511763, guid: 2403548ba6390244d9a1c2bc1a3b83c8, type: 3}
   - {fileID: 8860741672557496968, guid: b08e52bedd89f4946a253c4e27943e48, type: 3}
   - {fileID: 6450330525000317583, guid: 84977c9cd34065b40b57374fb5b9d530, type: 3}
+  - {fileID: 8306730742367588989, guid: f0f77bd1bd0fdb340bbf4c52c320305b, type: 3}
   initiative: []
   roundturn: 0
   init_track_holder: {fileID: 1608182084}
@@ -18845,7 +18883,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29302
+  m_Name: pb_Mesh29304
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -22591,7 +22629,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29026
+  m_Name: pb_Mesh29028
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -24225,7 +24263,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30350
+  m_Name: pb_Mesh30352
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -25509,7 +25547,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29570
+  m_Name: pb_Mesh29572
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -29917,7 +29955,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30496
+  m_Name: pb_Mesh30498
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -30738,13 +30776,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
-      propertyPath: weapon_CO.Array.size
+      propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy5
@@ -37989,7 +38039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.mana
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.stam
@@ -37997,7 +38047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.cmana
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.cstam
@@ -38005,12 +38055,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: weapon_CO.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
@@ -38553,13 +38607,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
-      propertyPath: weapon_CO.Array.size
+      propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: weapon_CO.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
       value: enemy1
