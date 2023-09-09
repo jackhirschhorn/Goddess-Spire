@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class combatoption : ScriptableObject
 {
-    public int iconid = 0;
+    public Sprite icon;
 	public Color background = Color.white;
 	public string nme = "";
 	public string explain = "";

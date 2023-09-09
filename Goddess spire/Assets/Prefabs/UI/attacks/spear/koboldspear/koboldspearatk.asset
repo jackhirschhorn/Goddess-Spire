@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e9352f9ac83e34b9315a87f2447b39, type: 3}
   m_Name: koboldspearatk
   m_EditorClassIdentifier: 
-  iconid: 4
+  icon: {fileID: 21300000, guid: 5b8dc22a447ccfa45bca7640d06af551, type: 3}
   background: {r: 1, g: 1, b: 1, a: 1}
   nme: Spear Charge
   explain: Press [A] or [D] to tug the cursor into the green zone

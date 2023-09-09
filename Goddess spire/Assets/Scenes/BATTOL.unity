@@ -38128,32 +38128,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
-      propertyPath: weapon_CO.Array.data[0].nme
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.resistances.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.resistances.Array.data[3]
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
-      propertyPath: weapon_CO.Array.data[0].background.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
-      propertyPath: weapon_CO.Array.data[0].background.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
-      propertyPath: weapon_CO.Array.data[0].background.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
-      propertyPath: weapon_CO.Array.data[0].background.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 376850461014927138, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: m_Height

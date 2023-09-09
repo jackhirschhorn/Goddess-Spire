@@ -6,7 +6,7 @@ using UnityEngine;
 public class koboldspearatk : combatoption
 {
 	public koboldspearatk(){
-		iconid = 4;
+		//iconid = 4;
 		background = Color.white;
 		nme = "Spear Charge";
 		explain = "Press [A] or [D] to tug the cursor into the green zone";

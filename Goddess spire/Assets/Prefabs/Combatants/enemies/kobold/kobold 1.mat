@@ -113,9 +113,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _COLOR_BLUE: {r: 0.6603774, g: 0, b: 0, a: 1}
-    - _COLOR_GREEN: {r: 0.2830189, g: 0, b: 0, a: 1}
-    - _COLOR_RED: {r: 0.11098778, g: 0.4716981, b: 0, a: 1}
+    - _COLOR_BLUE: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+    - _COLOR_GREEN: {r: 1, g: 0, b: 0, a: 1}
+    - _COLOR_RED: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

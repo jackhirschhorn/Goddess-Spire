@@ -5,7 +5,7 @@ using UnityEngine;
 public class CO_test : combatoption
 {
     public CO_test(){
-		iconid = 0;
+		//iconid = 0;
 		background = new Color(1,1,1,1);
 		nme = "test option";
 		explain = "this is a test option";

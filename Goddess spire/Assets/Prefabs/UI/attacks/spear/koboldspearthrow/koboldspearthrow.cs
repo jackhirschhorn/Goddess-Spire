@@ -6,7 +6,7 @@ using UnityEngine;
 public class koboldspearthrow : combatoption
 {
    public koboldspearthrow(){
-		iconid = 5;
+		//iconid = 5;
 		background = Color.white;
 		nme = "Spear Throw";
 		explain = "Press [A] or [D] to aim, then hold [W] to increase power.";

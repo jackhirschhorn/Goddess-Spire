@@ -341,7 +341,7 @@ public class BattleMaster : MonoBehaviour
 			
 			if(curmenutarg%4 == 3)CO = new CO_test(); //DEBUG, no inventory currently
 			
-			optiontexts[i].image.sprite = BattleMaster.cmoi[CO.iconid];
+			optiontexts[i].image.sprite = CO.icon;
 			optiontexts[i].background.color = CO.background;
 			optiontexts[i].text.text = CO.nme;
 			optiontexts[i].costback.color = (CO.costype == 0?Color.blue:(CO.costype == 1?Color.green:Color.red));

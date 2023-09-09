@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="koboldspit")]
+//[CreateAssetMenu(fileName ="koboldspit")]
 public class koboldspit : combatoption
 {
     public koboldspit(){
-		iconid = 6;
+		//iconid = 6;
 		background = Color.white;
 		nme = "Elemental spit";
 		explain = "Press and hold [Space] to charge and release for an elemental blast. grows in power as you charge. don't hold it too long!";

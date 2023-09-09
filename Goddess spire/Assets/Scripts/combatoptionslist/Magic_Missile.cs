@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magic_Missile : combatoption
 {
 	public Magic_Missile(){
-		iconid = 3;
+		//iconid = 3;
 		background = new Color(1,1,1,1);
 		nme = "Magic Missile";
 		explain = "Click on the magic circle and drag the missile into the target.";

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c239bacbaa58ae84c812b8dc9b2b1a6c, type: 3}
   m_Name: koboldspit
   m_EditorClassIdentifier: 
-  iconid: 6
+  icon: {fileID: 21300000, guid: 84e8082f21cd03c4daa1f53287d344b1, type: 3}
   background: {r: 1, g: 1, b: 1, a: 1}
   nme: Elemental spit
   explain: Press and hold [Space] to charge and release for an elemental blast. grows
