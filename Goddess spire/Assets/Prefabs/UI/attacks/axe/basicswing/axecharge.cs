@@ -21,7 +21,7 @@ public class axecharge : MonoBehaviour
     void Update()
     {
         if(stage == 0){
-			if(Input.GetKeyDown(KeyCode.E))stage = 1;
+			
 		} else if (stage == -1){
 			Destroy(this.gameObject);
 		} else if (stage == 1){

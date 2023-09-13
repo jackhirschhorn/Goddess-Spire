@@ -41,7 +41,7 @@ public class koboldspearatkmono : attackmono
 		} else if(stage == 3){
 			if(Vector3.Distance(anim.transform.position, target.transform.position) > 1f){
 				timer += (speed * Time.deltaTime)/Vector3.Distance(anim.transform.parent.position, target.transform.position);
-				anim.transform.position = Vector3.Lerp(anim.transform.parent.position, target.transform.position, timer); 
+				anim.transform.position = Vector3.Lerp(new Vector3(anim.transform.parent.position.x,anim.transform.position.y,anim.transform.parent.position.z), new Vector3(target.transform.position.x,anim.transform.position.y,target.transform.position.z), timer); 
 			} else {
 				BattleMaster.killsound();
 				stage = 4;
@@ -52,9 +52,9 @@ public class koboldspearatkmono : attackmono
 			}
 		} else if(stage == 4){
 			timer += Time.deltaTime*1.9f;
-			anim.transform.position = Vector3.Lerp(start, anim.transform.parent.position, timer); 
+			anim.transform.position = Vector3.Lerp(start, new Vector3(anim.transform.parent.position.x,anim.transform.position.y,anim.transform.parent.position.z), timer); 
 			if(timer >= 1){
-				anim.transform.position = anim.transform.parent.position;
+				anim.transform.position = new Vector3(anim.transform.parent.position.x,anim.transform.position.y,anim.transform.parent.position.z);
 				anim.SetInteger("stage",-1);
 				anim.SetInteger("atkanim",0);
 				BattleMaster.attackcallback(0);

@@ -105,4 +105,13 @@ public class Combatant : MonoBehaviour
 		anim.gameObject.AddComponent(typeof(deathredirect));
 	}
 	
+	public void resetanim(RuntimeAnimatorController rac){
+		StartCoroutine(resetanimIE(rac));
+	}
+	
+	public IEnumerator resetanimIE(RuntimeAnimatorController rac){
+		anim.SetBool("exit",true);
+		yield return new WaitForSeconds(0.25f);
+		anim.runtimeAnimatorController = rac;
+	}
 }
