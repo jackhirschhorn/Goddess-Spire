@@ -17,6 +17,7 @@ MonoBehaviour:
   nme: Axe Chop
   explain: Rapidly Press [E] to increase damage!
   cost: 0
-  costype: 0
+  costype: 1
   ac: {fileID: 9100000, guid: 8e95b0bf3a9867242a3ba440568567d7, type: 2}
   tempac: {fileID: 0}
+  anim: {fileID: 0}
