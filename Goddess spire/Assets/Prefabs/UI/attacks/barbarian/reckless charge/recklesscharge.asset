@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a355220019b0874996c960ece8493b4, type: 3}
+  m_Name: recklesscharge
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: b72ac56186f1aa34f8f986f0323e0677, type: 3}
+  background: {r: 1, g: 1, b: 1, a: 1}
+  nme: Reckless Charge
+  explain: Press [E] right before striking the enemy for bonus damage and a chance
+    to knock them prone!
+  cost: 0
+  costype: 1
+  ac: {fileID: 9100000, guid: eb6da356257e4d24d81e975f2ac19177, type: 2}
+  tempac: {fileID: 0}

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
 
-//[CreateAssetMenu(fileName ="axeswing")]
-public class axeswing : combatoption
+[CreateAssetMenu(fileName ="recklesscharge")]
+public class recklesscharge : combatoption
 {
-    public axeswing(){
+    public recklesscharge(){
 		background = Color.white;
-		nme = "Axe Chop";
-		explain = "Rapidly Press [E] to increase damage!";
+		nme = "Reckless Charge";
+		explain = "Press [E] right before striking the enemy for bonus damage and a chance to knock them prone!";
 		cost = 0;
 		costype = 1;//0 = mana, 1 = stam, 2 = hp
 	}
@@ -23,20 +23,18 @@ public class axeswing : combatoption
 		tempac = anim.runtimeAnimatorController as AnimatorController;
 		anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
 		anim.SetInteger("stage",1);
-		anim.gameObject.AddComponent(typeof(axeswingmono));
-		anim.transform.GetComponent<axeswingmono>().anim = anim;
-		anim.transform.GetComponent<axeswingmono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
-		anim.transform.GetComponent<axeswingmono>().tempac = tempac;
+		anim.gameObject.AddComponent(typeof(recklesschargemono));
+		anim.transform.GetComponent<recklesschargemono>().anim = anim;
+		anim.transform.GetComponent<recklesschargemono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
+		anim.transform.GetComponent<recklesschargemono>().tempac = tempac;
 	}
 	
 	public override void nevermind(){
 		BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
-		anim.transform.GetComponent<axeswingmono>().stage = -1;
+		anim.transform.GetComponent<recklesschargemono>().stage = -1;
 	}
 	
 	public override void dothething(){
-		anim.transform.GetComponent<axeswingmono>().stage = 1;
+		anim.transform.GetComponent<recklesschargemono>().stage = 1;
 	}
-	
-	
 }
