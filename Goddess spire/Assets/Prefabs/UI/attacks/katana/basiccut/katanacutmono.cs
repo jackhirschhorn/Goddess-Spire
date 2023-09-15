@@ -16,6 +16,7 @@ public class katanacutmono : MonoBehaviour
 	public int damage = 0;
 	public int pierce = 0;
 	public AnimatorController tempac;
+	public bool missed = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,8 @@ public class katanacutmono : MonoBehaviour
 					damage = 0;
 					pierce = 0;
 					stage = 3;
-					anim.SetInteger("stage",4);
+					anim.SetInteger("stage",5);
+					missed = true;
 				} else if (timer <= 0 && timer >= -0.3f){
 					damage = comb.weapondamage() + 5;
 					pierce = 5;
@@ -78,14 +80,15 @@ public class katanacutmono : MonoBehaviour
 					damage = 0;
 					pierce = 0;
 					stage = 3;
-					anim.SetInteger("stage",4);
+					anim.SetInteger("stage",5);
+					missed = true;
 				}
 			}
 		} else if (stage == 3){
-			Destroy(clone.gameObject);
-			target.take_damage(damage,pierce,1);
-			anim.SetInteger("stage",5);
-			timer = -1.9f;
+			if(clone != null)Destroy(clone.gameObject);
+			if(!missed)target.take_damage(damage,pierce,1);
+			anim.SetInteger("stage",6);
+			timer = (missed?-1.9f:-2.3f);
 			stage = 4;
 		} else if (stage == 4){
 			timer += Time.deltaTime*1.9f;

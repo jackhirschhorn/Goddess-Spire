@@ -113,5 +113,8 @@ public class Combatant : MonoBehaviour
 		anim.SetBool("exit",true);
 		yield return new WaitForSeconds(0.25f);
 		anim.runtimeAnimatorController = rac;
+		if(idleanim != 0){
+			anim.SetInteger("weapon",idleanim);
+		}
 	}
 }
