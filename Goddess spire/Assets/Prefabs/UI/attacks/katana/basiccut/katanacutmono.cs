@@ -61,12 +61,12 @@ public class katanacutmono : MonoBehaviour
 					stage = 3;
 					anim.SetInteger("stage",5);
 					missed = true;
-				} else if (timer <= 0 && timer >= -0.3f){
+				} else if (timer <= 0 && timer >= -0.35f){
 					damage = comb.weapondamage() + 5;
 					pierce = 5;
 					stage = 3;
 					anim.SetInteger("stage",4);
-				} else if (timer <= -0.3f && timer >= -0.6f){
+				} else if (timer <= -0.35f && timer >= -0.6f){
 					damage = comb.weapondamage() + 2;
 					pierce = 2;
 					stage = 3;
