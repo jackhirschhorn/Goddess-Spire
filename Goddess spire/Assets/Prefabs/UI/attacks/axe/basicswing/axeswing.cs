@@ -14,10 +14,6 @@ public class axeswing : combatoption
 		costype = 1;//0 = mana, 1 = stam, 2 = hp
 	}
 	
-	public AnimatorController ac;
-	public AnimatorController tempac;
-	Animator anim;
-	
 	public override void demothething(){
 		anim = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.GetChild(0).GetChild(0).GetComponent<Animator>();
 		tempac = anim.runtimeAnimatorController as AnimatorController;

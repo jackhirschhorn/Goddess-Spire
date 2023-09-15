@@ -14,7 +14,6 @@ public class koboldspearatk : combatoption
 		costype = 1;//0 = mana, 1 = stam, 2 = hp
 	}
 	
-	Animator anim;
 	
 	public override void dothething(){
 		anim.transform.GetComponent<koboldspearatkmono>().stage = 1;

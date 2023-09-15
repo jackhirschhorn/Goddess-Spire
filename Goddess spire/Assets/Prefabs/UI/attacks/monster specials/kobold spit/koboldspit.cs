@@ -14,7 +14,6 @@ public class koboldspit : combatoption
 		costype = 0;//0 = mana, 1 = stam, 2 = hp
 	}
 		
-	Animator anim;
 	public List<Color> cols = new List<Color>();
 	
 	public override void dothething(){
