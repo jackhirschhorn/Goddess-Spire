@@ -734,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.mana
@@ -754,12 +754,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: weapon_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: class_CO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f82fc93f4d5cb4ab727ada301a9411, type: 2}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: weapon_CO.Array.data[0]
       value: 
@@ -14791,6 +14795,7 @@ MonoBehaviour:
   - {fileID: 7993145427308429630, guid: 196047f8df9da2a469a5eb2c7efc2367, type: 3}
   - {fileID: 6164805850996252207, guid: 5b9c342ea9d56744b926662de00d8b38, type: 3}
   - {fileID: 1694170721400500471, guid: b1a3c31c0fa10c74b856cb8b66d343b2, type: 3}
+  - {fileID: 2391554279704645610, guid: 959394fb6d7a1854fae8bf47cf3e553d, type: 3}
   initiative: []
   roundturn: 0
   init_track_holder: {fileID: 1608182084}
@@ -14848,6 +14853,7 @@ MonoBehaviour:
   - {fileID: 1802456162809357751, guid: dac1003c59b38a040992534112928098, type: 3}
   - {fileID: 9002744681986696884, guid: 03d29f42b9d27d14980e6e50ee8c2afc, type: 3}
   - {fileID: 3683489679490486062, guid: c85eef6e518c97243b621c87ed831b4a, type: 3}
+  - {fileID: 952072650962503275, guid: 07b7a146fb7b26b43a1b21944e1c386a, type: 3}
   snd: {fileID: 0}
 --- !u!1 &958796937
 GameObject:

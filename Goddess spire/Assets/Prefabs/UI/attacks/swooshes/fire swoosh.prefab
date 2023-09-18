@@ -5300,6 +5300,7 @@ MonoBehaviour:
   five: {r: 1, g: 0.4872635, b: 0, a: 0.627451}
   one: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.627451}
   ind: {fileID: 4617981574869362944}
+  nodam: 0
 --- !u!95 &6318195594162200288
 Animator:
   serializedVersion: 4
