@@ -29,8 +29,8 @@ public class koboldspitmono : MonoBehaviour
 		main = clone2.GetChild(0).GetComponent<ParticleSystem>().main;
 		main.startColor = new ParticleSystem.MinMaxGradient(cols[comb.phenotype*2], cols[comb.phenotype*2+1]);
 		BezierCurve bz = new BezierCurve();
-		front = BattleMaster.unitlist(!anim.transform.parent.parent.GetComponent<Combatant>().isPC,0).transform.position +new Vector3((anim.transform.parent.parent.GetComponent<Combatant>().isPC?-1:1),0,0);
-		end = BattleMaster.unitlist(!anim.transform.parent.parent.GetComponent<Combatant>().isPC,4).transform.position +new Vector3((anim.transform.parent.parent.GetComponent<Combatant>().isPC?1:-1),0,0); // FIX THIS
+		front = BattleMaster.unitlist(!comb.isPC,0).transform.position +new Vector3((comb.isPC?-1:1),0,0);
+		end = BattleMaster.unitlist(!comb.isPC,BattleMaster.targettotal(!comb.isPC)-1).transform.position +new Vector3((comb.isPC?1:-1),0,0); // FIX THIS
 		bz.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,0.5f),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,0.5f),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,0.5f)};
 		clone.GetComponent<lrbez>().bc.Points = bz.Points;
 		BattleMaster.makesound(5);

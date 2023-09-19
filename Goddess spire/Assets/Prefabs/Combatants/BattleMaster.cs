@@ -66,9 +66,21 @@ public class BattleMaster : MonoBehaviour
 		if(BM.snd)Destroy(BM.snd.gameObject);
 	}
 	
+	public static int targettotal(bool b){
+		int i = 0;
+		combatants.RemoveAll(s => s == null);
+		foreach(Combatant c in combatants){
+			if(c.isPC == b){
+				i++;
+			}
+		}
+		return i;
+	}
+	
 	public static Combatant unitlist(bool b, int i){
 		//true = player, false = enemy;
 		//FIX THIS LATER
+		combatants.RemoveAll(s => s == null);
 		foreach(Combatant c in combatants){
 			if(c.isPC == b){
 				if(i == 0){

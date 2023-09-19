@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
 
-//[CreateAssetMenu(fileName ="firestrike")]
-public class firestrike : combatoption
+[CreateAssetMenu(fileName ="threehitcombo")]
+public class threehitcombo : combatoption
 {
-    public firestrike(){
+    public threehitcombo(){
 		background = Color.white;
-		nme = "Fire Strike";
-		explain = "Press the indicated buttons before the timer is up!";
-		cost = 3;
+		nme = "Three hit combo";
+		explain = "Press [E] as you strike to keep the combo going!";
+		cost = 0;
 		costype = 1;//0 = mana, 1 = stam, 2 = hp
 	}
 	
@@ -19,18 +19,18 @@ public class firestrike : combatoption
 		tempac = anim.runtimeAnimatorController as AnimatorController;
 		anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
 		anim.SetInteger("stage",1);
-		anim.gameObject.AddComponent(typeof(firestrikemono));
-		anim.transform.GetComponent<firestrikemono>().anim = anim;
-		anim.transform.GetComponent<firestrikemono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
-		anim.transform.GetComponent<firestrikemono>().tempac = tempac;
+		anim.gameObject.AddComponent(typeof(threehitcombomono));
+		anim.transform.GetComponent<threehitcombomono>().anim = anim;
+		anim.transform.GetComponent<threehitcombomono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
+		anim.transform.GetComponent<threehitcombomono>().tempac = tempac;
 	}
 	
 	public override void nevermind(){
 		BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
-		anim.transform.GetComponent<firestrikemono>().stage = -1;
+		anim.transform.GetComponent<threehitcombomono>().stage = -1;
 	}
 	
 	public override void dothething(){
-		anim.transform.GetComponent<firestrikemono>().stage = 1;
+		anim.transform.GetComponent<threehitcombomono>().stage = 1;
 	}
 }
