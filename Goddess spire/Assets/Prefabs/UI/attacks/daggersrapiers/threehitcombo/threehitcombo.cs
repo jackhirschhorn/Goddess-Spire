@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
 
-[CreateAssetMenu(fileName ="threehitcombo")]
+//[CreateAssetMenu(fileName ="threehitcombo")]
 public class threehitcombo : combatoption
 {
     public threehitcombo(){
