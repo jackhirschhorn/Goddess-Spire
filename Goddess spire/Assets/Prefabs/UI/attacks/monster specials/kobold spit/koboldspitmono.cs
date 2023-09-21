@@ -53,7 +53,7 @@ public class koboldspitmono : MonoBehaviour
 			slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
 			if(slider == 1 || slider == 0)flip = !flip;
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
-			if(Input.GetKey(KeyCode.Space)){
+			if(Input.GetKey(KeyCode.E)){
 				stage = 2;
 				BattleMaster.makesoundtokill(8);
 			}
@@ -63,7 +63,7 @@ public class koboldspitmono : MonoBehaviour
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
 			powar += Time.deltaTime;
 			if(powar >= 1.75f)stage = 3;
-			if(Input.GetKeyUp(KeyCode.Space))stage = 4;
+			if(Input.GetKeyUp(KeyCode.E))stage = 4;
 			clone2.localScale = new Vector3(2+(powar*2),2+(powar*2),2+(powar*2));
 		} else if (stage == 3){
 			//self damage

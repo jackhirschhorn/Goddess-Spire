@@ -77,6 +77,17 @@ public class BattleMaster : MonoBehaviour
 		return i;
 	}
 	
+	public static List<Combatant> gettargs(bool b){
+		List<Combatant> temp = new List<Combatant>();
+		combatants.RemoveAll(s => s == null);
+		foreach(Combatant c in combatants){
+			if(c.isPC == b){
+				temp.Add(c);
+			}
+		}
+		return temp;
+	}
+	
 	public static Combatant unitlist(bool b, int i){
 		//true = player, false = enemy;
 		//FIX THIS LATER

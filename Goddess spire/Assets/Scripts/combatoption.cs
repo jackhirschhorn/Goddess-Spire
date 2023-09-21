@@ -17,6 +17,7 @@ public class combatoption : ScriptableObject
 	public AnimatorController ac;
 	public AnimatorController tempac;
 	public Animator anim;
+	public bool iswand = false;
 		
 	
 	public virtual void dothething(){

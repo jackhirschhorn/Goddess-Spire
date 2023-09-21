@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
 
-//[CreateAssetMenu(fileName ="fade")]
-public class fade : combatoption
+//[CreateAssetMenu(fileName ="firebolt")]
+public class firebolt : combatoption
 {
-    public fade(){
+    public firebolt(){
 		background = Color.white;
-		nme = "fade";
-		explain = "{PLACEHOLDER} Turn invisible for one turn, evading all attacks.";
-		cost = 3;
+		nme = "firebolt";
+		explain = "Pick a target, then press [E] to keep the heat up! don't overdo it, or else!";
+		cost = 2;
 		costype = 0;//0 = mana, 1 = stam, 2 = hp
 	}
 	
@@ -19,18 +19,18 @@ public class fade : combatoption
 		tempac = anim.runtimeAnimatorController as AnimatorController;
 		anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
 		anim.SetInteger("stage",1);
-		anim.gameObject.AddComponent(typeof(fademono));
-		anim.transform.GetComponent<fademono>().anim = anim;
-		anim.transform.GetComponent<fademono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
-		anim.transform.GetComponent<fademono>().tempac = tempac;
+		anim.gameObject.AddComponent(typeof(fireboltmono));
+		anim.transform.GetComponent<fireboltmono>().anim = anim;
+		anim.transform.GetComponent<fireboltmono>().comb = BattleMaster.BM.initiative[BattleMaster.BM.roundturn];
+		anim.transform.GetComponent<fireboltmono>().tempac = tempac;
 	}
 	
 	public override void nevermind(){
 		BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
-		anim.transform.GetComponent<fademono>().stage = -1;
+		anim.transform.GetComponent<fireboltmono>().stage = -1;
 	}
 	
 	public override void dothething(){
-		anim.transform.GetComponent<fademono>().stage = 1;
+		anim.transform.GetComponent<fireboltmono>().stage = 1;
 	}
 }

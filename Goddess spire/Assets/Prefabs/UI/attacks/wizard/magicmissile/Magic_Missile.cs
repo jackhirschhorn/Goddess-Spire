@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName ="magicmissile")]
 public class Magic_Missile : combatoption
 {
 	public Magic_Missile(){
@@ -22,7 +23,9 @@ public class Magic_Missile : combatoption
 	public override void demothething(){
 		clone = GameObject.Instantiate(BattleMaster.pl[0]);
 		clone.parent = BattleMaster.attackst;
-		clone.position = Vector3.zero;
+		clone.position = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.position + new Vector3(2f,3f,0);
+		clone.GetComponent<dragattack>().dam = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].magicdamage(11);
+		clone.GetComponent<dragattack>().damtype = 10;
 	}
 	
 	public override void nevermind(){
