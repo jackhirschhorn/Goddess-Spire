@@ -17,7 +17,7 @@ public class koboldspearthrow : combatoption
 	
 	public override void dothething(){
 		anim.transform.GetComponent<koboldspearthrowmono>().stage = 1;
-		BattleMaster.makesoundtokill(3);
+		if(BattleMaster.BM.initiative[BattleMaster.BM.roundturn].isPC)BattleMaster.makesoundtokill(3);
 	}
 	
 	public override void demothething(){

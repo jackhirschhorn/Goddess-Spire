@@ -6,6 +6,7 @@ using System;
 
 public class Combatant : MonoBehaviour
 {
+	public brain AI;
 	public int phenotype = 0;
     public Stats statblock;
 	public bool isPC = false;
@@ -103,8 +104,9 @@ public class Combatant : MonoBehaviour
 	public void die(){
 		anim.SetBool("dead",true);
 		transform.GetChild(0).GetComponent<Collider>().enabled = false;
-		BattleMaster.isdead(this);
-		anim.gameObject.AddComponent(typeof(deathredirect));
+		if(!isPC){BattleMaster.isdead(this);
+			anim.gameObject.AddComponent(typeof(deathredirect));
+		}
 	}
 	
 	public void resetanim(RuntimeAnimatorController rac){
@@ -118,5 +120,16 @@ public class Combatant : MonoBehaviour
 		if(idleanim != 0){
 			anim.SetInteger("weapon",idleanim);
 		}
+	}
+	
+	public void runAIturn(){
+		StartCoroutine(runAIturn1());
+	}
+	
+	public IEnumerator runAIturn1(){
+		combatoption curop = AI.pickoption();
+		curop.demothething();
+		yield return new WaitForEndOfFrame();
+		curop.dothething();
 	}
 }

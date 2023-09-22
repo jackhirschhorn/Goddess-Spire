@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="magicmissile")]
+//[CreateAssetMenu(fileName ="magicmissile")]
 public class Magic_Missile : combatoption
 {
 	public Magic_Missile(){
