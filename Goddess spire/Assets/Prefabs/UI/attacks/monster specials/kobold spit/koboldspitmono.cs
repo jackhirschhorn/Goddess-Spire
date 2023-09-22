@@ -14,6 +14,7 @@ public class koboldspitmono : MonoBehaviour
 	Transform head;
 	Vector3 front;
 	Vector3 end;
+	public bool first = true;
 	void Start(){
 		clone = Instantiate(BattleMaster.pl[4]);
 		clone.parent = BattleMaster.BM.combatmenu.parent;
@@ -53,10 +54,11 @@ public class koboldspitmono : MonoBehaviour
 			slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
 			if(slider == 1 || slider == 0)flip = !flip;
 			clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
-			if(Input.GetKey(KeyCode.E)){
+			if(Input.GetKey(KeyCode.E) && !first){
 				stage = 2;
 				BattleMaster.makesoundtokill(8);
 			}
+			first = false;
 		} else if (stage == 2){
 			slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
 			if(slider == 1 || slider == 0)flip = !flip;

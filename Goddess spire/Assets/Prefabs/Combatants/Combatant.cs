@@ -102,6 +102,8 @@ public class Combatant : MonoBehaviour
 	
 	public void die(){
 		anim.SetBool("dead",true);
+		transform.GetChild(0).GetComponent<Collider>().enabled = false;
+		BattleMaster.isdead(this);
 		anim.gameObject.AddComponent(typeof(deathredirect));
 	}
 	

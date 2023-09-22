@@ -88,6 +88,10 @@ public class BattleMaster : MonoBehaviour
 		return temp;
 	}
 	
+	public static void isdead(Combatant b){
+		combatants.RemoveAll(s => s == b);
+	}
+	
 	public static Combatant unitlist(bool b, int i){
 		//true = player, false = enemy;
 		//FIX THIS LATER
