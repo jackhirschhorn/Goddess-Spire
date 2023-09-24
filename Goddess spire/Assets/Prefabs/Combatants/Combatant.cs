@@ -7,6 +7,7 @@ using System;
 public class Combatant : MonoBehaviour
 {
 	public brain AI;
+	public bool humanoid = false;
 	public int phenotype = 0;
     public Stats statblock;
 	public bool isPC = false;
@@ -62,6 +63,9 @@ public class Combatant : MonoBehaviour
 		int totdam = i;
 		totdam = (int)Mathf.Floor(i * statblock.resistances[i3]);
 		totdam -= (i3 >= 3?statblock.res:statblock.def);
+		if(transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
+			totdam -= 1; // might be dynamic later. % based?
+		}
 		totdam = (totdam <= 0?0:totdam);
 		statblock.chp = Mathf.Max(statblock.chp-totdam,0);
 		if(statblock.chp == 0){
