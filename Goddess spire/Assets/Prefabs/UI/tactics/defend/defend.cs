@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor.Animations;
 
 
-[CreateAssetMenu(fileName ="defend")]
+//[CreateAssetMenu(fileName ="defend")]
 public class defend : combatoption
 {
     public defend(){

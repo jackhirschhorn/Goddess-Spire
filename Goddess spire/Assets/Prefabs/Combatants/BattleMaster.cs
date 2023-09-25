@@ -52,6 +52,11 @@ public class BattleMaster : MonoBehaviour
 	public static List<Transform> sndl = new List<Transform>(); //sound prefab list
 	public List<Transform> sndlass = new List<Transform>();
 	
+	public static List<itemscript> itms = new List<itemscript>(); // items
+	public List<itemscript> itmsass = new List<itemscript>();
+	
+	public static int lastitmsel = 0;
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -129,6 +134,7 @@ public class BattleMaster : MonoBehaviour
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);
 		attackst = attackstass;
+		itms = itmsass;
 	}
 	
 	void Start(){
@@ -370,13 +376,18 @@ public class BattleMaster : MonoBehaviour
 				}
 			}
 			
-			if(curmenutarg%4 == 3)CO = new CO_test(); //DEBUG, no inventory currently
+			if(curmenutarg%4 == 3){
+				CO = (combatoption)BattleMaster.itms[Mathf.Abs((submenucurtarg+i2)%BattleMaster.itms.Count)].user;
+				
+			}
 			
 			optiontexts[i].image.sprite = CO.icon;
 			optiontexts[i].background.color = CO.background;
 			optiontexts[i].text.text = CO.nme;
-			optiontexts[i].costback.color = (CO.costype == 0?Color.blue:(CO.costype == 1?Color.green:Color.red));
+			optiontexts[i].costback.color = (CO.costype == 0?Color.blue:(CO.costype == 1?Color.green:(CO.costype == 2?Color.red:Color.black)));
 			optiontexts[i].cost.text = CO.cost+"";
+			if(CO.iswand)optiontexts[i].cost.text = "0";
+			if(CO.costype == 3)optiontexts[i].cost.text = BattleMaster.itms[BattleMaster.lastitmsel].count + "";
 			if(i2 == 0)cur_sel_CO = CO;
 			i2++;
 		}
@@ -391,6 +402,7 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public bool costcheck(){
+		if(cur_sel_CO.iswand) return true;
 		switch(cur_sel_CO.costype){
 			case 0: //mana
 				return initiative[roundturn].statblock.cmana >= cur_sel_CO.cost;
@@ -401,11 +413,15 @@ public class BattleMaster : MonoBehaviour
 			case 2: //hp
 				return initiative[roundturn].statblock.chp >= cur_sel_CO.cost;
 			break;
+			case 3: //item
+				return BattleMaster.itms[BattleMaster.lastitmsel].count >= 0;
+			break;
 		}
 		return false;
 	}
 	
 	public void docosts(Combatant c, int i, int i2){
+		if(cur_sel_CO.iswand) return;
 		switch(i2){
 			case 0: //mana
 				c.statblock.cmana -= i;
@@ -415,6 +431,9 @@ public class BattleMaster : MonoBehaviour
 			break;
 			case 2: //hp
 				c.statblock.chp -= i;
+			break;
+			case 3: //item
+				BattleMaster.itms[BattleMaster.lastitmsel].count -= 1;
 			break;
 		}
 		

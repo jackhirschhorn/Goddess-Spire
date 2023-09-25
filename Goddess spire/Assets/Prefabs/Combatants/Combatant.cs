@@ -89,6 +89,11 @@ public class Combatant : MonoBehaviour
 		
 	}
 	
+	public void heal(int i){
+		statblock.chp += i;
+		if(statblock.chp >= statblock.hp)statblock.chp = statblock.hp;
+	}
+	
 	public void debug(){
 		class_CO.Add(new Magic_Missile());
 	}
