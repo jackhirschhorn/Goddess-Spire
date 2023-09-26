@@ -198,6 +198,15 @@ public class Combatant : MonoBehaviour
 			}
 		}
 		yield return new WaitForSeconds(2f);
+		if(!transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
+			if(humanoid){
+				anim.SetBool("defend",false);
+				anim.SetBool("dodge",false);
+			} else {				
+				anim.SetInteger("stage",0);
+				anim.SetInteger("atkanim",0);
+			}
+		}
 		dodgestate = 0;
 		
 	}
