@@ -38,7 +38,8 @@ public class defendmono : MonoBehaviour
 			timer += Time.deltaTime;
 			if(timer >= 1){
 				if(comb.humanoid){
-					BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
+					//BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
+					anim.SetBool("defend",false);
 				} else {
 					anim.SetInteger("atkanim",0);		
 					anim.SetInteger("stage",0);

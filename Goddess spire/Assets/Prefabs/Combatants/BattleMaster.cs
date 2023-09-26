@@ -57,6 +57,10 @@ public class BattleMaster : MonoBehaviour
 	
 	public static int lastitmsel = 0;
 	
+	
+    public static List<Combatant> partyorder = new List<Combatant>();
+    public List<Combatant> partyorderass = new List<Combatant>();
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -135,6 +139,7 @@ public class BattleMaster : MonoBehaviour
 		iconanims[3].SetBool("skip",true);
 		attackst = attackstass;
 		itms = itmsass;
+		partyorder = partyorderass;
 	}
 	
 	void Start(){
@@ -201,6 +206,23 @@ public class BattleMaster : MonoBehaviour
 			}
 			combatmenurotate();
 			if(csubmenuon)subcombatmenurotate();
+		}
+		if(explained){
+			if(Input.GetKeyDown(KeyCode.Alpha1)){
+				partyorder[4].dodge();
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha2)){
+				partyorder[3].dodge();
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha3)){
+				partyorder[2].dodge();
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha4)){
+				partyorder[1].dodge();
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha5)){
+				partyorder[0].dodge();
+			}
 		}
 	}
 	

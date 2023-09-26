@@ -60,12 +60,31 @@ public class Combatant : MonoBehaviour
 		//damage reduction logic goes here
 		//i = damage, i2 = pierce, i3 = damagetype;
 		//damagetype, 0 = pierce, 1 = slash, 2 = bash, 3 = fire, 4 = ice, 5 = lightning, 6 = acid, 7 = wind, 8 = light, 9 = dark, 10 = arcane
+		if(dodgestate == 1){ // full evade
+			if(humanoid){				
+					anim.SetBool("dodge",true);
+					anim.SetBool("defend",(transform.GetChild(0).GetChild(0).GetComponent<defendmono>())?true:false);
+
+			} else {				
+				anim.SetInteger("stage",1);
+				anim.SetInteger("atkanim",(transform.GetChild(0).GetChild(0).GetComponent<defendmono>())?-1:0);
+				anim.SetBool("dodge",true);
+			}
+			//miss/dodge swoosh
+			Transform clone = Instantiate(BattleMaster.pl[28]);
+			clone.position = transform.position;
+			clone.GetComponent<swooshcontroller>().damtype = -1;
+			clone.GetComponent<swooshcontroller>().dothething();
+			dodgestate = 0;
+			return;
+		}
 		int totdam = i;
 		totdam = (int)Mathf.Floor(i * statblock.resistances[i3]);
 		totdam -= (i3 >= 3?statblock.res:statblock.def);
 		if(transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
 			totdam -= 1; // might be dynamic later. % based?
 		}
+		if(dodgestate == 2)totdam -= 1;
 		totdam = (totdam <= 0?0:totdam);
 		statblock.chp = Mathf.Max(statblock.chp-totdam,0);
 		if(statblock.chp == 0){
@@ -79,12 +98,14 @@ public class Combatant : MonoBehaviour
 			clone.GetComponent<swooshcontroller>().damtype = -1;
 			clone.GetComponent<swooshcontroller>().dothething();
 		} else {
-			anim.SetBool("hurt",true);		
+			if(dodgestate != 2)anim.SetBool("hurt",true);		
 			Transform clone = Instantiate(BattleMaster.pl[6+i3]);
 			clone.position = transform.position;
 			clone.GetComponent<swooshcontroller>().dam = totdam;
 			clone.GetComponent<swooshcontroller>().damtype = i3;
 			clone.GetComponent<swooshcontroller>().dothething();
+			dodgestate = -1;			
+			StartCoroutine(dodge2());
 		}
 		
 	}
@@ -140,5 +161,55 @@ public class Combatant : MonoBehaviour
 		curop.demothething();
 		yield return new WaitForEndOfFrame();
 		curop.dothething();
+	}
+	
+	public void dodge(){
+		StartCoroutine(dodge1());
+	}
+	
+	public int dodgestate = 0;
+	
+	public IEnumerator dodge1(){
+		if(dodgestate == -1){//knock prone for dodging late
+			yield break;
+		} else if (dodgestate == 0){ //from neutral
+			dodgestate = 1; // actual dodge
+		}
+		yield return new WaitForSeconds(0.05f);
+		if(dodgestate == 1){
+			dodgestate = 2; //too early, block
+			if(humanoid){
+				anim.SetBool("defend",true);
+			} else {
+				anim.SetInteger("stage",1);
+				anim.SetInteger("atkanim",-1);
+			}	
+		}
+		yield return new WaitForSeconds(1f);
+		if(dodgestate == 2){
+			dodgestate = 3; //lockout
+			if(!transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
+				if(humanoid){
+					anim.SetBool("defend",false);
+				} else {				
+					anim.SetInteger("stage",0);
+					anim.SetInteger("atkanim",0);
+				}
+			}
+		}
+		yield return new WaitForSeconds(2f);
+		dodgestate = 0;
+		
+	}
+	
+	public IEnumerator dodge2(){
+		yield return new WaitForSeconds(3f);		
+		if(dodgestate == -1)dodgestate = 0; 
+		anim.SetBool("dodge",false);
+		if(humanoid){
+			anim.SetBool("defend",(transform.GetChild(0).GetChild(0).GetComponent<defendmono>())?true:false);
+		} else {
+			anim.SetInteger("atkanim",(transform.GetChild(0).GetChild(0).GetComponent<defendmono>())?-1:0);
+		}
 	}
 }

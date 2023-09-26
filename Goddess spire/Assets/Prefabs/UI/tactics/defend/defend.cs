@@ -17,8 +17,8 @@ public class defend : combatoption
 	
 	public override void demothething(){
 		anim = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.GetChild(0).GetChild(0).GetComponent<Animator>();
-		tempac = anim.runtimeAnimatorController as AnimatorController;
-		if(BattleMaster.BM.initiative[BattleMaster.BM.roundturn].humanoid)anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
+		//tempac = anim.runtimeAnimatorController as AnimatorController;
+		if(BattleMaster.BM.initiative[BattleMaster.BM.roundturn].humanoid)anim.SetBool("defend",true);//anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
 		anim.SetInteger("stage",1);
 		if(!BattleMaster.BM.initiative[BattleMaster.BM.roundturn].humanoid)anim.SetInteger("atkanim",-1);
 		anim.gameObject.AddComponent(typeof(defendmono));
@@ -28,7 +28,7 @@ public class defend : combatoption
 	}
 	
 	public override void nevermind(){
-		BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
+		//BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
 		anim.transform.GetComponent<defendmono>().stage = -1;
 	}
 	
