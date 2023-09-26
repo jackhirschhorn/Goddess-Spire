@@ -414,7 +414,7 @@ public class BattleMaster : MonoBehaviour
 				return initiative[roundturn].statblock.chp >= cur_sel_CO.cost;
 			break;
 			case 3: //item
-				return BattleMaster.itms[BattleMaster.lastitmsel].count >= 0;
+				return BattleMaster.itms[BattleMaster.lastitmsel].count > 0;
 			break;
 		}
 		return false;
