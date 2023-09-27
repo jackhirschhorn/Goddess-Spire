@@ -81,7 +81,7 @@ public class BattleMaster : MonoBehaviour
 		int i = 0;
 		combatants.RemoveAll(s => s == null);
 		foreach(Combatant c in combatants){
-			if(c.isPC == b){
+			if(c.isPC == b && c.statblock.chp > 0){
 				i++;
 			}
 		}
@@ -92,15 +92,56 @@ public class BattleMaster : MonoBehaviour
 		List<Combatant> temp = new List<Combatant>();
 		combatants.RemoveAll(s => s == null);
 		foreach(Combatant c in combatants){
-			if(c.isPC == b){
+			if(c.isPC == b && c.statblock.chp > 0){
 				temp.Add(c);
 			}
 		}
 		return temp;
 	}
 	
-	public static void isdead(Combatant b){
-		combatants.RemoveAll(s => s == b);
+	public static void isdead(Combatant b, bool b2){
+		if(!b2)combatants.RemoveAll(s => s == b);
+		BM.initiative.RemoveAll(s => s == b);
+		foreach (Transform child in BM.init_track_holder.GetChild(0)) {
+			if(child.GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb == b){
+				if(child.GetSiblingIndex() < BM.roundturn)BM.roundturn--;
+				
+			}
+		}
+		/*for(int i = 0; i <= BM.init_track_holder.childCount-1; i++){
+			(BM.init_track_holder.GetChild(0).GetChild(i) as RectTransform).anchoredPosition = Vector3.zero + new Vector3(70*(i-1),0,0);
+		}*/
+		BM.isdead2();
+	}
+	
+	public void isdead2(){
+		initiative.Clear();	
+		int temp = init_track_holder.GetChild(0).childCount;
+		foreach (Transform child in init_track_holder.GetChild(0)) {
+			Destroy(child.gameObject);
+		}
+		int cur = 255;
+		while(cur >= 0){
+			foreach(Combatant c in combatants){
+				if(c.statblock.chp > 0){
+					if(c.statblock.get_spd() == cur){
+						initiative.Add(c);
+						add_init_face(c,temp);
+					} else if(c.statblock.get_spd()-50 == cur){
+						initiative.Add(c);
+						add_init_face(c,temp);
+					} else if(c.statblock.get_spd()-100 == cur){
+						initiative.Add(c);	
+						add_init_face(c,temp);				
+					}
+				}
+			}
+			cur--;
+		}		
+		reverseorder();
+		//init_track_holder.GetComponent<Animator>().SetBool("move",true);
+		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
+		
 	}
 	
 	public static Combatant unitlist(bool b, int i){
@@ -108,7 +149,7 @@ public class BattleMaster : MonoBehaviour
 		//FIX THIS LATER
 		combatants.RemoveAll(s => s == null);
 		foreach(Combatant c in combatants){
-			if(c.isPC == b){
+			if(c.isPC == b && c.statblock.chp > 0){
 				if(i == 0){
 					return c;
 				} else {
@@ -142,6 +183,10 @@ public class BattleMaster : MonoBehaviour
 		attackst = attackstass;
 		itms = itmsass;
 		partyorder = partyorderass;
+		foreach(Combatant c in combatants){
+			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("startspd", Random.Range(8,13)*0.1f);
+			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", false);
+		}
 	}
 	
 	void Start(){
@@ -156,6 +201,9 @@ public class BattleMaster : MonoBehaviour
 				explained = true;
 				explainer.gameObject.SetActive(false);
 				screenwipe.SetBool("start",true);
+				foreach(Combatant c in combatants){
+					c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", false);
+				}
 			}
 		} else if(!abilityactive && initiative[roundturn].isPC){
 			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon && !abilityselected)menutarget -= 1;
@@ -232,18 +280,21 @@ public class BattleMaster : MonoBehaviour
 	public void initiative_calc(){
 		initiative.Clear();
 		reset_init_faces();
+		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
 		int cur = 255;
 		while(cur >= 0){
 			foreach(Combatant c in combatants){
-				if(c.statblock.get_spd() == cur){
-					initiative.Add(c);
-					add_init_face(c);
-				} else if(c.statblock.get_spd()-50 == cur){
-					initiative.Add(c);
-					add_init_face(c);
-				} else if(c.statblock.get_spd()-100 == cur){
-					initiative.Add(c);	
-					add_init_face(c);				
+				if(c.statblock.chp > 0){
+					if(c.statblock.get_spd() == cur){
+						initiative.Add(c);
+						add_init_face(c,0);
+					} else if(c.statblock.get_spd()-50 == cur){
+						initiative.Add(c);
+						add_init_face(c,0);
+					} else if(c.statblock.get_spd()-100 == cur){
+						initiative.Add(c);	
+						add_init_face(c,0);				
+					}
 				}
 			}
 			cur--;
@@ -264,17 +315,17 @@ public class BattleMaster : MonoBehaviour
 	
 	public void reset_init_faces(){
 		foreach (Transform child in init_track_holder.GetChild(0)) {
-			GameObject.Destroy(child.gameObject);
+			Destroy(child.gameObject);
 		}
 	}
 	
-	public void add_init_face(Combatant c){
+	public void add_init_face(Combatant c, int i){
 		RectTransform clone = (Instantiate(init_head)) as RectTransform;
 		clone.parent = init_track_holder.GetChild(0);
 		clone.GetComponent<Image>().color = (c.isPC?Color.green:Color.red);
 		clone.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.icon;
 		clone.GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb = c;
-		clone.anchoredPosition = Vector3.zero + new Vector3(70*(init_track_holder.GetChild(0).childCount-1),0,0);
+		clone.anchoredPosition = Vector3.zero + new Vector3(70*(init_track_holder.GetChild(0).childCount-i-1),0,0);
 		clone.localScale = Vector3.one;
 	}
 	
