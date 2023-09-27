@@ -279,6 +279,7 @@ public class BattleMaster : MonoBehaviour
 	
 	public void initiative_calc(){
 		initiative.Clear();
+		int temp = init_track_holder.GetChild(0).childCount;
 		reset_init_faces();
 		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
 		int cur = 255;
@@ -287,13 +288,13 @@ public class BattleMaster : MonoBehaviour
 				if(c.statblock.chp > 0){
 					if(c.statblock.get_spd() == cur){
 						initiative.Add(c);
-						add_init_face(c,0);
+						add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-50 == cur){
 						initiative.Add(c);
-						add_init_face(c,0);
+						add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-100 == cur){
 						initiative.Add(c);	
-						add_init_face(c,0);				
+						add_init_face(c,temp);				
 					}
 				}
 			}
@@ -340,6 +341,8 @@ public class BattleMaster : MonoBehaviour
 		roundturn++;
 		if(roundturn >= initiative.Count){
 			roundturn = 0;
+			initiative_calc();
+			return;
 		} else {
 			init_track_holder.GetComponent<Animator>().SetBool("move",true);
 		}
