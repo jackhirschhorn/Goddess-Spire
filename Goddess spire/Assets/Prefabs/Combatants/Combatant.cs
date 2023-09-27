@@ -6,6 +6,7 @@ using System;
 
 public class Combatant : MonoBehaviour
 {
+	public bool strong = false;
 	public brain AI;
 	public bool humanoid = false;
 	public int phenotype = 0;

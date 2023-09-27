@@ -61,6 +61,8 @@ public class BattleMaster : MonoBehaviour
     public static List<Combatant> partyorder = new List<Combatant>();
     public List<Combatant> partyorderass = new List<Combatant>();
 	
+	public Animator screenwipe;
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -153,6 +155,7 @@ public class BattleMaster : MonoBehaviour
 			if(Input.GetKeyDown(KeyCode.E)){
 				explained = true;
 				explainer.gameObject.SetActive(false);
+				screenwipe.SetBool("start",true);
 			}
 		} else if(!abilityactive && initiative[roundturn].isPC){
 			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon && !abilityselected)menutarget -= 1;
