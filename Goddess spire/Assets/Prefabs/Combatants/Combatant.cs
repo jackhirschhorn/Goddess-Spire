@@ -34,6 +34,7 @@ public class Combatant : MonoBehaviour
 	public int idleanim = 0;
 	
 	public void Awake(){
+		statblock.start();
 		enemyHP = Instantiate(enemyHP);
 		enemyHP.parent = transform;
 		enemyHP.position = transform.position + new Vector3(0,height,0);
@@ -160,9 +161,14 @@ public class Combatant : MonoBehaviour
 	
 	public IEnumerator runAIturn1(){
 		combatoption curop = AI.pickoption();
-		curop.demothething();
-		yield return new WaitForEndOfFrame();
-		curop.dothething();
+		if(curop == null){
+			BattleMaster.attackcallback(0);			
+			yield return new WaitForEndOfFrame();
+		} else {
+			curop.demothething();
+			yield return new WaitForEndOfFrame();
+			curop.dothething();
+		}
 	}
 	
 	public void dodge(){
@@ -223,4 +229,20 @@ public class Combatant : MonoBehaviour
 			anim.SetInteger("atkanim",(transform.GetChild(0).GetChild(0).GetComponent<defendmono>())?-1:0);
 		}
 	}
+	
+	public void apply_status(status s, int i){
+		int res = 0;
+		for(int i2 = 0; i2 < statblock.statusresistance.Count; i2++){
+			res += (int)((int)statblock.statusresistance[i2][0] == s.id?statblock.statusresistance[i2][1]:0);
+		}
+		int chance = i - res;
+		int randchance = UnityEngine.Random.Range(0,100);
+		if(randchance <= chance){
+			statusmono sm = (statusmono)gameObject.AddComponent(typeof(statusmono));
+			sm.comb = this;
+			sm.sts = s;
+			sm.init();
+		}
+	}		
+	
 }

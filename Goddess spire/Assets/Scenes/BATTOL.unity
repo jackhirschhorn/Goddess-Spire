@@ -1306,7 +1306,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30596
+  m_Name: pb_Mesh30594
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2099,7 +2099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -2128,6 +2128,26 @@ PrefabInstance:
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[7]
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.data[0].y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.data[0]
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
@@ -8981,7 +9001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -9010,6 +9030,26 @@ PrefabInstance:
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[4]
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.data[0].y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.data[0]
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
@@ -9999,7 +10039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -10028,6 +10068,26 @@ PrefabInstance:
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[3]
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.data[0].y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.data[0]
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
@@ -12513,7 +12573,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30448
+  m_Name: pb_Mesh30446
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -19648,7 +19708,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29376
+  m_Name: pb_Mesh29374
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -22133,6 +22193,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50616664
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.8404207
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.022772321
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.19227566
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239053030791375958, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 379997265308337542, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000029802322
@@ -22355,19 +22443,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999345
+      value: 0.9999475
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.744042e-10
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000053439635
+      value: -0.000000055879354
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011449278
+      value: 0.010253262
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22378,6 +22466,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3779233153720815277, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137835361774178131, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137835361774178131, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000023370372
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137835361774178131, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000016298144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137835361774178131, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000005348375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137835361774178131, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -22538,6 +22646,34 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5231014216984535855, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7065235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7065235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.028715597
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.028715665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238219514363617830, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -25582,7 +25718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.spd
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.mana
@@ -26237,7 +26373,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29100
+  m_Name: pb_Mesh29098
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -27056,7 +27192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29660
+  m_Name: pb_Mesh29658
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32929,7 +33065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -32954,6 +33090,26 @@ PrefabInstance:
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[9]
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.data[0].y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.data[0]
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name
@@ -41952,7 +42108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -41981,6 +42137,26 @@ PrefabInstance:
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[6]
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistance.Array.data[0].y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.statusresistanceintass.Array.data[0]
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584474, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: m_Name

@@ -44,6 +44,9 @@ public class recklesschargemono : MonoBehaviour
 					damage = comb.statblock.atk + (timedhit?2:0);
 					pierce = 0;
 					target.take_damage(damage,pierce,2);
+					if(timedhit){
+						target.apply_status(new prone(target, target.transform.GetChild(0).GetChild(0).GetComponent<Animator>()), 30);
+					}
 					//target knocked prone;
 					hit = true;
 					Destroy(clone.gameObject);
