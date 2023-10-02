@@ -102,22 +102,19 @@ public class BattleMaster : MonoBehaviour
 	public static void isdead(Combatant b, bool b2){
 		if(!b2)combatants.RemoveAll(s => s == b);
 		BM.initiative.RemoveAll(s => s == b);
-		foreach (Transform child in BM.init_track_holder.GetChild(0)) {
+		BM.initiativetrackcheck();
+		/*foreach (Transform child in BM.init_track_holder.GetChild(0)) {
 			if(child.GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb == b){
 				if(child.GetSiblingIndex() < BM.roundturn)BM.roundturn--;
 				
 			}
 		}
-		/*for(int i = 0; i <= BM.init_track_holder.childCount-1; i++){
+		for(int i = 0; i <= BM.init_track_holder.childCount-1; i++){
 			(BM.init_track_holder.GetChild(0).GetChild(i) as RectTransform).anchoredPosition = Vector3.zero + new Vector3(70*(i-1),0,0);
 		}*/
-		BM.isdead2();
-	}
-	
-	public void isdead2(){
-		initiative.Clear();	
-		int temp = init_track_holder.GetChild(0).childCount;
-		foreach (Transform child in init_track_holder.GetChild(0)) {
+		/*BM.initiative.Clear();	
+		int temp = BM.init_track_holder.GetChild(0).childCount;
+		foreach (Transform child in BM.init_track_holder.GetChild(0)) {
 			Destroy(child.gameObject);
 		}
 		int cur = 255;
@@ -125,24 +122,25 @@ public class BattleMaster : MonoBehaviour
 			foreach(Combatant c in combatants){
 				if(c.statblock.chp > 0){
 					if(c.statblock.get_spd() == cur){
-						initiative.Add(c);
-						add_init_face(c,temp);
+						BM.initiative.Add(c);
+						BM.add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-50 == cur){
-						initiative.Add(c);
-						add_init_face(c,temp);
+						BM.initiative.Add(c);
+						BM.add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-100 == cur){
-						initiative.Add(c);	
-						add_init_face(c,temp);				
+						BM.initiative.Add(c);	
+						BM.add_init_face(c,temp);				
 					}
 				}
 			}
 			cur--;
 		}		
-		reverseorder();
+		BM.reverseorder();
 		//init_track_holder.GetComponent<Animator>().SetBool("move",true);
-		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
-		
+		(BM.init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*BM.roundturn+50,-50,0);
+		*/
 	}
+	
 	
 	public static Combatant unitlist(bool b, int i){
 		//true = player, false = enemy;
@@ -277,30 +275,35 @@ public class BattleMaster : MonoBehaviour
 		}
 	}
 	
+	public void LateUpdate(){
+		initiativetrack();
+	}
+	
 	public void initiative_calc(){
 		initiative.Clear();
 		int temp = init_track_holder.GetChild(0).childCount;
-		reset_init_faces();
-		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
+		//reset_init_faces();
+		//(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
 		int cur = 255;
 		while(cur >= 0){
 			foreach(Combatant c in combatants){
 				if(c.statblock.chp > 0){
 					if(c.statblock.get_spd() == cur){
 						initiative.Add(c);
-						add_init_face(c,temp);
+						//add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-50 == cur){
 						initiative.Add(c);
-						add_init_face(c,temp);
+						//add_init_face(c,temp);
 					} else if(c.statblock.get_spd()-100 == cur){
 						initiative.Add(c);	
-						add_init_face(c,temp);				
+						//add_init_face(c,temp);				
 					}
 				}
 			}
 			cur--;
 		}		
 		reverseorder();
+		initiativetrackcheck();
 		if(initiative[roundturn].isPC){
 			abilityselected = false;
 			csubmenuon = false;
@@ -336,17 +339,47 @@ public class BattleMaster : MonoBehaviour
 		}
 	}
 	
+	public bool unset = true;
+	
+	public void initiativetrack(){
+		if(unset){//create/mantain
+			for(int i = 0; i <initiative.Count; i++){
+				add_init_face(initiative[i],0);
+			}
+			unset = false;
+		}
+		//animate
+	}
+	
+	public void initiativetrackcheck(){
+		if(init_track_holder.GetChild(0).childCount != initiative.Count){
+			unset = true;
+			reset_init_faces();
+			return;
+		}
+		for(int i = 0; i < initiative.Count; i++){
+			if(init_track_holder.GetChild(0).GetChild(i).GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb != initiative[i]){
+				unset = true;
+				reset_init_faces();
+				return;
+			}
+		}
+	}
+	
 	public void next_turn(){
+		if(checkendfight())return;
 		initiative[roundturn].BMM = menutarget;
-		roundturn++;
-		if(roundturn >= initiative.Count){
-			roundturn = 0;
+		//roundturn++;
+		initiative.RemoveAt(0);
+		if(initiative.Count == 0){
 			initiative_calc();
+			abilityactive = false;
 			return;
 		} else {
 			init_track_holder.GetComponent<Animator>().SetBool("move",true);
 		}
-		(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
+		//(init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*roundturn+50,-50,0);
+		initiativetrackcheck();
 		update_menu_memory();
 		abilityactive = false;
 		if(initiative[roundturn].isPC){
@@ -362,6 +395,34 @@ public class BattleMaster : MonoBehaviour
 		} else {
 			initiative[roundturn].runAIturn();
 		}
+	}
+	
+	public bool checkendfight(){
+		bool ded = true;
+		foreach(Combatant c in partyorder){
+			if(c.statblock.chp != 0)ded = false;
+		}
+		if(ded){//party loss
+			gameover();
+			return true;
+		}
+		ded = true;
+		foreach(Combatant c in combatants){
+			if(!c.isPC && c.statblock.chp != 0)ded = false;
+		}
+		if(ded){//party win
+			endfight();
+			return true;
+		}
+		return false;
+	}
+	
+	public void gameover(){
+		Debug.Log("GAME OVER");
+	}
+	
+	public void endfight(){
+		Debug.Log("You won!");		
 	}
 	
 	public void update_menu_memory(){

@@ -134,6 +134,11 @@ public class Combatant : MonoBehaviour
 	}
 	
 	public void die(){
+		StartCoroutine(die1());
+	}
+	
+	public IEnumerator die1(){	
+		yield return new WaitForEndOfFrame();
 		anim.SetBool("dead",true);
 		transform.GetChild(0).GetComponent<Collider>().enabled = false;
 		BattleMaster.isdead(this, isPC);
