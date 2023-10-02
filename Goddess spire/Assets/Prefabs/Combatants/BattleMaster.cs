@@ -397,6 +397,8 @@ public class BattleMaster : MonoBehaviour
 		}
 	}
 	
+	public GameObject gameoverscreen;
+	
 	public bool checkendfight(){
 		bool ded = true;
 		foreach(Combatant c in partyorder){
@@ -418,7 +420,8 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public void gameover(){
-		Debug.Log("GAME OVER");
+		gameoverscreen.SetActive(true);
+		//add scene transition logic too later
 	}
 	
 	public void endfight(){
