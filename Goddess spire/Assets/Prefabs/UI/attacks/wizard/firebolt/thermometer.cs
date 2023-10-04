@@ -43,7 +43,6 @@ public class thermometer : MonoBehaviour
 			}
 			if(charge >= 1f){
 				stage = 3;
-				comb.take_damage(comb.magicdamage(3)+4, 0, 3);
 			}
 		} 
     }

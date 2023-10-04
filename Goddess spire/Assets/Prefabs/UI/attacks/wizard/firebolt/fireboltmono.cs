@@ -56,10 +56,13 @@ public class fireboltmono : MonoBehaviour
 			if(clone.GetComponent<thermometer>().stage == 3)stage = 4;
 		} else if (stage == 3){
 				target.take_damage(clone.GetComponent<thermometer>().damage+comb.magicdamage(3), 0, 3);
+				BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
 				Destroy(clone.gameObject);
 				BattleMaster.attackcallback(0);	
 				Destroy(this);
-		} else if (stage == 4){
+		} else if (stage == 4){			
+				comb.take_damage(comb.magicdamage(3)+4, 0, 3);
+				BattleMaster.BM.initiative[BattleMaster.BM.roundturn].resetanim(tempac as RuntimeAnimatorController);
 				Destroy(clone.gameObject);
 				BattleMaster.attackcallback(0);
 				Destroy(this);

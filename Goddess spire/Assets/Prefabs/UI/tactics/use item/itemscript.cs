@@ -9,6 +9,8 @@ public class itemscript : ScriptableObject
 	public int count = 0;
 	public ScriptableObject user;
 	public bool mat = false; //material, not for combat
+	public Sprite icon;
+	public string name = "";
 	
     public virtual void useitem(){
 		done = true;

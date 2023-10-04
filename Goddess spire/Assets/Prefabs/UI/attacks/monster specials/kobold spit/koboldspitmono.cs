@@ -85,9 +85,9 @@ public class koboldspitmono : MonoBehaviour
 				//self damage
 				BattleMaster.killsound();
 				Destroy(clone.gameObject);
+				anim.SetInteger("stage",-1);	
+				anim.SetInteger("atkanim",0);				
 				comb.take_damage(comb.magicdamage(0)+(int)powar,0,3+comb.phenotype);
-				anim.SetInteger("stage",0);	
-				anim.SetInteger("atkanim",0);
 				BattleMaster.attackcallback(0);	
 				clone = Instantiate(BattleMaster.pl[19]);//spawn an explosion
 				var main = clone.GetComponent<ParticleSystem>().main;

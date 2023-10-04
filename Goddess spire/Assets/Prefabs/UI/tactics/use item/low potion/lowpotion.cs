@@ -8,6 +8,7 @@ public class lowpotion : itemscript
 {
     public lowpotion(){
 		targtype = 0;
+		name = "Low Potion";
 	}
 		Transform clone;
 	public override void useitem(){

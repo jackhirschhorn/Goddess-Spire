@@ -15,6 +15,9 @@ public class brain : ScriptableObject
 	}
 	
 	public virtual bool statuscheck(){
+		if(BattleMaster.BM.initiative[BattleMaster.BM.roundturn].statblock.chp == 0){
+			return true;
+		}
 		foreach(statusmono sm in BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.GetComponents<statusmono>()){
 			if(sm.sts.id == 0){
 				sm.sts.onturnstart();

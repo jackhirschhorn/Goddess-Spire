@@ -300,7 +300,8 @@ public class BattleMaster : MonoBehaviour
 			combatmenu.GetChild(0).gameObject.SetActive(true);
 			combatmenu.position = initiative[roundturn].transform.position + new Vector3(0,5,0);
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
-			csubmenu.transform.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
+			combatmenu.GetChild(0).localRotation = Quaternion.Euler(-38,-20,5);
+			combatmenu.GetChild(0).Rotate(0,initiative[roundturn].BMM%4 == 0?0:(initiative[roundturn].BMM%4 == 1?90:(initiative[roundturn].BMM%4 == 2?180:270)),0);
 		} else {
 			initiative[roundturn].runAIturn();
 		}
@@ -410,14 +411,41 @@ public class BattleMaster : MonoBehaviour
 	
 	public void gameover(){
 		gameoverscreen.SetActive(true);
+		//play gameover tune
 		//add scene transition logic too later
 	}
 	
 	public GameObject battleendscreen;
+	public TextMeshProUGUI endscreenxp;
 	
 	public void endfight(){
 		battleendscreen.SetActive(true);
-		Debug.Log("You won!");		
+		//play victory tune
+		StartCoroutine(endfight1());
+	}
+	
+	public Transform itmholder;
+	
+	public IEnumerator endfight1(){		
+		endscreenxp.text = "EXP: " + 0;
+		yield return new WaitForSeconds(0.2f);
+		int curxp = 0;
+		while(curxp != encounterxp){
+			curxp++;
+			endscreenxp.text = "EXP: " + curxp;
+			yield return new WaitForEndOfFrame();
+		}
+		int offset = 0;
+		foreach(itemscript its in encounteritems){
+			yield return new WaitForSeconds(0.2f);
+			Transform itsclone = Instantiate(pl[29]);
+			itsclone.parent = itmholder;
+			itsclone.localPosition = new Vector3(0,0-offset,0);
+			itsclone.GetChild(0).GetComponent<Image>().sprite = its.icon;
+			itsclone.GetChild(1).GetComponent<TextMeshProUGUI>().text = its.name + " X " + its.count;
+			//add to total items;
+			offset += 50;
+		}
 	}
 	
 	public void update_menu_memory(){

@@ -7,5 +7,6 @@ public class scale : itemscript
 {
     public scale(){
 		mat = true;
+		name = "scale";
 	}
 }
