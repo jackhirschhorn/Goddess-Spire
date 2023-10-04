@@ -31,7 +31,7 @@ public class firestrikemono : animredirect
     {
         if(stage == 0){
 		} else if (stage == -1){
-			clone.GetComponent<axecharge>().stage = -1;
+			clone.GetComponent<firestrikeui>().stage = -1;
 			Destroy(this);
 		} else if (stage == 1){
 			if(anim.GetInteger("stage") != 2)BattleMaster.makesoundtokill(1);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor.Animations;
 
 
-[CreateAssetMenu(fileName ="useitem")]
+//[CreateAssetMenu(fileName ="useitem")]
 public class useitem : combatoption
 {
     public useitem(){

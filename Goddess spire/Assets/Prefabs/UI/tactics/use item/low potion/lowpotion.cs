@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName ="lowpotionitm")]
+//[CreateAssetMenu(fileName ="lowpotionitm")]
 public class lowpotion : itemscript
 {
     public lowpotion(){

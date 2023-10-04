@@ -5,10 +5,11 @@ using UnityEngine;
 [Serializable]
 public class Stats 
 {
-    public int atk,spd,def,mag,res,lck,hp,chp,stam,cstam,mana,cmana;
+    public int atk,spd,def,mag,res,lck,hp,chp,stam,cstam,mana,cmana, lvl, xp, nextxp;
 	public float[] resistances = new float[]{1,1,1,1,1,1,1,1,1,1,1};
 	[SerializeField]
 	public List<Vector2> statusresistance = new List<Vector2>(); //x = id, y = modifier, 0 = prone
+	public List<itemscript> deathdrops = new List<itemscript>();
 	
 	public void start(){
 		

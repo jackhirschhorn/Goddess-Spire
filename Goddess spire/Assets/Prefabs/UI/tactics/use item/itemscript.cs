@@ -8,6 +8,7 @@ public class itemscript : ScriptableObject
 	public int targtype = 0; //0 = self only, 1 = target, 2 = area
 	public int count = 0;
 	public ScriptableObject user;
+	public bool mat = false; //material, not for combat
 	
     public virtual void useitem(){
 		done = true;

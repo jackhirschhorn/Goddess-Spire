@@ -63,6 +63,9 @@ public class BattleMaster : MonoBehaviour
 	
 	public Animator screenwipe;
 	
+	public int encounterxp = 0;
+	public List<itemscript> encounteritems = new List<itemscript>();
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -103,42 +106,25 @@ public class BattleMaster : MonoBehaviour
 		if(!b2)combatants.RemoveAll(s => s == b);
 		BM.initiative.RemoveAll(s => s == b);
 		BM.initiativetrackcheck();
-		/*foreach (Transform child in BM.init_track_holder.GetChild(0)) {
-			if(child.GetChild(0).GetChild(0).GetComponent<indicatorgrabber>().comb == b){
-				if(child.GetSiblingIndex() < BM.roundturn)BM.roundturn--;
-				
+		if(!b2)BM.encounterxp += b.statblock.xp;
+		if(!b2)addencounteritem(b.statblock.deathdrops);
+	}
+	
+	public static void addencounteritem(List<itemscript> l){
+		foreach(itemscript i in l){
+			addencounteritem(Instantiate(i));
+		}
+	}
+	
+	public static void addencounteritem(itemscript l){
+		for(int i = 0; i < BM.encounteritems.Count;i++){
+			if(BM.encounteritems[i].GetType() == l.GetType()){
+				BM.encounteritems[i].count += l.count;
+				return;
 			}
 		}
-		for(int i = 0; i <= BM.init_track_holder.childCount-1; i++){
-			(BM.init_track_holder.GetChild(0).GetChild(i) as RectTransform).anchoredPosition = Vector3.zero + new Vector3(70*(i-1),0,0);
-		}*/
-		/*BM.initiative.Clear();	
-		int temp = BM.init_track_holder.GetChild(0).childCount;
-		foreach (Transform child in BM.init_track_holder.GetChild(0)) {
-			Destroy(child.gameObject);
-		}
-		int cur = 255;
-		while(cur >= 0){
-			foreach(Combatant c in combatants){
-				if(c.statblock.chp > 0){
-					if(c.statblock.get_spd() == cur){
-						BM.initiative.Add(c);
-						BM.add_init_face(c,temp);
-					} else if(c.statblock.get_spd()-50 == cur){
-						BM.initiative.Add(c);
-						BM.add_init_face(c,temp);
-					} else if(c.statblock.get_spd()-100 == cur){
-						BM.initiative.Add(c);	
-						BM.add_init_face(c,temp);				
-					}
-				}
-			}
-			cur--;
-		}		
-		BM.reverseorder();
-		//init_track_holder.GetComponent<Animator>().SetBool("move",true);
-		(BM.init_track_holder as RectTransform).anchoredPosition = new Vector3(-70*BM.roundturn+50,-50,0);
-		*/
+		BM.encounteritems.Add(l);
+		
 	}
 	
 	
@@ -179,7 +165,10 @@ public class BattleMaster : MonoBehaviour
 		iconanims[2].SetBool("skip",true);
 		iconanims[3].SetBool("skip",true);
 		attackst = attackstass;
-		itms = itmsass;
+		//itms = itmsass;
+		foreach(itemscript its in itmsass){
+			itms.Add(Instantiate(its));
+		}
 		partyorder = partyorderass;
 		foreach(Combatant c in combatants){
 			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("startspd", Random.Range(8,13)*0.1f);
@@ -424,7 +413,10 @@ public class BattleMaster : MonoBehaviour
 		//add scene transition logic too later
 	}
 	
+	public GameObject battleendscreen;
+	
 	public void endfight(){
+		battleendscreen.SetActive(true);
 		Debug.Log("You won!");		
 	}
 	

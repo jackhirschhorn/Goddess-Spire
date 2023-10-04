@@ -765,6 +765,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: statblock.nextxp
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1306,7 +1310,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30600
+  m_Name: pb_Mesh30624
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2090,6 +2094,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.xp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.atk
       value: 1
       objectReference: {fileID: 0}
@@ -2121,6 +2129,14 @@ PrefabInstance:
       propertyPath: weapon_CO.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7a53c5071d304aa3d63e1dfdc9660, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[4]
       value: 1
@@ -8992,6 +9008,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.xp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.atk
       value: 1
       objectReference: {fileID: 0}
@@ -9023,6 +9043,14 @@ PrefabInstance:
       propertyPath: weapon_CO.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7a53c5071d304aa3d63e1dfdc9660, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[1]
       value: 1
@@ -9331,6 +9359,7 @@ RectTransform:
   - {fileID: 975299879}
   - {fileID: 242738218}
   - {fileID: 843811647}
+  - {fileID: 1162756815}
   m_Father: {fileID: 943418781}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10031,6 +10060,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.xp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.atk
       value: 1
       objectReference: {fileID: 0}
@@ -10062,6 +10095,14 @@ PrefabInstance:
       propertyPath: weapon_CO.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7a53c5071d304aa3d63e1dfdc9660, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[0]
       value: 1
@@ -12574,7 +12615,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30452
+  m_Name: pb_Mesh30468
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -15261,9 +15302,12 @@ MonoBehaviour:
   - {fileID: 1386805345}
   - {fileID: 1241514938}
   screenwipe: {fileID: 975299881}
+  encounterxp: 0
+  encounteritems: []
   snd: {fileID: 0}
   unset: 1
   gameoverscreen: {fileID: 843811646}
+  battleendscreen: {fileID: 1162756814}
 --- !u!1 &958796937
 GameObject:
   m_ObjectHideFlags: 0
@@ -20083,6 +20127,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7011093310369348940, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
   m_PrefabInstance: {fileID: 2097162047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162756814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162756815}
+  m_Layer: 5
+  m_Name: battlewon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1162756815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162756814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 620408606}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1166445565
 GameObject:
   m_ObjectHideFlags: 0
@@ -21943,6 +22023,10 @@ PrefabInstance:
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.cstam
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: statblock.nextxp
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
@@ -24845,6 +24929,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: statblock.nextxp
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -25953,6 +26041,10 @@ PrefabInstance:
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.cstam
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: statblock.nextxp
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: class_CO.Array.size
@@ -27410,7 +27502,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29664
+  m_Name: pb_Mesh29672
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -33409,6 +33501,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.xp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.atk
       value: 1
       objectReference: {fileID: 0}
@@ -33440,6 +33536,14 @@ PrefabInstance:
       propertyPath: weapon_CO.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7a53c5071d304aa3d63e1dfdc9660, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[9]
       value: 0.5
@@ -41887,6 +41991,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
+      propertyPath: statblock.lvl
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.mag
       value: 1
       objectReference: {fileID: 0}
@@ -42452,6 +42560,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.xp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.atk
       value: 1
       objectReference: {fileID: 0}
@@ -42483,6 +42595,14 @@ PrefabInstance:
       propertyPath: weapon_CO.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
+      propertyPath: statblock.deathdrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7a53c5071d304aa3d63e1dfdc9660, type: 2}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.resistances.Array.data[3]
       value: 1
