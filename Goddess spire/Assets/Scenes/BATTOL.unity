@@ -1310,7 +1310,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30630
+  m_Name: pb_Mesh31078
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -12750,7 +12750,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30474
+  m_Name: pb_Mesh30914
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -15695,7 +15695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &975299879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20044,7 +20044,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29382
+  m_Name: pb_Mesh29806
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -26974,7 +26974,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29106
+  m_Name: pb_Mesh29522
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -27793,7 +27793,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29674
+  m_Name: pb_Mesh30106
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32112,7 +32112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c709d9c20fa2c64e8d8924287216a3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: 0.576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c709d9c20fa2c64e8d8924287216a3e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32493,6 +32493,10 @@ PrefabInstance:
     - target: {fileID: 92097553111088338, guid: 7c709d9c20fa2c64e8d8924287216a3e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.81312305
+      objectReference: {fileID: 0}
+    - target: {fileID: 92097553111088338, guid: 7c709d9c20fa2c64e8d8924287216a3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 92097553111088338, guid: 7c709d9c20fa2c64e8d8924287216a3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
