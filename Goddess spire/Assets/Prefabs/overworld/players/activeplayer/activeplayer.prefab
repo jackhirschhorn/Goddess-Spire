@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1419433222233019574}
   - component: {fileID: 4120586800477469809}
   - component: {fileID: 6494643321896763517}
+  - component: {fileID: 557242490314889458}
   m_Layer: 0
   m_Name: activeplayer
   m_TagString: Untagged
@@ -86,7 +87,200 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1419433222233019574}
-  rotspeed: 1
+  rotspeed: 3
+  is_sprinting: 0
+  camera: {fileID: 0}
+  rotass: {x: 0, y: 0}
+--- !u!114 &557242490314889458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024971240307710921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 56aadb329d5fafa42bd8ffacde241628, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: confirm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c9fb9eea-ea9c-47d8-8eaf-4510b6a8bb14
+    m_ActionName: input/confirm[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: cancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9ec68175-c6b6-4bf7-8094-2375f4881338
+    m_ActionName: input/cancel[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 53727934-f077-41ff-a41c-030d084f3a4a
+    m_ActionName: input/move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: sprinttoggle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 128e300a-8178-4dd3-8e32-f553fb9afef0
+    m_ActionName: input/sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: select1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2635115f-503a-4ac4-8d66-b931e51fe145
+    m_ActionName: input/selector[/Keyboard/1,/Keyboard/2,/Keyboard/3,/Keyboard/4,/Keyboard/5]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: select2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fc92fbff-d1c3-49c3-9f60-557d91275e6e
+    m_ActionName: input/select 2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: select3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 13563cc6-b986-4fac-b067-204f1ea1ebce
+    m_ActionName: input/select 3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: select4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f1d0324-0842-4842-bb40-1b56183c888e
+    m_ActionName: input/select 4[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: select5
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0d5f9280-75c2-40ea-9a7a-f453d9b2ae56
+    m_ActionName: input/select 5[/Keyboard/5]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 97908b82-e2b5-4c41-af41-2ebda8b36ed1
+    m_ActionName: input/New action
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: default
+  m_DefaultActionMap: input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4151187440434510042
 GameObject:
   m_ObjectHideFlags: 0
