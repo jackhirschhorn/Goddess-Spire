@@ -7,10 +7,10 @@ public class overworldmanager : MonoBehaviour
 {
 	public static overworldmanager OM;
     
-	public InputActionAsset IA;
+	public InputActionMap IA;
 	public PlayerInput PI;
 	
-	void awake(){
+	void Awake(){
 		OM = this;
 	}
 	// Start is called before the first frame update
