@@ -12,7 +12,6 @@ public class interactable : MonoBehaviour
 		if(col.transform.GetComponent<playercontroller>()){
 			on = true;
 			if(indicator != null)indicator.gameObject.SetActive(true);
-			Debug.Log(overworldmanager.OM);
 			InputAction action = overworldmanager.OM.PI.actions.FindAction("confirm", true);
 			action.performed += interact;
 		}

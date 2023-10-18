@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class interactabletest : interactable
 {
 	public ParticleSystem ps;
+	public AudioSource sfx;
     public override void interact(InputAction.CallbackContext context){
 		if(on){
 			Debug.Log("interacted!");
 			ps.Play();
+			sfx.Play();
 		}
 	}
 }
