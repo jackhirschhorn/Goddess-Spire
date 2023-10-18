@@ -12,6 +12,8 @@ public class playercontroller : MonoBehaviour
 	public Transform camera;
 	public List<AudioClip> sounds = new List<AudioClip>();
 	public GameObject footsteps;
+	public AudioSource jumpgrunt;
+	public AudioSource land;
 	
 	void Awake(){
 		
@@ -40,6 +42,13 @@ public class playercontroller : MonoBehaviour
 			anim.SetBool("walk", false);
 			anim.SetBool("sprint", false);
 		}
+		if(playland && transform.GetComponent<CharacterController>().isGrounded && !anim.GetBool("jump")){
+			land.Play();
+			playland = false;
+		}
+		if(Input.GetKeyDown(KeyCode.F)){
+			Debug.Log(transform.GetComponent<CharacterController>().isGrounded);
+		}
     }
 	
 	public void sprinttoggle(InputAction.CallbackContext context){
@@ -66,9 +75,15 @@ public class playercontroller : MonoBehaviour
 		}
 	}
 	
+	bool playland = false;
+	
 	public void jump(InputAction.CallbackContext context){
 		if(context.performed){
-			if(transform.GetComponent<CharacterController>().isGrounded)anim.SetBool("jump", true);
+			if(transform.GetComponent<CharacterController>().isGrounded && !anim.GetBool("jump")){
+				anim.SetBool("jump", true);
+				playland = true;
+				jumpgrunt.Play();
+			}
 		}
 	}
 	
