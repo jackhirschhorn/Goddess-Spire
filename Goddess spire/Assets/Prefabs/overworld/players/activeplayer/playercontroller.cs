@@ -37,7 +37,6 @@ public class playercontroller : MonoBehaviour
 			footsteps.GetComponent<AudioSource>().clip = sounds[(is_sprinting?0:1)];
 			if(!footsteps.GetComponent<AudioSource>().isPlaying)footsteps.GetComponent<AudioSource>().Play();
 			footsteps.SetActive(true);
-			Debug.Log((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			transform.GetComponent<Rigidbody>().velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),transform.GetComponent<Rigidbody>().velocity.y,Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
 		} else {
