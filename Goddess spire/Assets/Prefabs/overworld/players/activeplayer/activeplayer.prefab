@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 557242490314889458}
   - component: {fileID: 557242490314889461}
   - component: {fileID: 557242490314889462}
-  - component: {fileID: 557242490314889465}
   m_Layer: 7
   m_Name: activeplayer
   m_TagString: Untagged
@@ -76,9 +75,9 @@ MonoBehaviour:
   is_sprinting: 0
   camera: {fileID: 0}
   sounds:
-  - {fileID: 8300000, guid: 1cbee1afd0bd8a74e86879db95a99c42, type: 3}
-  - {fileID: 8300000, guid: 7d16b25cfb9861b4e849cae8f404b920, type: 3}
-  footsteps: {fileID: 5595558350388147447}
+  - {fileID: 8300000, guid: 63615e9308ec70f44b09cb8a5ea55dad, type: 3}
+  - {fileID: 8300000, guid: 06238471fa870f6408650d56a28dec1d, type: 3}
+  footsteps: {fileID: 5952205938303499479}
   jumpgrunt: {fileID: 1174083057979674708}
   land: {fileID: 6416541183144207112}
   rotass: {x: 0, y: 0}
@@ -298,26 +297,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024971240307710921}
-  m_Material: {fileID: 13400000, guid: f174724be92fcde4a9fdcbabca4abf66, type: 2}
+  m_Material: {fileID: 13400000, guid: 39183f1d3fb11b74ebe65018e35e12d0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 3.2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &557242490314889465
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024971240307710921}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 1, z: 0.8}
-  m_Center: {x: 0, y: -1.1, z: 0}
 --- !u!1 &2771351841745374409
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8485326337326075838
 Transform:
   m_ObjectHideFlags: 0
@@ -555,10 +541,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4059015029361059714, guid: 6f532eb4a41df1442b7c1b04a18b1875, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1cbee1afd0bd8a74e86879db95a99c42, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -11,9 +11,9 @@ public class playercontroller : MonoBehaviour
 	public bool is_sprinting = false;
 	public Transform camera;
 	public List<AudioClip> sounds = new List<AudioClip>();
-	public GameObject footsteps;
+	public AudioSource footsteps;
 	public AudioSource jumpgrunt;
-	public AudioSource land;
+	public AudioSource land;	
 	
 	void Awake(){
 		
@@ -34,13 +34,11 @@ public class playercontroller : MonoBehaviour
 		if(rotass != Vector2.zero){	
 			transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
 			anim.SetBool((is_sprinting?"sprint":"walk"), true);
-			footsteps.GetComponent<AudioSource>().clip = sounds[(is_sprinting?0:1)];
-			if(!footsteps.GetComponent<AudioSource>().isPlaying)footsteps.GetComponent<AudioSource>().Play();
-			footsteps.SetActive(true);
+			footsteps.clip = sounds[(is_sprinting?0:1)];
 			transform.GetComponent<Rigidbody>().velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),transform.GetComponent<Rigidbody>().velocity.y,Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
 		} else {
-			footsteps.SetActive(false);
+			footsteps.Stop();
 			anim.SetBool("walk", false);
 			anim.SetBool("sprint", false);
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
@@ -48,14 +46,20 @@ public class playercontroller : MonoBehaviour
 		if(playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !anim.GetBool("jump")){
 			land.Play();
 			playland = false;
+			anim.SetBool("landed", true);
 		}
 		if(jumppower > 0){
+			footsteps.Stop();
 			transform.GetComponent<Rigidbody>().AddForce(new Vector3(0,jumppower,0));
 			jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
 		} else {
 			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
 		}
     }
+	
+	public void playstep(){
+		footsteps.Play();
+	}
 	
 	public void sprinttoggle(InputAction.CallbackContext context){
 		if(context.performed){
@@ -91,6 +95,7 @@ public class playercontroller : MonoBehaviour
 			jumppower = 500f;
 			jumppowerdecay = 15f;
 			anim.SetBool("jump", true);
+			anim.SetBool("landed", false);
 			playland = true;
 			jumpgrunt.Play();
 		}
