@@ -14,6 +14,7 @@ public class playercontroller : MonoBehaviour
 	public AudioSource footsteps;
 	public AudioSource jumpgrunt;
 	public AudioSource land;	
+	public Rigidbody cc;
 	
 	void Awake(){
 		
@@ -31,19 +32,31 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if(rotass != Vector2.zero){	
+		if(rotass != Vector2.zero){
+			cc.isKinematic = false;
 			transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
 			anim.SetBool((is_sprinting?"sprint":"walk"), true);
 			footsteps.clip = sounds[(is_sprinting?0:1)];
 			transform.GetComponent<Rigidbody>().velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),transform.GetComponent<Rigidbody>().velocity.y,Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
+			if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+				transform.GetComponent<Rigidbody>().velocity = Vector3.ProjectOnPlane(transform.GetComponent<Rigidbody>().velocity,hit.normal);//new Vector3(1-Mathf.Abs(hit.normal.x),1-Mathf.Abs(hit.normal.y),1-Mathf.Abs(hit.normal.z)));
+				if(Mathf.Abs(hit.normal.x)> 0.51f){ //fix this to be right decector
+				} else {
+				}
+			}
 		} else {
 			footsteps.Stop();
 			anim.SetBool("walk", false);
 			anim.SetBool("sprint", false);
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
+			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+				cc.isKinematic = true;
+			} else {
+				cc.isKinematic = false;
+			}
 		}
-		if(playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !anim.GetBool("jump")){
+		if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
 			land.Play();
 			playland = false;
 			anim.SetBool("landed", true);
@@ -91,13 +104,14 @@ public class playercontroller : MonoBehaviour
 	public LayerMask jumplayers;
 	
 	public void jump(InputAction.CallbackContext context){
-		if(context.performed && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
 			jumppower = 500f;
 			jumppowerdecay = 15f;
 			anim.SetBool("jump", true);
 			anim.SetBool("landed", false);
 			playland = true;
 			jumpgrunt.Play();
+			cc.isKinematic = false;
 		}
 		if(context.canceled){
 			jumppowerdecay = 50f;

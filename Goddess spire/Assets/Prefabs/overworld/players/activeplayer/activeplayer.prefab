@@ -80,6 +80,8 @@ MonoBehaviour:
   footsteps: {fileID: 5952205938303499479}
   jumpgrunt: {fileID: 1174083057979674708}
   land: {fileID: 6416541183144207112}
+  cc: {fileID: 557242490314889461}
+  blocker: {fileID: 0}
   rotass: {x: 0, y: 0}
   jumplayers:
     serializedVersion: 2
