@@ -37,12 +37,15 @@ public class playercontroller : MonoBehaviour
 			transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
 			anim.SetBool((is_sprinting?"sprint":"walk"), true);
 			footsteps.clip = sounds[(is_sprinting?0:1)];
-			transform.GetComponent<Rigidbody>().velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
-			transform.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),transform.GetComponent<Rigidbody>().velocity.y,Mathf.Clamp(transform.GetComponent<Rigidbody>().velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
+			cc.velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
+			cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
 			if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
-				transform.GetComponent<Rigidbody>().velocity = Vector3.ProjectOnPlane(transform.GetComponent<Rigidbody>().velocity,hit.normal);//new Vector3(1-Mathf.Abs(hit.normal.x),1-Mathf.Abs(hit.normal.y),1-Mathf.Abs(hit.normal.z)));
-				if(Mathf.Abs(hit.normal.x)> 0.51f){ //fix this to be right decector
+				//Debug.Log(transform.right +" " + cc.velocity.normalized);
+				if(groundangle(hit.normal)){ //fix this to be right decector
+					cc.velocity = new Vector3(0,0,0);
+					cc.isKinematic = true;
 				} else {
+					cc.velocity = Vector3.ProjectOnPlane(cc.velocity,hit.normal);
 				}
 			}
 		} else {
@@ -50,7 +53,7 @@ public class playercontroller : MonoBehaviour
 			anim.SetBool("walk", false);
 			anim.SetBool("sprint", false);
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
-			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && groundangle(hit.normal)){
 				cc.isKinematic = true;
 			} else {
 				cc.isKinematic = false;
@@ -63,12 +66,20 @@ public class playercontroller : MonoBehaviour
 		}
 		if(jumppower > 0){
 			footsteps.Stop();
-			transform.GetComponent<Rigidbody>().AddForce(new Vector3(0,jumppower,0));
+			transform.GetComponent<Rigidbody>().AddForce(jumpangle*jumppower);
 			jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
 		} else {
 			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
 		}
     }
+	
+	public bool groundangle(Vector3 v){
+		return (((Vector3.Angle( v, new Vector3(cc.velocity.normalized.x,0,cc.velocity.normalized.z))) - 90)> 50f);
+	}
+	
+	public bool groundangle(Vector3 v, bool b){ //forjumping
+		return (((Vector3.Angle( v, transform.right)) - 90)> 50f);
+	}
 	
 	public void playstep(){
 		footsteps.Play();
@@ -102,9 +113,11 @@ public class playercontroller : MonoBehaviour
 	float jumppower = 0f;
 	float jumppowerdecay = 1f;
 	public LayerMask jumplayers;
+	Vector3 jumpangle = new Vector3(0,1,0);
 	
 	public void jump(InputAction.CallbackContext context){
-		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !groundangle(hit.normal,true)){
+			Debug.Log(!groundangle(hit.normal));
 			jumppower = 500f;
 			jumppowerdecay = 15f;
 			anim.SetBool("jump", true);
