@@ -40,7 +40,9 @@ public class playercontroller : MonoBehaviour
 			footsteps.clip = sounds[(is_sprinting?0:1)];
 			cc.velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
-			if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+			if(jumppower > 0){
+				
+			} else if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
 				if(groundangle(hit.normal,1)){ //fix this to be right decector
 					if(lastangle < 150f){
 						cc.velocity = new Vector3(0,0,0);
@@ -131,6 +133,7 @@ public class playercontroller : MonoBehaviour
 	
 	public void jump(InputAction.CallbackContext context){
 		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !groundangle(hit.normal,true)){
+			//jumpangle = hit.normal;
 			jumppower = 500f;
 			jumppowerdecay = 15f;
 			anim.SetBool("jump", true);
@@ -138,6 +141,7 @@ public class playercontroller : MonoBehaviour
 			playland = true;
 			jumpgrunt.Play();
 			cc.isKinematic = false;
+			cc.velocity = new Vector3(cc.velocity.x, 0, cc.velocity.z);
 		}
 		if(context.canceled){
 			jumppowerdecay = 50f;
