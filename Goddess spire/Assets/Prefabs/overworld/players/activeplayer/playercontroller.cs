@@ -68,6 +68,9 @@ public class playercontroller : MonoBehaviour
 				if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
 			}
 		}
+		if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
+			if(hit3.transform.GetComponent<Rigidbody>())cc.velocity += hit3.transform.GetComponent<Rigidbody>().velocity;
+		}
 		if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
 			land.Play();
 			playland = false;
