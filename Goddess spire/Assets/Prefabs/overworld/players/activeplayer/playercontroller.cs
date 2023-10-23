@@ -15,6 +15,7 @@ public class playercontroller : MonoBehaviour
 	public AudioSource jumpgrunt;
 	public AudioSource land;	
 	public Rigidbody cc;
+	public float lastangle = 0;
 	
 	void Awake(){
 		
@@ -40,12 +41,16 @@ public class playercontroller : MonoBehaviour
 			cc.velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
 			cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
 			if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
-				//Debug.Log(transform.right +" " + cc.velocity.normalized);
-				if(groundangle(hit.normal)){ //fix this to be right decector
-					cc.velocity = new Vector3(0,0,0);
-					cc.isKinematic = true;
+				if(groundangle(hit.normal,1)){ //fix this to be right decector
+					if(lastangle < 150f){
+						cc.velocity = new Vector3(0,0,0);
+						cc.isKinematic = true;
+					} else {
+						cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+					}
 				} else {
 					cc.velocity = Vector3.ProjectOnPlane(cc.velocity,hit.normal);
+					lastangle = Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up);
 				}
 			}
 		} else {
@@ -53,16 +58,19 @@ public class playercontroller : MonoBehaviour
 			anim.SetBool("walk", false);
 			anim.SetBool("sprint", false);
 			transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
-			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && groundangle(hit.normal)){
+			RaycastHit hit = new RaycastHit();
+			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers) && groundangle(hit.normal)){
 				cc.isKinematic = true;
 			} else {
 				cc.isKinematic = false;
+				if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
 			}
 		}
 		if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
 			land.Play();
 			playland = false;
 			anim.SetBool("landed", true);
+			lastangle = Vector3.Angle(Vector3.Cross(hit2.normal,Vector3.Cross(hit2.normal,Vector3.up)),Vector3.up);
 		}
 		if(jumppower > 0){
 			footsteps.Stop();
@@ -77,7 +85,13 @@ public class playercontroller : MonoBehaviour
 		return (((Vector3.Angle( v, new Vector3(cc.velocity.normalized.x,0,cc.velocity.normalized.z))) - 90)> 50f);
 	}
 	
+	public bool groundangle(Vector3 v, int i){
+		if(Vector3.Angle(Vector3.Cross(v,Vector3.Cross(v,Vector3.up)),Vector3.up) <149f)return false;
+		return (((Vector3.Angle( v, new Vector3(cc.velocity.normalized.x,0,cc.velocity.normalized.z))) - 90)> Mathf.Clamp(Vector3.Angle(Vector3.Cross(v,Vector3.Cross(v,Vector3.up)),Vector3.ProjectOnPlane(cc.velocity,v))-120,0,50));
+	}
+	
 	public bool groundangle(Vector3 v, bool b){ //forjumping
+		if(Vector3.Angle(Vector3.Cross(v,Vector3.Cross(v,Vector3.up)),Vector3.up) >149f)return true;
 		return (((Vector3.Angle( v, transform.right)) - 90)> 50f);
 	}
 	
@@ -117,7 +131,6 @@ public class playercontroller : MonoBehaviour
 	
 	public void jump(InputAction.CallbackContext context){
 		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !groundangle(hit.normal,true)){
-			Debug.Log(!groundangle(hit.normal));
 			jumppower = 500f;
 			jumppowerdecay = 15f;
 			anim.SetBool("jump", true);
