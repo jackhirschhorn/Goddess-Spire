@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 557242490314889458}
   - component: {fileID: 557242490314889461}
   - component: {fileID: 557242490314889462}
+  - component: {fileID: 5488617897803447835}
   m_Layer: 7
   m_Name: activeplayer
   m_TagString: Untagged
@@ -81,7 +82,9 @@ MonoBehaviour:
   jumpgrunt: {fileID: 1174083057979674708}
   land: {fileID: 6416541183144207112}
   cc: {fileID: 557242490314889461}
-  blocker: {fileID: 0}
+  lastangle: 0
+  jumpmat: {fileID: 13400000, guid: 39183f1d3fb11b74ebe65018e35e12d0, type: 2}
+  standmat: {fileID: 13400000, guid: f174724be92fcde4a9fdcbabca4abf66, type: 2}
   rotass: {x: 0, y: 0}
   jumplayers:
     serializedVersion: 2
@@ -303,9 +306,23 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 3.2
+  m_Height: 3.1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &5488617897803447835
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024971240307710921}
+  m_Material: {fileID: 13400000, guid: f174724be92fcde4a9fdcbabca4abf66, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: -1.1, z: 0}
 --- !u!1 &2771351841745374409
 GameObject:
   m_ObjectHideFlags: 0

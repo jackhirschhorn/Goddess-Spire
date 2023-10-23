@@ -16,6 +16,9 @@ public class playercontroller : MonoBehaviour
 	public AudioSource land;	
 	public Rigidbody cc;
 	public float lastangle = 0;
+	public PhysicMaterial jumpmat;
+	public PhysicMaterial standmat;
+	
 	
 	void Awake(){
 		
@@ -29,6 +32,8 @@ public class playercontroller : MonoBehaviour
 	void LateUpdate(){
 		camera.position = transform.position;
 	}
+
+	Vector3 lastvel = Vector3.zero;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -68,13 +73,18 @@ public class playercontroller : MonoBehaviour
 				if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
 			}
 		}
-		if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
-			if(hit3.transform.GetComponent<Rigidbody>())cc.velocity += hit3.transform.GetComponent<Rigidbody>().velocity;
+		if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
+			if(hit3.transform.GetComponent<Rigidbody>()){
+				lastvel = hit3.transform.GetComponent<Rigidbody>().velocity;
+			} else {
+				lastvel = Vector3.zero;
+			}
 		}
 		if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
 			land.Play();
 			playland = false;
 			anim.SetBool("landed", true);
+			//transform.GetComponent<Collider>().material = standmat;
 			lastangle = Vector3.Angle(Vector3.Cross(hit2.normal,Vector3.Cross(hit2.normal,Vector3.up)),Vector3.up);
 		}
 		if(jumppower > 0){
@@ -84,6 +94,7 @@ public class playercontroller : MonoBehaviour
 		} else {
 			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
 		}
+		cc.velocity += lastvel;
     }
 	
 	public bool groundangle(Vector3 v){
@@ -145,6 +156,7 @@ public class playercontroller : MonoBehaviour
 			jumpgrunt.Play();
 			cc.isKinematic = false;
 			cc.velocity = new Vector3(cc.velocity.x, 0, cc.velocity.z);
+			//transform.GetComponent<Collider>().material = jumpmat;
 		}
 		if(context.canceled){
 			jumppowerdecay = 50f;

@@ -8917,7 +8917,7 @@ Transform:
   m_GameObject: {fileID: 1897321372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.59, y: 1.71, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 2}
+  m_LocalScale: {x: 4, y: 100, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 330969870}
@@ -9482,10 +9482,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1786155446}
     m_Modifications:
-    - target: {fileID: 557242490314889465, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: f174724be92fcde4a9fdcbabca4abf66, type: 2}
     - target: {fileID: 1052277968725071788, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9538,10 +9534,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1906868689}
-    - target: {fileID: 6494643321896763517, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
-      propertyPath: blocker
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
