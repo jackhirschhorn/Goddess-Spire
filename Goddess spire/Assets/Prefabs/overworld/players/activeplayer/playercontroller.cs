@@ -68,13 +68,17 @@ public class playercontroller : MonoBehaviour
 				footsteps.Stop();
 				anim.SetBool("walk", false);
 				anim.SetBool("sprint", false);
-				transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
+				cc.velocity = new Vector3(0,cc.velocity.y,0);
 				RaycastHit hit = new RaycastHit();
-				if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers) && groundangle(hit.normal)){
-					cc.isKinematic = true;
+				Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers);
+				if(!playland && hit.transform != null && !groundangle(hit.normal,true)){
+					//cc.isKinematic = true;
+					cc.velocity = Vector3.zero;
 				} else {
 					cc.isKinematic = false;
-					if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+					if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f){
+						cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+					}
 				}
 			}
 			if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
