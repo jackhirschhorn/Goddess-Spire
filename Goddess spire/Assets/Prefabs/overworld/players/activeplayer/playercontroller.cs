@@ -13,11 +13,14 @@ public class playercontroller : MonoBehaviour
 	public List<AudioClip> sounds = new List<AudioClip>();
 	public AudioSource footsteps;
 	public AudioSource jumpgrunt;
-	public AudioSource land;	
+	public AudioSource land;
+	public AudioSource faceplant;		
 	public Rigidbody cc;
 	public float lastangle = 0;
 	public PhysicMaterial jumpmat;
 	public PhysicMaterial standmat;
+	public bool canmove = true;
+	public Vector3 safepoint;
 	
 	
 	void Awake(){
@@ -38,63 +41,68 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if(rotass != Vector2.zero){
-			cc.isKinematic = false;
-			transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
-			anim.SetBool((is_sprinting?"sprint":"walk"), true);
-			footsteps.clip = sounds[(is_sprinting?0:1)];
-			cc.velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
-			cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
-			if(jumppower > 0){
-				
-			} else if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
-				if(groundangle(hit.normal,1)){ //fix this to be right decector
-					if(lastangle < 150f){
-						cc.velocity = new Vector3(0,0,0);
-						cc.isKinematic = true;
+		if(canmove){
+			if(rotass != Vector2.zero){
+				cc.isKinematic = false;
+				transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
+				anim.SetBool((is_sprinting?"sprint":"walk"), true);
+				footsteps.clip = sounds[(is_sprinting?0:1)];
+				cc.velocity += ((new Vector3(rotass.x,0,rotass.y)*(is_sprinting?2.9f:1.9f)*50f*Time.fixedDeltaTime));
+				cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
+				if(jumppower > 0){
+					
+				} else if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+					if(groundangle(hit.normal,1)){ //fix this to be right decector
+						if(lastangle < 150f){
+							cc.velocity = new Vector3(0,0,0);
+							cc.isKinematic = true;
+						} else {
+							cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+						}
 					} else {
-						cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+						cc.velocity = Vector3.ProjectOnPlane(cc.velocity,hit.normal);
+						lastangle = Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up);
 					}
+				}
+			} else {
+				footsteps.Stop();
+				anim.SetBool("walk", false);
+				anim.SetBool("sprint", false);
+				transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
+				RaycastHit hit = new RaycastHit();
+				if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers) && groundangle(hit.normal)){
+					cc.isKinematic = true;
 				} else {
-					cc.velocity = Vector3.ProjectOnPlane(cc.velocity,hit.normal);
-					lastangle = Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up);
+					cc.isKinematic = false;
+					if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
 				}
 			}
-		} else {
-			footsteps.Stop();
-			anim.SetBool("walk", false);
-			anim.SetBool("sprint", false);
-			transform.GetComponent<Rigidbody>().velocity = new Vector3(0,transform.GetComponent<Rigidbody>().velocity.y,0);
-			RaycastHit hit = new RaycastHit();
-			if(!playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers) && groundangle(hit.normal)){
-				cc.isKinematic = true;
-			} else {
-				cc.isKinematic = false;
-				if(Vector3.Angle(Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up)),Vector3.up) >149f)cc.velocity = -Physics.gravity.y*Vector3.Cross(hit.normal,Vector3.Cross(hit.normal,Vector3.up));
+			if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
+				if(hit3.transform.GetComponent<Rigidbody>()){
+					lastvel = hit3.transform.GetComponent<Rigidbody>().velocity;
+				} else {
+					lastvel = Vector3.zero;
+					safepoint = transform.position;
+				}
 			}
-		}
-		if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
-			if(hit3.transform.GetComponent<Rigidbody>()){
-				lastvel = hit3.transform.GetComponent<Rigidbody>().velocity;
-			} else {
-				lastvel = Vector3.zero;
+			if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
+				land.Play();
+				playland = false;
+				anim.SetBool("landed", true);
+				//transform.GetComponent<Collider>().material = standmat;
+				lastangle = Vector3.Angle(Vector3.Cross(hit2.normal,Vector3.Cross(hit2.normal,Vector3.up)),Vector3.up);
 			}
-		}
-		if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
-			land.Play();
-			playland = false;
-			anim.SetBool("landed", true);
-			//transform.GetComponent<Collider>().material = standmat;
-			lastangle = Vector3.Angle(Vector3.Cross(hit2.normal,Vector3.Cross(hit2.normal,Vector3.up)),Vector3.up);
-		}
-		if(jumppower > 0){
-			footsteps.Stop();
-			transform.GetComponent<Rigidbody>().AddForce(jumpangle*jumppower);
-			jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
+			if(jumppower > 0){
+				footsteps.Stop();
+				transform.GetComponent<Rigidbody>().AddForce(jumpangle*jumppower);
+				jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
+			} else {
+				transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
+			}
+			cc.velocity += lastvel;
 		} else {
-			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
+			
 		}
-		cc.velocity += lastvel;
     }
 	
 	public bool groundangle(Vector3 v){
@@ -113,6 +121,10 @@ public class playercontroller : MonoBehaviour
 	
 	public void playstep(){
 		footsteps.Play();
+	}
+	
+	public void playfaceplant(){
+		faceplant.Play();
 	}
 	
 	public void sprinttoggle(InputAction.CallbackContext context){
@@ -161,6 +173,53 @@ public class playercontroller : MonoBehaviour
 		if(context.canceled){
 			jumppowerdecay = 50f;
 		}
+	}
+	
+	public void hazardmode(int dam,int damtype, bool sink){
+		//deal damage to party members
+		if(sink){
+			StartCoroutine(sinkhazard());
+		} else {
+			StartCoroutine(spikehazard());
+		}
+	}
+	
+	public IEnumerator spikehazard(){
+		cc.isKinematic = true;
+		canmove = false;
+		anim.SetBool("spike",true);
+		anim.SetBool("hazard",true);
+		anim.SetBool("hazardfall",true);
+		if(!playland)safepoint -= transform.right;
+		while(anim.GetBool("hazard")){
+			yield return new WaitForEndOfFrame();
+		}
+		//anim.SetBool("fall",true); // add launch animation?
+		transform.position = safepoint;
+		do {
+			yield return new WaitForEndOfFrame();
+		} while(anim.GetBool("hazardfall"));
+		canmove = true;
+		cc.isKinematic = false;
+	}
+	
+	public IEnumerator sinkhazard(){
+		cc.isKinematic = true;
+		canmove = false;
+		anim.SetBool("sink",true);
+		anim.SetBool("hazard",true);
+		anim.SetBool("hazardfall",true);
+		if(!playland)safepoint -= transform.right;
+		while(anim.GetBool("hazard")){
+			yield return new WaitForEndOfFrame();
+		}
+		//anim.SetBool("fall",true); // add launch animation?
+		transform.position = safepoint;
+		do {
+			yield return new WaitForEndOfFrame();
+		} while(anim.GetBool("hazardfall"));
+		canmove = true;
+		cc.isKinematic = false;
 	}
 	
 	public void select1(InputAction.CallbackContext context){
