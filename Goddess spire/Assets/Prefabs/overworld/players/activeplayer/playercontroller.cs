@@ -193,6 +193,8 @@ public class playercontroller : MonoBehaviour
 		canmove = false;
 		anim.SetBool("spike",true);
 		anim.SetBool("hazard",true);
+		anim.SetBool("walk", false);
+		anim.SetBool("sprint", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
@@ -212,6 +214,8 @@ public class playercontroller : MonoBehaviour
 		canmove = false;
 		anim.SetBool("sink",true);
 		anim.SetBool("hazard",true);
+		anim.SetBool("walk", false);
+		anim.SetBool("sprint", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
