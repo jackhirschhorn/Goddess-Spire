@@ -21,6 +21,7 @@ public class playercontroller : MonoBehaviour
 	public PhysicMaterial standmat;
 	public bool canmove = true;
 	public Vector3 safepoint;
+	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 thief, 5 phantom, 6 wizard, 7 cleric, 8 druid
 	
 	
 	void Awake(){
@@ -195,6 +196,7 @@ public class playercontroller : MonoBehaviour
 		anim.SetBool("hazard",true);
 		anim.SetBool("walk", false);
 		anim.SetBool("sprint", false);
+		anim.SetBool("barbcharge", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
@@ -215,7 +217,8 @@ public class playercontroller : MonoBehaviour
 		anim.SetBool("sink",true);
 		anim.SetBool("hazard",true);
 		anim.SetBool("walk", false);
-		anim.SetBool("sprint", false);
+		anim.SetBool("sprint", false);	
+		anim.SetBool("barbcharge", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
@@ -228,6 +231,18 @@ public class playercontroller : MonoBehaviour
 		} while(anim.GetBool("hazardfall"));
 		canmove = true;
 		cc.isKinematic = false;
+	}
+	
+	public void ability(InputAction.CallbackContext context){
+		if(classid == 0){ //barbarian
+			if(context.performed){
+				anim.SetBool("barbcharge", true);
+				is_sprinting = true;
+			} else if (context.canceled){
+				anim.SetBool("barbcharge", false);
+				if(!anim.GetBool("sprint"))is_sprinting = false;
+			}
+		}
 	}
 	
 	public void select1(InputAction.CallbackContext context){
