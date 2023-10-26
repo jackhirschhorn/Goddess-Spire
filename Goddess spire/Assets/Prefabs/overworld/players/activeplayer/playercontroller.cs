@@ -251,13 +251,15 @@ public class playercontroller : MonoBehaviour
 	
 	public void select1(InputAction.CallbackContext context){
 		if(context.performed){
-			
+			//debug
+			classid++;
 		}
 	}
 	
 	public void select2(InputAction.CallbackContext context){
 		if(context.performed){
-			
+			//debug
+			classid--;
 		}
 	}
 	
