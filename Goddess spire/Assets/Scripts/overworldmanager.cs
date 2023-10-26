@@ -9,6 +9,7 @@ public class overworldmanager : MonoBehaviour
     
 	public InputActionMap IA;
 	public PlayerInput PI;
+	public playercontroller pc;
 	
 	void Awake(){
 		OM = this;

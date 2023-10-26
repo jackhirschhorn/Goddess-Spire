@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class barbarianbreaker : MonoBehaviour
+public class barbarianbreaker : fixture
 {
 	public bool broken = false;
 	public AudioSource sfx;

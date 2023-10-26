@@ -22,7 +22,7 @@ public class playercontroller : MonoBehaviour
 	public bool canmove = true;
 	public Vector3 safepoint;
 	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 thief, 5 phantom, 6 wizard, 7 cleric, 8 druid
-	
+	public fixture targetfixture;
 	
 	void Awake(){
 		
