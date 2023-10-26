@@ -69,6 +69,7 @@ public class playercontroller : MonoBehaviour
 				footsteps.Stop();
 				anim.SetBool("walk", false);
 				anim.SetBool("sprint", false);
+				anim.SetBool("barbcharge", false);
 				cc.velocity = new Vector3(0,cc.velocity.y,0);
 				RaycastHit hit = new RaycastHit();
 				Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers);
@@ -98,6 +99,7 @@ public class playercontroller : MonoBehaviour
 				lastangle = Vector3.Angle(Vector3.Cross(hit2.normal,Vector3.Cross(hit2.normal,Vector3.up)),Vector3.up);
 			}
 			if(jumppower > 0){
+				anim.SetBool("barbcharge", false);
 				footsteps.Stop();
 				transform.GetComponent<Rigidbody>().AddForce(jumpangle*jumppower);
 				jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
@@ -135,7 +137,10 @@ public class playercontroller : MonoBehaviour
 	public void sprinttoggle(InputAction.CallbackContext context){
 		if(context.performed){
 			is_sprinting = !is_sprinting;
-			if(!is_sprinting)anim.SetBool("sprint", false);
+			if(!is_sprinting){
+				anim.SetBool("sprint", false);				
+				anim.SetBool("barbcharge", false);
+			}
 		}
 	}
 	
@@ -240,7 +245,6 @@ public class playercontroller : MonoBehaviour
 				is_sprinting = true;
 			} else if (context.canceled){
 				anim.SetBool("barbcharge", false);
-				if(!anim.GetBool("sprint"))is_sprinting = false;
 			}
 		}
 	}
