@@ -42,7 +42,7 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if(canmove){
+		if(canmove && !anim.GetBool("kistrike")){
 			if(rotass != Vector2.zero){
 				cc.isKinematic = false;
 				transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
@@ -111,6 +111,16 @@ public class playercontroller : MonoBehaviour
 			
 		}
     }
+	
+	public bool isgrounded(){
+		return Physics.SphereCast(transform.position, 0.40f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers);
+	}
+	
+	public AudioSource kistrikeas;
+	
+	public void playkistrike(){
+		kistrikeas.Play();
+	}
 	
 	public bool groundangle(Vector3 v){
 		return (((Vector3.Angle( v, new Vector3(cc.velocity.normalized.x,0,cc.velocity.normalized.z))) - 90)> 50f);
@@ -246,6 +256,8 @@ public class playercontroller : MonoBehaviour
 			} else if (context.canceled){
 				anim.SetBool("barbcharge", false);
 			}
+		} else if (classid == 1){ //ki master
+			//handled by breakers
 		}
 	}
 	
