@@ -23,6 +23,7 @@ public class playercontroller : MonoBehaviour
 	public Vector3 safepoint;
 	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 thief, 5 phantom, 6 wizard, 7 cleric, 8 druid
 	public fixture targetfixture;
+	public Animator rangervision;
 	
 	void Awake(){
 		
@@ -258,6 +259,17 @@ public class playercontroller : MonoBehaviour
 			}
 		} else if (classid == 1){ //ki master
 			//handled by breakers
+		} else if (classid == 2){ //paladin
+			
+		} else if (classid == 3){ //ranger
+			if(context.performed && !rangervision.GetBool("play")){
+				//anim;
+				rangerdetector[] randets = Object.FindObjectsOfType<rangerdetector>();
+				foreach(rangerdetector rd in randets){
+					rd.shimmer();
+				}
+				rangervision.SetBool("play", true);
+			}
 		}
 	}
 	
