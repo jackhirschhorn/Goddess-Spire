@@ -249,6 +249,8 @@ public class playercontroller : MonoBehaviour
 		cc.isKinematic = false;
 	}
 	
+	public AudioSource rangersonar;
+	
 	public void ability(InputAction.CallbackContext context){
 		if(classid == 0){ //barbarian
 			if(context.performed){
@@ -269,6 +271,7 @@ public class playercontroller : MonoBehaviour
 					rd.shimmer();
 				}
 				rangervision.SetBool("play", true);
+				rangersonar.Play();
 			}
 		}
 	}

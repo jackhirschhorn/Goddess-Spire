@@ -5,6 +5,7 @@ using UnityEngine;
 public class rangerdetector : MonoBehaviour
 {
 	public Animator anim;
+	public AudioSource sfx;
     public void shimmer(){
 		//delay shimmer based on distance from player
 		//might need to mess with the shader? use width as an offset?
@@ -19,7 +20,10 @@ public class rangerdetector : MonoBehaviour
 			temp2 -= Time.deltaTime*5;
 			yield return new WaitForEndOfFrame();
 		}
-		if(temp < 6)anim.SetBool("play",true);	
+		if(temp < 6){
+			anim.SetBool("play",true);	
+			sfx.Play();
+		}			
 	}
 	
 }
