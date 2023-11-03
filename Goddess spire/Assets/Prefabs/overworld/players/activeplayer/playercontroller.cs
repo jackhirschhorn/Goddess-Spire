@@ -273,6 +273,18 @@ public class playercontroller : MonoBehaviour
 				rangervision.SetBool("play", true);
 				rangersonar.Play();
 			}
+		} else if (classid == 4){ //rogue
+			
+		} else if (classid == 5){ //phantom
+		
+		} else if (classid == 6){ //wizard
+			if(context.performed){
+				//connect to a tablet
+			}
+		} else if (classid == 7){ //cleric
+			
+		} else if (classid == 8){ //druid
+			
 		}
 	}
 	
