@@ -292,6 +292,7 @@ public class playercontroller : MonoBehaviour
 		if(context.performed){
 			//debug
 			classid++;
+			Debug.Log(classid);
 		}
 	}
 	
@@ -299,6 +300,7 @@ public class playercontroller : MonoBehaviour
 		if(context.performed){
 			//debug
 			classid--;
+			Debug.Log(classid);
 		}
 	}
 	

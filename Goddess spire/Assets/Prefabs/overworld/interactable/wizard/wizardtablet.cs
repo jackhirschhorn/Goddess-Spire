@@ -10,14 +10,18 @@ public class wizardtablet : interactable
 	}
 	
 	public override void interact(InputAction.CallbackContext context){
-		if(context.performed){
-			
+		if(context.performed && overworldmanager.OM.pc.classid == 6){
+			playfx();
 		}
 	}
 	
 	public AudioSource sfx;
-	public void playfx(){		
+	public GameObject tabletgui;
+	public void playfx(){	
+		tabletgui.SetActive(!tabletgui.activeSelf);
+		overworldmanager.OM.pc.canmove =!tabletgui.activeSelf; 
 		sfx.Play();
 		//pfx.Play();
 	}
+	
 }
