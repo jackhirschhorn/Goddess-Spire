@@ -15,11 +15,11 @@ public class cornertwist : wizardtabletnode
 		{1,3,4,6},
 		{2,0,7,5}};
 	
-	void Awake(){
+	void Start(){
 		for(int i = 0; i < 4; i++){
-				if(nodes[connectmatrix[connectstate,i]] != null)
-					powerin[connectmatrix[connectstate,i]] = nodes[connectmatrix[connectstate,i]].powerout[invertdirection(connectmatrix[connectstate,i])];
-			}
+			if(nodes[connectmatrix[connectstate,i]] != null)
+				powerin[connectmatrix[connectstate,i]] = nodes[connectmatrix[connectstate,i]].powerout[invertdirection(connectmatrix[connectstate,i])];
+		}
 	}
 	
 	public void FixedUpdate(){

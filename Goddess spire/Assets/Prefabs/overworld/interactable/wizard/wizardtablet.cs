@@ -16,12 +16,25 @@ public class wizardtablet : interactable
 	}
 	
 	public AudioSource sfx;
+	public AudioSource sfx2;
 	public GameObject tabletgui;
+	public Animator anim;
 	public void playfx(){	
-		tabletgui.SetActive(!tabletgui.activeSelf);
-		overworldmanager.OM.pc.canmove =!tabletgui.activeSelf; 
-		sfx.Play();
-		//pfx.Play();
+		if(!tabletgui.activeSelf){
+			tabletgui.SetActive(!tabletgui.activeSelf);
+			overworldmanager.OM.pc.canmove =!tabletgui.activeSelf; 
+			sfx.Play();
+			anim.SetBool("play",true);
+			//pfx.Play();
+		} else {
+			sfx2.Play();
+			anim.SetBool("play",false);
+		}
+	}
+	
+	public void endanim(){
+		tabletgui.SetActive(false);
+		overworldmanager.OM.pc.canmove =true; 
 	}
 	
 }
