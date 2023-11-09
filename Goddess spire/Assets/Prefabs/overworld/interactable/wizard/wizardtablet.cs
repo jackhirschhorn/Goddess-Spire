@@ -34,7 +34,8 @@ public class wizardtablet : interactable
 	
 	public void endanim(){
 		tabletgui.SetActive(false);
-		overworldmanager.OM.pc.canmove =true; 
+		overworldmanager.OM.pc.canmove = true; 
+		overworldmanager.OM.pc.anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
 	}
 	
 }

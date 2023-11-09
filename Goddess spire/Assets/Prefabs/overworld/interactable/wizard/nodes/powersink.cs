@@ -5,7 +5,8 @@ using UnityEngine;
 public class powersink : wizardtabletnode
 {
     //links to outside object, which points to this
-	void FixedUpdate(){
+	public override void FixedUpdate(){
+		base.FixedUpdate();
 		power = 0;
 		foreach(int i in powerin){
 			power = (i > power?i:power);

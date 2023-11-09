@@ -11,7 +11,8 @@ public class powergem : wizardtabletnode
 		}
 	}
 	
-	public void FixedUpdate(){
+	public override void FixedUpdate(){
+		base.FixedUpdate();
 		for(int i = 0; i < 8; i++){
 			if(nodes[i] != null){
 			   nodes[i].connect(power, i);
