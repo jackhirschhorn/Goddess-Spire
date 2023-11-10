@@ -282,7 +282,16 @@ public class playercontroller : MonoBehaviour
 				//connect to a tablet
 			}
 		} else if (classid == 7){ //cleric
-			
+			if(context.performed){
+				canmove = false; 
+				anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
+				anim.SetBool("pray",true);
+				//play animation?
+			}
+			if(context.canceled){
+				anim.SetBool("pray",false);
+				StartCoroutine(delayedcanmove(0.5f));
+			}
 		} else if (classid == 8){ //druid
 			
 		}
@@ -320,5 +329,10 @@ public class playercontroller : MonoBehaviour
 		if(context.performed){
 			
 		}
+	}
+	
+	public IEnumerator delayedcanmove(float f){
+		yield return new WaitForSeconds(f);
+		canmove = true;
 	}
 }
