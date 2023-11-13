@@ -250,6 +250,8 @@ public class playercontroller : MonoBehaviour
 	}
 	
 	public AudioSource rangersonar;
+	public AudioSource prayer;
+	public ParticleSystem prayerps;
 	
 	public void ability(InputAction.CallbackContext context){
 		if(classid == 0){ //barbarian
@@ -286,11 +288,19 @@ public class playercontroller : MonoBehaviour
 				canmove = false; 
 				anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
 				anim.SetBool("pray",true);
-				//play animation?
+				prayer.Play();
+				prayerps.Play();
+				footsteps.Stop();
+				anim.SetBool("walk", false);
+				anim.SetBool("sprint", false);
+				anim.SetBool("barbcharge", false);
+				cc.velocity = new Vector3(0,cc.velocity.y,0);
 			}
 			if(context.canceled){
 				anim.SetBool("pray",false);
 				StartCoroutine(delayedcanmove(0.5f));
+				prayer.Stop();
+				prayerps.Stop();
 			}
 		} else if (classid == 8){ //druid
 			

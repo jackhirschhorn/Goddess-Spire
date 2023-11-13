@@ -25,6 +25,11 @@ public class wizardtablet : interactable
 			overworldmanager.OM.pc.canmove =!tabletgui.activeSelf; 
 			sfx.Play();
 			anim.SetBool("play",true);
+			overworldmanager.OM.pc.footsteps.Stop();
+			overworldmanager.OM.pc.anim.SetBool("walk", false);
+			overworldmanager.OM.pc.anim.SetBool("sprint", false);
+			overworldmanager.OM.pc.anim.SetBool("barbcharge", false);
+			overworldmanager.OM.pc.cc.velocity = new Vector3(0,overworldmanager.OM.pc.cc.velocity.y,0);
 			//pfx.Play();
 		} else {
 			sfx2.Play();
