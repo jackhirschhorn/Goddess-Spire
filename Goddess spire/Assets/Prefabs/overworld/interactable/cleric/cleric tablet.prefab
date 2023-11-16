@@ -168,7 +168,7 @@ Transform:
   - {fileID: 988210257020433672}
   - {fileID: 3427702439972175197}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8159280769012914638
 MonoBehaviour:
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 6004441143379259314}
   - component: {fileID: 8821312534708805363}
   - component: {fileID: 2871243037293149922}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 4843348105791384858}
   - component: {fileID: 5538568400411945414}
   - component: {fileID: 7905630342084245816}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8686940000897650483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.7, y: 0, z: -6.5}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

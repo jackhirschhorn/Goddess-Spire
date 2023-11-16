@@ -5,6 +5,11 @@ using UnityEngine;
 public class lookat : MonoBehaviour
 {
     public Transform target;
+	public bool grabcam = false;
+	
+	void Awake(){
+		if(grabcam)target = Camera.main.transform;
+	}
 
     // Update is called once per frame
     void LateUpdate()
