@@ -60,14 +60,17 @@ public class druidplant : interactable
 	}
 	
 	public Image mg;
+	public Image mg2;
 	
 	public void Awake(){
 		plantresetpower();
 		plantupdatepower();
+		mg2.color = flowerpowerrequire;
+		mg2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = powerrequire +"";
 	}
 	
 	
-	public virtual void plantupdatepower(){
+	public virtual void plantupdatepower(){ // need to fix, only takes 1 power input
 		if(linkto != null){
 			linkto.adjpower = adjpower + linkto.power;
 			linkto.adjflowerpower = Color.Lerp(adjflowerpower,linkto.flowerpower, 0.5f);

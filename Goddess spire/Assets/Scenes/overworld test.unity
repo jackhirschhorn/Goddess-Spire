@@ -224,16 +224,28 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.g
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.b
-      value: 0.098039225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
-      value: 0.7058824
+      value: 0.9803922
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
-      value: 0.098039225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: target
@@ -1146,6 +1158,9 @@ Transform:
   - {fileID: 528304732}
   - {fileID: 271231859}
   - {fileID: 48328152}
+  - {fileID: 2007883676}
+  - {fileID: 1169174800}
+  - {fileID: 926808235}
   m_Father: {fileID: 317826330}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2632,6 +2647,118 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &926808234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 330969870}
+    m_Modifications:
+    - target: {fileID: 872199716612491941, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176020594570353077, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Name
+      value: druid plant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: powerrequire
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.b
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1746257275}
+    - target: {fileID: 6228370183776349836, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538109650849596482, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1746257274}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1550016764d9c0e409745c101c337331, type: 3}
+--- !u!4 &926808235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+  m_PrefabInstance: {fileID: 926808234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &949368405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3545,118 @@ MonoBehaviour:
   butt: 
   ps: {fileID: 1666273625}
   sfx: {fileID: 602441644}
+--- !u!1001 &1169174799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 330969870}
+    m_Modifications:
+    - target: {fileID: 872199716612491941, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176020594570353077, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Name
+      value: druid plant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: powerrequire
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.g
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.g
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.r
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1746257275}
+    - target: {fileID: 6228370183776349836, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538109650849596482, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1746257274}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.7499995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1550016764d9c0e409745c101c337331, type: 3}
+--- !u!4 &1169174800 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+  m_PrefabInstance: {fileID: 1169174799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1179383419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +9743,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004329085}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2007883675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 330969870}
+    m_Modifications:
+    - target: {fileID: 872199716612491941, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176020594570353077, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Name
+      value: druid plant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: powerrequire
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.r
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpowerrequire.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1746257275}
+    - target: {fileID: 6228370183776349836, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538109650849596482, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1746257274}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6513681191427143213, guid: 1550016764d9c0e409745c101c337331, type: 3}
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1550016764d9c0e409745c101c337331, type: 3}
+--- !u!4 &2007883676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
+  m_PrefabInstance: {fileID: 2007883675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2011563084
 GameObject:
   m_ObjectHideFlags: 0
@@ -10295,16 +10647,28 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.g
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
+      propertyPath: flowerpower.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.b
-      value: 0.098039225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
-      value: 0.7058824
+      value: 0.9803922
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
-      value: 0.098039225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: target

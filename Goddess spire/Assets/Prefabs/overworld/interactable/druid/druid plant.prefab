@@ -374,8 +374,9 @@ MonoBehaviour:
   adjpower: 0
   adjflowerpower: {r: 0.098039225, g: 0.7058824, b: 0.098039225, a: 1}
   powerrequire: 0
-  flowerpowerrequire: {r: 25, g: 180, b: 25, a: 255}
+  flowerpowerrequire: {r: 0.098039225, g: 0.7058824, b: 0.098039225, a: 255}
   mg: {fileID: 6009844578946590206}
+  mg2: {fileID: 433546186848347405}
   sfx1: {fileID: 5508443258095979367}
   sfx2: {fileID: 3658318067531774519}
 --- !u!136 &9190758548969958723
@@ -531,7 +532,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4059015029361059714, guid: 6f532eb4a41df1442b7c1b04a18b1875, type: 2}
   m_audioClip: {fileID: 8300000, guid: 32b7730281846c74f96d173e85fd3481, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -576,7 +577,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -659,7 +660,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4059015029361059714, guid: 6f532eb4a41df1442b7c1b04a18b1875, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3b0ab516c1ad5444c8968f132862b2d2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -704,7 +705,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
