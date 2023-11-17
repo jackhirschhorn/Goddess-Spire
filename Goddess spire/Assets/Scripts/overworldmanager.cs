@@ -11,6 +11,7 @@ public class overworldmanager : MonoBehaviour
 	public PlayerInput PI;
 	public playercontroller pc;
 	
+	
 	void Awake(){
 		OM = this;
 	}
