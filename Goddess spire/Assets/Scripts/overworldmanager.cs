@@ -28,6 +28,7 @@ public class overworldmanager : MonoBehaviour
 	
 	public static void resetplants(){
 		OM.BroadcastMessage("plantresetpower");
+		OM.BroadcastMessage("plantupdatelinks");
 		OM.BroadcastMessage("plantupdatepower");
 	}
 }

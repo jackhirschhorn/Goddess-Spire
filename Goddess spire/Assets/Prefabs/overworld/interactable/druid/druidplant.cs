@@ -23,6 +23,7 @@ public class druidplant : interactable
 	public druidplant linkto;
 	public LineRenderer linelink;
 	public Transform linker;
+	public int linkedto = 0;
 	public int power;
 	public Color flowerpower = new Color(25,180,25,255); //default to green
 	public int adjpower; //after adjustments
@@ -70,13 +71,32 @@ public class druidplant : interactable
 	}
 	
 	
+	
+	public virtual void plantresetpower(){
+		adjpower = power;
+		adjflowerpower = flowerpower;
+		mg.color = adjflowerpower;
+		mg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = adjpower +"";
+		linkedto = 0;
+	}
+	
+	public virtual void plantupdatelinks(){
+		if(linkto != null) linkto.linkedto++;
+	}
+	
+	
 	public virtual void plantupdatepower(){ // need to fix, only takes 1 power input
-		if(linkto != null){
-			linkto.adjpower = adjpower + linkto.power;
-			linkto.adjflowerpower = Color.Lerp(adjflowerpower,linkto.flowerpower, 0.5f);
-			linkto.mg.color = linkto.adjflowerpower;
-			linkto.mg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = linkto.adjpower +"";
-			linkto.plantupdatepower();
+		if(linkedto == 0){ //has something pointing at this
+			if(linkto != null){
+				linkto.adjpower += adjpower;
+				linkto.adjflowerpower = Color.Lerp(adjflowerpower,linkto.adjflowerpower, 0.5f);
+				linkto.mg.color = linkto.adjflowerpower;
+				linkto.mg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = linkto.adjpower +"";
+				linkto.plantupdatepower();
+				//linkto.linkedto--;
+			}
+		} else {
+			linkedto--;
 		}
 	}
 	
@@ -97,16 +117,19 @@ public class druidplant : interactable
 		transform.GetChild(0).GetComponent<Animator>().SetBool("bloom",false);
 	}
 	
-	public virtual void plantresetpower(){
-		adjpower = power;
-		adjflowerpower = flowerpower;
-		mg.color = adjflowerpower;
-		mg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = adjpower +"";
+	public virtual bool checklink(){
+		if(on){
+			return true;
+		} else if(linkto != null) {
+			return linkto.checklink();
+		} else {
+			return false;
+		}
 		
 	}
 	
 	public virtual void FixedUpdate(){
-		if((on && linkto != null) || (linkto != null && (linkto as interactable).on)){
+		if(linkto != null && (on || linkto.checklink())){
 			linelink.enabled = true;
 			linelink.material.SetColor("_Color",adjflowerpower);
 			linelink.SetPosition(0,linker.position);

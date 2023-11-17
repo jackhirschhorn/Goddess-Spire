@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.g
-      value: 0.98039216
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.r
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
-      value: 0.9803922
+      value: 0.94117653
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
@@ -2673,7 +2673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.b
-      value: 0.98039216
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.g
@@ -2685,7 +2685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.b
-      value: 0.49019608
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
@@ -2693,7 +2693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
-      value: 0.49019608
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: target
@@ -3542,7 +3542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 100305898}
   on: 0
-  butt: 
+  butt: confirm
   ps: {fileID: 1666273625}
   sfx: {fileID: 602441644}
 --- !u!1001 &1169174799
@@ -3575,7 +3575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.g
-      value: 0.98039216
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.r
@@ -3587,11 +3587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
-      value: 0.7372549
+      value: 0.7058824
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
-      value: 0.24313726
+      value: 0.23529412
       objectReference: {fileID: 0}
     - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: target
@@ -3619,7 +3619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.7
+      value: -23.59
       objectReference: {fileID: 0}
     - target: {fileID: 8591718037164935047, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9777,11 +9777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.r
-      value: 0.98039216
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.b
-      value: 0.49019608
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
@@ -9789,7 +9789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
-      value: 0.49019608
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 4263737075858095281, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: target
@@ -10652,7 +10652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.g
-      value: 0.98039216
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpower.r
@@ -10664,7 +10664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.g
-      value: 0.9803922
+      value: 0.94117653
       objectReference: {fileID: 0}
     - target: {fileID: 2597086853773943526, guid: 1550016764d9c0e409745c101c337331, type: 3}
       propertyPath: flowerpowerrequire.r
