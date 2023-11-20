@@ -26,7 +26,7 @@ public class fadetocamera : MonoBehaviour
 				}
 			}
 			for(int i = 0; i < strucs.Count; i++){
-				strucs[i].delay += Time.fixedDeltaTime*3;
+				strucs[i].delay += Time.fixedDeltaTime*5;
 				if(strucs[i].delay > 1){
 					strucs[i].fadeout = false;
 					strucs.RemoveAt(i);

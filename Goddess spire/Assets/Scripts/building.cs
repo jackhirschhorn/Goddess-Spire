@@ -8,50 +8,65 @@ public class building : structure
 	
 	public static building inroom;
 	
-	public void OnTriggerEnter(Collider col){
-		if(col.GetComponent<playercontroller>()){
+	public bool fadeout2 = false;
+	public float fadetim2 = 1f;
+	
+	public override void FixedUpdate(){
+		base.FixedUpdate();
+		if(!fadeout2 && fadetim2 < 1f){
+			fadetim2 += Time.fixedDeltaTime*3;
 			if(clng.GetComponent<Renderer>()){			
 				foreach(Material m in clng.GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",0.2f);
+					m.SetFloat("_DitherThreshold",fadetim2);
 				}
 			} else {
 				foreach(Material m in clng.transform.GetChild(0).GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",0.2f);
+					m.SetFloat("_DitherThreshold",fadetim2);
 				}
 			}
 			if(frnt.GetComponent<Renderer>()){
 				foreach(Material m in frnt.GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",0.2f);
+					m.SetFloat("_DitherThreshold",fadetim2);
 				}
 			} else {
 				foreach(Material m in frnt.transform.GetChild(0).GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",0.2f);
+					m.SetFloat("_DitherThreshold",fadetim2);
 				}
 			}
+		} else if(fadeout2 && fadetim2 > 0.2f){
+			fadetim2 -= Time.fixedDeltaTime*3;
+			if(fadetim2 < 0.2f)fadetim2 = 0.2f;
+			if(clng.GetComponent<Renderer>()){			
+				foreach(Material m in clng.GetComponent<Renderer>().materials){
+					m.SetFloat("_DitherThreshold",fadetim2);
+				}
+			} else {
+				foreach(Material m in clng.transform.GetChild(0).GetComponent<Renderer>().materials){
+					m.SetFloat("_DitherThreshold",fadetim2);
+				}
+			}
+			if(frnt.GetComponent<Renderer>()){
+				foreach(Material m in frnt.GetComponent<Renderer>().materials){
+					m.SetFloat("_DitherThreshold",fadetim2);
+				}
+			} else {
+				foreach(Material m in frnt.transform.GetChild(0).GetComponent<Renderer>().materials){
+					m.SetFloat("_DitherThreshold",fadetim2);
+				}
+			}
+		}
+	}
+	
+	public void OnTriggerEnter(Collider col){
+		if(col.GetComponent<playercontroller>()){
+			fadeout2 = true;
 			inroom = this;
 		} 
 	}
 	
 	public void OnTriggerExit(Collider col){
 		if(col.GetComponent<playercontroller>()){
-			if(clng.GetComponent<Renderer>()){
-				foreach(Material m in clng.GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",1f);
-				}
-			} else {
-				foreach(Material m in clng.transform.GetChild(0).GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",1f);
-				}
-			}
-			if(frnt.GetComponent<Renderer>()){
-				foreach(Material m in frnt.GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",1f);
-				}
-			} else {
-				foreach(Material m in frnt.transform.GetChild(0).GetComponent<Renderer>().materials){
-					m.SetFloat("_DitherThreshold",1f);
-				}
-			}
+			fadeout2 = false;
 			if(inroom == this) inroom = null;
 		}
 	}
