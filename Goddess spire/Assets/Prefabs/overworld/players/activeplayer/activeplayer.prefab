@@ -495,7 +495,9 @@ MonoBehaviour:
   rends: []
   lm:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2048
+  strucs: []
+  structuresonly: 1
 --- !u!1 &2771351841745374409
 GameObject:
   m_ObjectHideFlags: 0

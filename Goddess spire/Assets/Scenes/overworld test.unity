@@ -692,7 +692,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 144895285}
-  m_Layer: 0
+  - component: {fileID: 144895286}
+  - component: {fileID: 144895287}
+  m_Layer: 11
   m_Name: building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,6 +738,34 @@ Transform:
   m_Father: {fileID: 949368406}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &144895286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144895284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c7ab0b52b2f27479a69a99e5394aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeout: 0
+  fadetim: 1
+  delay: 1
+--- !u!65 &144895287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144895284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 15, z: 8}
+  m_Center: {x: 10, y: 7, z: 4}
 --- !u!1 &149671276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +1820,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e294b96512c6ed45a57a0fb7b245736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeout: 0
+  fadetim: 1
+  delay: 1
   flr: {fileID: 885730850}
   clng: {fileID: 1218690561}
   wall1: {fileID: 545187740}
@@ -3381,7 +3414,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29886
+  m_Name: pb_Mesh29922
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -8435,6 +8468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e294b96512c6ed45a57a0fb7b245736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeout: 0
+  fadetim: 1
+  delay: 1
   flr: {fileID: 1125707672}
   clng: {fileID: 594204500}
   wall1: {fileID: 426741489}
@@ -8499,6 +8535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e294b96512c6ed45a57a0fb7b245736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeout: 0
+  fadetim: 1
+  delay: 1
   flr: {fileID: 1288767315}
   clng: {fileID: 257922065}
   wall1: {fileID: 261272929}
@@ -15910,7 +15949,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30278
+  m_Name: pb_Mesh30410
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2

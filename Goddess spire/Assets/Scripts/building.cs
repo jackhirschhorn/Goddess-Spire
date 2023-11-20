@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class building : MonoBehaviour
+public class building : structure
 {
     public GameObject flr, clng, wall1,wall2,wall3,frnt;
 	
