@@ -109,7 +109,7 @@ public class playercontroller : MonoBehaviour
 			}
 			cc.velocity += lastvel;
 		} else {
-			
+			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
 		}
     }
 	
@@ -286,6 +286,7 @@ public class playercontroller : MonoBehaviour
 		} else if (classid == 7){ //cleric
 			if(context.performed){
 				canmove = false; 
+				cancelcanmove = true;
 				anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
 				anim.SetBool("pray",true);
 				prayer.Play();
@@ -294,10 +295,15 @@ public class playercontroller : MonoBehaviour
 				anim.SetBool("walk", false);
 				anim.SetBool("sprint", false);
 				anim.SetBool("barbcharge", false);
-				cc.velocity = new Vector3(0,cc.velocity.y,0);
+				if(isgrounded()){
+					cc.velocity = new Vector3(0,0,0);
+				}/* else {
+					cc.velocity = new Vector3(0,cc.velocity.y,0);
+				}*/ //leap of faith?
 			}
 			if(context.canceled){
 				anim.SetBool("pray",false);
+				cancelcanmove = false;
 				StartCoroutine(delayedcanmove(0.5f));
 				prayer.Stop();
 				prayerps.Stop();
@@ -341,8 +347,10 @@ public class playercontroller : MonoBehaviour
 		}
 	}
 	
+	public bool cancelcanmove = false;
+	
 	public IEnumerator delayedcanmove(float f){
 		yield return new WaitForSeconds(f);
-		canmove = true;
+		if(!cancelcanmove)canmove = true;
 	}
 }
