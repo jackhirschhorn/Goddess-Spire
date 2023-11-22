@@ -230,6 +230,7 @@ MonoBehaviour:
   rangersonar: {fileID: 1594008303436311205}
   prayer: {fileID: 4356213391772476001}
   prayerps: {fileID: 2035737100161528268}
+  cancelcanmove: 0
 --- !u!114 &557242490314889458
 MonoBehaviour:
   m_ObjectHideFlags: 0
