@@ -10,6 +10,7 @@ public class overworldmanager : MonoBehaviour
 	public InputActionMap IA;
 	public PlayerInput PI;
 	public playercontroller pc;
+	public GameObject buildinglos;
 	
 	
 	void Awake(){
@@ -26,6 +27,10 @@ public class overworldmanager : MonoBehaviour
     {
         
     }
+	
+	void FixedUpdate(){
+		buildinglos.SetActive(building.inroom != null);
+	}
 	
 	public static void resetplants(){
 		OM.BroadcastMessage("plantresetpower");

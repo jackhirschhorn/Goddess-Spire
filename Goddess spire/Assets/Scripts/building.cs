@@ -7,6 +7,7 @@ public class building : structure
     public GameObject flr, clng, wall1,wall2,wall3,frnt;
 	
 	public static building inroom;
+	public GameObject lighting;
 	
 	public bool fadeout2 = false;
 	public float fadetim2 = 1f;
@@ -61,13 +62,15 @@ public class building : structure
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = true;
 			inroom = this;
+			lighting.SetActive(true);
 		} 
 	}
 	
 	public void OnTriggerExit(Collider col){
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = false;
-			if(inroom == this) inroom = null;
+			if(inroom == this) inroom = null;			
+			lighting.SetActive(false);
 		}
 	}
 }
