@@ -14,8 +14,10 @@ public class building : structure
 	
 	public override void FixedUpdate(){
 		base.FixedUpdate();
+		if(fadeout2 && inroom != this)inroom = this;
 		if(!fadeout2 && fadetim2 < 1f){
 			fadetim2 += Time.fixedDeltaTime*3;
+			if(fadetim2 >= 1f)lighting.SetActive(false);
 			if(clng.GetComponent<Renderer>()){			
 				foreach(Material m in clng.GetComponent<Renderer>().materials){
 					m.SetFloat("_DitherThreshold",fadetim2);
@@ -70,7 +72,6 @@ public class building : structure
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = false;
 			if(inroom == this) inroom = null; //	needs to recheck so it doesn't fade out at wrong time	
-			lighting.SetActive(false);
 		}
 	}
 }
