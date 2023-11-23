@@ -69,7 +69,7 @@ public class building : structure
 	public void OnTriggerExit(Collider col){
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = false;
-			if(inroom == this) inroom = null;			
+			if(inroom == this) inroom = null; //	needs to recheck so it doesn't fade out at wrong time	
 			lighting.SetActive(false);
 		}
 	}

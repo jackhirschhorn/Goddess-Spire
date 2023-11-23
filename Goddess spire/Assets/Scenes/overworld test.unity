@@ -36707,6 +36707,7 @@ GameObject:
   - component: {fileID: 2088616130}
   - component: {fileID: 2088616132}
   - component: {fileID: 2088616131}
+  - component: {fileID: 2088616133}
   m_Layer: 0
   m_Name: buildinglos
   m_TagString: Untagged
@@ -36772,6 +36773,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088616129}
   m_CullTransparentMesh: 1
+--- !u!95 &2088616133
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088616129}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2e75442c8828e547be3065cd0bb01fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2124939058
 GameObject:
   m_ObjectHideFlags: 0

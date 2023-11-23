@@ -28,8 +28,18 @@ public class overworldmanager : MonoBehaviour
         
     }
 	
-	void FixedUpdate(){
-		buildinglos.SetActive(building.inroom != null);
+	bool lastframecheckbuilding = true;
+	
+	void FixedUpdate(){	
+		if(lastframecheckbuilding != building.inroom){
+			if(building.inroom){
+				buildinglos.GetComponent<Animator>().Play("Base Layer.fadein",-1, 0);
+			} else {
+				buildinglos.GetComponent<Animator>().Play("Base Layer.fadeout",-1, 0);
+			}
+		}
+		lastframecheckbuilding = building.inroom;
+		
 	}
 	
 	public static void resetplants(){
