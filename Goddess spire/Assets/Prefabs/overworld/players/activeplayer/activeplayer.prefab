@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 2035737100161528268}
   - component: {fileID: 8936703186853000690}
   m_Layer: 7
-  m_Name: Particle System
+  m_Name: prayer particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
