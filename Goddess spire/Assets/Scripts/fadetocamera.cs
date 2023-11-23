@@ -15,7 +15,7 @@ public class fadetocamera : MonoBehaviour
     void FixedUpdate()
     {
         if(structuresonly){
-			RaycastHit[] hits = Physics.SphereCastAll(Camera.main.transform.position, 5f, overworldmanager.OM.pc.transform.position - Camera.main.transform.position, Vector3.Distance( overworldmanager.OM.pc.transform.position, Camera.main.transform.position)-5f, lm);
+			RaycastHit[] hits = Physics.SphereCastAll(Camera.main.transform.position, 4f, overworldmanager.OM.pc.transform.position - Camera.main.transform.position, Vector3.Distance( overworldmanager.OM.pc.transform.position, Camera.main.transform.position)-5f, lm);
 			foreach(RaycastHit h in hits){
 				if(h.collider.GetComponent<structure>()){
 					if(!strucs.Contains(h.collider.GetComponent<structure>())){
