@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374271602039860937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 5186870670015766058}
   m_Father: {fileID: 5866818126977388874}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &4894134755298172207
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ Transform:
   m_Children:
   - {fileID: 3034552756250052813}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5495385240686482000
 Animator:
@@ -145,6 +145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e87c0858b692b42aa940b9ca7a001a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connections: []
+  connectionswait: []
+  target: {fileID: 0}
+  timer: 0
+  cc: {fileID: 6362152698324033043}
+  rotspeed: 1
+  is_sprinting: 0
 --- !u!1 &7379899814239403580
 GameObject:
   m_ObjectHideFlags: 0
