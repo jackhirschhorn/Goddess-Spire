@@ -30,6 +30,7 @@ public class navigatorlist : MonoBehaviour
 			transform.LookAt(new Vector3(target.position.x,transform.position.y,target.position.z));
 			cc.velocity = transform.forward*8;
 			if(Vector3.Distance(transform.position,target.position) < 5.5f){
+				yield return new WaitForSeconds(connectionswait[targ]);
 				targ++;
 				if(targ > connections.Count-1)targ = 0;
 				target = connections[targ].transform;

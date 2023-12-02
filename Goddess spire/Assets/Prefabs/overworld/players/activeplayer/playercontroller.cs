@@ -53,7 +53,7 @@ public class playercontroller : MonoBehaviour
 				cc.velocity = new Vector3(Mathf.Clamp(cc.velocity.x,rotass.x*(is_sprinting?2.9f:1.9f)*5f,rotass.x*(is_sprinting?2.9f:1.9f)*5f),cc.velocity.y,Mathf.Clamp(cc.velocity.z,rotass.y*(is_sprinting?2.9f:1.9f)*5f,rotass.y*(is_sprinting?2.9f:1.9f)*5f));
 				if(jumppower > 0){
 					
-				} else if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers)){
+				} else if(Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore)){
 					if(groundangle(hit.normal,1)){ //fix this to be right decector
 						if(lastangle < 150f){
 							cc.velocity = new Vector3(0,0,0);
@@ -73,7 +73,7 @@ public class playercontroller : MonoBehaviour
 				anim.SetBool("barbcharge", false);
 				cc.velocity = new Vector3(0,cc.velocity.y,0);
 				RaycastHit hit = new RaycastHit();
-				Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers);
+				Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore);
 				if(!playland && hit.transform != null && !groundangle(hit.normal,true)){
 					//cc.isKinematic = true;
 					cc.velocity = Vector3.zero;
@@ -84,7 +84,7 @@ public class playercontroller : MonoBehaviour
 					}
 				}
 			}
-			if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers)){
+			if(!playland && Physics.SphereCast(transform.position, 0.4f, -Vector3.up, out RaycastHit hit3, 1.21f, jumplayers,QueryTriggerInteraction.Ignore)){
 				if(hit3.transform.GetComponent<Rigidbody>()){
 					lastvel = hit3.transform.GetComponent<Rigidbody>().velocity;
 				} else {
@@ -92,7 +92,7 @@ public class playercontroller : MonoBehaviour
 					safepoint = transform.position;
 				}
 			}
-			if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers) && !anim.GetBool("jump")){
+			if(playland && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit2, 1.21f, jumplayers,QueryTriggerInteraction.Ignore) && !anim.GetBool("jump")){
 				land.Play();
 				playland = false;
 				anim.SetBool("landed", true);
@@ -114,7 +114,7 @@ public class playercontroller : MonoBehaviour
     }
 	
 	public bool isgrounded(){
-		return Physics.SphereCast(transform.position, 0.40f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers);
+		return Physics.SphereCast(transform.position, 0.40f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore);
 	}
 	
 	public AudioSource kistrikeas;
@@ -179,7 +179,7 @@ public class playercontroller : MonoBehaviour
 	Vector3 jumpangle = new Vector3(0,1,0);
 	
 	public void jump(InputAction.CallbackContext context){
-		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers) && !groundangle(hit.normal,true)){
+		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore) && !groundangle(hit.normal,true)){
 			//jumpangle = hit.normal;
 			jumppower = 500f;
 			jumppowerdecay = 15f;

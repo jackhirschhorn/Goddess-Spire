@@ -12,12 +12,19 @@ public class building : structure
 	public bool fadeout2 = false;
 	public float fadetim2 = 1f;
 	
+	void Awake(){
+		if(transform.parent.GetComponent<structure>().nextfloor != null)nextfloor = transform.parent.GetComponent<structure>().nextfloor;
+	}
+	
 	public override void FixedUpdate(){
 		base.FixedUpdate();
 		if(fadeout2 && inroom != this)inroom = this;
 		if(!fadeout2 && fadetim2 < 1f){
 			fadetim2 += Time.fixedDeltaTime*3;
-			if(fadetim2 >= 1f)lighting.SetActive(false);
+			if(fadetim2 >= 1f){
+				lighting.SetActive(false);
+				if(transform.parent.GetComponent<structure>().overrider2 == this)transform.parent.GetComponent<structure>().overrider2 = null;
+			}
 			if(clng.GetComponent<Renderer>()){			
 				foreach(Material m in clng.GetComponent<Renderer>().materials){
 					m.SetFloat("_DitherThreshold",fadetim2);
@@ -64,13 +71,18 @@ public class building : structure
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = true;
 			inroom = this;
-			lighting.SetActive(true);
+			lighting.SetActive(true);			
+			if(nextfloor != null)nextfloor.overrider = this;
+			if(transform.parent.GetComponent<structure>().overrider != null)transform.parent.GetComponent<structure>().snap();
+			//transform.parent.GetComponent<structure>().overrider = null;
+			transform.parent.GetComponent<structure>().overrider2 = this;
 		} 
 	}
 	
 	public void OnTriggerExit(Collider col){
 		if(col.GetComponent<playercontroller>()){
 			fadeout2 = false;
+			if(nextfloor != null && nextfloor.overrider == this)nextfloor.overrider = null;
 			if(inroom == this) inroom = null; //	needs to recheck so it doesn't fade out at wrong time	
 		}
 	}
