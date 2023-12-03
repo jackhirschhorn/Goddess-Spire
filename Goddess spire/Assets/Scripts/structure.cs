@@ -10,6 +10,7 @@ public class structure : MonoBehaviour
 	public float fadetim = 1f;
 	public float delay = 1f;
 	public structure nextfloor;
+	public structure bigstruck;
 	
 	public virtual void FixedUpdate(){
 		if (fadetim > 0.2f && (fadeout || overrider != null && overrider2 == null)){

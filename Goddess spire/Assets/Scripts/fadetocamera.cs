@@ -17,7 +17,7 @@ public class fadetocamera : MonoBehaviour
         if(structuresonly){
 			RaycastHit[] hits = Physics.SphereCastAll(Camera.main.transform.position, 4f, overworldmanager.OM.pc.transform.position - Camera.main.transform.position, Vector3.Distance( overworldmanager.OM.pc.transform.position, Camera.main.transform.position)-5f, lm);
 			foreach(RaycastHit h in hits){
-				if(h.collider.GetComponent<structure>()){
+				if(h.collider.GetComponent<structure>()  && (building.inroom == null || h.collider.GetComponent<structure>() != building.inroom.bigstruck)){
 					if(!strucs.Contains(h.collider.GetComponent<structure>())){
 						strucs.Add(h.collider.GetComponent<structure>());
 					}					
@@ -26,11 +26,18 @@ public class fadetocamera : MonoBehaviour
 				}
 			}
 			for(int i = 0; i < strucs.Count; i++){
-				strucs[i].delay += Time.fixedDeltaTime*5;
-				if(strucs[i].delay > 1){
+				if(building.inroom != null && strucs[i] != building.inroom.bigstruck){
+					strucs[i].delay = 1.1f;
 					strucs[i].fadeout = false;
 					strucs.RemoveAt(i);
 					i--;
+				} else {
+					strucs[i].delay += Time.fixedDeltaTime*5;
+					if(strucs[i].delay > 1){
+						strucs[i].fadeout = false;
+						strucs.RemoveAt(i);
+						i--;
+					}
 				}
 			}
 		} else {

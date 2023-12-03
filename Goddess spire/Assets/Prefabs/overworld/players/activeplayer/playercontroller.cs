@@ -157,7 +157,7 @@ public class playercontroller : MonoBehaviour
 	
 	public Vector2 rotass = new Vector2(0,0);
 	public void move(InputAction.CallbackContext context){
-		rotass = context.ReadValue<Vector2>();
+		rotass = Quaternion.AngleAxis(-camera.eulerAngles.y, Vector3.forward) * context.ReadValue<Vector2>();
 	}
 	
 	public void confirm(InputAction.CallbackContext context){

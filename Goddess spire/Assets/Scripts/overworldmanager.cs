@@ -11,6 +11,7 @@ public class overworldmanager : MonoBehaviour
 	public PlayerInput PI;
 	public playercontroller pc;
 	public GameObject buildinglos;
+	public Transform camera;
 	
 	
 	void Awake(){
@@ -39,6 +40,11 @@ public class overworldmanager : MonoBehaviour
 			}
 		}
 		lastframecheckbuilding = building.inroom;
+		if(building.inroom){
+			camera.localRotation = Quaternion.Slerp(camera.localRotation, Quaternion.Euler(building.inroom.euls), Time.fixedDeltaTime*(180f/Quaternion.Angle(camera.localRotation, Quaternion.Euler(building.inroom.euls))));
+		} else {
+			camera.localRotation = Quaternion.Slerp(camera.localRotation, Quaternion.Euler(new Vector3(0,0,0)), Time.fixedDeltaTime*(180f/Vector3.Angle(camera.forward, Vector3.forward)));
+		}
 		
 	}
 	
