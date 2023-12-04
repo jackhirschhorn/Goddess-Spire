@@ -1310,7 +1310,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30664
+  m_Name: pb_Mesh31654
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1870,6 +1870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1608999130}
+  grabcam: 0
 --- !u!95 &119550277
 Animator:
   serializedVersion: 4
@@ -2107,7 +2108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -6770,7 +6771,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30500
+  m_Name: pb_Mesh31490
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9341,7 +9342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -9652,9 +9653,9 @@ GameObject:
   - component: {fileID: 620408606}
   - component: {fileID: 620408607}
   - component: {fileID: 620408608}
-  - component: {fileID: 620408609}
   - component: {fileID: 620408610}
   - component: {fileID: 620408611}
+  - component: {fileID: 620408612}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -9725,25 +9726,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &620408609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620408605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &620408610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9784,6 +9766,35 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &620408612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620408605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &625158648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10393,7 +10404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -14718,6 +14729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1608999130}
+  grabcam: 0
 --- !u!95 &865676613
 Animator:
   serializedVersion: 4
@@ -15353,6 +15365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943418781}
   - component: {fileID: 943418782}
+  - component: {fileID: 943418783}
   m_Layer: 0
   m_Name: BattleMaster
   m_TagString: Untagged
@@ -15514,11 +15527,219 @@ MonoBehaviour:
   encounterxp: 0
   encounteritems: []
   snd: {fileID: 0}
+  vec: {x: 0, y: 0}
+  wasdtimer: 0
   unset: 1
   gameoverscreen: {fileID: 843811646}
   battleendscreen: {fileID: 1162756814}
   endscreenxp: {fileID: 1897960935}
   itmholder: {fileID: 808382963}
+--- !u!114 &943418783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943418780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 56aadb329d5fafa42bd8ffacde241628, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnConfirm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c9fb9eea-ea9c-47d8-8eaf-4510b6a8bb14
+    m_ActionName: input/confirm[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9ec68175-c6b6-4bf7-8094-2375f4881338
+    m_ActionName: input/cancel[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 53727934-f077-41ff-a41c-030d084f3a4a
+    m_ActionName: input/move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 128e300a-8178-4dd3-8e32-f553fb9afef0
+    m_ActionName: input/sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSelect1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2635115f-503a-4ac4-8d66-b931e51fe145
+    m_ActionName: input/select 1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSelect2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fc92fbff-d1c3-49c3-9f60-557d91275e6e
+    m_ActionName: input/select 2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSelect3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 13563cc6-b986-4fac-b067-204f1ea1ebce
+    m_ActionName: input/select 3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSelect4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f1d0324-0842-4842-bb40-1b56183c888e
+    m_ActionName: input/select 4[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnSelect5
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0d5f9280-75c2-40ea-9a7a-f453d9b2ae56
+    m_ActionName: input/select 5[/Keyboard/5]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 97908b82-e2b5-4c41-af41-2ebda8b36ed1
+    m_ActionName: input/jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 943418782}
+        m_TargetAssemblyTypeName: BattleMaster, Assembly-CSharp
+        m_MethodName: OnAbility
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0311ac83-82b0-4afb-a296-67ec234f6b84
+    m_ActionName: input/ability[/Keyboard/f]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 607468311}
 --- !u!1 &958796937
 GameObject:
   m_ObjectHideFlags: 0
@@ -21960,6 +22181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1608999130}
+  grabcam: 0
 --- !u!95 &1235613479
 Animator:
   serializedVersion: 4
@@ -25133,7 +25355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29394
+  m_Name: pb_Mesh30384
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -27327,6 +27549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1608999130}
+  grabcam: 0
 --- !u!95 &1614228517
 Animator:
   serializedVersion: 4
@@ -27608,7 +27831,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29692
+  m_Name: pb_Mesh30684
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -33759,7 +33982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size
@@ -39233,6 +39456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1608999130}
+  grabcam: 0
 --- !u!95 &1987908768
 Animator:
   serializedVersion: 4
@@ -40412,7 +40636,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29108
+  m_Name: pb_Mesh30098
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -42450,7 +42674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.spd
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 376850459869611448, guid: a5b541a690eaec34f8cb4986108718c9, type: 3}
       propertyPath: statblock.mana
@@ -43023,7 +43247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: statblock.spd
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8386547958053584452, guid: 7155c0ac1ebc4ba4a98074ac081adfe6, type: 3}
       propertyPath: class_CO.Array.size

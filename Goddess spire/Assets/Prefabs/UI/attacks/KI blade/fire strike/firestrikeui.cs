@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class firestrikeui : MonoBehaviour
 {
@@ -35,6 +36,93 @@ public class firestrikeui : MonoBehaviour
 		texts[3].enabled = false;
     }
 
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 1){
+			if(rans[substage] == 5){				
+				fires[substage].SetBool("expand",false);
+				substage += 1;
+				BattleMaster.makesound(15);
+			} else {
+				stage = 2;
+				atk = substage;
+				pierce = substage;
+			}
+		}
+	}
+
+	public void OnCancel2(InputAction.CallbackContext context){ //q
+		if(stage == 1){
+			if(rans[substage] == 3){				
+				fires[substage].SetBool("expand",false);
+				substage += 1;
+				BattleMaster.makesound(15);
+			} else {
+				stage = 2;
+				atk = substage;
+				pierce = substage;
+			}
+		}
+	}
+	
+	bool vecreset = true;
+	
+	public void OnMove2(InputAction.CallbackContext context){ //WASD
+		Vector2 vec = context.ReadValue<Vector2>();
+		if(vec == Vector2.zero)vecreset = true;
+		if(vecreset){
+			if(stage == 1){
+				if(vec.y > 0){//w
+					if(rans[substage] == 4){				
+						fires[substage].SetBool("expand",false);
+						substage += 1;
+						BattleMaster.makesound(15);
+					} else {
+						stage = 2;
+						atk = substage;
+						pierce = substage;
+					}
+					vecreset = false;
+				}
+				if(vec.y < 0){//s
+					if(rans[substage] == 1){				
+						fires[substage].SetBool("expand",false);
+						substage += 1;
+						BattleMaster.makesound(15);
+					} else {
+						stage = 2;
+						atk = substage;
+						pierce = substage;
+					}
+					vecreset = false;
+				}
+				if(vec.x > 0){//d
+					if(rans[substage] == 2){				
+						fires[substage].SetBool("expand",false);
+						substage += 1;
+						BattleMaster.makesound(15);
+					} else {
+						stage = 2;
+						atk = substage;
+						pierce = substage;
+					}
+					vecreset = false;
+				}
+				if(vec.x < 0){//a
+					if(rans[substage] == 0){				
+						fires[substage].SetBool("expand",false);
+						substage += 1;
+						BattleMaster.makesound(15);
+					} else {
+						stage = 2;
+						atk = substage;
+						pierce = substage;
+					}
+					vecreset = false;
+				}
+			}
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -45,15 +133,6 @@ public class firestrikeui : MonoBehaviour
 			adso.enabled = true;
 			texts[substage].enabled = true;
 			fires[substage].SetBool("expand",true);
-			if(Input.GetKeyDown(rans[substage] == 0?KeyCode.A:(rans[substage] == 1?KeyCode.S:(rans[substage] == 2?KeyCode.D:(rans[substage] == 3?KeyCode.Q:(rans[substage] == 4?KeyCode.W:KeyCode.E)))))){				
-				fires[substage].SetBool("expand",false);
-				substage += 1;
-				BattleMaster.makesound(15);
-			} else if(Input.anyKeyDown){
-				stage = 2;
-				atk = substage;
-				pierce = substage;
-			}
 			if(substage == 4){
 				stage = 2;
 				atk = substage;

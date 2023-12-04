@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.InputSystem;
 
 public class threehitcombomono : animredirect
 {
@@ -26,6 +27,36 @@ public class threehitcombomono : animredirect
 		
     }
 
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(context.performed){
+			if (stage == 2){
+				stage = 4;
+				missed2 = true;
+				anim.SetInteger("stage",4);
+				BattleMaster.makesound(10);
+			} else if (stage == 3){
+				target.take_damage(damage,pierce,1);
+				missed = false;
+				BattleMaster.makesound(9);
+			} else if (stage == 5){
+				stage = 7;
+				missed2 = true;
+				anim.SetInteger("stage",4);
+			} else if (stage == 6){
+				target.take_damage(damage,pierce,1);
+				missed = false;
+			} else if (stage == 8){
+				stage = 10;
+				missed2 = true;
+				anim.SetInteger("stage",4);
+			} else if (stage == 9){
+				target.take_damage(damage+2,pierce+2,0);
+				missed = false;
+			}
+		} else if(context.canceled) {				
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -48,19 +79,8 @@ public class threehitcombomono : animredirect
 		} else if (stage == 2){
 			damage = comb.weapondamage();
 			pierce = comb.pierce();
-			if(Input.GetKeyDown(KeyCode.E)){
-				stage = 4;
-				missed2 = true;
-				anim.SetInteger("stage",4);
-				BattleMaster.makesound(10);
-			}
 		} else if (stage == 3){
 			didit = false;
-			if(Input.GetKeyDown(KeyCode.E)){
-				target.take_damage(damage,pierce,1);
-				missed = false;
-				BattleMaster.makesound(9);
-			}
 		} else if (stage == 4){
 			if(clone != null)Destroy(clone.gameObject);
 			if(missed){
@@ -75,17 +95,9 @@ public class threehitcombomono : animredirect
 				missed = true;
 			}
 		} else if (stage == 5){
-			if(Input.GetKeyDown(KeyCode.E)){
-				stage = 7;
-				missed2 = true;
-				anim.SetInteger("stage",4);
-			}
+			
 		} else if (stage == 6){
 			didit = false;
-			if(Input.GetKeyDown(KeyCode.E)){
-				target.take_damage(damage,pierce,1);
-				missed = false;
-			}
 		} else if (stage == 7){
 			if(clone != null)Destroy(clone.gameObject);
 			if(missed){
@@ -100,17 +112,8 @@ public class threehitcombomono : animredirect
 				missed = true;
 			}
 		} else if (stage == 8){
-			if(Input.GetKeyDown(KeyCode.E)){
-				stage = 10;
-				missed2 = true;
-				anim.SetInteger("stage",4);
-			}
 		} else if (stage == 9){
 			didit = false;
-			if(Input.GetKeyDown(KeyCode.E)){
-				target.take_damage(damage+2,pierce+2,0);
-				missed = false;
-			}
 		} else if (stage == 10){
 			if(clone != null)Destroy(clone.gameObject);
 			if(missed){

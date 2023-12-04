@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class koboldspearthrowmono : animredirect
 {
@@ -32,6 +33,31 @@ public class koboldspearthrowmono : animredirect
 		}
 	}
 	
+	bool adown,ddown,wdown = false;
+	public void OnMove2(InputAction.CallbackContext context){ //WASD
+		Vector2 vec = context.ReadValue<Vector2>();
+		if(vec.y > 0){//w
+			ddown = false;
+			wdown = true;
+			adown = false;
+		}
+		if(vec.x > 0){//d
+			ddown = true;
+			wdown = false;
+			adown = false;
+		}
+		if(vec.x < 0){//a			
+			ddown = false;
+			wdown = false;
+			adown = true;
+		}
+		if(vec == Vector2.zero){			
+			ddown = false;
+			wdown = false;
+			adown = false;
+		}
+	}
+	
 	public Vector3 target;
 	public BezierCurve bz;
 	public float slider = 0.5f;
@@ -52,11 +78,11 @@ public class koboldspearthrowmono : animredirect
 				Destroy(this);
 			} else if(stage == 1){
 				slider = Mathf.Clamp01(slider - (Time.deltaTime/2f));
-				if(Input.GetKey(KeyCode.A)){
+				if(adown){
 					slider = Mathf.Clamp01(slider - Time.deltaTime);
-				} else if (Input.GetKey(KeyCode.D)){
+				} else if (ddown){
 					slider = Mathf.Clamp01(slider + Time.deltaTime);				
-				} else if (Input.GetKey(KeyCode.W)){
+				} else if (wdown){
 					trg = bz.GetSegment(slider);
 					stage = 2;
 				}

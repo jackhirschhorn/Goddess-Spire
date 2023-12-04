@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class axecharge : MonoBehaviour
 {
@@ -17,6 +18,18 @@ public class axecharge : MonoBehaviour
         
     }
 
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 1){
+			if(context.performed){
+				Debug.Log("ye");
+				img.anchoredPosition = new Vector3((1f*charge),0,0);
+				charge = Mathf.Clamp01(charge+(Random.Range(1,5)*0.03f));
+			} else if(context.canceled) {				
+				img.anchoredPosition = Vector3.Lerp(img.anchoredPosition, new Vector3((1f*charge),0,0),0.5f);
+			}
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -26,12 +39,7 @@ public class axecharge : MonoBehaviour
 			Destroy(this.gameObject);
 		} else if (stage == 1){
 			adso.gameObject.SetActive(true);
-			if(Input.GetKeyDown(KeyCode.E)){
-				img.anchoredPosition = new Vector3((1f*charge),0,0);
-				charge = Mathf.Clamp01(charge+(Random.Range(1,5)*0.03f));
-			} else {				
-				img.anchoredPosition = Vector3.Lerp(img.anchoredPosition, new Vector3((1f*charge),0,0),0.5f);
-			}
+			//moved
 			adso.pitch = 0.5f + (charge*1.2f);			
 			timer += Time.deltaTime;
 			if(timer >= 2)stage = 2;

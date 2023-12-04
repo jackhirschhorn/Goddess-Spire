@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class BattleMaster : MonoBehaviour
 {
@@ -181,40 +182,17 @@ public class BattleMaster : MonoBehaviour
 		update_menu_memory();
 	}
 	
-	void Update(){
-		//if(Input.GetKeyDown(KeyCode.Space))next_turn();
-		if(!explained){
-			if(Input.GetKeyDown(KeyCode.E)){
+	public void OnConfirm(InputAction.CallbackContext context){ //e
+		BroadcastMessage("OnConfirm2",context);
+		if(context.performed){
+			if(!explained){
 				explained = true;
 				explainer.gameObject.SetActive(false);
 				screenwipe.SetBool("start",true);
 				foreach(Combatant c in combatants){
 					c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", false);
 				}
-			}
-		} else if(!abilityactive && initiative[roundturn].isPC){
-			if(Input.GetKeyDown(KeyCode.A) && !csubmenuon && !abilityselected)menutarget -= 1;
-			if(Input.GetKeyDown(KeyCode.D) && !csubmenuon && !abilityselected)menutarget += 1;
-			if(Input.GetKeyDown(KeyCode.W) && csubmenuon)submenutarg -= 1;
-			if(Input.GetKeyDown(KeyCode.S) && csubmenuon)submenutarg += 1;
-			if(Input.GetKeyDown(KeyCode.Q)){
-				if(abilityselected){
-					combatmenu.GetComponent<Animator>().SetBool("unselect", true);
-					cur_sel_CO.nevermind();
-					abilityselected = false;
-					csubmenuon = true;
-					csubmenu.SetActive(true);
-					update_submenu_memory(true);
-					combatmenu.GetChild(0).gameObject.SetActive(true);
-					explainer.gameObject.SetActive(false);
-				} else if(csubmenuon){
-					combatmenu.GetComponent<Animator>().SetBool("unselect", true);
-					csubmenuon = false;
-					csubmenu.SetActive(false);
-					update_submenu_memory(false);
-				}
-			}
-			if(Input.GetKeyDown(KeyCode.E)){
+			} else if(!abilityactive && initiative[roundturn].isPC){
 				if(!csubmenuon && !abilityselected){
 					combatmenu.GetComponent<Animator>().SetBool("select", true);
 					csubmenuon = true;
@@ -242,24 +220,110 @@ public class BattleMaster : MonoBehaviour
 					explainer.gameObject.SetActive(false);
 				}
 			}
+		}
+	}
+	
+	public void OnCancel(InputAction.CallbackContext context){ //q
+		BroadcastMessage("OnCancel2",context);
+		if(!abilityactive && initiative[roundturn].isPC){
+			
+			if(abilityselected){
+				combatmenu.GetComponent<Animator>().SetBool("unselect", true);
+				cur_sel_CO.nevermind();
+				abilityselected = false;
+				csubmenuon = true;
+				csubmenu.SetActive(true);
+				update_submenu_memory(true);
+				combatmenu.GetChild(0).gameObject.SetActive(true);
+				explainer.gameObject.SetActive(false);
+			} else if(csubmenuon){
+				combatmenu.GetComponent<Animator>().SetBool("unselect", true);
+				csubmenuon = false;
+				csubmenu.SetActive(false);
+				update_submenu_memory(false);
+			}
+		}
+	}
+	
+	public Vector2 vec;	
+	public void OnMove(InputAction.CallbackContext context){ //WASD
+		BroadcastMessage("OnMove2",context);
+		if(explained)vec = context.ReadValue<Vector2>();
+	}
+	
+	public void OnSprint(InputAction.CallbackContext context){ //shift
+		BroadcastMessage("OnSprint2",context);
+		
+	}
+	
+	public void OnSelect1(InputAction.CallbackContext context){ //1
+		BroadcastMessage("OnSelect12",context);
+		if(explained)partyorder[4].dodge();
+	}
+	
+	public void OnSelect2(InputAction.CallbackContext context){ //1
+		BroadcastMessage("OnSelect22",context);
+		if(explained)partyorder[3].dodge();
+	}
+	
+	public void OnSelect3(InputAction.CallbackContext context){ //1
+		BroadcastMessage("OnSelect32",context);
+		if(explained)partyorder[2].dodge();
+	}
+	
+	public void OnSelect4(InputAction.CallbackContext context){ //1
+		BroadcastMessage("OnSelect42",context);
+		if(explained)partyorder[1].dodge();
+	}
+	
+	public void OnSelect5(InputAction.CallbackContext context){ //1
+		BroadcastMessage("OnSelect52",context);
+		if(explained)partyorder[0].dodge();
+	}
+	
+	public void OnJump(InputAction.CallbackContext context){ //space
+		BroadcastMessage("OnJump2",context);
+		
+	}
+	
+	public void OnAbility(InputAction.CallbackContext context){ //f
+		BroadcastMessage("OnAbility2",context);
+		
+	}
+	
+	public float wasdtimer = 0f;
+	
+	void Update(){
+		if(!abilityactive && initiative[roundturn].isPC){
+			wasdtimer -= Time.deltaTime;
 			combatmenurotate();
 			if(csubmenuon)subcombatmenurotate();
-		}
-		if(explained){
-			if(Input.GetKeyDown(KeyCode.Alpha1)){
-				partyorder[4].dodge();
-			}
-			if(Input.GetKeyDown(KeyCode.Alpha2)){
-				partyorder[3].dodge();
-			}
-			if(Input.GetKeyDown(KeyCode.Alpha3)){
-				partyorder[2].dodge();
-			}
-			if(Input.GetKeyDown(KeyCode.Alpha4)){
-				partyorder[1].dodge();
-			}
-			if(Input.GetKeyDown(KeyCode.Alpha5)){
-				partyorder[0].dodge();
+			if(vec == Vector2.zero)wasdtimer = -1f;
+			if(wasdtimer < 0){
+				if(vec.y > 0){//w
+					if(csubmenuon){
+						submenutarg -= 1;	
+						wasdtimer = 0.35f;
+					}
+				}
+				if(vec.y < 0){//s
+					if(csubmenuon){
+						submenutarg += 1;	
+						wasdtimer = 0.35f;
+					}
+				}
+				if(vec.x > 0){//d
+					if(!csubmenuon && !abilityselected){
+						menutarget += 1;	
+						wasdtimer = 0.35f;
+					}
+				}
+				if(vec.x < 0){//a
+					if(!csubmenuon && !abilityselected){
+						menutarget -= 1;	
+						wasdtimer = 0.35f;
+					}
+				}
 			}
 		}
 	}

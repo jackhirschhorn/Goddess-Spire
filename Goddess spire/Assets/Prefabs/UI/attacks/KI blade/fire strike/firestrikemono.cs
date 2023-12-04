@@ -24,6 +24,7 @@ public class firestrikemono : animredirect
         target = BattleMaster.BM.meleetarg(!comb.isPC);
 		clone = Instantiate(BattleMaster.pl[23]);
 		clone.position = target.transform.position + new Vector3(-2f,3f,0);
+		clone.parent = BattleMaster.BM.transform;
     }
 
     // Update is called once per frame

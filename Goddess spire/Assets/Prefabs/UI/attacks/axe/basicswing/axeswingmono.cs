@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.InputSystem;
 
 public class axeswingmono : animredirect
 {
@@ -23,7 +24,18 @@ public class axeswingmono : animredirect
         target = BattleMaster.BM.meleetarg(!comb.isPC);
 		clone = Instantiate(BattleMaster.pl[21]);
 		clone.position = target.transform.position + new Vector3(-2f,3f,0);
+		clone.parent = BattleMaster.BM.transform;
     }
+
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 2){
+			if(context.performed){				
+				stage = 3;
+				clone.GetComponent<axecharge>().stage = 1;
+				Destroy(clone2.gameObject);
+			}
+		}
+	}
 
     // Update is called once per frame
     void Update()
@@ -49,11 +61,6 @@ public class axeswingmono : animredirect
 			if(clone2 == null){
 				clone2 = Instantiate(BattleMaster.pl[22]);
 				clone2.position = target.transform.position + new Vector3(-2f,5f,0);
-			}
-			if(Input.GetKeyDown(KeyCode.E)){
-				stage = 3;
-				clone.GetComponent<axecharge>().stage = 1;
-				Destroy(clone2.gameObject);
 			}
 		} else if (stage == 3){
 			if(clone.GetComponent<axecharge>().stage == 2){

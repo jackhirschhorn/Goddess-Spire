@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class thermometer : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class thermometer : MonoBehaviour
         
     }
 
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 1){
+			if(context.performed){
+				charge += 0.199f;
+			}
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -34,9 +43,6 @@ public class thermometer : MonoBehaviour
 			img.anchoredPosition = new Vector3(0,charge,0);
 			img2.anchoredPosition = new Vector3(0,timer,0);
 			adso.pitch = 0.5f + (charge*1.2f);		
-			if(Input.GetKeyDown(KeyCode.E)){
-				charge += 0.199f;
-			}
 			if(timer >= 2f){
 				stage = 2;
 				damage = (int)Mathf.Floor(charge * 5);

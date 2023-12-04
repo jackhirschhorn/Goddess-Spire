@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.InputSystem;
 
 public class recklesschargemono : MonoBehaviour
 {
@@ -26,6 +27,24 @@ public class recklesschargemono : MonoBehaviour
     {
         target = BattleMaster.BM.meleetarg(!comb.isPC);
     }
+
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 1){
+			if(context.performed){
+				if(!tooearly && !timedhit){
+					timedhit = true;					
+					BattleMaster.makesound(9);
+				}
+				if(Vector3.Distance(anim.transform.position, target.transform.position) < 2f && timer < 1){
+				} else if (!firstframe) {
+					if(!tooearly){
+						tooearly = true;
+						BattleMaster.makesound(10);
+					}
+				}
+			}
+		}
+	}
 
     // Update is called once per frame
     void Update()
@@ -53,18 +72,9 @@ public class recklesschargemono : MonoBehaviour
 				}
 			}
 			if(Vector3.Distance(anim.transform.position, target.transform.position) < 2f && timer < 1){
-				if(Input.GetKeyDown(KeyCode.E) && !tooearly && !timedhit){
-					timedhit = true;					
-					BattleMaster.makesound(9);
-				}
 				if(clone == null){			
 					clone = Instantiate(BattleMaster.pl[22]);
 					clone.position = target.transform.position + new Vector3(-2f,3f,0);
-				}
-			} else if (!firstframe) {
-				if(Input.GetKeyDown(KeyCode.E) && !tooearly){
-					tooearly = true;
-					BattleMaster.makesound(10);
 				}
 			}
 			if((Vector3.Distance(anim.transform.position, target.transform.position) < 1.5f && timer > 1) || timer < 1){

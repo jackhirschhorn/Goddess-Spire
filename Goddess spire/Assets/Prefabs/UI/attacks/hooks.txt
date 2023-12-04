@@ -1,0 +1,57 @@
+using UnityEngine.InputSystem;
+
+public void OnConfirm2(InputAction.CallbackContext context){ //e
+	
+}
+
+public void OnCancel2(InputAction.CallbackContext context){ //q
+	
+}
+
+public void OnMove2(InputAction.CallbackContext context){ //WASD
+	Vector2 vec = context.ReadValue<Vector2>();
+	if(vec.y > 0){//w
+	
+	}
+	if(vec.y < 0){//s
+	
+	}
+	if(vec.x > 0){//d
+	
+	}
+	if(vec.x < 0){//a
+	
+	}
+}
+
+public void OnSprint2(InputAction.CallbackContext context){ //shift
+	
+}
+
+public void OnSelect12(InputAction.CallbackContext context){ //1
+	
+}
+
+public void OnSelect22(InputAction.CallbackContext context){ //1
+	
+}
+
+public void OnSelect32(InputAction.CallbackContext context){ //1
+	
+}
+
+public void OnSelect42(InputAction.CallbackContext context){ //1
+	
+}
+
+public void OnSelect52(InputAction.CallbackContext context){ //1
+	
+}
+
+public void OnJump2(InputAction.CallbackContext context){ //space
+	
+}
+
+public void OnAbility2(InputAction.CallbackContext context){ //f
+	
+}

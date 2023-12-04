@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.InputSystem;
 
 public class Combatant : MonoBehaviour
 {
@@ -32,6 +33,50 @@ public class Combatant : MonoBehaviour
 	
 	public Animator anim;
 	public int idleanim = 0;
+	
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+	
+	}
+
+	public void OnCancel2(InputAction.CallbackContext context){ //q
+		
+	}
+
+	public void OnMove2(InputAction.CallbackContext context){ //WASD
+
+	}
+
+	public void OnSprint2(InputAction.CallbackContext context){ //shift
+		
+	}
+
+	public void OnSelect12(InputAction.CallbackContext context){ //1
+		
+	}
+
+	public void OnSelect22(InputAction.CallbackContext context){ //1
+		
+	}
+
+	public void OnSelect32(InputAction.CallbackContext context){ //1
+		
+	}
+
+	public void OnSelect42(InputAction.CallbackContext context){ //1
+		
+	}
+
+	public void OnSelect52(InputAction.CallbackContext context){ //1
+		
+	}
+
+	public void OnJump2(InputAction.CallbackContext context){ //space
+		
+	}
+
+	public void OnAbility2(InputAction.CallbackContext context){ //f
+		
+	}
 	
 	public void Awake(){
 		statblock.start();

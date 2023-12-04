@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class koboldspitmono : MonoBehaviour
 {
@@ -49,6 +50,22 @@ public class koboldspitmono : MonoBehaviour
 			
 		}
 	}
+	
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(context.performed){
+			if(stage == 1){
+				if(!first){
+					stage = 2;
+					BattleMaster.makesoundtokill(8);
+				}
+			} 
+		} else if(context.canceled){
+			if(stage == 2){				
+				stage = 4;
+			}
+		}
+	}
+	
 	bool flip = false;
 	float slider = 0.5f;
 	float powar = 0f;
@@ -68,10 +85,6 @@ public class koboldspitmono : MonoBehaviour
 				slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
 				if(slider == 1 || slider == 0)flip = !flip;
 				clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
-				if(Input.GetKeyDown(KeyCode.E) && !first){
-					stage = 2;
-					BattleMaster.makesoundtokill(8);
-				}
 				first = false;
 			} else if (stage == 2){
 				slider = Mathf.Clamp01(slider + (Time.deltaTime*(flip?-1:1)));
@@ -79,7 +92,6 @@ public class koboldspitmono : MonoBehaviour
 				clone.GetComponent<lrbez>().bc.Points = new Vector3[]{clone2.position, Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(-1,5,0), Vector3.Lerp(head.position,Vector3.Lerp(front,end,slider),0.5f)+ new Vector3(1,5,0),Vector3.Lerp(front,end,slider)};
 				powar += Time.deltaTime;
 				if(powar >= 1.75f)stage = 3;
-				if(Input.GetKeyUp(KeyCode.E))stage = 4;
 				clone2.localScale = new Vector3(2+(powar*2),2+(powar*2),2+(powar*2));
 			} else if (stage == 3){
 				//self damage

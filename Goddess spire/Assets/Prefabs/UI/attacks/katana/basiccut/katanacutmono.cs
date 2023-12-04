@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.InputSystem;
 
 public class katanacutmono : MonoBehaviour
 {
@@ -23,6 +24,42 @@ public class katanacutmono : MonoBehaviour
     {
         target = BattleMaster.BM.meleetarg(!comb.isPC);
     }
+
+	public void OnConfirm2(InputAction.CallbackContext context){ //e
+		if(stage == 2){
+			if(context.performed){
+				if(timer > 0){
+					//miss animation?
+					damage = 0;
+					pierce = 0;
+					anim.SetInteger("stage",5);
+					stage = 3;
+					missed = true;
+				} else if (timer <= 0 && timer >= -0.32f){
+					damage = comb.weapondamage() + 5;
+					pierce = 5;
+					anim.SetInteger("stage",4);
+					stage = 3;
+				} else if (timer <= -0.32f && timer >= -0.6f){
+					damage = comb.weapondamage() + 2;
+					pierce = 2;
+					anim.SetInteger("stage",4);
+					stage = 3;
+				} else if (timer <= -0.6f && timer >= -1f){
+					damage = comb.weapondamage();
+					pierce = 0;
+					anim.SetInteger("stage",4);
+					stage = 3;
+				} else if (timer <= -1f){
+					damage = 0;
+					pierce = 0;
+					anim.SetInteger("stage",5);
+					stage = 3;
+					missed = true;
+				}
+			}
+		}
+	}
 
     // Update is called once per frame
     void Update()
@@ -53,41 +90,10 @@ public class katanacutmono : MonoBehaviour
 				clone.position = target.transform.position + new Vector3(-2f,5f,0);				
 				BattleMaster.makesound(14);
 			}
-			if(Input.GetKeyDown(KeyCode.E)){
-				if(timer > 0){
-					//miss animation?
-					damage = 0;
-					pierce = 0;
-					stage = 3;
-					anim.SetInteger("stage",5);
-					missed = true;
-				} else if (timer <= 0 && timer >= -0.32f){
-					damage = comb.weapondamage() + 5;
-					pierce = 5;
-					stage = 3;
-					anim.SetInteger("stage",4);
-				} else if (timer <= -0.32f && timer >= -0.6f){
-					damage = comb.weapondamage() + 2;
-					pierce = 2;
-					stage = 3;
-					anim.SetInteger("stage",4);
-				} else if (timer <= -0.6f && timer >= -1f){
-					damage = comb.weapondamage();
-					pierce = 0;
-					stage = 3;
-					anim.SetInteger("stage",4);
-				} else if (timer <= -1f){
-					damage = 0;
-					pierce = 0;
-					stage = 3;
-					anim.SetInteger("stage",5);
-					missed = true;
-				}
-			}
 		} else if (stage == 3){
 			if(clone != null)Destroy(clone.gameObject);
 			if(!missed)target.take_damage(damage,pierce,1);
-			anim.SetInteger("stage",6);
+			//anim.SetInteger("stage",6);
 			timer = (missed?-1.9f:-2.3f);
 			stage = 4;
 		} else if (stage == 4){
