@@ -12,6 +12,7 @@ public class overworldmanager : MonoBehaviour
 	public playercontroller pc;
 	public GameObject buildinglos;
 	public Transform camera;
+	public GameObject BattleMaster;
 	
 	
 	void Awake(){
@@ -52,5 +53,10 @@ public class overworldmanager : MonoBehaviour
 		OM.BroadcastMessage("plantresetpower");
 		OM.BroadcastMessage("plantupdatelinks");
 		OM.BroadcastMessage("plantupdatepower");
+	}
+	
+	public void gotobattle(){
+		BattleMaster.SetActive(true);
+		this.gameObject.SetActive(false);
 	}
 }
