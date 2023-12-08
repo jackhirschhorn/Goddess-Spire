@@ -12,7 +12,7 @@ public class overworldmanager : MonoBehaviour
 	public playercontroller pc;
 	public GameObject buildinglos;
 	public Transform camera;
-	public GameObject BattleMaster;
+	public GameObject battlemaster;
 	
 	
 	void Awake(){
@@ -55,8 +55,15 @@ public class overworldmanager : MonoBehaviour
 		OM.BroadcastMessage("plantupdatepower");
 	}
 	
-	public void gotobattle(){
-		BattleMaster.SetActive(true);
+	public void gotobattle(List<combatantdata> enemy, List<combatantdata> player){
+		battlemaster.SetActive(true);
+		foreach(combatantdata cd in player){
+			BattleMaster.BM.addbattoler(cd,true);
+		}
+		foreach(combatantdata cd in enemy){
+			BattleMaster.BM.addbattoler(cd,false);
+		}
+		BattleMaster.BM.begin();
 		this.gameObject.SetActive(false);
 	}
 }

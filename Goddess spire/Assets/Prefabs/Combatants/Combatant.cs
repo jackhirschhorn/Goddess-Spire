@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.InputSystem;
+using UnityEditor.Animations;
 
 public class Combatant : MonoBehaviour
 {
@@ -37,48 +38,80 @@ public class Combatant : MonoBehaviour
 	public void OnConfirm2(InputAction.CallbackContext context){ //e
 	
 	}
-
 	public void OnCancel2(InputAction.CallbackContext context){ //q
 		
 	}
-
 	public void OnMove2(InputAction.CallbackContext context){ //WASD
-
 	}
-
 	public void OnSprint2(InputAction.CallbackContext context){ //shift
 		
 	}
-
 	public void OnSelect12(InputAction.CallbackContext context){ //1
 		
 	}
-
 	public void OnSelect22(InputAction.CallbackContext context){ //1
-		
+	
 	}
-
 	public void OnSelect32(InputAction.CallbackContext context){ //1
 		
 	}
-
 	public void OnSelect42(InputAction.CallbackContext context){ //1
-		
+	
 	}
-
 	public void OnSelect52(InputAction.CallbackContext context){ //1
-		
+	
 	}
-
 	public void OnJump2(InputAction.CallbackContext context){ //space
-		
+	
 	}
-
 	public void OnAbility2(InputAction.CallbackContext context){ //f
-		
+	
 	}
 	
-	public void Awake(){
+	public void sync(combatantdata cd, bool team){
+		show_HP = !team;
+		isPC = team;
+		
+		strong = cd.strong;
+		AI = cd.AI;
+		humanoid = cd.humanoid;
+		phenotype = cd.phenotype;
+		statblock = cd.statblock;
+		icon = cd.icon;
+	
+		foreach(combatoption co in cd.class_CO){
+			class_CO.Add(Instantiate(co));
+		}
+		
+		foreach(combatoption co in cd.weapon_CO){
+			weapon_CO.Add(Instantiate(co));
+		}
+	
+	
+		red = cd.red;
+		blue = cd.blue;
+		green = cd.green;
+		height = cd.height;
+	
+		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+		
+		anim.runtimeAnimatorController = (cd.anim as RuntimeAnimatorController);
+		idleanim = cd.idleanim;
+		
+		
+		statblock.start();
+		enemyHP = Instantiate(enemyHP);
+		enemyHP.parent = transform;
+		enemyHP.position = transform.position + new Vector3(0,height,0);
+		HP = enemyHP.GetChild(0) as RectTransform;
+		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
+		//debug();
+		if(idleanim != 0){
+			anim.SetInteger("weapon",idleanim);
+		}
+	}
+	
+	/*public void Awake(){
 		statblock.start();
 		enemyHP = Instantiate(enemyHP);
 		enemyHP.parent = transform;
@@ -90,7 +123,7 @@ public class Combatant : MonoBehaviour
 		if(idleanim != 0){
 			anim.SetInteger("weapon",idleanim);
 		}
-	}
+	}*/
 	
 	public void LateUpdate(){
 		if(show_HP){
@@ -280,8 +313,8 @@ public class Combatant : MonoBehaviour
 		}
 	}
 	
-	public void apply_status(status s, int i){
-		int res = 0;
+	public bool apply_status(status s, int i){
+		int res = statblock.lck;
 		for(int i2 = 0; i2 < statblock.statusresistance.Count; i2++){
 			res += (int)((int)statblock.statusresistance[i2][0] == s.id?statblock.statusresistance[i2][1]:0);
 		}
@@ -292,7 +325,9 @@ public class Combatant : MonoBehaviour
 			sm.comb = this;
 			sm.sts = s;
 			sm.init();
+			return true;
 		}
+		return false;
 	}		
 	
 }

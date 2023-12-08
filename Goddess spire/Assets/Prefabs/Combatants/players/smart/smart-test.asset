@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
+  m_Name: smart-test
+  m_EditorClassIdentifier: 
+  strong: 0
+  AI: {fileID: 0}
+  humanoid: 1
+  phenotype: 0
+  statblock:
+    atk: 0
+    spd: 0
+    def: 0
+    mag: 1
+    res: 1
+    lck: 0
+    hp: 10
+    chp: 10
+    stam: 5
+    cstam: 5
+    mana: 5
+    cmana: 5
+    lvl: 0
+    xp: 0
+    nextxp: 5
+    resistances:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    statusresistance: []
+    deathdrops: []
+  icon: {fileID: 21300000, guid: 3440c64b1107eb144a07227804487691, type: 3}
+  class_CO:
+  - {fileID: 11400000, guid: c3247fce2e288c047983d739dc573633, type: 2}
+  weapon_CO:
+  - {fileID: 11400000, guid: a7608327be516fb45b665a2ace751628, type: 2}
+  red: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  green: {r: 0, g: 0, b: 0, a: 0}
+  height: 1.5
+  anim: {fileID: 9100000, guid: 762a0f41f9e178144949144d9cd2fd6d, type: 2}
+  idleanim: 3
+  model: {fileID: 1203842287287967992, guid: d4a0a0357aca9ae4f8f084125081b98e, type: 3}

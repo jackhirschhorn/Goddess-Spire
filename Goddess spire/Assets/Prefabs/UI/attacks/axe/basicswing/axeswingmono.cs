@@ -28,7 +28,7 @@ public class axeswingmono : animredirect
     }
 
 	public void OnConfirm2(InputAction.CallbackContext context){ //e
-		if(stage == 2){
+		if(stage == 2 && clone2.gameObject != null){
 			if(context.performed){				
 				stage = 3;
 				clone.GetComponent<axecharge>().stage = 1;

@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class BattleMaster : MonoBehaviour
 {
 	public static BattleMaster BM;
+	public  List<battleplayerui> bpuiass = new List<battleplayerui>();
+	public static List<battleplayerui> bpui = new List<battleplayerui>();
     public static List<Combatant> combatants = new List<Combatant>();
     public List<Combatant> combatantsass = new List<Combatant>();
 	
@@ -157,7 +159,8 @@ public class BattleMaster : MonoBehaviour
 	
 	void Awake(){
 		BM = this;
-		combatants = combatantsass;
+		bpui = bpuiass;
+		//combatants = combatantsass;
 		cmoi = cmoiass;
 		sl = slass;
 		pl = plass;
@@ -170,14 +173,51 @@ public class BattleMaster : MonoBehaviour
 		foreach(itemscript its in itmsass){
 			itms.Add(Instantiate(its));
 		}
-		partyorder = partyorderass;
+		//partyorder = partyorderass;
+	}
+	
+	public Transform emptycombatant;
+	public int pcsnum = 0;
+	public int enemynum = 0;
+	
+	public void addbattoler(combatantdata cd, bool team){
+		//team true = player
+		Transform clone = Instantiate(emptycombatant);
+		clone.parent = transform.GetChild(0);
+		clone.localPosition = new Vector3((team?-1:1)*(2+(team?pcsnum*3:enemynum*3)),0,0);
+		Transform clone2 = Instantiate(cd.model);
+		clone2.parent = clone.GetChild(0);
+		clone2.localPosition = Vector3.zero;
+		clone2.localScale = new Vector3(clone2.localScale.x*(team?1:-1),clone2.localScale.y,clone2.localScale.z);
+		clone.GetComponent<Combatant>().sync(cd,team);
+		if(team){
+			pcsnum++;
+			partyorder.Add(clone.GetComponent<Combatant>());
+			bpuilinker(clone.GetComponent<Combatant>());
+		} else {
+			enemynum++;
+		}
+		combatants.Add(clone.GetComponent<Combatant>());
+	}
+	
+	public void bpuilinker(Combatant c){
+		for(int i = 4; i > -1; i--){
+			if(bpui[i].linked == null){
+				bpui[i].linked = c;
+				bpui[i].awake();
+				return;
+			}
+		}
+	}
+	
+	//public void addreinforcement
+	
+	public void begin(){
 		foreach(Combatant c in combatants){
 			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("startspd", Random.Range(8,13)*0.1f);
 			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", false);
 		}
-	}
-	
-	void Start(){
+		
 		initiative_calc();
 		update_menu_memory();
 	}

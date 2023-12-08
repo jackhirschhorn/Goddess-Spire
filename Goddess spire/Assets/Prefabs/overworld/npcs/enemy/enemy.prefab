@@ -73,11 +73,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7540396544840071082}
+  - component: {fileID: 4414215214232988580}
+  - component: {fileID: 5000052388304214730}
   - component: {fileID: 8470278550975673520}
   - component: {fileID: 7027047667933690099}
   - component: {fileID: 7027047667933690096}
   - component: {fileID: 3032562392840625693}
-  - component: {fileID: 4414215214232988580}
   m_Layer: 7
   m_Name: enemy
   m_TagString: Untagged
@@ -101,6 +102,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4414215214232988580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801312495994797007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbde3b70cd03b04c8e909baef8649bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections: []
+  connectionswait: []
+  target: {fileID: 0}
+  targ: 0
+  timer: 0
+  cc: {fileID: 7027047667933690099}
+  rotspeed: 1
+  is_sprinting: 0
+  detectrange: 3
+--- !u!114 &5000052388304214730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801312495994797007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e74e64885140534f8cbbec91bc3e5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cdass: []
+  cd: []
 --- !u!95 &8470278550975673520
 Animator:
   serializedVersion: 4
@@ -165,27 +201,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -1.1, z: 0}
---- !u!114 &4414215214232988580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801312495994797007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcbde3b70cd03b04c8e909baef8649bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connections: []
-  connectionswait: []
-  target: {fileID: 0}
-  targ: 0
-  timer: 0
-  cc: {fileID: 7027047667933690099}
-  rotspeed: 1
-  is_sprinting: 0
-  detectrange: 3
 --- !u!1001 &1691489581854838238
 PrefabInstance:
   m_ObjectHideFlags: 0

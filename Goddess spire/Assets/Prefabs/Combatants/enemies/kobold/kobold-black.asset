@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
+  m_Name: kobold-black
+  m_EditorClassIdentifier: 
+  strong: 0
+  AI: {fileID: 11400000, guid: 53fd6c2d59d779a46bb4b5aefafbd4f6, type: 2}
+  humanoid: 0
+  phenotype: 6
+  statblock:
+    atk: 1
+    spd: 0
+    def: 0
+    mag: 1
+    res: 0
+    lck: 0
+    hp: 5
+    chp: 5
+    stam: 2
+    cstam: 2
+    mana: 2
+    cmana: 2
+    lvl: 0
+    xp: 5
+    nextxp: 0
+    resistances:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 0.5
+    - 1
+    statusresistance: []
+    deathdrops: []
+  icon: {fileID: 21300000, guid: 3440c64b1107eb144a07227804487691, type: 3}
+  class_CO:
+  - {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}
+  weapon_CO:
+  - {fileID: 11400000, guid: 53d521e8c23cf7748ada2ab71d5067f0, type: 2}
+  - {fileID: 11400000, guid: 8eaa1c39b45f1944687bf229eb836119, type: 2}
+  red: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
+  blue: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+  green: {r: 1, g: 0, b: 0, a: 1}
+  height: 2.5
+  anim: {fileID: 9100000, guid: 8010cf02c0b65c04092cdf0c1649f1b5, type: 2}
+  idleanim: 0
+  model: {fileID: 1469655026063856084, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}

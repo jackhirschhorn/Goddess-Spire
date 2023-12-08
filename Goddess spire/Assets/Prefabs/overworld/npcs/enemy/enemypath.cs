@@ -20,7 +20,7 @@ public class enemypath : navigatorlist
 		if(target == overworldmanager.OM.pc.transform){
 			if(Vector3.Distance(overworldmanager.OM.pc.transform.position,transform.position) < 2){
 				//combat load
-				overworldmanager.OM.gotobattle();
+				overworldmanager.OM.gotobattle(transform.GetComponent<combatantdataholder>().cd, target.GetComponent<combatantdataholder>().cd);
 			}
 		}
 		
