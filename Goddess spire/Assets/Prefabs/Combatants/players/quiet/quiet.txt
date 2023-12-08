@@ -1,0 +1,18 @@
+quiet
+starting stats:
+	bonus stam (+5?)
+	bonus mana (+5?)
+	
+starting equipment:
+	barbarian: scythe
+	ki master: tanto 
+	paladin: warhammer
+	ranger: dagger + hunting bow
+	rogue: dagger
+	bard: dog whistle/flute
+	wizard: magic missile wand
+	cleric: tome of blinding (dark damage)
+	druid: staff of entangling
+	
+trait:
+	wallflower: you're 1/3rd as likely to be targeted by enemies. (special, combos with rogue passive to make you IMPOSSIBLE to target if there's another valid target)

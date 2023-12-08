@@ -1,0 +1,18 @@
+smart
+starting stats:
+	bonus mag (+1?)
+	bonus res (+1?)
+	
+starting equipment:
+	barbarian: spear
+	ki master: 
+	paladin: 
+	ranger: 
+	rogue: 
+	bard: 
+	wizard: 
+	cleric: 
+	druid: 
+	
+trait:
+	

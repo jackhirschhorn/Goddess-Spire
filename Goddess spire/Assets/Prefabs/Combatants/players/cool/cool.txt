@@ -1,0 +1,19 @@
+cool
+starting stats:
+	bonus speed (+5?)
+	bonus luck (+5?)
+	
+starting equipment:
+	all: sunglasses
+	barbarian: greatsword
+	ki master: katana 
+	paladin: longsword
+	ranger: shortsword + gun
+	rogue: switchblade
+	bard: guitar
+	wizard: gun
+	cleric: guitar
+	druid: beast claws
+	
+trait:
+	stylin: +50% style meter gain

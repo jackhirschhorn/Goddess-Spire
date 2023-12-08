@@ -1,0 +1,18 @@
+jock
+
+starting stats:
+	increased str (+1?)
+	increased def (+1?)
+	
+starting equipment for classes:
+barbarian: greataxe
+Ki master: tetsubo
+Paladin: Maul
+ranger: hand axe + short bow
+rogue: Greatclub
+bard: portable drum
+wizard: quarterstaff (actually a club/hammer, not a staff, but gives bonuses to casting?)
+cleric: maul
+druid: scythe (axe)
+
+'peak performance': while at full health, you gain 1/4th(or other numbers) your level to str
