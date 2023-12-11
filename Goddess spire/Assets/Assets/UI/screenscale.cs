@@ -8,7 +8,7 @@ public class screenscale : MonoBehaviour
     void Start()
     {
 		RectTransform myRect = transform as RectTransform;
-        myRect.sizeDelta = new Vector2(Screen.width, Screen.height);
+        myRect.sizeDelta = new Vector2(1920, 1080);
     }
 	
 	void LateUpdate(){

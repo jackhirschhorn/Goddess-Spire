@@ -13,6 +13,7 @@ public class overworldmanager : MonoBehaviour
 	public GameObject buildinglos;
 	public Transform camera;
 	public GameObject battlemaster;
+	public RenderTexture battoltex;
 	
 	
 	void Awake(){
@@ -56,6 +57,13 @@ public class overworldmanager : MonoBehaviour
 	}
 	
 	public void gotobattle(List<combatantdata> enemy, List<combatantdata> player){
+		battoltex.Release();
+		battoltex.width = Screen.width;
+		battoltex.height = Screen.height;
+		battoltex.Create();
+		Camera.main.targetTexture = battoltex;
+		Camera.main.Render();
+		Camera.main.targetTexture = null;
 		battlemaster.SetActive(true);
 		foreach(combatantdata cd in player){
 			BattleMaster.BM.addbattoler(cd,true);
