@@ -52,16 +52,18 @@ public class koboldspitmono : MonoBehaviour
 	}
 	
 	public void OnConfirm2(InputAction.CallbackContext context){ //e
-		if(context.performed){
-			if(stage == 1){
-				if(!first){
-					stage = 2;
-					BattleMaster.makesoundtokill(8);
+		if(comb.isPC){
+			if(context.performed){
+				if(stage == 1){
+					if(!first){
+						stage = 2;
+						BattleMaster.makesoundtokill(8);
+					}
+				} 
+			} else if(context.canceled){
+				if(stage == 2){				
+					stage = 4;
 				}
-			} 
-		} else if(context.canceled){
-			if(stage == 2){				
-				stage = 4;
 			}
 		}
 	}

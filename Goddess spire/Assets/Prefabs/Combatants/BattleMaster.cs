@@ -397,6 +397,7 @@ public class BattleMaster : MonoBehaviour
 		}		
 		reverseorder();
 		initiativetrackcheck();
+		update_menu_memory();
 		if(initiative[roundturn].isPC){
 			abilityselected = false;
 			csubmenuon = false;
@@ -406,6 +407,7 @@ public class BattleMaster : MonoBehaviour
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
 			combatmenu.GetChild(0).localRotation = Quaternion.Euler(-38,-20,5);
 			combatmenu.GetChild(0).Rotate(0,initiative[roundturn].BMM%4 == 0?0:(initiative[roundturn].BMM%4 == 1?90:(initiative[roundturn].BMM%4 == 2?180:270)),0);
+			Debug.Log(initiative[roundturn].BMM%4);
 		} else {
 			initiative[roundturn].runAIturn();
 		}
