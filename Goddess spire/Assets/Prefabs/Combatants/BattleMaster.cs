@@ -533,12 +533,13 @@ public class BattleMaster : MonoBehaviour
 	public Transform itmholder;
 	
 	public IEnumerator endfight1(){		
-		endscreenxp.text = "EXP: " + 0;
+		endscreenxp.text = "" + encounterxp;
 		yield return new WaitForSeconds(0.2f);
-		int curxp = 0;
-		while(curxp != encounterxp){
-			curxp++;
-			endscreenxp.text = "EXP: " + curxp;
+		int curxp = encounterxp;
+		while(curxp != 0){
+			curxp--;
+			endscreenxp.text = "" + curxp;
+			//update player ones here
 			yield return new WaitForEndOfFrame();
 		}
 		int offset = 0;
