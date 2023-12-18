@@ -15,6 +15,7 @@ MonoBehaviour:
   strong: 1
   AI: {fileID: 0}
   humanoid: 1
+  ismaincharacter: 1
   phenotype: 0
   statblock:
     atk: 1
@@ -46,6 +47,8 @@ MonoBehaviour:
     - 1
     statusresistance: []
     deathdrops: []
+    weaponxp: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    weaponnextxp: 050000000500000005000000050000000500000005000000050000000500000005000000050000000500000005000000
   icon: {fileID: 21300000, guid: 3440c64b1107eb144a07227804487691, type: 3}
   class_CO:
   - {fileID: 11400000, guid: 3f44712e18b8d994ebb885c26ece3b1d, type: 2}

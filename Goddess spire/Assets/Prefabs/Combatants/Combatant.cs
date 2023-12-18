@@ -14,6 +14,7 @@ public class Combatant : MonoBehaviour
 	public int phenotype = 0;
     public Stats statblock;
 	public bool isPC = false;
+	public bool ismaincharacter = false;
 	public Sprite icon;
 	public GameObject indicator;
 	public Transform enemyHP;
@@ -68,6 +69,15 @@ public class Combatant : MonoBehaviour
 	
 	}
 	
+	public void addxp(int i){
+		statblock.xp += i;
+		if(statblock.xp > statblock.nextxp){
+			statblock.lvl++;
+			statblock.xp = 0;
+			statblock.nextxp += 5*statblock.lvl; //???
+		}
+	}
+	
 	public void sync(combatantdata cd, bool team){
 		show_HP = !team;
 		isPC = team;
@@ -75,6 +85,7 @@ public class Combatant : MonoBehaviour
 		strong = cd.strong;
 		AI = cd.AI;
 		humanoid = cd.humanoid;
+		ismaincharacter = cd.ismaincharacter;
 		phenotype = cd.phenotype;
 		statblock = cd.statblock;
 		icon = cd.icon;

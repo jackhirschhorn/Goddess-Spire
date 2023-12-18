@@ -12,6 +12,7 @@ public class combatantdata : ScriptableObject
     public bool strong = false;
 	public brain AI;
 	public bool humanoid = false;
+	public bool ismaincharacter = false;
 	public int phenotype = 0;
     public Stats statblock;
 	public Sprite icon;

@@ -222,8 +222,11 @@ public class BattleMaster : MonoBehaviour
 		update_menu_memory();
 	}
 	
+	bool OC = false;
+	
 	public void OnConfirm(InputAction.CallbackContext context){ //e
 		BroadcastMessage("OnConfirm2",context);
+		OC = true;
 		if(context.performed){
 			if(!explained){
 				explained = true;
@@ -407,7 +410,7 @@ public class BattleMaster : MonoBehaviour
 			combatmenu.rotation = cmrotpos[initiative[roundturn].transform.GetSiblingIndex()];
 			combatmenu.GetChild(0).localRotation = Quaternion.Euler(-38,-20,5);
 			combatmenu.GetChild(0).Rotate(0,initiative[roundturn].BMM%4 == 0?0:(initiative[roundturn].BMM%4 == 1?90:(initiative[roundturn].BMM%4 == 2?180:270)),0);
-			Debug.Log(initiative[roundturn].BMM%4);
+			//Debug.Log(initiative[roundturn].BMM%4);
 		} else {
 			initiative[roundturn].runAIturn();
 		}
@@ -531,16 +534,39 @@ public class BattleMaster : MonoBehaviour
 	}
 	
 	public Transform itmholder;
+	public Transform levelupxp;
 	
 	public IEnumerator endfight1(){		
 		endscreenxp.text = "" + encounterxp;
-		yield return new WaitForSeconds(0.2f);
+		OC = false;
+		yield return new WaitForSeconds(0.1f);
 		int curxp = encounterxp;
+		List<xptotaler> lstxp = new List<xptotaler>();
+		foreach(Combatant c in combatants){
+			if(c != null && c.ismaincharacter){
+				Transform xpclone = Instantiate(levelupxp);
+				xpclone.parent = transform.GetChild(2).GetChild(3);
+				xpclone.position = c.transform.position + new Vector3(0,2,0);
+				xpclone.GetComponent<xptotaler>().comb = c;
+				lstxp.Add(xpclone.GetComponent<xptotaler>());
+				//weapon xp also
+			}
+		}
+		yield return new WaitUntil(() => OC);
 		while(curxp != 0){
 			curxp--;
 			endscreenxp.text = "" + curxp;
 			//update player ones here
-			yield return new WaitForEndOfFrame();
+			foreach(xptotaler xpt in lstxp){
+				xpt.xp++;
+			}
+			yield return new WaitForSeconds(0.1f);
+		}
+		// actually give the player the correct xp here
+		foreach(Combatant c in combatants){
+			if(c != null && c.ismaincharacter){
+				c.addxp(encounterxp);
+			}
 		}
 		int offset = 0;
 		foreach(itemscript its in encounteritems){
