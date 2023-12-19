@@ -546,7 +546,7 @@ public class BattleMaster : MonoBehaviour
 			if(c != null && c.ismaincharacter){
 				Transform xpclone = Instantiate(levelupxp);
 				xpclone.parent = transform.GetChild(2).GetChild(3);
-				xpclone.position = c.transform.position + new Vector3(0,2,0);
+				xpclone.position = c.transform.position + new Vector3(0,3,0);
 				xpclone.GetComponent<xptotaler>().comb = c;
 				lstxp.Add(xpclone.GetComponent<xptotaler>());
 				//weapon xp also
