@@ -563,9 +563,10 @@ public class BattleMaster : MonoBehaviour
 			yield return new WaitForSeconds(0.1f);
 		}
 		// actually give the player the correct xp here
+		List<Combatant> levelups = new List<Combatant>();
 		foreach(Combatant c in combatants){
 			if(c != null && c.ismaincharacter){
-				c.addxp(encounterxp);
+				if(c.addxp(encounterxp))levelups.Add(c);
 			}
 		}
 		int offset = 0;
@@ -578,6 +579,9 @@ public class BattleMaster : MonoBehaviour
 			itsclone.GetChild(1).GetComponent<TextMeshProUGUI>().text = its.name + " X " + its.count;
 			//add to total items;
 			offset += 50;
+		}
+		foreach(Combatant c in levelups){
+			//zoom in, show stats screen change, play animation/soundbyte for the person
 		}
 	}
 	
