@@ -226,8 +226,8 @@ public class BattleMaster : MonoBehaviour
 	
 	public void OnConfirm(InputAction.CallbackContext context){ //e
 		BroadcastMessage("OnConfirm2",context);
-		OC = true;
 		if(context.performed){
+			OC = true;
 			if(!explained){
 				explained = true;
 				explainer.gameObject.SetActive(false);
@@ -553,6 +553,8 @@ public class BattleMaster : MonoBehaviour
 			}
 		}
 		yield return new WaitUntil(() => OC);
+		OC = false;
+		StartCoroutine("showitems");
 		while(curxp != 0){
 			curxp--;
 			endscreenxp.text = "" + curxp;
@@ -564,12 +566,40 @@ public class BattleMaster : MonoBehaviour
 		}
 		// actually give the player the correct xp here
 		List<Combatant> levelups = new List<Combatant>();
+		List<int> levelupsnum = new List<int>();
 		foreach(Combatant c in combatants){
 			if(c != null && c.ismaincharacter){
-				if(c.addxp(encounterxp))levelups.Add(c);
+				int num = c.addxp(encounterxp);
+				if(num >= 0){
+					levelups.Add(c);
+					levelupsnum.Add(num);
+				}
 			}
 		}
-		int offset = 0;
+		yield return new WaitForSeconds(0.2f);
+		yield return new WaitUntil(() => OC);
+		OC = false;
+		battleendscreen.SetActive(false);
+		lvlr.gameObject.SetActive(true);
+		for(int i = 0; i < levelups.Count; i++){
+			//zoom in, show stats screen change, play animation/soundbyte for the person
+			cameraholder.position = levelups[i].transform.position + new Vector3(2,2,-8);
+			lvlr.num = levelupsnum[i];
+			lvlr.comb = levelups[i];
+			lvlr.doer2();
+			yield return new WaitForSeconds(2.2f);
+			Debug.Log(OC);
+			yield return new WaitUntil(() => OC);
+			OC = false;
+			lvlr.reset();
+		}
+		lvlr.gameObject.SetActive(false);
+		cameraholder.position = new Vector3(0,5,-35);
+		//cutback to overworld;
+	}
+	
+	public IEnumerator showitems(){
+		int offset = 50;
 		foreach(itemscript its in encounteritems){
 			yield return new WaitForSeconds(0.2f);
 			Transform itsclone = Instantiate(pl[29]);
@@ -578,12 +608,12 @@ public class BattleMaster : MonoBehaviour
 			itsclone.GetChild(0).GetComponent<Image>().sprite = its.icon;
 			itsclone.GetChild(1).GetComponent<TextMeshProUGUI>().text = its.name + " X " + its.count;
 			//add to total items;
-			offset += 50;
-		}
-		foreach(Combatant c in levelups){
-			//zoom in, show stats screen change, play animation/soundbyte for the person
+			offset += 100;
 		}
 	}
+	
+	public Transform cameraholder;
+	public levelerupui lvlr;
 	
 	public void update_menu_memory(){
 		menutarget = initiative[roundturn].BMM;

@@ -69,15 +69,22 @@ public class Combatant : MonoBehaviour
 	
 	}
 	
-	public bool addxp(int i){
+	public int addxp(int i){
 		statblock.xp += i;
+		int num = 0;
 		if(statblock.xp > statblock.nextxp){
-			statblock.lvl++;
-			statblock.xp = 0;
+			//statblock.lvl++; level up when called
+			statblock.xp -= statblock.nextxp;
 			statblock.nextxp += 5*statblock.lvl; //???
-			return true;
+			num++;
 		}
-		return false;
+		return num;
+	}
+	
+	public void lvlup(int i){
+		//do we need number of levels?
+		//add stats correctly
+		statblock.lvl += i;
 	}
 	
 	public void sync(combatantdata cd, bool team){

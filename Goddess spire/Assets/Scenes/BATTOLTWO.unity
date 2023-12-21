@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2125,7 +2125,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47944
+  m_Name: pb_Mesh55188
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2620,7 +2620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &172616251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3300,7 +3300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &206650717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3777,7 +3777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &240370207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5199,7 +5199,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47956
+  m_Name: pb_Mesh55208
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5858,7 +5858,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh48300
+  m_Name: pb_Mesh55580
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -16754,7 +16754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &625149490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16794,7 +16794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &629340571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21976,7 +21976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &845368551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27986,7 +27986,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47702
+  m_Name: pb_Mesh54914
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -28704,7 +28704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47768
+  m_Name: pb_Mesh54980
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -28898,7 +28898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1218018113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29523,13 +29523,14 @@ GameObject:
   - component: {fileID: 1279703216}
   - component: {fileID: 1279703218}
   - component: {fileID: 1279703217}
+  - component: {fileID: 1279703219}
   m_Layer: 5
   m_Name: levelup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1279703216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29590,6 +29591,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279703215}
   m_CullTransparentMesh: 1
+--- !u!114 &1279703219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279703215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2282c3407512841b9b8a28ae42a1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comb: {fileID: 0}
+  num: 0
 --- !u!1 &1296942960
 GameObject:
   m_ObjectHideFlags: 0
@@ -32086,7 +32101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1560696295
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33717,7 +33732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1697739424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34426,7 +34441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1751318926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34774,6 +34789,7 @@ MonoBehaviour:
   endscreenxp: {fileID: 649658801}
   itmholder: {fileID: 166778909}
   levelupxp: {fileID: 4965966544607705509, guid: 6542787adf50e354ea3fb31439f59e75, type: 3}
+  cameraholder: {fileID: 877783665}
 --- !u!4 &1751318928
 Transform:
   m_ObjectHideFlags: 0
@@ -36905,7 +36921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1948061600
 RectTransform:
   m_ObjectHideFlags: 0
