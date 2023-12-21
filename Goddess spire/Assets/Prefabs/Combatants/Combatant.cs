@@ -15,6 +15,7 @@ public class Combatant : MonoBehaviour
     public Stats statblock;
 	public bool isPC = false;
 	public bool ismaincharacter = false;
+	public bool issummon = false;
 	public Sprite icon;
 	public GameObject indicator;
 	public Transform enemyHP;
@@ -72,7 +73,7 @@ public class Combatant : MonoBehaviour
 	public int addxp(int i){
 		statblock.xp += i;
 		int num = 0;
-		if(statblock.xp > statblock.nextxp){
+		if(statblock.xp >= statblock.nextxp){
 			//statblock.lvl++; level up when called
 			statblock.xp -= statblock.nextxp;
 			statblock.nextxp += 5*statblock.lvl; //???

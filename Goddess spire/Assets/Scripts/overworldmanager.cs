@@ -56,7 +56,10 @@ public class overworldmanager : MonoBehaviour
 		OM.BroadcastMessage("plantupdatepower");
 	}
 	
-	public void gotobattle(List<combatantdata> enemy, List<combatantdata> player){
+	public combatantdataholder senttocombat;
+	
+	public void gotobattle(List<combatantdata> enemy, combatantdataholder player){
+		senttocombat = player;
 		battoltex.Release();
 		battoltex.width = Screen.width;
 		battoltex.height = Screen.height;
@@ -65,7 +68,7 @@ public class overworldmanager : MonoBehaviour
 		Camera.main.Render();
 		Camera.main.targetTexture = null;
 		battlemaster.SetActive(true);
-		foreach(combatantdata cd in player){
+		foreach(combatantdata cd in player.cd){
 			BattleMaster.BM.addbattoler(cd,true);
 		}
 		foreach(combatantdata cd in enemy){
@@ -73,5 +76,20 @@ public class overworldmanager : MonoBehaviour
 		}
 		BattleMaster.BM.begin();
 		this.gameObject.SetActive(false);
+	}
+	
+	public void backfrombattle(List<Combatant> player){
+		//animation
+		//
+		//Combatant to combatantdata
+		for(int i = 0; i < player.Count; i++){
+			senttocombat.cd[i].reconstruct(player[i]);
+		}		
+		foreach(Transform c in battlemaster.transform.GetChild(0)){
+			Destroy(c.gameObject);
+		}
+		BattleMaster.combatants.Clear();
+		battlemaster.SetActive(false);
+		this.gameObject.SetActive(true);
 	}
 }

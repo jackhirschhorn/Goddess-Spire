@@ -225,7 +225,9 @@ public class BattleMaster : MonoBehaviour
 	bool OC = false;
 	
 	public void OnConfirm(InputAction.CallbackContext context){ //e
-		BroadcastMessage("OnConfirm2",context);
+		try{
+			BroadcastMessage("OnConfirm2",context);
+		} catch{}
 		if(context.performed){
 			OC = true;
 			if(!explained){
@@ -570,7 +572,7 @@ public class BattleMaster : MonoBehaviour
 		foreach(Combatant c in combatants){
 			if(c != null && c.ismaincharacter){
 				int num = c.addxp(encounterxp);
-				if(num >= 0){
+				if(num > 0){
 					levelups.Add(c);
 					levelupsnum.Add(num);
 				}
@@ -578,7 +580,10 @@ public class BattleMaster : MonoBehaviour
 		}
 		yield return new WaitForSeconds(0.2f);
 		yield return new WaitUntil(() => OC);
-		OC = false;
+		OC = false;		
+		foreach(Transform c in transform.GetChild(2).GetChild(3)){
+			Destroy(c.gameObject);
+		}
 		battleendscreen.SetActive(false);
 		lvlr.gameObject.SetActive(true);
 		for(int i = 0; i < levelups.Count; i++){
@@ -588,20 +593,29 @@ public class BattleMaster : MonoBehaviour
 			lvlr.comb = levelups[i];
 			lvlr.doer2();
 			yield return new WaitForSeconds(2.2f);
-			Debug.Log(OC);
 			yield return new WaitUntil(() => OC);
 			OC = false;
 			lvlr.reset();
 		}
 		lvlr.gameObject.SetActive(false);
 		cameraholder.position = new Vector3(0,5,-35);
+		//remove 'summons'
+		for(int i = 0; i < combatants.Count; i++){
+			if(combatants[i].issummon){
+				combatants.RemoveAt(i);
+				i--;
+			}
+		}		
+		pcsnum = 0;
+		enemynum = 0;
+		initiative.Clear();
+		overworldmanager.OM.backfrombattle(combatants);
 		//cutback to overworld;
 	}
 	
 	public IEnumerator showitems(){
 		int offset = 50;
 		foreach(itemscript its in encounteritems){
-			yield return new WaitForSeconds(0.2f);
 			Transform itsclone = Instantiate(pl[29]);
 			itsclone.parent = itmholder;
 			itsclone.localPosition = new Vector3(0,0-offset,0);
@@ -609,6 +623,7 @@ public class BattleMaster : MonoBehaviour
 			itsclone.GetChild(1).GetComponent<TextMeshProUGUI>().text = its.name + " X " + its.count;
 			//add to total items;
 			offset += 100;
+			yield return new WaitForSeconds(0.2f);
 		}
 	}
 	
