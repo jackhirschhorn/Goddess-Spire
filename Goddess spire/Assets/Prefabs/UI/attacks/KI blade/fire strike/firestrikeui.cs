@@ -37,29 +37,33 @@ public class firestrikeui : MonoBehaviour
     }
 
 	public void OnConfirm2(InputAction.CallbackContext context){ //e
-		if(stage == 1){
-			if(rans[substage] == 5){				
-				fires[substage].SetBool("expand",false);
-				substage += 1;
-				BattleMaster.makesound(15);
-			} else {
-				stage = 2;
-				atk = substage;
-				pierce = substage;
+		if(context.performed){
+			if(stage == 1){
+				if(rans[substage] == 5){				
+					fires[substage].SetBool("expand",false);
+					substage += 1;
+					BattleMaster.makesound(15);
+				} else {
+					stage = 2;
+					atk = substage;
+					pierce = substage;
+				}
 			}
 		}
 	}
 
 	public void OnCancel2(InputAction.CallbackContext context){ //q
-		if(stage == 1){
-			if(rans[substage] == 3){				
-				fires[substage].SetBool("expand",false);
-				substage += 1;
-				BattleMaster.makesound(15);
-			} else {
-				stage = 2;
-				atk = substage;
-				pierce = substage;
+		if(context.performed){
+			if(stage == 1){
+				if(rans[substage] == 3){				
+					fires[substage].SetBool("expand",false);
+					substage += 1;
+					BattleMaster.makesound(15);
+				} else {
+					stage = 2;
+					atk = substage;
+					pierce = substage;
+				}
 			}
 		}
 	}
