@@ -198,6 +198,7 @@ public class BattleMaster : MonoBehaviour
 			enemynum++;
 		}
 		combatants.Add(clone.GetComponent<Combatant>());
+		if(clone.GetComponent<Combatant>().statblock.chp <= 0)clone.GetComponent<Combatant>().die();
 	}
 	
 	public void bpuilinker(Combatant c){
@@ -566,9 +567,9 @@ public class BattleMaster : MonoBehaviour
 				}
 			}
 		}
-		OC = false;
-		yield return new WaitUntil(() => OC);
-		OC = false;
+		//OC = false;
+		//yield return new WaitUntil(() => OC);
+		//OC = false;
 		StartCoroutine("showitems");
 		while(curxp != 0){
 			curxp--;
@@ -624,6 +625,7 @@ public class BattleMaster : MonoBehaviour
 		pcsnum = 0;
 		enemynum = 0;
 		initiative.Clear();
+		abilityactive = false;
 		init_track_holder.parent.gameObject.SetActive(true);
 		overworldmanager.OM.backfrombattle(combatants);
 		//cutback to overworld;
