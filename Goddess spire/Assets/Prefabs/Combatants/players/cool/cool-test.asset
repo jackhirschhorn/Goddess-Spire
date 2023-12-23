@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
   m_Name: cool-test
   m_EditorClassIdentifier: 
+  clas: 1
   strong: 0
   AI: {fileID: 0}
   humanoid: 1

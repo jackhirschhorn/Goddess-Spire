@@ -225,9 +225,7 @@ public class BattleMaster : MonoBehaviour
 	bool OC = false;
 	
 	public void OnConfirm(InputAction.CallbackContext context){ //e
-		try{
-			BroadcastMessage("OnConfirm2",context);
-		} catch{}
+		if(gameObject.activeSelf)BroadcastMessage("OnConfirm2",context);
 		if(context.performed){
 			OC = true;
 			if(!explained){
@@ -537,10 +535,12 @@ public class BattleMaster : MonoBehaviour
 	
 	public Transform itmholder;
 	public Transform levelupxp;
+	public Transform levelupwxp;
 	
-	public IEnumerator endfight1(){		
+	public IEnumerator endfight1(){	
+		init_track_holder.parent.gameObject.SetActive(false);
+		yield return new WaitForEndOfFrame();	
 		endscreenxp.text = "" + encounterxp;
-		OC = false;
 		yield return new WaitForSeconds(0.1f);
 		int curxp = encounterxp;
 		List<xptotaler> lstxp = new List<xptotaler>();
@@ -551,9 +551,21 @@ public class BattleMaster : MonoBehaviour
 				xpclone.position = c.transform.position + new Vector3(0,3,0);
 				xpclone.GetComponent<xptotaler>().comb = c;
 				lstxp.Add(xpclone.GetComponent<xptotaler>());
-				//weapon xp also
+				xpclone = Instantiate(levelupwxp);
+				xpclone.parent = transform.GetChild(2).GetChild(3);
+				xpclone.position = c.transform.position + new Vector3(0,4,0);
+				xpclone.GetComponent<xptotaler>().comb = c;
+				//change icon to match weapon type, and apply weapon type
+				lstxp.Add(xpclone.GetComponent<xptotaler>());
+				if(c.clas == 3){
+					xpclone = Instantiate(levelupwxp);
+					xpclone.parent = transform.GetChild(2).GetChild(3);
+					xpclone.position = c.transform.position + new Vector3(0,5,0);
+					xpclone.GetComponent<xptotaler>().comb = c;
+				}
 			}
 		}
+		OC = false;
 		yield return new WaitUntil(() => OC);
 		OC = false;
 		StartCoroutine("showitems");
@@ -579,6 +591,7 @@ public class BattleMaster : MonoBehaviour
 			}
 		}
 		yield return new WaitForSeconds(0.2f);
+		OC = false;
 		yield return new WaitUntil(() => OC);
 		OC = false;		
 		foreach(Transform c in transform.GetChild(2).GetChild(3)){
@@ -593,6 +606,7 @@ public class BattleMaster : MonoBehaviour
 			lvlr.comb = levelups[i];
 			lvlr.doer2();
 			yield return new WaitForSeconds(2.2f);
+			OC = false;
 			yield return new WaitUntil(() => OC);
 			OC = false;
 			lvlr.reset();
@@ -609,6 +623,7 @@ public class BattleMaster : MonoBehaviour
 		pcsnum = 0;
 		enemynum = 0;
 		initiative.Clear();
+		init_track_holder.parent.gameObject.SetActive(true);
 		overworldmanager.OM.backfrombattle(combatants);
 		//cutback to overworld;
 	}

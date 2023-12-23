@@ -8,6 +8,7 @@ using UnityEditor.Animations;
 
 public class Combatant : MonoBehaviour
 {
+	public int clas = -1;//-1 no class, 0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 phantom, 5 bard, 6 wizard, 7 cleric, 8 druid
 	public bool strong = false;
 	public brain AI;
 	public bool humanoid = false;
@@ -91,6 +92,7 @@ public class Combatant : MonoBehaviour
 	public void sync(combatantdata cd, bool team){
 		show_HP = !team;
 		isPC = team;
+		clas = cd.clas;
 		
 		strong = cd.strong;
 		AI = cd.AI;

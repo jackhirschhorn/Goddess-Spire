@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
   m_Name: kobold-blue
   m_EditorClassIdentifier: 
+  clas: -1
   strong: 0
   AI: {fileID: 11400000, guid: 53fd6c2d59d779a46bb4b5aefafbd4f6, type: 2}
   humanoid: 0
+  ismaincharacter: 0
   phenotype: 1
   statblock:
     atk: 1
@@ -46,6 +48,8 @@ MonoBehaviour:
     - 1
     statusresistance: []
     deathdrops: []
+    weaponxp: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    weaponnextxp: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   icon: {fileID: 21300000, guid: 3440c64b1107eb144a07227804487691, type: 3}
   class_CO:
   - {fileID: 11400000, guid: 8e017d50ec30bb14a975779de96516ea, type: 2}

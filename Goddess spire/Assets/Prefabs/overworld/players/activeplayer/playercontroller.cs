@@ -21,7 +21,7 @@ public class playercontroller : MonoBehaviour
 	public PhysicMaterial standmat;
 	public bool canmove = true;
 	public Vector3 safepoint;
-	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 thief, 5 phantom, 6 wizard, 7 cleric, 8 druid
+	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 phantom, 5 bard, 6 wizard, 7 cleric, 8 druid
 	public fixture targetfixture;
 	public Animator rangervision;
 	
@@ -277,7 +277,7 @@ public class playercontroller : MonoBehaviour
 			}
 		} else if (classid == 4){ //rogue
 			
-		} else if (classid == 5){ //phantom
+		} else if (classid == 5){ //bard
 		
 		} else if (classid == 6){ //wizard
 			if(context.performed){
