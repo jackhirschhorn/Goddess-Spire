@@ -562,6 +562,7 @@ public class BattleMaster : MonoBehaviour
 					xpclone.parent = transform.GetChild(2).GetChild(3);
 					xpclone.position = c.transform.position + new Vector3(0,5,0);
 					xpclone.GetComponent<xptotaler>().comb = c;
+					lstxp.Add(xpclone.GetComponent<xptotaler>());
 				}
 			}
 		}
