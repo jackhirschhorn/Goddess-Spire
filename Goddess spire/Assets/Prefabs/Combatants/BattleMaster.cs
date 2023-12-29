@@ -55,8 +55,8 @@ public class BattleMaster : MonoBehaviour
 	public static List<Transform> sndl = new List<Transform>(); //sound prefab list
 	public List<Transform> sndlass = new List<Transform>();
 	
-	public static List<itemscript> itms = new List<itemscript>(); // items
-	public List<itemscript> itmsass = new List<itemscript>();
+	//public static List<itemscript> itms = new List<itemscript>(); // items
+	//public List<itemscript> itmsass = new List<itemscript>();
 	
 	public static int lastitmsel = 0;
 	
@@ -170,9 +170,6 @@ public class BattleMaster : MonoBehaviour
 		iconanims[3].SetBool("skip",true);
 		attackst = attackstass;
 		//itms = itmsass;
-		foreach(itemscript its in itmsass){
-			itms.Add(Instantiate(its));
-		}
 		//partyorder = partyorderass;
 	}
 	
@@ -740,7 +737,7 @@ public class BattleMaster : MonoBehaviour
 			}
 			
 			if(curmenutarg%4 == 3){
-				CO = (combatoption)BattleMaster.itms[Mathf.Abs((submenucurtarg+i2)%BattleMaster.itms.Count)].user;
+				CO = (combatoption)inventory.inv.invitems[Mathf.Abs((submenucurtarg+i2)%inventory.inv.invitems.Count)].user;
 				
 			}
 			
@@ -750,7 +747,7 @@ public class BattleMaster : MonoBehaviour
 			optiontexts[i].costback.color = (CO.costype == 0?Color.blue:(CO.costype == 1?Color.green:(CO.costype == 2?Color.red:Color.black)));
 			optiontexts[i].cost.text = CO.cost+"";
 			if(CO.iswand)optiontexts[i].cost.text = "0";
-			if(CO.costype == 3)optiontexts[i].cost.text = BattleMaster.itms[BattleMaster.lastitmsel].count + "";
+			if(CO.costype == 3)optiontexts[i].cost.text = inventory.inv.invitems[BattleMaster.lastitmsel].count + "";
 			if(i2 == 0)cur_sel_CO = CO;
 			i2++;
 		}
@@ -777,7 +774,7 @@ public class BattleMaster : MonoBehaviour
 				return initiative[roundturn].statblock.chp >= cur_sel_CO.cost;
 			break;
 			case 3: //item
-				return BattleMaster.itms[BattleMaster.lastitmsel].count > 0;
+				return inventory.inv.invitems[BattleMaster.lastitmsel].count > 0;
 			break;
 		}
 		return false;
@@ -796,7 +793,7 @@ public class BattleMaster : MonoBehaviour
 				c.statblock.chp -= i;
 			break;
 			case 3: //item
-				BattleMaster.itms[BattleMaster.lastitmsel].count -= 1;
+				inventory.inv.invitems[BattleMaster.lastitmsel].count -= 1;
 			break;
 		}
 		
