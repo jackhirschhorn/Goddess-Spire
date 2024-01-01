@@ -123,6 +123,16 @@ public class playercontroller : MonoBehaviour
 		kistrikeas.Play();
 	}
 	
+	public bool iskistriking = false;
+	
+	public void startkifirststrike(){
+		iskistriking = true;
+	}
+	
+	public void endkifirststrike(){
+		iskistriking = false;
+	}
+	
 	public bool groundangle(Vector3 v){
 		return (((Vector3.Angle( v, new Vector3(cc.velocity.normalized.x,0,cc.velocity.normalized.z))) - 90)> 50f);
 	}
@@ -263,6 +273,11 @@ public class playercontroller : MonoBehaviour
 			}
 		} else if (classid == 1){ //ki master
 			//handled by breakers
+			try{
+				StartCoroutine(kimasterstrike());
+			} catch {
+				
+			}
 		} else if (classid == 2){ //paladin
 			
 		} else if (classid == 3){ //ranger
@@ -310,6 +325,39 @@ public class playercontroller : MonoBehaviour
 			}
 		} else if (classid == 8){ //druid
 			
+		}
+	}
+	
+	public LayerMask entitiesonly;
+	public combatoption firestrike;
+	
+	public IEnumerator kimasterstrike(){
+		yield return new WaitForEndOfFrame();
+		if(!anim.GetBool("kistrike")){
+			anim.SetBool("kistrike",true);
+			canmove = false;
+			yield return new WaitUntil(() => iskistriking);
+			RaycastHit hit;
+			while(iskistriking){
+				if(Physics.SphereCast(transform.position,1.2f,transform.right,out hit,3f,entitiesonly)){
+					if(hit.transform.GetComponent<enemypath>()){
+						Debug.Log("first strike!");
+						//DEBUG
+						combatantdata cd = new combatantdata();
+						foreach(combatantdata c in transform.GetComponent<combatantdataholder>().cd){
+							if(c.clas == 1)cd = c;
+						}
+						//END DEBUG
+						overworldmanager.OM.firststrike(cd, firestrike);
+						hit.transform.GetComponent<enemypath>().enterbattle();
+						canmove = true;
+						yield break;
+					}
+				}
+				yield return new WaitForEndOfFrame();
+			}
+			yield return new WaitUntil(() => !anim.GetBool("kistrike"));
+			canmove = true;
 		}
 	}
 	

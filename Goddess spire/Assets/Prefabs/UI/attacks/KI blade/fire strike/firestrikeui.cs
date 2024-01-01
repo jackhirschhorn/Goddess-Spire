@@ -135,13 +135,13 @@ public class firestrikeui : MonoBehaviour
 			Destroy(this.gameObject);
 		} else if (stage == 1){
 			adso.enabled = true;
-			texts[substage].enabled = true;
-			fires[substage].SetBool("expand",true);
 			if(substage == 4){
 				stage = 2;
 				atk = substage;
 				pierce = substage;
 			}
+			texts[substage].enabled = true;
+			fires[substage].SetBool("expand",true);
 			timer += Time.deltaTime/2f;
 			adso.pitch = 0.5f + (timer*1.2f);		
 			img.anchoredPosition = new Vector3(timer,0,0);

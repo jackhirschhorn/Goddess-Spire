@@ -92,4 +92,8 @@ public class overworldmanager : MonoBehaviour
 		battlemaster.SetActive(false);
 		this.gameObject.SetActive(true);
 	}
+	
+	public void firststrike(combatantdata cd, combatoption co){
+		battlemaster.GetComponent<BattleMaster>().firststrike(cd,co);
+	}
 }

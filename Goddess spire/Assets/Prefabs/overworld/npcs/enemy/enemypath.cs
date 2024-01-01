@@ -41,4 +41,9 @@ public class enemypath : navigatorlist
 			}
 		}
 	}
+	
+	public void enterbattle(){
+		overworldmanager.OM.gotobattle(transform.GetComponent<combatantdataholder>().cd, target.GetComponent<combatantdataholder>());
+		gameObject.SetActive(false);
+	}
 }

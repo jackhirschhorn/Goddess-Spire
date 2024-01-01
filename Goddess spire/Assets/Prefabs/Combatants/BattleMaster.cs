@@ -210,14 +210,48 @@ public class BattleMaster : MonoBehaviour
 	
 	//public void addreinforcement
 	
+	
+	public combatantdata firststriker;
+	public combatoption firststrikeattack;
+	public void firststrike(combatantdata cd, combatoption co){
+		firststriker = cd;
+		firststrikeattack = co;
+	}
+	
+	public bool keepgoing = false;
+	
 	public void begin(){
+		StartCoroutine(begin2());
+	}
+	
+	public IEnumerator begin2(){
 		foreach(Combatant c in combatants){
 			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetFloat("startspd", Random.Range(8,13)*0.1f);
 			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", false);
 		}
-		
+		yield return new WaitForEndOfFrame();
+		yield return new WaitUntil(() => explained);
+		if(firststriker != null){
+			csubmenu.SetActive(false);						
+			combatmenu.GetChild(0).gameObject.SetActive(false);		
+			yield return new WaitForSeconds(0.2f);
+			foreach(Combatant c in combatants){
+				if(c.statblock == firststriker.statblock){ //its a reference, so it works
+					initiative.Add(c);
+				}
+			}
+			abilityactive = true;
+			cur_sel_CO = firststrikeattack;
+			cur_sel_CO.demothething(); //just in case?
+			cur_sel_CO.dothething();
+		}		
+		firststriker = null;
+		firststrikeattack = null;
+		yield return new WaitUntil(() => !abilityactive);
 		initiative_calc();
 		update_menu_memory();
+		keepgoing = true;
+		yield break;
 	}
 	
 	bool OC = false;
@@ -335,34 +369,36 @@ public class BattleMaster : MonoBehaviour
 	public float wasdtimer = 0f;
 	
 	void Update(){
-		if(!abilityactive && initiative[roundturn].isPC){
-			wasdtimer -= Time.deltaTime;
-			combatmenurotate();
-			if(csubmenuon)subcombatmenurotate();
-			if(vec == Vector2.zero)wasdtimer = -1f;
-			if(wasdtimer < 0){
-				if(vec.y > 0){//w
-					if(csubmenuon){
-						submenutarg -= 1;	
-						wasdtimer = 0.35f;
+		if(keepgoing){
+			if(!abilityactive && initiative[roundturn].isPC){
+				wasdtimer -= Time.deltaTime;
+				combatmenurotate();
+				if(csubmenuon)subcombatmenurotate();
+				if(vec == Vector2.zero)wasdtimer = -1f;
+				if(wasdtimer < 0){
+					if(vec.y > 0){//w
+						if(csubmenuon){
+							submenutarg -= 1;	
+							wasdtimer = 0.35f;
+						}
 					}
-				}
-				if(vec.y < 0){//s
-					if(csubmenuon){
-						submenutarg += 1;	
-						wasdtimer = 0.35f;
+					if(vec.y < 0){//s
+						if(csubmenuon){
+							submenutarg += 1;	
+							wasdtimer = 0.35f;
+						}
 					}
-				}
-				if(vec.x > 0){//d
-					if(!csubmenuon && !abilityselected){
-						menutarget += 1;	
-						wasdtimer = 0.35f;
+					if(vec.x > 0){//d
+						if(!csubmenuon && !abilityselected){
+							menutarget += 1;	
+							wasdtimer = 0.35f;
+						}
 					}
-				}
-				if(vec.x < 0){//a
-					if(!csubmenuon && !abilityselected){
-						menutarget -= 1;	
-						wasdtimer = 0.35f;
+					if(vec.x < 0){//a
+						if(!csubmenuon && !abilityselected){
+							menutarget -= 1;	
+							wasdtimer = 0.35f;
+						}
 					}
 				}
 			}
@@ -621,6 +657,7 @@ public class BattleMaster : MonoBehaviour
 		}		
 		pcsnum = 0;
 		enemynum = 0;
+		keepgoing = false;
 		initiative.Clear();
 		abilityactive = false;
 		init_track_holder.parent.gameObject.SetActive(true);
