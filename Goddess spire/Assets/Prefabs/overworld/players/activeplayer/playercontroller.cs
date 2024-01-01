@@ -44,6 +44,7 @@ public class playercontroller : MonoBehaviour
     void FixedUpdate()
     {
 		if(canmove && !anim.GetBool("kistrike")){
+			if(rotass2 != Vector2.zero)rotass = rotass2;
 			if(rotass != Vector2.zero){
 				cc.isKinematic = false;
 				transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0), 90f/Quaternion.Angle(transform.localRotation, Quaternion.Euler(0,(Mathf.Atan2(-rotass[1], rotass[0]) * Mathf.Rad2Deg),0))*rotspeed *(is_sprinting?2.5f:1)*Time.deltaTime);
@@ -166,8 +167,10 @@ public class playercontroller : MonoBehaviour
 	}
 	
 	public Vector2 rotass = new Vector2(0,0);
+	public Vector2 rotassb = new Vector2(0,0);
 	public void move(InputAction.CallbackContext context){
 		rotass = Quaternion.AngleAxis(-camera.eulerAngles.y, Vector3.forward) * context.ReadValue<Vector2>();
+		rotassb = rotass;
 	}
 	
 	public void confirm(InputAction.CallbackContext context){
@@ -259,26 +262,43 @@ public class playercontroller : MonoBehaviour
 		cc.isKinematic = false;
 	}
 	
+	public Vector2 rotass2 = new Vector2(0,0);
+	
+	public IEnumerator barbchargeie(){
+		if(anim.GetBool("barbcharge"))yield break;
+		if(rotass == Vector2.zero)yield break;
+		rotass2 = rotass;
+		anim.SetBool("barbcharge", true);
+		combatantdata cd = new combatantdata();
+		foreach(combatantdata c in transform.GetComponent<combatantdataholder>().cd){
+			if(c.clas == 0)cd = c;
+		}
+		//END DEBUG
+		overworldmanager.OM.firststrike(cd, barbchargeattack);
+		is_sprinting = true;
+		yield return new WaitUntil(() => !anim.GetBool("barbcharge"));
+		yield return new WaitForEndOfFrame();
+		overworldmanager.OM.firststrike(null, null);
+		rotass2 = Vector2.zero;
+		rotass = rotassb;
+		yield break;
+	}
+	
 	public AudioSource rangersonar;
 	public AudioSource prayer;
 	public ParticleSystem prayerps;
 	public combatoption barbchargeattack;
+
 	
 	public void ability(InputAction.CallbackContext context){
 		if(classid == 0){ //barbarian
 			if(context.performed){
-				anim.SetBool("barbcharge", true);
-				is_sprinting = true;
-				combatantdata cd = new combatantdata();
-				foreach(combatantdata c in transform.GetComponent<combatantdataholder>().cd){
-					if(c.clas == 0)cd = c;
-				}
-				//END DEBUG
-				overworldmanager.OM.firststrike(cd, barbchargeattack);
-			} else if (context.canceled){
+				StartCoroutine(barbchargeie());
+			}
+			if(context.canceled){
 				anim.SetBool("barbcharge", false);
-				//will be fixed when barbcharge is redone
-				//overworldmanager.OM.firststrike(null, null);
+				rotass2 = Vector2.zero;
+				rotass = rotassb;
 			}
 		} else if (classid == 1){ //ki master
 			//handled by breakers			
