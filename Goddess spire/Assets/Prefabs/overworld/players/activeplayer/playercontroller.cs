@@ -262,14 +262,23 @@ public class playercontroller : MonoBehaviour
 	public AudioSource rangersonar;
 	public AudioSource prayer;
 	public ParticleSystem prayerps;
+	public combatoption barbchargeattack;
 	
 	public void ability(InputAction.CallbackContext context){
 		if(classid == 0){ //barbarian
 			if(context.performed){
 				anim.SetBool("barbcharge", true);
 				is_sprinting = true;
+				combatantdata cd = new combatantdata();
+				foreach(combatantdata c in transform.GetComponent<combatantdataholder>().cd){
+					if(c.clas == 0)cd = c;
+				}
+				//END DEBUG
+				overworldmanager.OM.firststrike(cd, barbchargeattack);
 			} else if (context.canceled){
 				anim.SetBool("barbcharge", false);
+				//will be fixed when barbcharge is redone
+				//overworldmanager.OM.firststrike(null, null);
 			}
 		} else if (classid == 1){ //ki master
 			//handled by breakers			

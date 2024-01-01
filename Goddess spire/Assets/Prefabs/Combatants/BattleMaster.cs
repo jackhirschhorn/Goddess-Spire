@@ -236,7 +236,7 @@ public class BattleMaster : MonoBehaviour
 			combatmenu.GetChild(0).gameObject.SetActive(false);		
 			yield return new WaitForSeconds(0.2f);
 			foreach(Combatant c in combatants){
-				if(c.statblock == firststriker.statblock){ //its a reference, so it works
+				if(c.statblock == firststriker.statblock){
 					initiative.Add(c);
 				}
 			}

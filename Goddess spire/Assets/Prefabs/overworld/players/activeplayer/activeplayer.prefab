@@ -226,6 +226,7 @@ MonoBehaviour:
   rangersonar: {fileID: 1594008303436311205}
   prayer: {fileID: 4356213391772476001}
   prayerps: {fileID: 2035737100161528268}
+  barbchargeattack: {fileID: 11400000, guid: 3f44712e18b8d994ebb885c26ece3b1d, type: 2}
   entitiesonly:
     serializedVersion: 2
     m_Bits: 128
