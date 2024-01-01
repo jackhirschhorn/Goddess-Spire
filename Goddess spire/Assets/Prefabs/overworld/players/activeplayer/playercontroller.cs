@@ -272,12 +272,8 @@ public class playercontroller : MonoBehaviour
 				anim.SetBool("barbcharge", false);
 			}
 		} else if (classid == 1){ //ki master
-			//handled by breakers
-			try{
-				StartCoroutine(kimasterstrike());
-			} catch {
-				
-			}
+			//handled by breakers			
+			if(gameObject.activeSelf && context.performed)StartCoroutine(kimasterstrike());
 		} else if (classid == 2){ //paladin
 			
 		} else if (classid == 3){ //ranger
@@ -329,6 +325,7 @@ public class playercontroller : MonoBehaviour
 	}
 	
 	public LayerMask entitiesonly;
+	public LayerMask objectsonly;
 	public combatoption firestrike;
 	
 	public IEnumerator kimasterstrike(){
@@ -352,6 +349,13 @@ public class playercontroller : MonoBehaviour
 						hit.transform.GetComponent<enemypath>().enterbattle();
 						canmove = true;
 						yield break;
+					}
+				}
+				RaycastHit[] hit2;
+				hit2 = Physics.SphereCastAll(transform.position,1.2f,transform.right,3f,objectsonly,QueryTriggerInteraction.Collide);
+				foreach(RaycastHit h in hit2){
+					if(h.transform.GetComponent<kimasterbreaker>()){
+						h.transform.GetComponent<kimasterbreaker>().forceinteract();
 					}
 				}
 				yield return new WaitForEndOfFrame();

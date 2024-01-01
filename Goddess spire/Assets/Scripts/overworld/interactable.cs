@@ -37,4 +37,8 @@ public class interactable : fixture
 	public virtual void interact(InputAction.CallbackContext context){
 		if(on)Debug.Log("interacted!");
 	}
+	
+	public virtual void forceinteract(){
+		
+	}
 }

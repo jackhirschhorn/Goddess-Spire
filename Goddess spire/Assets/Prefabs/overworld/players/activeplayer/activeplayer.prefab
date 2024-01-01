@@ -229,6 +229,9 @@ MonoBehaviour:
   entitiesonly:
     serializedVersion: 2
     m_Bits: 128
+  objectsonly:
+    serializedVersion: 2
+    m_Bits: 512
   firestrike: {fileID: 11400000, guid: 75f82fc93f4d5cb4ab727ada301a9411, type: 2}
   cancelcanmove: 0
 --- !u!95 &1419433222233019574

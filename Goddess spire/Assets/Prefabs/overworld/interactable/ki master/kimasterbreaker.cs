@@ -25,6 +25,15 @@ public class kimasterbreaker : interactable
 		}
 	}
 	
+	public override void forceinteract(){
+		if(!broken){
+			broken = true;
+			indicator.gameObject.SetActive(false);
+			indicator = null;
+			transform.GetComponent<Animator>().SetBool("break",true);
+		}
+	}
+	
 	public void playfx(){		
 				sfx.Play();
 				pfx.Play();
