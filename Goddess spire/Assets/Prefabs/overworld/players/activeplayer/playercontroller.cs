@@ -72,6 +72,7 @@ public class playercontroller : MonoBehaviour
 				anim.SetBool("walk", false);
 				anim.SetBool("sprint", false);
 				anim.SetBool("barbcharge", false);
+				anim.SetBool("barbchargestart", false);
 				cc.velocity = new Vector3(0,cc.velocity.y,0);
 				RaycastHit hit = new RaycastHit();
 				Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore);
@@ -102,6 +103,7 @@ public class playercontroller : MonoBehaviour
 			}
 			if(jumppower > 0){
 				anim.SetBool("barbcharge", false);
+				anim.SetBool("barbchargestart", false);
 				footsteps.Stop();
 				transform.GetComponent<Rigidbody>().AddForce(jumpangle*jumppower);
 				jumppower = Mathf.Clamp(jumppower - (Time.fixedDeltaTime*jumppowerdecay),0,5f);
@@ -161,7 +163,8 @@ public class playercontroller : MonoBehaviour
 			is_sprinting = !is_sprinting;
 			if(!is_sprinting){
 				anim.SetBool("sprint", false);				
-				anim.SetBool("barbcharge", false);
+				anim.SetBool("barbcharge", false);				
+				anim.SetBool("barbchargestart", false);
 			}
 		}
 	}
@@ -225,7 +228,8 @@ public class playercontroller : MonoBehaviour
 		anim.SetBool("hazard",true);
 		anim.SetBool("walk", false);
 		anim.SetBool("sprint", false);
-		anim.SetBool("barbcharge", false);
+		anim.SetBool("barbcharge", false);		
+		anim.SetBool("barbchargestart", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
@@ -247,7 +251,8 @@ public class playercontroller : MonoBehaviour
 		anim.SetBool("hazard",true);
 		anim.SetBool("walk", false);
 		anim.SetBool("sprint", false);	
-		anim.SetBool("barbcharge", false);
+		anim.SetBool("barbcharge", false);		
+		anim.SetBool("barbchargestart", false);
 		anim.SetBool("hazardfall",true);
 		if(!playland)safepoint -= transform.right;
 		while(anim.GetBool("hazard")){
@@ -268,7 +273,11 @@ public class playercontroller : MonoBehaviour
 		if(anim.GetBool("barbcharge"))yield break;
 		if(rotass == Vector2.zero)yield break;
 		rotass2 = rotass;
-		anim.SetBool("barbcharge", true);
+		anim.SetBool("barbcharge", true);		
+		anim.SetBool("barbchargestart", true);
+		canmove = false;
+		yield return new WaitUntil(() => !anim.GetBool("barbchargestart"));
+		canmove = true;
 		combatantdata cd = new combatantdata();
 		foreach(combatantdata c in transform.GetComponent<combatantdataholder>().cd){
 			if(c.clas == 0)cd = c;
@@ -296,7 +305,8 @@ public class playercontroller : MonoBehaviour
 				StartCoroutine(barbchargeie());
 			}
 			if(context.canceled){
-				anim.SetBool("barbcharge", false);
+				anim.SetBool("barbcharge", false);	
+				anim.SetBool("barbchargestart", false);
 				rotass2 = Vector2.zero;
 				rotass = rotassb;
 			}
@@ -334,7 +344,8 @@ public class playercontroller : MonoBehaviour
 				footsteps.Stop();
 				anim.SetBool("walk", false);
 				anim.SetBool("sprint", false);
-				anim.SetBool("barbcharge", false);
+				anim.SetBool("barbcharge", false);				
+				anim.SetBool("barbchargestart", false);
 				if(isgrounded()){
 					cc.velocity = new Vector3(0,0,0);
 				}/* else {
