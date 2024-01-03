@@ -314,7 +314,20 @@ public class playercontroller : MonoBehaviour
 			//handled by breakers			
 			if(gameObject.activeSelf && context.performed)StartCoroutine(kimasterstrike());
 		} else if (classid == 2){ //paladin
-			
+			//animation!
+			if(context.performed){ //cooldown!
+				foreach(Transform t in transform.parent.parent.GetChild(2)){
+					if(Vector3.Distance(transform.position,t.position) < 4 && t.GetComponent<enemypath>()){ //needs to be linked to animation
+						if(t.GetComponent<enemypath>().isundead){
+							t.GetComponent<enemypath>().state = 2;
+							t.GetComponent<enemypath>().stateduration = 10f;
+						} else {
+							t.GetComponent<enemypath>().state = 1;
+							t.GetComponent<enemypath>().stateduration = 2f;
+						}
+					}
+				}
+			}
 		} else if (classid == 3){ //ranger
 			if(context.performed && !rangervision.GetBool("play")){
 				//anim;

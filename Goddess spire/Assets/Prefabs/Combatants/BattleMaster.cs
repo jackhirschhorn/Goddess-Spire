@@ -69,6 +69,9 @@ public class BattleMaster : MonoBehaviour
 	public int encounterxp = 0;
 	public List<itemscript> encounteritems = new List<itemscript>();
 	
+	public int battlestateenemy = 0;
+	public int battlestateally = 0;
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -196,6 +199,29 @@ public class BattleMaster : MonoBehaviour
 		}
 		combatants.Add(clone.GetComponent<Combatant>());
 		if(clone.GetComponent<Combatant>().statblock.chp <= 0)clone.GetComponent<Combatant>().die();
+		if(team){
+			switch(battlestateally){
+				case 1:
+					Debug.Log("allies are stunned!");
+					break;
+				case 2:
+					Debug.Log("allies are afraid!");
+					break;
+				default:
+					break;
+			}
+		} else {
+			switch(battlestateenemy){
+				case 1:
+					Debug.Log("enemies are stunned!");
+					break;
+				case 2:
+					Debug.Log("enemies are afraid!");
+					break;
+				default:
+					break;
+			}
+		}
 	}
 	
 	public void bpuilinker(Combatant c){
