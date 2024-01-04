@@ -34,7 +34,10 @@ public class enemypath : navigatorlist
 		timer -= Time.fixedDeltaTime;
 		if(timer < 0){
 			transform.LookAt(new Vector3(target.position.x,transform.position.y,target.position.z));
-			cc.velocity = transform.forward*8;
+			if(state == 2){
+				transform.LookAt(transform.position-transform.forward);
+			}
+			cc.velocity = transform.forward*8*(state == 1?0:1);
 			if(target == overworldmanager.OM.pc.transform){
 				
 			} else {

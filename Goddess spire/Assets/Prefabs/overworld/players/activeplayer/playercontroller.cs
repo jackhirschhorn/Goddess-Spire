@@ -36,6 +36,7 @@ public class playercontroller : MonoBehaviour
 
 	void LateUpdate(){
 		camera.position = transform.position;
+		if(paladincooldown > 0)paladincooldown -= Time.deltaTime;
 	}
 
 	Vector3 lastvel = Vector3.zero;
@@ -297,6 +298,13 @@ public class playercontroller : MonoBehaviour
 	public AudioSource prayer;
 	public ParticleSystem prayerps;
 	public combatoption barbchargeattack;
+	public Animator paladinlight;
+	public float paladincooldown = 0;
+
+	public void dosmite(){
+		paladinlight.SetBool("doit",true);
+		canmove = true;
+	}
 
 	
 	public void ability(InputAction.CallbackContext context){
@@ -315,18 +323,10 @@ public class playercontroller : MonoBehaviour
 			if(gameObject.activeSelf && context.performed)StartCoroutine(kimasterstrike());
 		} else if (classid == 2){ //paladin
 			//animation!
-			if(context.performed){ //cooldown!
-				foreach(Transform t in transform.parent.parent.GetChild(2)){
-					if(Vector3.Distance(transform.position,t.position) < 4 && t.GetComponent<enemypath>()){ //needs to be linked to animation
-						if(t.GetComponent<enemypath>().isundead){
-							t.GetComponent<enemypath>().state = 2;
-							t.GetComponent<enemypath>().stateduration = 10f;
-						} else {
-							t.GetComponent<enemypath>().state = 1;
-							t.GetComponent<enemypath>().stateduration = 2f;
-						}
-					}
-				}
+			if(context.performed && paladincooldown <= 0){
+				anim.SetBool("paladinsmite", true);
+				paladincooldown = 5;
+				canmove = false;
 			}
 		} else if (classid == 3){ //ranger
 			if(context.performed && !rangervision.GetBool("play")){

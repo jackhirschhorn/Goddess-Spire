@@ -168,6 +168,7 @@ Transform:
   - {fileID: 7406642583255460988}
   - {fileID: 7871554005968174756}
   - {fileID: 8580481852438334108}
+  - {fileID: 2152931717493637318}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -220,13 +221,17 @@ MonoBehaviour:
   kistrikeas: {fileID: 5669573671875496028}
   iskistriking: 0
   rotass: {x: 0, y: 0}
+  rotassb: {x: 0, y: 0}
   jumplayers:
     serializedVersion: 2
     m_Bits: 1
+  rotass2: {x: 0, y: 0}
   rangersonar: {fileID: 1594008303436311205}
   prayer: {fileID: 4356213391772476001}
   prayerps: {fileID: 2035737100161528268}
   barbchargeattack: {fileID: 11400000, guid: 3f44712e18b8d994ebb885c26ece3b1d, type: 2}
+  paladinlight: {fileID: 2486344420298873861}
+  paladincooldown: 0
   entitiesonly:
     serializedVersion: 2
     m_Bits: 128
@@ -6240,6 +6245,75 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &2255692569557628408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1052277968725071788}
+    m_Modifications:
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642112375864809482, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+      propertyPath: m_Name
+      value: paladin smite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+--- !u!4 &2152931717493637318 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 192928613926516030, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+  m_PrefabInstance: {fileID: 2255692569557628408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2486344420298873861 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4453093987624430077, guid: d0fa4912a287480408095a066c1a2a02, type: 3}
+  m_PrefabInstance: {fileID: 2255692569557628408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2269989196377587495
 PrefabInstance:
   m_ObjectHideFlags: 0
