@@ -17,7 +17,7 @@ public class enemypath : navigatorlist
 			target = connections[0].transform;
 			targ = 0;
 		}
-		if(Vector3.Distance(overworldmanager.OM.pc.transform.position,transform.position) < detectrange){
+		if(Vector3.Distance(overworldmanager.OM.pc.transform.position,transform.position) < detectrange*(overworldmanager.OM.pc.instealth?0.5f:1f)){
 			target = overworldmanager.OM.pc.transform;
 		}
 		//lose interest after certain time

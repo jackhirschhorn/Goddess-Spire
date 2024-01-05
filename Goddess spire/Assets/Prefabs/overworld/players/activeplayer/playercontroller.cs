@@ -166,6 +166,8 @@ public class playercontroller : MonoBehaviour
 				anim.SetBool("sprint", false);				
 				anim.SetBool("barbcharge", false);				
 				anim.SetBool("barbchargestart", false);
+			} else {
+				anim.SetBool("instealth",false);
 			}
 		}
 	}
@@ -300,6 +302,7 @@ public class playercontroller : MonoBehaviour
 	public combatoption barbchargeattack;
 	public Animator paladinlight;
 	public float paladincooldown = 0;
+	public bool instealth = false;
 
 	public void dosmite(){
 		paladinlight.SetBool("doit",true);
@@ -339,7 +342,17 @@ public class playercontroller : MonoBehaviour
 				rangersonar.Play();
 			}
 		} else if (classid == 4){ //rogue
-			
+			if(context.performed){
+				if(instealth){
+					anim.SetBool("instealth",false);
+					instealth = false;
+				} else {
+					anim.SetBool("instealth",true);
+					is_sprinting = false;
+					anim.SetBool("sprint", false);
+					instealth = true;
+				}
+			}
 		} else if (classid == 5){ //bard
 		
 		} else if (classid == 6){ //wizard
