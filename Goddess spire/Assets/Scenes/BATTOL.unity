@@ -40920,6 +40920,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6793335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.07374403
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000014504324
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.73011494
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8591050541015318966, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8236334031958900472, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9994953
@@ -41620,6 +41648,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d3d21afc26c67c0479f527d6214608d4, type: 2}
+    - target: {fileID: 8879528566716807029, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4339119
+      objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 76a678792ec7c1143877e3a1aefc66ed, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.82
