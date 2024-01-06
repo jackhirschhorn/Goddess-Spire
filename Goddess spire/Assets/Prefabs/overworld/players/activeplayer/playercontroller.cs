@@ -44,7 +44,7 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if(canmove && !anim.GetBool("kistrike")){
+		if(canmove && !anim.GetBool("kistrike") && !inmusic){
 			if(rotass2 != Vector2.zero)rotass = rotass2;
 			if(rotass != Vector2.zero){
 				cc.isKinematic = false;
@@ -113,6 +113,17 @@ public class playercontroller : MonoBehaviour
 			}
 			cc.velocity += lastvel;
 		} else {
+			if(inmusic && rotass != Vector2.zero){
+				if(rotass.y > 0){//w
+					addmusicnote(2);
+				} else if(rotass.y < 0){//s
+					addmusicnote(5);
+				} else if(rotass.x > 0){//d
+					addmusicnote(4);
+				} else if(rotass.x < 0){//a
+					addmusicnote(6);
+				}
+			}
 			transform.GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * 2f * Time.fixedDeltaTime;
 		}
     }
@@ -181,13 +192,17 @@ public class playercontroller : MonoBehaviour
 	
 	public void confirm(InputAction.CallbackContext context){
 		if(context.performed){	
-		
+			if(inmusic){
+				addmusicnote(1);
+			}
 		}
 	}
 	
 	public void cancel(InputAction.CallbackContext context){
 		if(context.performed){
-		
+			if(inmusic){
+				addmusicnote(3);
+			}
 		}
 	}
 	
@@ -303,10 +318,39 @@ public class playercontroller : MonoBehaviour
 	public Animator paladinlight;
 	public float paladincooldown = 0;
 	public bool instealth = false;
+	public bool inmusic = false;
+	public int[] songhold = new int[8];
+	public int songholdpointer = 0;
 
 	public void dosmite(){
 		paladinlight.SetBool("doit",true);
 		canmove = true;
+	}
+	
+	public void addmusicnote(int i){
+		//play corresponding music
+		songhold[songholdpointer] = i;
+		songholdpointer++;
+		if(songholdpointer == 8){
+			musiccheck(songhold);
+			songhold = new int[]{0,0,0,0,0,0,0,0};
+			songholdpointer = 0;
+			//play restart indicator if musiccheck returns false;
+		}
+	}
+	
+	int[] debugsong = new int[]{1,1,1,1,3,3,3,3};
+	
+	public void musiccheck(int[] i2){
+		//check against songs
+		for(int i = 0; i < 8; i++){
+			if(i2[i] != debugsong[i]){
+				inmusic = !inmusic;
+				return;
+			}
+		}
+		inmusic = !inmusic;
+		Debug.Log("S O N G");
 	}
 
 	
@@ -354,7 +398,13 @@ public class playercontroller : MonoBehaviour
 				}
 			}
 		} else if (classid == 5){ //bard
-		
+			if(context.performed){
+				inmusic = !inmusic;
+				if(!inmusic){
+					songhold = new int[]{0,0,0,0,0,0,0,0};
+					songholdpointer = 0;
+				}
+			}
 		} else if (classid == 6){ //wizard
 			if(context.performed){
 				//connect to a tablet
@@ -386,7 +436,7 @@ public class playercontroller : MonoBehaviour
 				prayerps.Stop();
 			}
 		} else if (classid == 8){ //druid
-			
+			//preformed in world space
 		}
 	}
 	
