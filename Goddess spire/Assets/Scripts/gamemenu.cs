@@ -6,6 +6,7 @@ public class gamemenu : MonoBehaviour
 {
     public int menustate = 0;
 	public int menusubstate = 0;
+	public Animator anim;
 	// Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,6 @@ public class gamemenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))anim.SetInteger("menutarg",(anim.GetInteger("menutarg")+1)%5);
     }
 }
