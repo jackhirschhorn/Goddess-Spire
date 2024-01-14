@@ -16,6 +16,15 @@ public class gamemenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))anim.SetInteger("menutarg",(anim.GetInteger("menutarg")+1)%5);
+		
     }
+	
+	public void updatemenutab(int i){
+		menustate = i;
+		anim.SetInteger("menutarg", i);
+		for(int i2 = 1; i2 < 5; i2++){
+			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
+			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
+		}
+	}
 }
