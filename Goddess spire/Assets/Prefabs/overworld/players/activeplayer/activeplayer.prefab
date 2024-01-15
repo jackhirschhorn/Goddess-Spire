@@ -232,6 +232,10 @@ MonoBehaviour:
   barbchargeattack: {fileID: 11400000, guid: 3f44712e18b8d994ebb885c26ece3b1d, type: 2}
   paladinlight: {fileID: 2486344420298873861}
   paladincooldown: 0
+  instealth: 0
+  inmusic: 0
+  songhold: 0000000000000000000000000000000000000000000000000000000000000000
+  songholdpointer: 0
   entitiesonly:
     serializedVersion: 2
     m_Bits: 128
@@ -461,6 +465,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0311ac83-82b0-4afb-a296-67ec234f6b84
     m_ActionName: input/ability[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6494643321896763517}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: menu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2d4111f2-4b1a-403c-8b04-08afe13e4e06
+    m_ActionName: input/menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: default
   m_DefaultActionMap: input

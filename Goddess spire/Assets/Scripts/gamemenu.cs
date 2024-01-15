@@ -7,6 +7,12 @@ public class gamemenu : MonoBehaviour
     public int menustate = 0;
 	public int menusubstate = 0;
 	public Animator anim;
+	public static gamemenu GM;
+	public bool menuon = false;
+	
+	void Awake(){
+		GM = this;
+	}
 	// Start is called before the first frame update
     void Start()
     {
@@ -26,5 +32,17 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
 			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
 		}
+	}
+	
+	public void callmenu(){
+		menuon = !menuon;
+		if(menuon){
+			Time.timeScale = 0;
+			transform.GetChild(0).gameObject.SetActive(true);
+		} else {
+			Time.timeScale = 1;
+			transform.GetChild(0).gameObject.SetActive(false);
+		}
+		
 	}
 }

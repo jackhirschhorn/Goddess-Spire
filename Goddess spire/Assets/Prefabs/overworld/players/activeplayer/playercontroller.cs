@@ -521,4 +521,10 @@ public class playercontroller : MonoBehaviour
 		yield return new WaitForSeconds(f);
 		if(!cancelcanmove)canmove = true;
 	}
+	
+	public void menu(InputAction.CallbackContext context){
+		if(context.performed){
+			gamemenu.GM.callmenu();
+		}
+	}
 }
