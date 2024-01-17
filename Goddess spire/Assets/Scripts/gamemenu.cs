@@ -6,6 +6,7 @@ public class gamemenu : MonoBehaviour
 {
     public int menustate = 0;
 	public int menusubstate = 0;
+	public int optionsmenustate = 0;
 	public Animator anim;
 	public static gamemenu GM;
 	public bool menuon = false;
@@ -31,6 +32,24 @@ public class gamemenu : MonoBehaviour
 		for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
 			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
+		}
+	}
+	
+	public void updatesubmenutab(int i){
+		menusubstate = i;
+		anim.SetInteger("submenutarg", i);
+		/*for(int i2 = 1; i2 < 5; i2++){
+			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
+			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
+		}*/
+	}
+	
+	public void updateoptionsmenutab(int i){
+		optionsmenustate = i;
+		anim.SetInteger("optsmenutarg", i);
+		for(int i2 = 1; i2 < 5; i2++){
+			transform.GetChild(0).GetChild(1).GetChild(i2).gameObject.SetActive(false);
+			if(i2 == i)transform.GetChild(0).GetChild(1).GetChild(i2).gameObject.SetActive(true);
 		}
 	}
 	
