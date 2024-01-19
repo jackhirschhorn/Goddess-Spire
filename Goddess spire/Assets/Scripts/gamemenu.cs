@@ -51,6 +51,7 @@ public class gamemenu : MonoBehaviour
 	
 	public void updateoptionsmenutab(int i){
 		optionsmenustate = i;
+		anim.SetInteger("lastopsmenutarg", anim.GetInteger("optsmenutarg"));
 		anim.SetInteger("optsmenutarg", i);
 		for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(1).GetChild(0).GetChild(i2).gameObject.SetActive(false);
