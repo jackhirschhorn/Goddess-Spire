@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class gamemenu : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class gamemenu : MonoBehaviour
 	public static gamemenu GM;
 	public bool menuon = false;
 	
+	//audio
+	public Slider master, sfx, music, voices, menu;
+	public AudioMixer amc;
+	
 	void Awake(){
 		GM = this;
 	}
@@ -18,12 +24,33 @@ public class gamemenu : MonoBehaviour
     void Start()
     {
         menustate = 3;
+		master.value = PlayerPrefs.GetFloat("MasterVolume", 0.6f);
+		sfx.value = PlayerPrefs.GetFloat("SfxVolume", 0.6f);
+		music.value = PlayerPrefs.GetFloat("MusicVolume", 0.6f);
+		voices.value = PlayerPrefs.GetFloat("VoicesVolume", 0.6f);
+		menu.value = PlayerPrefs.GetFloat("MenuVolume", 0.6f);
+		amc.SetFloat("Master", (master.value != 0?Mathf.Log10(master.value) * 20:0));
+		amc.SetFloat("sfx", (sfx.value != 0?Mathf.Log10(sfx.value) * 20:0));
+		amc.SetFloat("music", (music.value != 0?Mathf.Log10(music.value) * 20:0));
+		amc.SetFloat("voices", (voices.value != 0?Mathf.Log10(voices.value) * 20:0));
+		amc.SetFloat("menu", (menu.value != 0?Mathf.Log10(menu.value) * 20:0));
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-		
+		if(menusubstate == 1 && optionsmenustate == 4){
+			amc.SetFloat("Master", (master.value != 0?Mathf.Log10(master.value) * 20:0));
+			amc.SetFloat("sfx", (sfx.value != 0?Mathf.Log10(sfx.value) * 20:0));
+			amc.SetFloat("music", (music.value != 0?Mathf.Log10(music.value) * 20:0));
+			amc.SetFloat("voices", (voices.value != 0?Mathf.Log10(voices.value) * 20:0));
+			amc.SetFloat("menu", (menu.value != 0?Mathf.Log10(menu.value) * 20:0));
+			PlayerPrefs.SetFloat("MasterVolume", master.value);
+			PlayerPrefs.SetFloat("SfxVolume", sfx.value);
+			PlayerPrefs.SetFloat("MusicVolume", music.value);
+			PlayerPrefs.SetFloat("VoicesVolume", voices.value);
+			PlayerPrefs.SetFloat("MenuVolume", menu.value);
+		}
     }
 	
 	public void updatemenutab(int i){
@@ -77,4 +104,5 @@ public class gamemenu : MonoBehaviour
 		}
 		
 	}
+	
 }
