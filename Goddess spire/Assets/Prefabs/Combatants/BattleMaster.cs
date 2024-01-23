@@ -72,6 +72,12 @@ public class BattleMaster : MonoBehaviour
 	public int battlestateenemy = 0;
 	public int battlestateally = 0;
 	
+	public void resetdodgePC(){
+		foreach(Combatant c in partyorder){
+			c.dodgestate = 0;
+		}
+	}
+	
 	public static void makesound(int i){
 		Instantiate(sndl[i]);
 	}
@@ -357,30 +363,30 @@ public class BattleMaster : MonoBehaviour
 		
 	}
 	
-	public void OnSelect1(InputAction.CallbackContext context){ //1
+	public void OnSelect1(InputAction.CallbackContext context){ //1, dodge
 		BroadcastMessage("OnSelect12",context);
-		if(explained)partyorder[4].dodge();
+		if(explained){
+			Debug.Log("dodge");
+			partyorder[4].dodge();
+			partyorder[3].dodge();
+			partyorder[2].dodge();
+			partyorder[1].dodge();
+			partyorder[0].dodge();
+		}
 	}
 	
-	public void OnSelect2(InputAction.CallbackContext context){ //1
+	public void OnSelect2(InputAction.CallbackContext context){ //2, defend
 		BroadcastMessage("OnSelect22",context);
-		if(explained)partyorder[3].dodge();
+		if(explained){
+			Debug.Log("block");
+			partyorder[4].block();
+			partyorder[3].block();
+			partyorder[2].block();
+			partyorder[1].block();
+			partyorder[0].block();
+		}
 	}
 	
-	public void OnSelect3(InputAction.CallbackContext context){ //1
-		BroadcastMessage("OnSelect32",context);
-		if(explained)partyorder[2].dodge();
-	}
-	
-	public void OnSelect4(InputAction.CallbackContext context){ //1
-		BroadcastMessage("OnSelect42",context);
-		if(explained)partyorder[1].dodge();
-	}
-	
-	public void OnSelect5(InputAction.CallbackContext context){ //1
-		BroadcastMessage("OnSelect52",context);
-		if(explained)partyorder[0].dodge();
-	}
 	
 	public void OnJump(InputAction.CallbackContext context){ //space
 		BroadcastMessage("OnJump2",context);

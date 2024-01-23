@@ -179,6 +179,9 @@ public class Combatant : MonoBehaviour
 			clone.GetComponent<swooshcontroller>().damtype = -1;
 			clone.GetComponent<swooshcontroller>().dothething();
 			dodgestate = 0;
+			if(isPC){
+				BattleMaster.BM.resetdodgePC();
+			}
 			return;
 		}
 		int totdam = i;
@@ -277,6 +280,33 @@ public class Combatant : MonoBehaviour
 		}
 	}
 	
+	public void block(){
+		StartCoroutine(block1());
+	}
+	
+	public IEnumerator block1(){
+		if(dodgestate != 0)yield break;
+		dodgestate = 2; //too early, block
+		if(humanoid){
+			anim.SetBool("defend",true);
+		} else {
+			anim.SetInteger("stage",1);
+			anim.SetInteger("atkanim",-1);
+		}	
+		yield return new WaitForSeconds(1f);
+		if(dodgestate == 2){
+			dodgestate = 0; //lockout
+			if(!transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
+				if(humanoid){
+					anim.SetBool("defend",false);
+				} else {				
+					anim.SetInteger("stage",0);
+					anim.SetInteger("atkanim",0);
+				}
+			}
+		}
+	}
+	
 	public void dodge(){
 		StartCoroutine(dodge1());
 	}
@@ -288,8 +318,11 @@ public class Combatant : MonoBehaviour
 			yield break;
 		} else if (dodgestate == 0){ //from neutral
 			dodgestate = 1; // actual dodge
+		} else {
+			yield break;
 		}
 		yield return new WaitForSeconds(0.05f);
+		/*
 		if(dodgestate == 1){
 			dodgestate = 2; //too early, block
 			if(humanoid){
@@ -300,7 +333,8 @@ public class Combatant : MonoBehaviour
 			}	
 		}
 		yield return new WaitForSeconds(1f);
-		if(dodgestate == 2){
+		*/
+		if(dodgestate == 1){
 			dodgestate = 3; //lockout
 			if(!transform.GetChild(0).GetChild(0).GetComponent<defendmono>()){
 				if(humanoid){
