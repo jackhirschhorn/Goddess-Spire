@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public class gamemenu : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class gamemenu : MonoBehaviour
 	public Animator anim;
 	public static gamemenu GM;
 	public bool menuon = false;
+	
+	//controllers
+	public InputActionAsset inputAsset;
 	
 	//audio
 	public Slider master, sfx, music, voices, menu;
@@ -92,9 +96,11 @@ public class gamemenu : MonoBehaviour
 			if(menuon){
 				Time.timeScale = 0;
 				transform.GetChild(0).gameObject.SetActive(true);
+				anim.SetInteger("menuon", 1);
 			} else {
 				Time.timeScale = 1;
 				transform.GetChild(0).gameObject.SetActive(false);
+				anim.SetInteger("menuon", 0);
 			}
 		} else {
 			menusubstate = 0;
