@@ -14,6 +14,10 @@ public class gamemenu : MonoBehaviour
 	public static gamemenu GM;
 	public bool menuon = false;
 	
+	//itemscolor1
+	public Color itemscolor1;
+	public Color itemscolor2;
+	
 	//controllers
 	public InputActionAsset inputAsset;
 	
@@ -73,6 +77,10 @@ public class gamemenu : MonoBehaviour
 		if(menusubstate == 1){
 			transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
 			transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+		} else if(menusubstate <= 4){
+			for(int i2 = 0; i2 < 3; i2++){
+				transform.GetChild(0).GetChild(0).GetChild(2).GetChild(i2).GetChild(0).GetComponent<Image>().color = (i2+2 == menusubstate?itemscolor1:itemscolor2);
+			}
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
