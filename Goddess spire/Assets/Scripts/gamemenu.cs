@@ -72,6 +72,9 @@ public class gamemenu : MonoBehaviour
 	}
 	
 	public void updatesubmenutab(int i){
+		if(i != 5 && menusubstate == 5){
+			anim.SetBool("mapon", false);
+		}
 		menusubstate = i;
 		anim.SetInteger("submenutarg", i);
 		if(menusubstate == 1){
@@ -81,6 +84,10 @@ public class gamemenu : MonoBehaviour
 			for(int i2 = 0; i2 < 3; i2++){
 				transform.GetChild(0).GetChild(0).GetChild(2).GetChild(i2).GetChild(0).GetComponent<Image>().color = (i2+2 == menusubstate?itemscolor1:itemscolor2);
 			}
+		} else if(menusubstate == 5){
+			anim.SetBool("mapon", true);
+			transform.GetChild(1).position = Camera.main.transform.position + Camera.main.transform.forward;
+			
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
@@ -110,6 +117,8 @@ public class gamemenu : MonoBehaviour
 				transform.GetChild(0).gameObject.SetActive(false);
 				anim.SetInteger("menuon", 0);
 			}
+		} else if (menusubstate == 5) {
+			updatesubmenutab(0);
 		} else {
 			menusubstate = 0;
 			anim.SetInteger("submenutarg", 0);
