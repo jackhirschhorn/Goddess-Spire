@@ -14,9 +14,13 @@ public class gamemenu : MonoBehaviour
 	public static gamemenu GM;
 	public bool menuon = false;
 	
-	//itemscolor1
+	//itemscolor
 	public Color itemscolor1;
 	public Color itemscolor2;
+	
+	//journalcolors
+	public Color journalcolor1;
+	public Color journalcolor2;
 	
 	//controllers
 	public InputActionAsset inputAsset;
@@ -88,6 +92,16 @@ public class gamemenu : MonoBehaviour
 			anim.SetBool("mapon", true);
 			transform.GetChild(1).position = Camera.main.transform.position + Camera.main.transform.forward;
 			
+		} else if(menusubstate == 6){
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(0).GetChild(1).GetComponent<Image>().color = journalcolor1;
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(0).GetChild(2).GetComponent<Image>().color = journalcolor2;
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(2).gameObject.SetActive(false);
+		} else if(menusubstate == 7){
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(0).GetChild(1).GetComponent<Image>().color = journalcolor2;
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(0).GetChild(2).GetComponent<Image>().color = journalcolor1;
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(2).gameObject.SetActive(true);
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
