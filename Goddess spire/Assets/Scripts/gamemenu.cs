@@ -102,6 +102,16 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(0).GetChild(2).GetComponent<Image>().color = journalcolor1;
 			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(1).gameObject.SetActive(false);
 			transform.GetChild(0).GetChild(0).GetChild(3).GetChild(2).gameObject.SetActive(true);
+		}  else if(menusubstate == 8){
+			transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(false);
+		}  else if(menusubstate == 9){
+			transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
@@ -133,6 +143,9 @@ public class gamemenu : MonoBehaviour
 			}
 		} else if (menusubstate == 5) {
 			updatesubmenutab(0);
+		} else if (menusubstate == 8 || menusubstate == 9){
+			transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+			transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(false);
 		} else {
 			menusubstate = 0;
 			anim.SetInteger("submenutarg", 0);
