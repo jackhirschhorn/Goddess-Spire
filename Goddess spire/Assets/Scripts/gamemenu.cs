@@ -31,6 +31,8 @@ public class gamemenu : MonoBehaviour
 	
 	void Awake(){
 		GM = this;
+		string rebinds = PlayerPrefs.GetString("rebinds");
+        if (!string.IsNullOrEmpty(rebinds))inputAsset.LoadBindingOverridesFromJson(rebinds);
 	}
 	// Start is called before the first frame update
     void Start()
@@ -153,6 +155,48 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
 		}
 		
+	}
+	
+	public void savebindings(){
+		string rebinds = inputAsset.SaveBindingOverridesAsJson();
+        PlayerPrefs.SetString("rebinds", rebinds);
+	}
+	
+	public void refreshbindingswindow(){
+		string rebinds = PlayerPrefs.GetString("rebinds");
+        if (!string.IsNullOrEmpty(rebinds))inputAsset.LoadBindingOverridesFromJson(rebinds);
+	}
+	
+	public void bindkey(int i){
+		switch (i){
+			case 0: //confirm
+				
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			case 11:
+				break;
+			default:
+				break;
+		}
 	}
 	
 }
