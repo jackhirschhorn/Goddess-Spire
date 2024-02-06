@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.Events;
 
 public class gamemenu : MonoBehaviour
 {
@@ -129,6 +131,7 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(1).GetChild(0).GetChild(i2).gameObject.SetActive(false);
 			if(i2 == i)transform.GetChild(0).GetChild(1).GetChild(0).GetChild(i2).gameObject.SetActive(true);
 		}
+		refreshbindingswindow();
 	}
 	
 	public void callmenu(){
@@ -165,38 +168,131 @@ public class gamemenu : MonoBehaviour
 	public void refreshbindingswindow(){
 		string rebinds = PlayerPrefs.GetString("rebinds");
         if (!string.IsNullOrEmpty(rebinds))inputAsset.LoadBindingOverridesFromJson(rebinds);
+		InputAction actionToRebind = new InputAction();
+		var directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Left");;
+		for(int i = 0; i <= 11; i++){
+			switch (i){
+			case 0: //confirm
+				actionToRebind = inputAsset.FindAction("confirm", true);
+				break;
+			case 1: //cancel
+				actionToRebind = inputAsset.FindAction("cancel", true);
+				break;
+			case 2: //ability
+				actionToRebind = inputAsset.FindAction("ability", true);
+				break;
+			case 3: //left
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Left");
+				break;
+			case 4: //dodge
+				actionToRebind = inputAsset.FindAction("select 1", true);
+				break;
+			case 5: //defend
+				actionToRebind = inputAsset.FindAction("select 2", true);
+				break;
+			case 6: //up
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Up");
+				break;
+			case 7: //down
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Down");
+				break;
+			case 8: //jump
+				actionToRebind = inputAsset.FindAction("jump", true);
+				break;
+			case 9: //menu
+				actionToRebind = inputAsset.FindAction("menu", true);
+				break;
+			case 10: //sprint
+				actionToRebind = inputAsset.FindAction("sprint", true);
+				break;
+			case 11: //right
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Right");
+				break;
+			default:
+				break;
+			}
+			transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = (actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString());
+			//Debug.Log((actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString()));
+		}
 	}
 	
 	public void bindkey(int i){
+		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetComponent<Animator>().SetBool("blink",true);
+		StartCoroutine(bindkey2(i));
+	}
+	
+	
+	public IEnumerator bindkey2(int i){
+		yield return new WaitForEndOfFrame();
+		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+		InputAction actionToRebind = new InputAction();
+		var directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Left");;
 		switch (i){
 			case 0: //confirm
-				
+				actionToRebind = inputAsset.FindAction("confirm", true);
 				break;
-			case 1:
+			case 1: //cancel
+				actionToRebind = inputAsset.FindAction("cancel", true);
 				break;
-			case 2:
+			case 2: //ability
+				actionToRebind = inputAsset.FindAction("ability", true);
 				break;
-			case 3:
+			case 3: //left
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Left");
 				break;
-			case 4:
+			case 4: //dodge
+				actionToRebind = inputAsset.FindAction("select 1", true);
 				break;
-			case 5:
+			case 5: //defend
+				actionToRebind = inputAsset.FindAction("select 2", true);
 				break;
-			case 6:
+			case 6: //up
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Up");
 				break;
-			case 7:
+			case 7: //down
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Down");
 				break;
-			case 8:
+			case 8: //jump
+				actionToRebind = inputAsset.FindAction("jump", true);
 				break;
-			case 9:
+			case 9: //menu
+				actionToRebind = inputAsset.FindAction("menu", true);
 				break;
-			case 10:
+			case 10: //sprint
+				actionToRebind = inputAsset.FindAction("sprint", true);
 				break;
-			case 11:
+			case 11: //right
+				actionToRebind = inputAsset.FindAction("move", true);
+				directionbinding = inputAsset.FindAction("move", true).ChangeCompositeBinding("2D Vector").NextPartBinding("Right");
 				break;
 			default:
 				break;
 		}
+		actionToRebind.Disable();
+		InputActionRebindingExtensions.RebindingOperation rebindOperation;
+		if(actionToRebind.name.Equals("move")){
+			rebindOperation = actionToRebind.PerformInteractiveRebinding(directionbinding.bindingIndex)
+			.WithControlsExcluding("Mouse")
+			.Start();
+			actionToRebind.Enable();
+		} else {
+			rebindOperation = actionToRebind.PerformInteractiveRebinding()
+			.WithControlsExcluding("Mouse")
+			.Start();
+			actionToRebind.Enable();
+		}
+		yield return new WaitUntil(() => rebindOperation.completed);
+		rebindOperation.Dispose();
+		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = (actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString());
+		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetComponent<Animator>().SetBool("blink",false);
+		
 	}
 	
 }

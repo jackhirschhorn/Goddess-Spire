@@ -275,7 +275,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "default",
                     "action": "ability",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -286,7 +286,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "default",
                     "action": "menu",
                     "isComposite": false,
                     "isPartOfComposite": false
