@@ -216,7 +216,6 @@ public class gamemenu : MonoBehaviour
 				break;
 			}
 			transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = (actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString());
-			//Debug.Log((actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString()));
 		}
 	}
 	
