@@ -39,7 +39,7 @@ public class gamemenu : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        menustate = 3;
+        menustate = 1;
 		master.value = PlayerPrefs.GetFloat("MasterVolume", 0.6f);
 		sfx.value = PlayerPrefs.GetFloat("SfxVolume", 0.6f);
 		music.value = PlayerPrefs.GetFloat("MusicVolume", 0.6f);
@@ -77,6 +77,7 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
 			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
 		}
+		if(menustate == 1)partymenuupdate();
 	}
 	
 	public void updatesubmenutab(int i){
@@ -146,6 +147,7 @@ public class gamemenu : MonoBehaviour
 				transform.GetChild(0).gameObject.SetActive(false);
 				anim.SetInteger("menuon", 0);
 			}
+			if(menustate == 1)partymenuupdate();
 		} else if (menusubstate == 5) {
 			updatesubmenutab(0);
 		} else if (menusubstate == 8 || menusubstate == 9){
@@ -292,6 +294,17 @@ public class gamemenu : MonoBehaviour
 		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = (actionToRebind.name.Equals("move")?actionToRebind.GetBindingDisplayString(directionbinding.bindingIndex):actionToRebind.GetBindingDisplayString());
 		transform.GetChild(0).GetChild(1).GetChild(0).GetChild(2).GetChild(0).GetChild(i).GetComponent<Animator>().SetBool("blink",false);
 		
+	}
+	
+	public void partymenuupdate(){
+		for(int i = 0; i < 5; i++){
+			if(overworldmanager.OM.pc.transform.GetComponent<combatantdataholder>().cd[i] != null){
+				transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetComponent<Image>().color = Color.white;
+				transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetComponent<Image>().sprite = overworldmanager.OM.pc.transform.GetComponent<combatantdataholder>().cd[i].icon;
+			} else {
+				transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetComponent<Image>().color = Color.grey;
+			}
+		}
 	}
 	
 }
