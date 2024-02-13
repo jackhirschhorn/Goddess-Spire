@@ -307,4 +307,13 @@ public class gamemenu : MonoBehaviour
 		}
 	}
 	
+	public void showface(int i){
+		transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(true);
+		//transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = 
+	}
+	
+	public void hideface(int i){
+		transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(false);
+	}
+	
 }
