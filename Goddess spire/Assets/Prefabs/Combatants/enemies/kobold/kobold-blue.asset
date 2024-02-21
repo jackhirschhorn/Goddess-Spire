@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
   m_Name: kobold-blue
   m_EditorClassIdentifier: 
+  name: blue kobold
   clas: -1
   strong: 0
   AI: {fileID: 11400000, guid: 53fd6c2d59d779a46bb4b5aefafbd4f6, type: 2}

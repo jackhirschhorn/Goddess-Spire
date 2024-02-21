@@ -31,6 +31,8 @@ public class gamemenu : MonoBehaviour
 	public Slider master, sfx, music, voices, menu;
 	public AudioMixer amc;
 	
+	public string[] classindex = new string[]{"summon","barbarian","martial artist","paladin","ranger","rogue","bard","wizard","cleric","druid"};
+	
 	void Awake(){
 		GM = this;
 		string rebinds = PlayerPrefs.GetString("rebinds");
@@ -73,6 +75,7 @@ public class gamemenu : MonoBehaviour
 		menustate = i;
 		anim.SetInteger("lastmenutarg", anim.GetInteger("menutarg"));
 		anim.SetInteger("menutarg", i);
+		transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
 		for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
 			if(i2 == i)transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(true);
@@ -89,6 +92,7 @@ public class gamemenu : MonoBehaviour
 		if(menusubstate == 1){
 			transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
 			transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(true);
 		} else if(menusubstate <= 4){
 			for(int i2 = 0; i2 < 3; i2++){
 				transform.GetChild(0).GetChild(0).GetChild(2).GetChild(i2).GetChild(0).GetComponent<Image>().color = (i2+2 == menusubstate?itemscolor1:itemscolor2);
@@ -117,6 +121,28 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(true);
 			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
 			transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
+		} else if (menusubstate <= 14){
+			transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true);
+			combatantdata tempcd = overworldmanager.OM.pc.transform.GetComponent<combatantdataholder>().cd[menusubstate-10];
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(1).GetComponent<Image>().sprite = tempcd.icon;
+			
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = tempcd.name;
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = classindex[tempcd.clas+1];
+			
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.chp + "/" + tempcd.statblock.hp;
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.cmana + "/" + tempcd.statblock.mana;
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.cstam + "/" + tempcd.statblock.stam;
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.atk + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(4).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.def + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(5).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.spd + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(6).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.mag + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(7).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.res + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(8).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.lck + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(9).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.lvl + "";
+			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(10).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.xp + "/" + tempcd.statblock.nextxp;
+
+			
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){
 			transform.GetChild(0).GetChild(0).GetChild(i2).gameObject.SetActive(false);
@@ -156,10 +182,19 @@ public class gamemenu : MonoBehaviour
 		} else {
 			menusubstate = 0;
 			anim.SetInteger("submenutarg", 0);
+			transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
 			transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-			transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+			StartCoroutine(turnoffsubmenu());
 		}
 		
+	}
+	
+	public IEnumerator turnoffsubmenu(){
+		yield return new WaitForSeconds(1f);
+		transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+		transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);
+		transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(false);
+		transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
 	}
 	
 	public void savebindings(){
@@ -308,12 +343,11 @@ public class gamemenu : MonoBehaviour
 	}
 	
 	public void showface(int i){
-		transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(true);
-		//transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = 
+		updatesubmenutab(i+10);
 	}
 	
-	public void hideface(int i){
-		transform.GetChild(0).GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(false);
+	public void hideface(){
+		transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);	
 	}
 	
 }
