@@ -32,6 +32,9 @@ public class combatantdata : ScriptableObject
 	public int idleanim = 0;
 	public Transform model;
 	
+	//inventory
+	public equipment[] equipmend = new equipment[12];
+	
 	public void reconstruct(Combatant c){
 		phenotype = c.phenotype;
 		humanoid = c.humanoid;

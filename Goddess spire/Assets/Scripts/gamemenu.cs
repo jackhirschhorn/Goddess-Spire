@@ -130,6 +130,7 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = tempcd.name;
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = classindex[tempcd.clas+1];
 			
+			//stats
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.chp + "/" + tempcd.statblock.hp;
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.cmana + "/" + tempcd.statblock.mana;
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(2).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.cstam + "/" + tempcd.statblock.stam;
@@ -142,6 +143,11 @@ public class gamemenu : MonoBehaviour
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(9).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.lvl + "";
 			transform.GetChild(0).GetChild(1).GetChild(2).GetChild(3).GetChild(10).GetComponent<TextMeshProUGUI>().text = tempcd.statblock.xp + "/" + tempcd.statblock.nextxp;
 
+			//equipment
+			for(int i3 = 0; i3 < 12; i3++){
+				if(tempcd.equipmend[i3] != null)transform.GetChild(0).GetChild(1).GetChild(2).GetChild(4).GetChild(i3).GetChild(0).GetComponent<Image>().sprite = tempcd.equipmend[i3].icon;
+			}
+			
 			
 		}
 		/*for(int i2 = 1; i2 < 5; i2++){

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class itemscript : ScriptableObject
 {
 	public bool done = false;
@@ -11,6 +12,7 @@ public class itemscript : ScriptableObject
 	public bool mat = false; //material, not for combat
 	public Sprite icon;
 	public string name = "";
+	public string desc = "";
 	
     public virtual void useitem(){
 		done = true;

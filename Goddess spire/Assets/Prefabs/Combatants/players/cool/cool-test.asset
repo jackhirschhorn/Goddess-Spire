@@ -63,3 +63,16 @@ MonoBehaviour:
   anim: {fileID: 9100000, guid: 762a0f41f9e178144949144d9cd2fd6d, type: 2}
   idleanim: 1
   model: {fileID: 4335946577536698819, guid: 00d87b967e289954494ca58b71a92ca6, type: 3}
+  equipmend:
+  - {fileID: 11400000, guid: 91410848b27c96a43974dfd551120f99, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
