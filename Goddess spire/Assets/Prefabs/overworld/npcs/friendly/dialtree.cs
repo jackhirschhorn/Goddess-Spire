@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dialtree 
+public class dialtree : ScriptableObject
 {
     public int[] flags = new int[]{};
 	

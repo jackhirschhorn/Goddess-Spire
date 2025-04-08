@@ -213,7 +213,7 @@ public class playercontroller : MonoBehaviour
 	Vector3 jumpangle = new Vector3(0,1,0);
 	
 	public void jump(InputAction.CallbackContext context){
-		if(context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore) && !groundangle(hit.normal,true)){
+		if(canmove && context.performed && Physics.SphereCast(transform.position, 0.49f, -Vector3.up, out RaycastHit hit, 1.21f, jumplayers,QueryTriggerInteraction.Ignore) && !groundangle(hit.normal,true)){
 			//jumpangle = hit.normal;
 			jumppower = 500f;
 			jumppowerdecay = 15f;
@@ -355,88 +355,90 @@ public class playercontroller : MonoBehaviour
 
 	
 	public void ability(InputAction.CallbackContext context){
-		if(classid == 0){ //barbarian
-			if(context.performed){
-				StartCoroutine(barbchargeie());
-			}
-			if(context.canceled){
-				anim.SetBool("barbcharge", false);	
-				anim.SetBool("barbchargestart", false);
-				rotass2 = Vector2.zero;
-				rotass = rotassb;
-			}
-		} else if (classid == 1){ //ki master
-			//handled by breakers			
-			if(gameObject.activeSelf && context.performed)StartCoroutine(kimasterstrike());
-		} else if (classid == 2){ //paladin
-			//animation!
-			if(context.performed && paladincooldown <= 0){
-				anim.SetBool("paladinsmite", true);
-				paladincooldown = 5;
-				canmove = false;
-			}
-		} else if (classid == 3){ //ranger
-			if(context.performed && !rangervision.GetBool("play")){
-				//anim;
-				rangerdetector[] randets = Object.FindObjectsOfType<rangerdetector>();
-				foreach(rangerdetector rd in randets){
-					rd.shimmer();
+		if(canmove){
+			if(classid == 0){ //barbarian
+				if(context.performed){
+					StartCoroutine(barbchargeie());
 				}
-				rangervision.SetBool("play", true);
-				rangersonar.Play();
-			}
-		} else if (classid == 4){ //rogue
-			if(context.performed){
-				if(instealth){
-					anim.SetBool("instealth",false);
-					instealth = false;
-				} else {
-					anim.SetBool("instealth",true);
-					is_sprinting = false;
+				if(context.canceled){
+					anim.SetBool("barbcharge", false);	
+					anim.SetBool("barbchargestart", false);
+					rotass2 = Vector2.zero;
+					rotass = rotassb;
+				}
+			} else if (classid == 1){ //ki master
+				//handled by breakers			
+				if(gameObject.activeSelf && context.performed)StartCoroutine(kimasterstrike());
+			} else if (classid == 2){ //paladin
+				//animation!
+				if(context.performed && paladincooldown <= 0){
+					anim.SetBool("paladinsmite", true);
+					paladincooldown = 5;
+					canmove = false;
+				}
+			} else if (classid == 3){ //ranger
+				if(context.performed && !rangervision.GetBool("play")){
+					//anim;
+					rangerdetector[] randets = Object.FindObjectsOfType<rangerdetector>();
+					foreach(rangerdetector rd in randets){
+						rd.shimmer();
+					}
+					rangervision.SetBool("play", true);
+					rangersonar.Play();
+				}
+			} else if (classid == 4){ //rogue
+				if(context.performed){
+					if(instealth){
+						anim.SetBool("instealth",false);
+						instealth = false;
+					} else {
+						anim.SetBool("instealth",true);
+						is_sprinting = false;
+						anim.SetBool("sprint", false);
+						instealth = true;
+					}
+				}
+			} else if (classid == 5){ //bard
+				if(context.performed){
+					inmusic = !inmusic;
+					if(!inmusic){
+						songhold = new int[]{0,0,0,0,0,0,0,0};
+						songholdpointer = 0;
+					}
+				}
+			} else if (classid == 6){ //wizard
+				if(context.performed){
+					//connect to a tablet
+				}
+			} else if (classid == 7){ //cleric
+				if(context.performed){
+					canmove = false; 
+					cancelcanmove = true;
+					anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
+					anim.SetBool("pray",true);
+					prayer.Play();
+					prayerps.Play();
+					footsteps.Stop();
+					anim.SetBool("walk", false);
 					anim.SetBool("sprint", false);
-					instealth = true;
+					anim.SetBool("barbcharge", false);				
+					anim.SetBool("barbchargestart", false);
+					if(isgrounded()){
+						cc.velocity = new Vector3(0,0,0);
+					}/* else {
+						cc.velocity = new Vector3(0,cc.velocity.y,0);
+					}*/ //leap of faith?
 				}
-			}
-		} else if (classid == 5){ //bard
-			if(context.performed){
-				inmusic = !inmusic;
-				if(!inmusic){
-					songhold = new int[]{0,0,0,0,0,0,0,0};
-					songholdpointer = 0;
+				if(context.canceled){
+					anim.SetBool("pray",false);
+					cancelcanmove = false;
+					StartCoroutine(delayedcanmove(0.5f));
+					prayer.Stop();
+					prayerps.Stop();
 				}
+			} else if (classid == 8){ //druid
+				//preformed in world space
 			}
-		} else if (classid == 6){ //wizard
-			if(context.performed){
-				//connect to a tablet
-			}
-		} else if (classid == 7){ //cleric
-			if(context.performed){
-				canmove = false; 
-				cancelcanmove = true;
-				anim.SetBool((overworldmanager.OM.pc.is_sprinting?"sprint":"walk"), false); 
-				anim.SetBool("pray",true);
-				prayer.Play();
-				prayerps.Play();
-				footsteps.Stop();
-				anim.SetBool("walk", false);
-				anim.SetBool("sprint", false);
-				anim.SetBool("barbcharge", false);				
-				anim.SetBool("barbchargestart", false);
-				if(isgrounded()){
-					cc.velocity = new Vector3(0,0,0);
-				}/* else {
-					cc.velocity = new Vector3(0,cc.velocity.y,0);
-				}*/ //leap of faith?
-			}
-			if(context.canceled){
-				anim.SetBool("pray",false);
-				cancelcanmove = false;
-				StartCoroutine(delayedcanmove(0.5f));
-				prayer.Stop();
-				prayerps.Stop();
-			}
-		} else if (classid == 8){ //druid
-			//preformed in world space
 		}
 	}
 	
