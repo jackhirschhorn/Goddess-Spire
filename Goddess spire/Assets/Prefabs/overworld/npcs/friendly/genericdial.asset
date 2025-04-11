@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flags: 
   dials:
-  - Hello world
+  - Hello!
+  - Hello.
+  - Fuck you.
+  - Good day.
+  - Fuck you!
   dialpointer: 0
   talker: {fileID: 0}

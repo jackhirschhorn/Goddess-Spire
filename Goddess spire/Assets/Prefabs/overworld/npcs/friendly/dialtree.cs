@@ -27,4 +27,13 @@ public class dialtree : ScriptableObject
 		talker.closedial();
 	}
 	
+	public virtual string advancetodial(int i){
+		dialpointer += i;
+		if(dialpointer >= dials.Length){
+			closedial();
+			return "";
+		}
+		return dials[dialpointer];
+	}
+	
 }

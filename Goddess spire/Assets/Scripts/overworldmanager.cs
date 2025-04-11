@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class overworldmanager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class overworldmanager : MonoBehaviour
 	public GameObject talkingUI;
 	public Image talkingUIicon;
 	public TextMeshProUGUI talkingUItxt;
+	public GameObject talkingUIbuttonholder;
+	public GameObject talkingUIbutton;
+	public npctalker lasttalker;
 	
 	
 	void Awake(){
@@ -105,5 +109,23 @@ public class overworldmanager : MonoBehaviour
 	public void battlestate(int i){
 		if(i>0)battlemaster.GetComponent<BattleMaster>().battlestateenemy = i;
 		if(i<0)battlemaster.GetComponent<BattleMaster>().battlestateally = i;
+	}
+	
+	public void adddialoptions(string[] strings,int[] ints, npctalker npcspeaker){
+		lasttalker = npcspeaker;
+		for(int i = 0; i < strings.Length; i++){
+			Transform clone = Instantiate(talkingUIbutton,talkingUIbuttonholder.transform).transform;
+			int temp = ints[i];
+			clone.GetComponent<Button>().onClick.AddListener(() => advancetodial(temp));
+			clone.GetChild(0).GetComponent<TextMeshProUGUI>().text = strings[i];
+			clone.GetComponent<RectTransform>().anchoredPosition = clone.GetComponent<RectTransform>().anchoredPosition + new Vector2(0,-200*i);
+		}
+	}
+	
+	public void advancetodial(int i){
+		foreach (Transform child in talkingUIbuttonholder.transform) {
+			GameObject.Destroy(child.gameObject);
+		}
+		lasttalker.advancetodial(i);
 	}
 }

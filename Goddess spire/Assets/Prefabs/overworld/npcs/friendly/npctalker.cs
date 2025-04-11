@@ -47,10 +47,16 @@ public class npctalker : interactable
 	
 	public virtual void advancedial(){
 		//press A to continue speaking, just say the next string, increase dialtree dialpointer by 1
-		dt.advancedial();
+		overworldmanager.OM.talkingUItxt.text = dt.advancedial();
 	}
 	
 	public virtual void choosedial(int i){
 		// chosing what to say, increase dialtree by the decision #, apply any flags, display.
 	}
+	
+	public virtual void advancetodial(int i){
+		//press A to continue speaking, just say the next string, increase dialtree dialpointer by 1
+		overworldmanager.OM.talkingUItxt.text = dt.advancetodial(i);
+	}
+	
 }
