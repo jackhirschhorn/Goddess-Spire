@@ -31,6 +31,7 @@ public class npctalker : interactable
 	public virtual void opendial(){
 		//called from playercontroller, open UI and pause gameplay
 		overworldmanager.OM.talkingUI.SetActive(true);
+		overworldmanager.OM.talkingUI.GetComponent<Animator>().SetBool("movein",true);
 		overworldmanager.OM.talkingUIicon.sprite = icon;
 		overworldmanager.OM.talkingUItxt.text = dt.startdial();
 		overworldmanager.OM.talkingUItxt.color = talkercolor;
@@ -40,9 +41,15 @@ public class npctalker : interactable
 	
 	public virtual void closedial(){
 		//called from either cancel button or dialtree, close UI and resume gameplay
-		overworldmanager.OM.talkingUI.SetActive(false);
+		overworldmanager.OM.talkingUI.GetComponent<Animator>().SetBool("moveout",true);
+		StartCoroutine("closedial2");
 		overworldmanager.OM.pc.canmove = true;
 		talkin = false;
+	}
+	
+	public IEnumerator closedial2(){
+		yield return new WaitForSeconds(0.3f);
+		overworldmanager.OM.talkingUI.SetActive(false);
 	}
 	
 	public virtual void advancedial(){
