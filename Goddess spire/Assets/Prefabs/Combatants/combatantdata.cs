@@ -10,8 +10,9 @@ using UnityEditor.Animations;
 public class combatantdata : ScriptableObject
 {
 	public string name = "";
-	public int clas = -1; //-1 no class, 0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 phantom, 5 bard, 6 wizard, 7 cleric, 8 druid
-    public bool strong = false;
+	public int clas = -1; //-1 no class, 0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 Rogue, 5 bard, 6 wizard, 7 cleric, 8 druid
+    public static string[] clasname = new string[]{"No Class","Barbarian","KI Master", "Paladin", "Ranger", "Rogue", "Bard", "Wizard", "Cleric", "Druid"};
+	public bool strong = false;
 	public brain AI;
 	public bool humanoid = false;
 	public bool ismaincharacter = false;
@@ -46,5 +47,9 @@ public class combatantdata : ScriptableObject
 		blue = c.blue;
 		green = c.green;
 		height = c.height;
+	}
+	
+	public string getclasname(){
+		return clasname[clas+1];
 	}
 }
