@@ -9,10 +9,14 @@ public class animationtrigger : StateMachineBehaviour
 	public string exitoff;
 	public string resetint;
 	public string enter;
+	public string randomf;
+	public int randomfmin; //*0.01
+	public int randomfmax;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(enter != null)animator.SetBool(enter,!animator.GetBool(enter));
+		if(randomf != null)animator.SetFloat(randomf,Random.Range(randomfmin,randomfmax)*0.01f);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
