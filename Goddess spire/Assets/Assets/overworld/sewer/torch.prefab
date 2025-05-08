@@ -9863,7 +9863,7 @@ Transform:
   - {fileID: 4278172901937899069}
   - {fileID: 8741782751075496633}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5262820538958779128
 MonoBehaviour:
@@ -13942,7 +13942,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.7411765, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 100
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

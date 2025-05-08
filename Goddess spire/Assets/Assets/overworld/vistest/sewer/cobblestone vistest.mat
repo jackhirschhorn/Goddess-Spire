@@ -136,10 +136,13 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _cutoff: 0.001
-    - _highlightstrength: 10
-    - _innercutoff: 0.08
+    - _cutoff: 0.1
+    - _highlight_smooth: 0
+    - _highlightcolorblending: 0.7
+    - _highlightstrength: 2
+    - _innercutoff: 0.15
     - _innerlightstrength: 0.1
+    - _light_smooth: 0
     - _lightblending: 0.1
     - _lightstrength: 0.02
     - _temp: 10
