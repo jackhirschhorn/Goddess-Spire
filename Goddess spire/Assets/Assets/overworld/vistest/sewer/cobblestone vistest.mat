@@ -138,13 +138,15 @@ Material:
     - _ZWrite: 1
     - _cutoff: 0.1
     - _highlight_smooth: 0
-    - _highlightcolorblending: 0.7
+    - _highlightcolorblending: 1
     - _highlightstrength: 2
-    - _innercutoff: 0.15
+    - _innercutoff: 0.25
     - _innerlightstrength: 0.1
     - _light_smooth: 0
     - _lightblending: 0.1
     - _lightstrength: 0.02
+    - _parallax: 0.9
+    - _parallax_blending: 0.9
     - _temp: 10
     m_Colors:
     - _BaseColor: {r: 1, g: 0.9195866, b: 0.7798742, a: 1}
