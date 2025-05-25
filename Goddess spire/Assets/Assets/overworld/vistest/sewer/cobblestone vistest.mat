@@ -136,7 +136,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _cutoff: 0.1
+    - _cutoff: 1
     - _highlight_smooth: 0
     - _highlightcolorblending: 1
     - _highlightstrength: 2
