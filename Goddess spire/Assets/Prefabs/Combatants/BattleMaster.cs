@@ -279,6 +279,9 @@ public class BattleMaster : MonoBehaviour
 		}		
 		firststriker = null;
 		firststrikeattack = null;
+		foreach(Combatant c in combatants){
+			c.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("start", true);
+		}
 		yield return new WaitUntil(() => !abilityactive);
 		initiative_calc();
 		update_menu_memory();
