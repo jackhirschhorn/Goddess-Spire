@@ -1407,6 +1407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swap: 1
+  sprites: 0
   tex:
   - {fileID: 2800000, guid: 2df92926bf68af0428d05efb82033d24, type: 3}
   - {fileID: 2800000, guid: c5072d0d63ee5c445af1240760ef829d, type: 3}
@@ -4197,10 +4198,38 @@ PrefabInstance:
       propertyPath: indexoffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004600080284744, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e3046f79a53e8646bddc0058a579957, type: 3}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: spritenum
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dcd224d1cab97c4dae6bcc98330717a, type: 3}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9846a35758f41f44ab08a1e4386392c2, type: 3}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 12ea388c0b70a9b49ba906d40221aa8b, type: 3}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: c4acfb7ddd462224c8d115c94f983862, type: 3}
+    - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: sprites.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fbac63aad920ba4d87e81da8ece60e7, type: 3}
     - target: {fileID: 4647372326808462668, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 1
@@ -4222,7 +4251,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7390886107121858955, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: spritenum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390886107121858955, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489759260836321548, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: spritenum
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8254115870082129605, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
@@ -4237,3 +4274,40 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1854125386708501757, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
   m_PrefabInstance: {fileID: 8846244042071977161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7169450373308409909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1854125386708501756, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+  m_PrefabInstance: {fileID: 8846244042071977161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5176819691701395780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169450373308409909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37677a97ad922f2409744c32476fb71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swap: 1
+  sprites: 1
+  tex:
+  - {fileID: 2800000, guid: e41948d0b1ce1b64c9996a8628148273, type: 3}
+  - {fileID: 2800000, guid: a537ccbe3d904544783e1a586fa7943a, type: 3}
+  - {fileID: 2800000, guid: 44b9b296320f5844d8c3d4601c827569, type: 3}
+  - {fileID: 2800000, guid: c2431dc84bc06ef41acacaccf7ead4df, type: 3}
+  - {fileID: 2800000, guid: 69f1220278cd1df46b976d0a301b42bc, type: 3}
+  - {fileID: 2800000, guid: e1ab51d2b4a4d764ba11531183fd9e0e, type: 3}
+  rtex: []
+  rtexf:
+  - {fileID: 2800000, guid: 6e3046f79a53e8646bddc0058a579957, type: 3}
+  - {fileID: 2800000, guid: 5dcd224d1cab97c4dae6bcc98330717a, type: 3}
+  - {fileID: 2800000, guid: 9846a35758f41f44ab08a1e4386392c2, type: 3}
+  - {fileID: 2800000, guid: 12ea388c0b70a9b49ba906d40221aa8b, type: 3}
+  - {fileID: 2800000, guid: c4acfb7ddd462224c8d115c94f983862, type: 3}
+  - {fileID: 2800000, guid: 6fbac63aad920ba4d87e81da8ece60e7, type: 3}
+  swapmat: {fileID: 2100000, guid: 5030adac02365a64a8253c954e478fb0, type: 2}
+  rends: []
+  combatant: 1

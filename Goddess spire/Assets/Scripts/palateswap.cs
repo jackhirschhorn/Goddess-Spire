@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class palateswap : MonoBehaviour
 {
 	public bool swap = false;
+	public bool sprites = false;
 	public List<Texture2D> tex = new List<Texture2D>();
 	public List<RenderTexture> rtex = new List<RenderTexture>();
 	public List<Texture2D> rtexf = new List<Texture2D>();
@@ -18,7 +19,7 @@ public class palateswap : MonoBehaviour
 	
 	void Start(){
 		swap = true;
-		if(combatant){
+		if(combatant && !sprites){
 			for(int i = 0; i < tex.Count; i++){
 				rtexf.Add(new Texture2D(256,256,TextureFormat.ARGB32,false));
 			}
@@ -27,7 +28,7 @@ public class palateswap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(swap){
+		if(swap && !sprites){
 			if(combatant){
 				comb = transform.parent.parent.GetComponent<Combatant>();
 				swapmat.SetColor("_COLOR_RED", comb.red);
@@ -44,6 +45,28 @@ public class palateswap : MonoBehaviour
 					rends[i].material.SetTexture("_BaseMap", rtexf[i]);
 				}
 			}
+		}
+		if(sprites && swap){
+			for(int i = 0; i < tex.Count; i++){
+				if(combatant){
+					comb = transform.parent.parent.parent.GetComponent<Combatant>();
+				}
+				Color[] pixels = tex[i].GetPixels();
+				for(int i2 = 0; i2 < pixels.Length; i2++){
+					if(pixels[i2] == Color.red){
+						pixels[i2] = comb.red;
+					}
+					if(pixels[i2] == Color.blue){
+						pixels[i2] = comb.blue;
+					}
+					if(pixels[i2] == Color.green){
+						pixels[i2] = comb.green;
+					}
+				}
+				rtexf[i].SetPixels(pixels);
+				rtexf[i].Apply();
+			}
+			swap = false;
 		}
         
     }
