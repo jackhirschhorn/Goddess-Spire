@@ -21,7 +21,7 @@ MonoBehaviour:
   phenotype: 0
   statblock:
     atk: 1
-    spd: 0
+    spd: 10
     def: 1
     mag: 0
     res: 0

@@ -4094,6 +4094,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -26.226
       objectReference: {fileID: 0}
+    - target: {fileID: 1854125385859653391, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1854125386708501756, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Name
       value: sprite model
@@ -4194,6 +4198,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1854125387505034790, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a06bf227162a6664db5f52b2e606a6fb, type: 3}
+    - target: {fileID: 2045865875397628547, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9345bf2377b70254da7fbaf0a697b286, type: 3}
     - target: {fileID: 2300004600080284744, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 1
@@ -4202,13 +4214,21 @@ PrefabInstance:
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: 6e3046f79a53e8646bddc0058a579957, type: 3}
+    - target: {fileID: 2912898161118371626, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c663b864c43c61b45916467571c2b19d, type: 3}
+    - target: {fileID: 2922071390236528280, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98e9fbbbdd260d14a984cf03524980f1, type: 3}
     - target: {fileID: 4015081314314300054, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: combatant
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: spritenum
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4126422038710906943, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
@@ -4235,32 +4255,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6fbac63aad920ba4d87e81da8ece60e7, type: 3}
     - target: {fileID: 4647372326808462668, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
-      propertyPath: indexoffset
+      propertyPath: spritenum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4647372326808462668, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
-      propertyPath: sprites.Array.size
-      value: 2
+      propertyPath: indexoffset
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4647372326808462668, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
-      propertyPath: sprites.Array.data[1]
+    - target: {fileID: 4931491390367535880, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e7efb44534648f24d8a3636cf2c30f5e, type: 3}
+      objectReference: {fileID: 21300000, guid: c4acfb7ddd462224c8d115c94f983862, type: 3}
     - target: {fileID: 5430792335849104633, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5906085751138702328, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85c8065a3249aa94b84b17a7b9492526, type: 3}
     - target: {fileID: 6044943136862748242, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e7efb44534648f24d8a3636cf2c30f5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 05e54681e3de54548bd9653392e2d108, type: 3}
     - target: {fileID: 6044943136862748242, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7390886107121858955, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: spritenum
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7390886107121858955, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
@@ -4268,7 +4292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7489759260836321548, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: spritenum
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8254115870082129605, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset

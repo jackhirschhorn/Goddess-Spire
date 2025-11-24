@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e3046f79a53e8646bddc0058a579957, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dcd224d1cab97c4dae6bcc98330717a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1293,6 +1293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  - {fileID: 21300000, guid: e7efb44534648f24d8a3636cf2c30f5e, type: 3}
+  - {fileID: 21300000, guid: 05e54681e3de54548bd9653392e2d108, type: 3}
   img: {fileID: 6044943136862748242}
   spritenum: 0
   indexoffset: 0
@@ -1363,7 +1365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0ae8eb5a38e58b4e8a09e545fde24c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
