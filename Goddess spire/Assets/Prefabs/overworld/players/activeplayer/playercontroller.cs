@@ -24,6 +24,7 @@ public class playercontroller : MonoBehaviour
 	public int classid = 0; //0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 phantom, 5 bard, 6 wizard, 7 cleric, 8 druid
 	public fixture targetfixture;
 	public Animator rangervision;
+	public int partyleader = 1;
 	
 	void Awake(){
 		

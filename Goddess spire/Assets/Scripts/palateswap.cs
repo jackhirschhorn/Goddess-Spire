@@ -15,6 +15,7 @@ public class palateswap : MonoBehaviour
 	public List<Renderer> rends = new List<Renderer>();
 	public bool combatant = true;
 	private Combatant comb;
+	private combatantdata combdata;
 
 	
 	void Start(){
@@ -50,21 +51,38 @@ public class palateswap : MonoBehaviour
 			for(int i = 0; i < tex.Count; i++){
 				if(combatant){
 					comb = transform.parent.parent.parent.GetComponent<Combatant>();
+					Color[] pixels = tex[i].GetPixels();
+					for(int i2 = 0; i2 < pixels.Length; i2++){
+						if(pixels[i2] == Color.red){
+							pixels[i2] = comb.red;
+						}
+						if(pixels[i2] == Color.blue){
+							pixels[i2] = comb.blue;
+						}
+						if(pixels[i2] == Color.green){
+							pixels[i2] = comb.green;
+						}
+					}
+					rtexf[i].SetPixels(pixels);
+					rtexf[i].Apply();
+				} else {
+					combdata = transform.parent.parent.GetComponent<combatantdataholder>().cd[overworldmanager.OM.pc.partyleader];
+					Color[] pixels = tex[i].GetPixels();
+					for(int i2 = 0; i2 < pixels.Length; i2++){
+						if(pixels[i2] == Color.red){
+							pixels[i2] = combdata.red;
+						}
+						if(pixels[i2] == Color.blue){
+							pixels[i2] = combdata.blue;
+						}
+						if(pixels[i2] == Color.green){
+							pixels[i2] = combdata.green;
+						}
+					}
+					rtexf[i].SetPixels(pixels);
+					rtexf[i].Apply();
 				}
-				Color[] pixels = tex[i].GetPixels();
-				for(int i2 = 0; i2 < pixels.Length; i2++){
-					if(pixels[i2] == Color.red){
-						pixels[i2] = comb.red;
-					}
-					if(pixels[i2] == Color.blue){
-						pixels[i2] = comb.blue;
-					}
-					if(pixels[i2] == Color.green){
-						pixels[i2] = comb.green;
-					}
-				}
-				rtexf[i].SetPixels(pixels);
-				rtexf[i].Apply();
+				
 			}
 			swap = false;
 		}
