@@ -1131,7 +1131,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/arm l
+    path: model/sprite model/arm l
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1174,7 +1174,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1217,7 +1217,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/arm r
+    path: model/sprite model/arm r
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1260,7 +1260,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/head
+    path: model/sprite model/head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1312,7 +1312,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/tail
+    path: model/sprite model/tail
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1355,7 +1355,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/torso
+    path: model/sprite model/torso
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -1425,7 +1425,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: sprite model/arm r
+    path: model/sprite model/arm r
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -1488,7 +1488,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l accessory
+    path: model/sprite model/arm l/arm l accessory
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -1552,7 +1552,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l actual
+    path: model/sprite model/arm l/arm l actual
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -1616,7 +1616,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l hand
+    path: model/sprite model/arm l/arm l hand
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -1662,7 +1662,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -1708,7 +1708,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -1754,7 +1754,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -1800,7 +1800,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -1828,7 +1828,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -1856,7 +1856,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm r/arm r accessory
+    path: model/sprite model/arm r/arm r accessory
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -1902,7 +1902,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_PPtrCurves: []
@@ -6162,7 +6162,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6208,7 +6208,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6254,7 +6254,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6318,7 +6318,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l accessory
+    path: model/sprite model/arm l/arm l accessory
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -6382,7 +6382,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l actual
+    path: model/sprite model/arm l/arm l actual
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -6446,7 +6446,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l hand
+    path: model/sprite model/arm l/arm l hand
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -6474,7 +6474,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6502,7 +6502,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6548,7 +6548,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6594,7 +6594,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6640,7 +6640,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6686,7 +6686,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6732,7 +6732,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6778,7 +6778,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6824,7 +6824,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.x
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6870,7 +6870,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6898,7 +6898,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6944,7 +6944,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -6972,7 +6972,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7000,7 +7000,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -7028,7 +7028,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm r/arm r accessory
+    path: model/sprite model/arm r/arm r accessory
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -7074,7 +7074,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7120,7 +7120,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7166,7 +7166,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7212,7 +7212,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7258,7 +7258,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7313,7 +7313,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7341,7 +7341,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7369,7 +7369,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7415,7 +7415,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -7461,7 +7461,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_EulerEditorCurves:
@@ -8762,7 +8762,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8772,7 +8772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8782,7 +8782,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/arm l
+    path: model/sprite model/arm l
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8792,7 +8792,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8802,7 +8802,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8812,7 +8812,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/arm r
+    path: model/sprite model/arm r
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8822,7 +8822,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8832,7 +8832,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8842,7 +8842,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/arm l/arm l hand holder
+    path: model/sprite model/arm l/arm l hand holder
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8852,7 +8852,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8862,7 +8862,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8872,7 +8872,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/head
+    path: model/sprite model/head
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8882,7 +8882,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8892,7 +8892,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8902,7 +8902,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/tail
+    path: model/sprite model/tail
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8912,7 +8912,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8922,7 +8922,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -8932,7 +8932,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: sprite model/torso
+    path: model/sprite model/torso
     classID: 224
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

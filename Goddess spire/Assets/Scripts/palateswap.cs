@@ -50,7 +50,7 @@ public class palateswap : MonoBehaviour
 		if(sprites && swap){
 			for(int i = 0; i < tex.Count; i++){
 				if(combatant){
-					comb = transform.parent.parent.parent.GetComponent<Combatant>();
+					comb = transform.parent.parent.parent.parent.GetComponent<Combatant>();
 					Color[] pixels = tex[i].GetPixels();
 					for(int i2 = 0; i2 < pixels.Length; i2++){
 						if(pixels[i2] == Color.red){
