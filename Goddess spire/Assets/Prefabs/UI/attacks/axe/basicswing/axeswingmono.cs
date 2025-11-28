@@ -91,7 +91,7 @@ public class axeswingmono : animredirect
 			stage = 5;
 			target.take_damage(damage,pierce,1);
 			anim.SetInteger("stage",5);
-			timer = -1.9f;
+			timer = -0.9f;
 		}
 	}
 }

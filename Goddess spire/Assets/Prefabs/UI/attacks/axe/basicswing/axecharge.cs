@@ -21,7 +21,6 @@ public class axecharge : MonoBehaviour
 	public void OnConfirm2(InputAction.CallbackContext context){ //e
 		if(stage == 1){
 			if(context.performed){
-				Debug.Log("ye");
 				img.anchoredPosition = new Vector3((1f*charge),0,0);
 				charge = Mathf.Clamp01(charge+(Random.Range(1,5)*0.03f));
 			} else if(context.canceled) {				
