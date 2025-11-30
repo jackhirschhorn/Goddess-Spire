@@ -24,6 +24,7 @@ public class defendmono : MonoBehaviour
         if(stage == 0){
 			
 		} else if (stage == -1){
+			anim.SetBool("defend",false);
 			Destroy(this);
 		} else if (stage == 1){
 			BattleMaster.makesound(16);
