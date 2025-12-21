@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384079414147557882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.50399995, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704031038055466980}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: -5.304, z: 1}
+  m_LocalPosition: {x: 0.5, y: -3, z: 1}
   m_LocalScale: {x: -4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,6 +259,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1399226180461407095, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: indexoffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492535698292253845, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 1
       objectReference: {fileID: 0}
@@ -389,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 1854125387505034790, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fe0971a9850829546a191f3bc477d181, type: 3}
+      objectReference: {fileID: 21300000, guid: dd5710493779b1c478d8fbcddab52946, type: 3}
     - target: {fileID: 2045865875397628547, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -398,6 +402,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c436e00b7abc0b84c89ad45237630913, type: 3}
+    - target: {fileID: 2291251079662130056, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9a3d81a66def364d9d1803a27b8ffe8, type: 3}
     - target: {fileID: 2300004600080284744, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 0
@@ -413,11 +421,11 @@ PrefabInstance:
     - target: {fileID: 2912898161118371626, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 99a48ed185c603a4c9d2b10ca178b228, type: 3}
+      objectReference: {fileID: 21300000, guid: d833249e448058d46a4e1cd9f2e6908f, type: 3}
     - target: {fileID: 2922071390236528280, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6fe3b79e816c98e45af57638051c2aa7, type: 3}
+      objectReference: {fileID: 21300000, guid: e82dbf44f1fed2243889a77b6dbf1342, type: 3}
     - target: {fileID: 3434221636409414251, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
       value: 1
@@ -468,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4647372326808462668, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4672471616083026903, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
@@ -497,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 6044943136862748242, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+      objectReference: {fileID: 21300000, guid: b9a3d81a66def364d9d1803a27b8ffe8, type: 3}
     - target: {fileID: 6044943136862748242, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -529,6 +537,10 @@ PrefabInstance:
     - target: {fileID: 7489759260836321548, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: spritenum
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489759260836321548, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
+      propertyPath: indexoffset
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7718030777475752105, guid: afd9db95158eaa5448abc94999b4072d, type: 3}
       propertyPath: indexoffset

@@ -1226,7 +1226,7 @@ GameObject:
   - component: {fileID: 2291251079662130056}
   - component: {fileID: 1492535698292253845}
   m_Layer: 7
-  m_Name: arm r (1)
+  m_Name: arm r weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,6 +1303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
+  - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  - {fileID: 21300000, guid: b9a3d81a66def364d9d1803a27b8ffe8, type: 3}
   - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
   img: {fileID: 2291251079662130056}
   spritenum: 0
@@ -1604,6 +1606,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1142ffacfbca9474ba336c4a602e2c70, type: 3}
   - {fileID: 21300000, guid: c663b864c43c61b45916467571c2b19d, type: 3}
   - {fileID: 21300000, guid: 9e19749e08c0af6478dc835d393a7692, type: 3}
+  - {fileID: 21300000, guid: 9c5cb3e70f71eac439b935bcb6cbd071, type: 3}
+  - {fileID: 21300000, guid: 42dc4301225d18e409af7807c6afc684, type: 3}
+  - {fileID: 21300000, guid: d833249e448058d46a4e1cd9f2e6908f, type: 3}
+  - {fileID: 21300000, guid: 3726d2e8d5bfd234b838775d09557b1d, type: 3}
+  - {fileID: 21300000, guid: 62f4d33a0a13b6e4cb4cbd959b564344, type: 3}
   img: {fileID: 2912898161118371626}
   spritenum: 0
   indexoffset: 0
@@ -1700,6 +1707,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
   - {fileID: 21300000, guid: e7efb44534648f24d8a3636cf2c30f5e, type: 3}
   - {fileID: 21300000, guid: 05e54681e3de54548bd9653392e2d108, type: 3}
+  - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
+  - {fileID: 21300000, guid: b9a3d81a66def364d9d1803a27b8ffe8, type: 3}
+  - {fileID: 21300000, guid: ca1cbbe8c0175494082f731206a92313, type: 3}
   img: {fileID: 6044943136862748242}
   spritenum: 0
   indexoffset: 0
