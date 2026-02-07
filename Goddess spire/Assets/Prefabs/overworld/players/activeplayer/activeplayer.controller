@@ -554,6 +554,25 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1107 &-5220186243846940845
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Layer 0
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1101 &-4914025151451107089
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1518,6 +1537,12 @@ AnimatorController:
   m_Name: activeplayer
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: char
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: walk
     m_Type: 4
     m_DefaultFloat: 0
@@ -1666,6 +1691,18 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: blink
     m_StateMachine: {fileID: -2535072378242108568}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: New Layer 0
+    m_StateMachine: {fileID: -5220186243846940845}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -3022,7 +3059,7 @@ AnimatorStateMachine:
     m_Position: {x: -160, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3015895593458748698}
-    m_Position: {x: 400, y: 100, z: 0}
+    m_Position: {x: 400, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 772617618296865065}
     m_Position: {x: 600, y: 200, z: 0}

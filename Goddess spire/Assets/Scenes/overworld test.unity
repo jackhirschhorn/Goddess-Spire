@@ -119503,6 +119503,14 @@ PrefabInstance:
       propertyPath: indexoffset
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1301269097487867169, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 2082557719}
+    - target: {fileID: 1301269097487867169, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: character
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1387661689280938614, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -119510,6 +119518,10 @@ PrefabInstance:
     - target: {fileID: 2024971240307710921, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Name
       value: activeplayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052459238265445294, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6494643321896763517, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: camera
@@ -156006,6 +156018,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8bb444e94beaa40a4062a82af141ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2082557719 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1419433222233019574, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+  m_PrefabInstance: {fileID: 1758615689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084825813
 GameObject:
   m_ObjectHideFlags: 0
