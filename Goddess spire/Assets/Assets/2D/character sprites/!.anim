@@ -85,7 +85,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -112,7 +112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/blank sign
+    path: model/sprite model/head/emotes/blank sign
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -140,7 +140,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -196,7 +196,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/mouth
+    path: model/sprite model/head/mouth
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_PPtrCurves: []
@@ -294,7 +294,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/blank sign
+    path: model/sprite model/head/emotes/blank sign
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -322,7 +322,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -350,7 +350,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -423,7 +423,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -451,7 +451,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: head/emotes/blank sign/!
+    path: model/sprite model/head/emotes/blank sign/!
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -479,7 +479,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/eyebrows
+    path: model/sprite model/head/eyebrows
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -507,7 +507,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/mouth
+    path: model/sprite model/head/mouth
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_EulerEditorCurves: []

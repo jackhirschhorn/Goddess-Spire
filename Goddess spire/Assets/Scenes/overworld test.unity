@@ -119501,7 +119501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1225027428062622499, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1301269097487867169, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: anim
@@ -119509,7 +119509,7 @@ PrefabInstance:
       objectReference: {fileID: 2082557719}
     - target: {fileID: 1301269097487867169, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: character
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1387661689280938614, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_IsActive
@@ -119518,10 +119518,18 @@ PrefabInstance:
     - target: {fileID: 1419433222233019574, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 96f77bbdbf0a24449b136cb2d8e7839d, type: 2}
+      objectReference: {fileID: 22100000, guid: 2da39566d312ddd4da6a27120863939b, type: 2}
     - target: {fileID: 2024971240307710921, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Name
       value: activeplayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450275500611205346, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: spritenum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450275500611205346, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: indexoffset
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5741934617405128755, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset
@@ -119541,7 +119549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8259840510572849225, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8282744487767754129, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Size.z
@@ -119561,7 +119569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142328755719772875, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9163311172726042987, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset

@@ -42,7 +42,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/tear
+    path: model/sprite model/head/emotes/tear
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -70,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/eyes
+    path: model/sprite model/head/eyes
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_PPtrCurves: []
@@ -144,7 +144,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/tear
+    path: model/sprite model/head/emotes/tear
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -172,7 +172,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/eyes
+    path: model/sprite model/head/eyes
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_EulerEditorCurves: []

@@ -85,7 +85,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -112,7 +112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -140,7 +140,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/eyebrows
+    path: model/sprite model/head/eyebrows
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   m_PPtrCurves: []
@@ -222,7 +222,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -250,7 +250,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: spritenum
-    path: head/eyebrows
+    path: model/sprite model/head/eyebrows
     classID: 114
     script: {fileID: 11500000, guid: 06cb44c4196ddd546b93c04bd13e0554, type: 3}
   - curve:
@@ -323,7 +323,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -396,7 +396,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -424,7 +424,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: head/emotes/angry vien
+    path: model/sprite model/head/emotes/angry vien
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
