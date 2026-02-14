@@ -23,5 +23,12 @@ public class spriteswapmaster : MonoBehaviour
 		}
 		anim.SetInteger("char",character);
 	}
+	
+	public void swap(){
+		for(int i2 = 0; i2 < spriteswaps.Length; i2++){
+			spriteswaps[i2].indexoffset = indexlist[i2]*character;
+		}
+		anim.SetInteger("char",character);
+	}
 
 }

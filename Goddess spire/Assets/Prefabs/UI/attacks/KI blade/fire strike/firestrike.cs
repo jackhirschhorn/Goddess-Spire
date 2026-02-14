@@ -17,7 +17,11 @@ public class firestrike : combatoption
 	public override void demothething(){
 		anim = BattleMaster.BM.initiative[BattleMaster.BM.roundturn].transform.GetChild(0).GetChild(0).GetComponent<Animator>();
 		tempac = anim.runtimeAnimatorController as AnimatorController;
-		anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
+		if(BattleMaster.BM.initiative[BattleMaster.BM.roundturn].animlink == -1){
+			anim.runtimeAnimatorController = ac as RuntimeAnimatorController;
+		} else {
+			anim.runtimeAnimatorController = acs[BattleMaster.BM.initiative[BattleMaster.BM.roundturn].animlink] as RuntimeAnimatorController;
+		}
 		anim.SetInteger("stage",1);
 		anim.gameObject.AddComponent(typeof(firestrikemono));
 		anim.transform.GetComponent<firestrikemono>().anim = anim;

@@ -9,6 +9,7 @@ using UnityEditor.Animations;
 [CreateAssetMenu(fileName ="combatantdata")]
 public class combatantdata : ScriptableObject
 {
+	public int animlink = 0; //which animset to use for abilities
 	public string name = "";
 	public int clas = -1; //-1 no class, 0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 Rogue, 5 bard, 6 wizard, 7 cleric, 8 druid
     public static string[] clasname = new string[]{"No Class","Barbarian","KI Master", "Paladin", "Ranger", "Rogue", "Bard", "Wizard", "Cleric", "Druid"};

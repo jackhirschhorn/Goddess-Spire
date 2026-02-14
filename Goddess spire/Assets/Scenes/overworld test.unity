@@ -119509,7 +119509,7 @@ PrefabInstance:
       objectReference: {fileID: 2082557719}
     - target: {fileID: 1301269097487867169, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: character
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387661689280938614, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_IsActive
@@ -119518,7 +119518,7 @@ PrefabInstance:
     - target: {fileID: 1419433222233019574, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 2da39566d312ddd4da6a27120863939b, type: 2}
+      objectReference: {fileID: 22100000, guid: 094c13d64222c8643b04cd6f797857b9, type: 2}
     - target: {fileID: 2024971240307710921, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: m_Name
       value: activeplayer
@@ -119543,6 +119543,18 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1906868689}
+    - target: {fileID: 6494643321896763517, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: animcons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6494643321896763517, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: animcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 22100000, guid: 094c13d64222c8643b04cd6f797857b9, type: 2}
+    - target: {fileID: 6494643321896763517, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
+      propertyPath: animcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 22100000, guid: 2da39566d312ddd4da6a27120863939b, type: 2}
     - target: {fileID: 7725836727205680677, guid: ceac5ca7dfe306e4480a5bd7e1b786e0, type: 3}
       propertyPath: indexoffset
       value: 1

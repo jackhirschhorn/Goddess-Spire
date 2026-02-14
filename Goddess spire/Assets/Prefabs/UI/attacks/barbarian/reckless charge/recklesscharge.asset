@@ -20,4 +20,9 @@ MonoBehaviour:
   cost: 0
   costype: 1
   ac: {fileID: 9100000, guid: eb6da356257e4d24d81e975f2ac19177, type: 2}
+  acs:
+  - {fileID: 22100000, guid: 11b80c4eecfe7f34dba27cae783bb7ef, type: 2}
+  - {fileID: 22100000, guid: dae0b027a9d4140439fe2fcc19cadd31, type: 2}
   tempac: {fileID: 0}
+  anim: {fileID: 0}
+  iswand: 0

@@ -15,6 +15,7 @@ public class combatoption : ScriptableObject
 	public int cost;
 	public int costype = 0;//0 = mana, 1 = stam, 2 = hp	
 	public AnimatorController ac;
+	public AnimatorOverrideController[] acs;
 	public AnimatorController tempac;
 	public Animator anim;
 	public bool iswand = false;

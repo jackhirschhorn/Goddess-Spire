@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations;
 
 public class playercontroller : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class playercontroller : MonoBehaviour
 	public fixture targetfixture;
 	public Animator rangervision;
 	public int partyleader = 1;
+	public AnimatorOverrideController[] animcons;
 	
 	void Awake(){
 		
@@ -487,16 +489,26 @@ public class playercontroller : MonoBehaviour
 	public void select1(InputAction.CallbackContext context){
 		if(context.performed){
 			//debug
-			classid++;
-			Debug.Log(classid);
+			transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character++;
+			if(transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character >= 2) transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character = 0;
+			transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().swap();
+			anim.runtimeAnimatorController = animcons[transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character];
+			classid = transform.GetComponent<combatantdataholder>().cd[transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character+1].clas;
+			//classid++;
+			//Debug.Log(classid);
 		}
 	}
 	
 	public void select2(InputAction.CallbackContext context){
 		if(context.performed){
 			//debug
-			classid--;
-			Debug.Log(classid);
+			transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character--;
+			if(transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character <= -1) transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character = 1;
+			transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().swap();
+			anim.runtimeAnimatorController = animcons[transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character];
+			classid = transform.GetComponent<combatantdataholder>().cd[transform.GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().character+1].clas;
+			//classid--;
+			//Debug.Log(classid);
 		}
 	}
 	
