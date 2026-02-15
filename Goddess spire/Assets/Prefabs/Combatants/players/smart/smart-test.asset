@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
   m_Name: smart-test
   m_EditorClassIdentifier: 
+  animlink: -1
   name: brainiac
-  clas: 6
+  clas: -1
   strong: 0
   AI: {fileID: 0}
   humanoid: 1
@@ -63,3 +64,17 @@ MonoBehaviour:
   anim: {fileID: 9100000, guid: 762a0f41f9e178144949144d9cd2fd6d, type: 2}
   idleanim: 3
   model: {fileID: 1203842287287967992, guid: d4a0a0357aca9ae4f8f084125081b98e, type: 3}
+  acs: []
+  equipmend:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

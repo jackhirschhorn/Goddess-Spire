@@ -64,6 +64,16 @@ MonoBehaviour:
   anim: {fileID: 9100000, guid: 762a0f41f9e178144949144d9cd2fd6d, type: 2}
   idleanim: 2
   model: {fileID: 806754786167924582, guid: e0185893cc4e00f4eae5eb6710630a87, type: 3}
+  acs:
+  - {fileID: 22100000, guid: 01eedcde968b8da4cafbdd05c600d785, type: 2}
+  - {fileID: 22100000, guid: 7b6be339432bb7a4aa03d603b1eb7b74, type: 2}
+  - {fileID: 22100000, guid: 0877ab7db8b459942841952417b5fe25, type: 2}
+  - {fileID: 22100000, guid: 0a42c19c646855443b36f837b1875d49, type: 2}
+  - {fileID: 22100000, guid: f7904329538fa81418dd287cedfd76ea, type: 2}
+  - {fileID: 22100000, guid: 70f39f2add20e9c46b82293cb2054394, type: 2}
+  - {fileID: 22100000, guid: ac82a14bf97b7eb488b98001cf9f61d8, type: 2}
+  - {fileID: 22100000, guid: aba9f4f1b0b3c4640b4300a49d9e21bd, type: 2}
+  - {fileID: 22100000, guid: af0e1874d305eda4eae13d4cafd5b97f, type: 2}
   equipmend:
   - {fileID: 0}
   - {fileID: 0}

@@ -203,6 +203,13 @@ public class BattleMaster : MonoBehaviour
 		} else {
 			enemynum++;
 		}
+		if(clone.GetComponent<Combatant>().clas != -1){
+			clone.GetComponent<Combatant>().anim.runtimeAnimatorController = clone.GetComponent<Combatant>().acs[clone.GetComponent<Combatant>().clas];
+			clone.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().swapclas(clone.GetComponent<Combatant>().clas);
+		}
+		if(clone.GetComponent<Combatant>().animlink != -1){
+			clone.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<spriteswapmaster>().swap(clone.GetComponent<Combatant>().animlink);
+		}
 		combatants.Add(clone.GetComponent<Combatant>());
 		if(clone.GetComponent<Combatant>().statblock.chp <= 0)clone.GetComponent<Combatant>().die();
 		if(team){

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168b6a8444c6c044f899b43ce3600b89, type: 3}
   m_Name: kobold-blue
   m_EditorClassIdentifier: 
+  animlink: -1
   name: blue kobold
   clas: -1
   strong: 0
@@ -64,3 +65,17 @@ MonoBehaviour:
   anim: {fileID: 9100000, guid: 8010cf02c0b65c04092cdf0c1649f1b5, type: 2}
   idleanim: 0
   model: {fileID: 1469655026063856084, guid: c7d1954d2760a6747bb0a7f13b4805d3, type: 3}
+  acs: []
+  equipmend:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -8,7 +8,7 @@ using UnityEditor.Animations;
 
 public class Combatant : MonoBehaviour
 {
-	public int animlink = 0;  //which animset to use for abilities
+	public int animlink = -1;  //which animset to use for abilities
 	public int clas = -1;//-1 no class, 0 barbarian, 1 KI master, 2 paladin, 3 ranger, 4 phantom, 5 bard, 6 wizard, 7 cleric, 8 druid
 	public bool strong = false;
 	public brain AI;
@@ -23,7 +23,8 @@ public class Combatant : MonoBehaviour
 	public Transform enemyHP;
 	public RectTransform HP;
 	public TextMeshProUGUI hpt;
-	public bool show_HP;
+	public bool show_HP;	
+	public AnimatorOverrideController[] acs;
 	
 	public List<combatoption> class_CO = new List<combatoption>();
 	public List<combatoption> weapon_CO = new List<combatoption>();
@@ -95,6 +96,7 @@ public class Combatant : MonoBehaviour
 		isPC = team;
 		clas = cd.clas;
 		
+		animlink = cd.animlink;
 		strong = cd.strong;
 		AI = cd.AI;
 		humanoid = cd.humanoid;
@@ -128,7 +130,8 @@ public class Combatant : MonoBehaviour
 		enemyHP.parent = transform;
 		enemyHP.position = transform.position + new Vector3(0,height,0);
 		HP = enemyHP.GetChild(0) as RectTransform;
-		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();
+		hpt = enemyHP.GetChild(1).GetComponent<TextMeshProUGUI>();		
+		acs = cd.acs;
 		//debug();
 		if(idleanim != 0){
 			anim.SetInteger("weapon",idleanim);
