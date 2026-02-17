@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animlink: 1
   name: 'Belle '
-  clas: 3
+  clas: 0
   strong: 0
   AI: {fileID: 0}
   humanoid: 1
