@@ -12,6 +12,10 @@ public class structure : MonoBehaviour
 	public structure nextfloor;
 	public structure bigstruck;
 	
+	public virtual void Awake(){
+		
+	}
+	
 	public virtual void FixedUpdate(){
 		if (fadetim > 0.2f && (fadeout || overrider != null && overrider2 == null)){
 			fadetim -= Time.fixedDeltaTime*3;

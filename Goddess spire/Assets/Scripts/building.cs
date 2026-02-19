@@ -14,7 +14,7 @@ public class building : structure
 	public float fadetim2 = 1f;
 	public Vector3 euls;
 	
-	void Awake(){
+	public override void Awake(){
 		if(transform.parent.GetComponent<structure>().nextfloor != null)nextfloor = transform.parent.GetComponent<structure>().nextfloor;
 	}
 	
